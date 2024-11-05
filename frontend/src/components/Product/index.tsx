@@ -7,22 +7,19 @@ import {
   Grid2 as Grid,
 } from "@mui/material";
 
-type ProductProps = {
-  image: string;
-  name: string;
-  description: string;
-  price: number;
-};
+import { IProductsList } from "context";
+import { useCart } from "hooks";
 
-export const ProductCard: React.FC<ProductProps> = ({
-  image,
-  name,
-  description,
-  price,
-}) => {
+export const ProductCard: React.FC<IProductsList> = ({ item }) => {
+  const { addToCart, cartItems } = useCart();
   return (
     <Card sx={{ height: 450, display: "flex", flexDirection: "column" }}>
-      <CardMedia component="img" height="140" image={image} alt={name} />
+      <CardMedia
+        component="img"
+        height="140"
+        image={item.image}
+        alt={item.name}
+      />
       <CardContent
         sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}
       >
@@ -34,7 +31,7 @@ export const ProductCard: React.FC<ProductProps> = ({
               component="div"
               sx={{ fontSize: { xs: "0.8rem", sm: "1rem" }, height: 35 }}
             >
-              {name}
+              {item.name}
             </Typography>
           </Grid>
           <Grid>
@@ -47,14 +44,19 @@ export const ProductCard: React.FC<ProductProps> = ({
                 my: 2,
               }}
             >
-              {description}
+              {item.description}
             </Typography>
           </Grid>
           <Grid display={"flex"} flexDirection={"column"}>
             <Typography variant="h6" color="text.primary" sx={{ mt: 2 }}>
-              ${price.toFixed(2)}
+              ${item.price.toFixed(2)}
             </Typography>
-            <Button variant="contained" color="primary" sx={{ mt: 2 }}>
+            <Button
+              variant="contained"
+              onClick={() => addToCart(item)}
+              color="primary"
+              sx={{ mt: 2 }}
+            >
               Comprar
             </Button>
           </Grid>
