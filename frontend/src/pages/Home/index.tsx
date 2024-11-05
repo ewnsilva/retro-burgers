@@ -11,11 +11,12 @@ export const Home = () => (
       container
       rowSpacing={2}
       columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-      marginX={"10%"}
+      marginX={"15%"}
     >
       {ProductMock.map(({ description, image, name, price }) => (
         <Grid size={3}>
           <ProductCard
+            id={0}
             description={description}
             image={image}
             name={name}
