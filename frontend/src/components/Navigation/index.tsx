@@ -1,5 +1,4 @@
-import { Search } from "@mui/icons-material";
-import { Button, ButtonGroup, InputAdornment, TextField } from "@mui/material";
+import { Button } from "@mui/material";
 
 export const Navigation = (): JSX.Element => {
   return (
@@ -10,30 +9,70 @@ export const Navigation = (): JSX.Element => {
         alignItems: "center",
         justifyContent: "center",
         background: "yellow",
-        padding: 10,
-        marginTop: 10,
         marginBottom: 10,
       }}
     >
-      <div style={{ display: "flex" }}>
-        <Button sx={{ width: 150 }}>Hamburguers</Button>
-        <Button sx={{ width: 150 }}>Salgados</Button>
-        <Button sx={{ width: 150 }}>Sucos</Button>
-        <Button sx={{ width: 150 }}>Doces</Button>
-      </div>
-      <TextField
-        label="Pesquisa"
-        variant="outlined"
-        size="small"
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <Search />
-            </InputAdornment>
-          ),
+      <div
+        style={{
+          display: "flex",
+          backgroundImage: "linear-gradient(90deg, #FA558A 0%, #FEAE5D 100%)",
+          width: "100%",
+          justifyContent: "center",
         }}
-        sx={{ position: "absolute", right: "15%" }}
-      />
+      >
+        <Button
+          sx={{
+            width: 150,
+            color: "#250F40",
+            fontWeight: 600,
+            "&:hover": {
+              color: "#FDE12D",
+              textDecoration: "underline",
+            },
+          }}
+        >
+          Hamburguers
+        </Button>
+        <Button
+          sx={{
+            width: 150,
+            color: "#250F40",
+            fontWeight: 600,
+            "&:hover": {
+              color: "#FDE12D",
+              textDecoration: "underline",
+            },
+          }}
+        >
+          Salgados
+        </Button>
+        <Button
+          sx={{
+            width: 150,
+            color: "#250F40",
+            fontWeight: 600,
+            "&:hover": {
+              color: "#FDE12D",
+              textDecoration: "underline",
+            },
+          }}
+        >
+          Sucos
+        </Button>
+        <Button
+          sx={{
+            width: 150,
+            color: "#250F40",
+            fontWeight: 600,
+            "&:hover": {
+              color: "#FDE12D",
+              textDecoration: "underline",
+            },
+          }}
+        >
+          Doces
+        </Button>
+      </div>
     </nav>
   );
 };
