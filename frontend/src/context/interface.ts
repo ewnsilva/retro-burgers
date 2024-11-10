@@ -1,3 +1,6 @@
+export interface IHeader {
+  setSearch: (query: string) => void;
+}
 export interface IProducts {
   id: number;
   image: string;
