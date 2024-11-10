@@ -2,6 +2,7 @@ import { FoodExemple } from "assets";
 
 export const ProductMock = [
   {
+    id: 1,
     image: FoodExemple,
     name: "Classic Burger",
     description:
@@ -9,6 +10,7 @@ export const ProductMock = [
     price: 19.99,
   },
   {
+    id: 2,
     image: FoodExemple,
     name: "Cheese Lover",
     description:
@@ -16,6 +18,7 @@ export const ProductMock = [
     price: 22.99,
   },
   {
+    id: 3,
     image: FoodExemple,
     name: "Bacon Deluxe",
     description:
@@ -23,6 +26,7 @@ export const ProductMock = [
     price: 24.99,
   },
   {
+    id: 4,
     image: FoodExemple,
     name: "Veggie Delight",
     description:
@@ -30,6 +34,7 @@ export const ProductMock = [
     price: 18.99,
   },
   {
+    id: 5,
     image: FoodExemple,
     name: "Spicy Jalapeño",
     description:
@@ -37,6 +42,7 @@ export const ProductMock = [
     price: 21.99,
   },
   {
+    id: 6,
     image: FoodExemple,
     name: "Mushroom Swiss",
     description:
@@ -44,6 +50,7 @@ export const ProductMock = [
     price: 23.49,
   },
   {
+    id: 7,
     image: FoodExemple,
     name: "Chicken Crispy",
     description:
@@ -51,6 +58,7 @@ export const ProductMock = [
     price: 20.99,
   },
   {
+    id: 8,
     image: FoodExemple,
     name: "Double Trouble",
     description:
@@ -58,12 +66,14 @@ export const ProductMock = [
     price: 26.99,
   },
   {
+    id: 9,
     image: FoodExemple,
     name: "BBQ Ranch",
     description: "Hambúrguer com molho ranch, queijo cheddar e cebolas crispy.",
     price: 22.49,
   },
   {
+    id: 10,
     image: FoodExemple,
     name: "Blue Cheese Bomb",
     description:
