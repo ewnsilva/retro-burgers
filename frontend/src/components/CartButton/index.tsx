@@ -12,11 +12,15 @@ export const CartButton = (): JSX.Element => {
 
   return (
     <IconButton
-      color="inherit"
       onClick={openDrawer}
-      style={{ position: "fixed", top: "15%", right: 16 }}
+      style={{
+        position: "fixed",
+        top: "15%",
+        right: 16,
+        backgroundColor: "#fa558a",
+      }}
     >
-      <Badge badgeContent={totalQuantity} color="secondary">
+      <Badge badgeContent={totalQuantity} sx={{ color: "white" }}>
         <ShoppingCart />
       </Badge>
     </IconButton>

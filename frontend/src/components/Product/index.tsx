@@ -13,6 +13,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 
 import { IProductsList } from "context";
 import { useCart } from "hooks";
+import { ShoppingCart } from "@mui/icons-material";
 
 export const ProductCard: React.FC<IProductsList> = ({ item }) => {
   const {
@@ -29,16 +30,22 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
   return (
     <Card
       key={item.id}
-      sx={{ height: 450, display: "flex", flexDirection: "column" }}
+      sx={{
+        height: 400,
+        display: "flex",
+        flexDirection: "column",
+        backgroundColor: "transparent",
+        border: "2px solid white",
+        borderRadius: 2,
+      }}
     >
-      <CardMedia
-        component="img"
-        height="140"
-        image={item.image}
-        alt={item.name}
-      />
       <CardContent
-        sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}
+        sx={{
+          flexGrow: 1,
+          display: "flex",
+          flexDirection: "column",
+          color: "white",
+        }}
       >
         <Grid container direction="column" spacing={1}>
           <Grid>
@@ -46,18 +53,24 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
               gutterBottom
               variant="h6"
               component="div"
+              fontWeight={600}
               sx={{ fontSize: { xs: "0.8rem", sm: "1rem" }, height: 35 }}
             >
               {item.name}
             </Typography>
           </Grid>
+          <CardMedia
+            component="img"
+            height="120"
+            image={item.image}
+            alt={item.name}
+          />
           <Grid>
             <Typography
               variant="body2"
-              color="text.secondary"
               sx={{
-                fontSize: { xs: "0.75rem", sm: "0.9rem" },
-                height: 70,
+                fontSize: { xs: "0.65rem", sm: "0.75rem" },
+                height: 50,
                 my: 2,
               }}
             >
@@ -65,8 +78,8 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
             </Typography>
           </Grid>
           <Grid display="flex" flexDirection="column">
-            <Typography variant="h6" color="text.primary" sx={{ mt: 2 }}>
-              ${item.price.toFixed(2)}
+            <Typography sx={{ mt: 2 }} color="secondary" alignSelf={"start"}>
+              R${item.price.toFixed(2)}
             </Typography>
             {isInCart(item.id) ? (
               <Grid
@@ -80,14 +93,14 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
                   {quantity === 1 ? (
                     <IconButton
                       onClick={() => decrementQuantity(item.id)}
-                      color="error"
+                      color="primary"
                     >
                       <DeleteIcon />
                     </IconButton>
                   ) : (
                     <IconButton
                       onClick={() => decrementQuantity(item.id)}
-                      color="error"
+                      color="primary"
                     >
                       <RemoveIcon />
                     </IconButton>
@@ -101,7 +114,7 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
                 <Grid>
                   <IconButton
                     onClick={() => incrementQuantity(item.id)}
-                    color="primary"
+                    color="secondary"
                   >
                     <AddIcon />
                   </IconButton>
@@ -111,10 +124,14 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
               <Button
                 variant="contained"
                 onClick={() => addToCart(item)}
-                color="primary"
-                sx={{ mt: 2 }}
+                sx={{
+                  mt: 2,
+                  backgroundColor: "secondary.main",
+                  border: "1px solid white",
+                  alignSelf: "end",
+                }}
               >
-                Comprar
+                <ShoppingCart color="inherit" />
               </Button>
             )}
           </Grid>

@@ -24,7 +24,7 @@ export const Home = () => {
         container
         rowSpacing={2}
         columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-        marginX={"15%"}
+        marginX={"10%"}
       >
         {filteredProducts.map((item) => (
           <Grid key={item.id} size={3}>

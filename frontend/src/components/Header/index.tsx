@@ -17,9 +17,8 @@ export const Header = ({ setSearch }: IHeader): JSX.Element => {
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
-        marginLeft: 10,
         justifyContent: "space-between",
-        backgroundColor: "#fff4e0",
+        backgroundColor: "primary.info",
       }}
     >
       <Box display="flex" ml={"2%"} paddingY={2}>
@@ -46,7 +45,7 @@ export const Header = ({ setSearch }: IHeader): JSX.Element => {
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
-              <Search />
+              <Search color="primary" />
             </InputAdornment>
           ),
         }}
