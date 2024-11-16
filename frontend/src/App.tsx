@@ -1,15 +1,17 @@
 import { Home } from "pages";
-
+import { ThemeProvider } from "@mui/material";
 import "./App.css";
-import { CartProvider } from "context";
+import { CartProvider, defaultTheme } from "context";
 
 function App() {
   return (
-    <CartProvider>
-      <div className="App">
-        <Home />
-      </div>
-    </CartProvider>
+    <ThemeProvider theme={defaultTheme}>
+      <CartProvider>
+        <div className="App">
+          <Home />
+        </div>
+      </CartProvider>
+    </ThemeProvider>
   );
 }
 
