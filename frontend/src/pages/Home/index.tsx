@@ -2,22 +2,45 @@ import { useState } from "react";
 
 import { Box, Grid2 as Grid } from "@mui/material";
 
-import { Cart, Header, Navigation, ProductCard, CartButton } from "components";
+import {
+  Cart,
+  Header,
+  Navigation,
+  ProductCard,
+  CartButton,
+  Footer,
+} from "components";
 import { useCart } from "hooks";
-import { ProductMock } from "utils";
+import { BurguerMock, DrinkMock, SnackMock, SweetMock } from "utils";
 
 export const Home = () => {
   const { totalQuantity } = useCart();
   const [search, setSearch] = useState("");
+  const [category, setCategory] = useState(0);
 
-  const filteredProducts = ProductMock.filter((product) =>
+  const getMockByNumber = (number: number) => {
+    switch (number) {
+      case 0:
+        return BurguerMock;
+      case 1:
+        return SnackMock;
+      case 2:
+        return SweetMock;
+      case 3:
+        return DrinkMock;
+      default:
+        return BurguerMock;
+    }
+  };
+
+  const filteredProducts = getMockByNumber(category).filter((product) =>
     product.name.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
     <Box display="flex" flexDirection={"column"}>
       <Header setSearch={setSearch} />
-      <Navigation />
+      <Navigation setCategory={setCategory} categoty={category} />
       {totalQuantity > 0 && <CartButton />}
       <Cart />
       <Grid
@@ -32,6 +55,7 @@ export const Home = () => {
           </Grid>
         ))}
       </Grid>
+      <Footer />
     </Box>
   );
 };

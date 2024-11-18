@@ -1,6 +1,9 @@
 import { Button } from "@mui/material";
 
-export const Navigation = (): JSX.Element => {
+export const Navigation: React.FC<{
+  setCategory: React.Dispatch<React.SetStateAction<number>>;
+  categoty: number;
+}> = ({ setCategory, categoty }) => {
   return (
     <nav
       style={{
@@ -21,9 +24,10 @@ export const Navigation = (): JSX.Element => {
         }}
       >
         <Button
+          onClick={() => setCategory(0)}
           sx={{
             width: 150,
-            color: "#250F40",
+            color: categoty === 0 ? "#FDE12D" : "#250F40",
             fontWeight: 600,
             "&:hover": {
               color: "#FDE12D",
@@ -34,9 +38,10 @@ export const Navigation = (): JSX.Element => {
           Hamburguers
         </Button>
         <Button
+          onClick={() => setCategory(1)}
           sx={{
             width: 150,
-            color: "#250F40",
+            color: categoty === 1 ? "#FDE12D" : "#250F40",
             fontWeight: 600,
             "&:hover": {
               color: "#FDE12D",
@@ -47,22 +52,10 @@ export const Navigation = (): JSX.Element => {
           Salgados
         </Button>
         <Button
+          onClick={() => setCategory(2)}
           sx={{
             width: 150,
-            color: "#250F40",
-            fontWeight: 600,
-            "&:hover": {
-              color: "#FDE12D",
-              textDecoration: "underline",
-            },
-          }}
-        >
-          Sucos
-        </Button>
-        <Button
-          sx={{
-            width: 150,
-            color: "#250F40",
+            color: categoty === 2 ? "#FDE12D" : "#250F40",
             fontWeight: 600,
             "&:hover": {
               color: "#FDE12D",
@@ -71,6 +64,20 @@ export const Navigation = (): JSX.Element => {
           }}
         >
           Doces
+        </Button>
+        <Button
+          onClick={() => setCategory(3)}
+          sx={{
+            width: 150,
+            color: categoty === 3 ? "#FDE12D" : "#250F40",
+            fontWeight: 600,
+            "&:hover": {
+              color: "#FDE12D",
+              textDecoration: "underline",
+            },
+          }}
+        >
+          Bebidas
         </Button>
       </div>
     </nav>
