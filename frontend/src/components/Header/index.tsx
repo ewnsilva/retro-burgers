@@ -18,7 +18,7 @@ export const Header = ({ setSearch }: IHeader): JSX.Element => {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
-        backgroundColor: "primary.info",
+        backgroundColor: "#fff4e0",
       }}
     >
       <Box display="flex" ml={"2%"} paddingY={2}>

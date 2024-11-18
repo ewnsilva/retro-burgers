@@ -31,7 +31,6 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
     <Card
       key={item.id}
       sx={{
-        height: 400,
         display: "flex",
         flexDirection: "column",
         backgroundColor: "transparent",
@@ -65,18 +64,20 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
             image={item.image}
             alt={item.name}
           />
-          <Grid>
-            <Typography
-              variant="body2"
-              sx={{
-                fontSize: { xs: "0.65rem", sm: "0.75rem" },
-                height: 50,
-                my: 2,
-              }}
-            >
-              {item.description}
-            </Typography>
-          </Grid>
+          {item.description && (
+            <Grid>
+              <Typography
+                variant="body2"
+                sx={{
+                  fontSize: { xs: "0.65rem", sm: "0.75rem" },
+                  height: 50,
+                  my: 2,
+                }}
+              >
+                {item.description}
+              </Typography>
+            </Grid>
+          )}
           <Grid display="flex" flexDirection="column">
             <Typography sx={{ mt: 2 }} color="secondary" alignSelf={"start"}>
               R${item.price.toFixed(2)}
