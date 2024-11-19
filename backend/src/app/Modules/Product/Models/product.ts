@@ -1,0 +1,53 @@
+import { Model, DataTypes, Sequelize } from "sequelize";
+import { ProductAttributes } from "../Interfaces/Product.interfaces";
+import { Category } from "modules/Category/Models/category";
+
+export class Product extends Model<ProductAttributes> {
+  static associate() {
+    Product.belongsTo(Category, {
+      foreignKey: "category_id",
+    });
+  }
+}
+
+export const ProductModel = (sequelize: Sequelize) => {
+  Product.init(
+    {
+      id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+      },
+      title: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      description: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      price: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
+      },
+      logo: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      category_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: "categories",
+          key: "id",
+        },
+      },
+    },
+    {
+      sequelize,
+      modelName: "Product",
+      tableName: "products",
+    }
+  );
+  return Product;
+};
