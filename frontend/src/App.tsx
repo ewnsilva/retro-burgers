@@ -1,7 +1,7 @@
-import { Home } from "pages";
-import { ThemeProvider } from "@mui/material";
-import "./App.css";
-import { CartProvider, defaultTheme } from "context";
+import { Home } from 'pages';
+import { ThemeProvider } from '@mui/material';
+import './App.css';
+import { CartProvider, defaultTheme } from 'context';
 
 function App() {
   return (
