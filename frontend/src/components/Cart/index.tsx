@@ -9,11 +9,25 @@ import {
   Box,
   Badge,
   CardMedia,
-} from "@mui/material";
-import { Delete, Add, Remove } from "@mui/icons-material";
+  SxProps,
+} from '@mui/material';
+import { Delete, Add, Remove } from '@mui/icons-material';
 
-import { useCart } from "hooks";
-import { ShoppingCart } from "@mui/icons-material";
+import { useCart } from 'hooks';
+import { ShoppingCart } from '@mui/icons-material';
+
+const incrementQuantityStyle: SxProps = {
+  py: 0,
+  px: 1,
+  backgroundColor: 'secondary.main',
+  borderTopLeftRadius: 5,
+  borderBottomLeftRadius: 5,
+  border: '1px solid transparent',
+  borderRightColor: 'background.default',
+  '&:hover': {
+    cursor: 'pointer',
+  },
+};
 
 export const Cart = (): JSX.Element => {
   const {
@@ -37,30 +51,21 @@ export const Cart = (): JSX.Element => {
 
   return (
     <Drawer anchor="right" open={isDrawerOpen} onClose={closeDrawer}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
           width: 350,
-          height: "100%",
-          backgroundColor: "#fff4e0",
+          height: '100%',
+          backgroundColor: 'info.main',
         }}
       >
-        <Box
-          display={"flex"}
-          width={"90%"}
-          m={2}
-          justifyContent={"space-between"}
-        >
-          <Box display={"flex"} alignItems={"center"}>
-            <Badge
-              badgeContent={totalQuantity}
-              color="secondary"
-              sx={{ color: "white" }}
-            >
+        <Box display="flex" width="90%" m={2} justifyContent="space-between">
+          <Box display="flex" alignItems="center">
+            <Badge badgeContent={totalQuantity} color="secondary" sx={{ color: 'white' }}>
               <ShoppingCart
                 sx={{
-                  backgroundColor: "primary.main",
+                  backgroundColor: 'primary.main',
                   p: 1.5,
                   borderRadius: 2,
                 }}
@@ -73,19 +78,20 @@ export const Cart = (): JSX.Element => {
           <Typography
             onClick={closeDrawer}
             sx={{
-              border: "2px solid #FA558A",
-              alignSelf: "top",
+              border: '2px solid',
+              borderColor: 'primary.main',
+              alignSelf: 'top',
               fontSize: 12,
               fontWeight: 600,
               height: 18,
               width: 18,
               borderRadius: 5,
-              textAlign: "center",
-              color: "primary.main",
-              "&:hover": {
-                cursor: "pointer",
-                backgroundColor: "primary.main",
-                color: "white",
+              textAlign: 'center',
+              color: 'primary.main',
+              '&:hover': {
+                cursor: 'pointer',
+                backgroundColor: 'primary.main',
+                color: 'white',
               },
             }}
           >
@@ -94,32 +100,27 @@ export const Cart = (): JSX.Element => {
         </Box>
 
         {cartItems?.length > 0 && (
-          <List sx={{ width: "90%", alignSelf: "center" }}>
-            {cartItems.map((item) => (
+          <List sx={{ width: '90%', alignSelf: 'center' }}>
+            {cartItems.map(item => (
               <Paper
+                key={item.id}
                 elevation={5}
                 sx={{
                   mb: 1,
-                  backgroundColor: "info.main",
-                  border: "1.2px solid #250f40",
+                  backgroundColor: 'info.main',
+                  border: '1.2px solid',
+                  borderColor: 'background.default',
                 }}
               >
-                <Box
-                  key={item.id}
-                  sx={{ display: "flex", alignItems: "top", p: 1.5 }}
-                >
-                  <Box display={"flex"} flexDirection={"column"}>
-                    <CardMedia
-                      component="img"
-                      height="70"
-                      image={item.image}
-                      alt={item.name}
-                    />
+                <Box key={item.id} sx={{ display: 'flex', alignItems: 'top', p: 1.5 }}>
+                  <Box display="flex" flexDirection="column">
+                    <CardMedia component="img" height="70" image={item.image} alt={item.name} />
                     <Box
                       sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        border: "1px solid #250f40",
+                        display: 'flex',
+                        alignItems: 'center',
+                        border: '1px solid',
+                        borderColor: 'background.default',
                         borderRadius: 1,
                         mt: 1,
                       }}
@@ -128,18 +129,7 @@ export const Cart = (): JSX.Element => {
                         <Box
                           color="error"
                           onClick={() => removeItem(item.id)}
-                          sx={{
-                            py: 0,
-                            px: 1,
-                            backgroundColor: "secondary.main",
-                            borderTopLeftRadius: 5,
-                            borderBottomLeftRadius: 5,
-                            border: "1px solid transparent",
-                            borderRightColor: "#250f40",
-                            "&:hover": {
-                              cursor: "pointer",
-                            },
-                          }}
+                          sx={incrementQuantityStyle}
                         >
                           <Delete
                             sx={{
@@ -151,18 +141,7 @@ export const Cart = (): JSX.Element => {
                         <Box
                           color="error"
                           onClick={() => decrementQuantity(item.id)}
-                          sx={{
-                            py: 0,
-                            px: 1,
-                            backgroundColor: "secondary.main",
-                            borderTopLeftRadius: 5,
-                            borderBottomLeftRadius: 5,
-                            border: "1px solid transparent",
-                            borderRightColor: "#250f40",
-                            "&:hover": {
-                              cursor: "pointer",
-                            },
-                          }}
+                          sx={incrementQuantityStyle}
                         >
                           <Remove sx={{ width: 15 }} />
                         </Box>
@@ -173,29 +152,18 @@ export const Cart = (): JSX.Element => {
                       <Box
                         color="primary"
                         onClick={() => incrementQuantity(item.id)}
-                        sx={{
-                          py: 0,
-                          px: 1,
-                          backgroundColor: "secondary.main",
-                          borderTopRightRadius: 5,
-                          borderBottomRightRadius: 5,
-                          border: "1px solid transparent",
-                          borderLeftColor: "#250f40",
-                          "&:hover": {
-                            cursor: "pointer",
-                          },
-                        }}
+                        sx={incrementQuantityStyle}
                       >
                         <Add sx={{ width: 15 }} />
                       </Box>
                     </Box>
                   </Box>
-                  <Box ml={2} width={"100%"}>
-                    <Box display={"flex"} justifyContent={"space-between"}>
+                  <Box ml={2} width="100%">
+                    <Box display="flex" justifyContent="space-between">
                       <Typography
                         fontSize={14}
                         fontWeight={600}
-                        sx={{ color: "#250f40" }}
+                        sx={{ color: 'background.default' }}
                       >
                         {item.name}
                       </Typography>
@@ -220,27 +188,18 @@ export const Cart = (): JSX.Element => {
 
         <Divider />
         <Box
-          display={"flex"}
-          flexDirection={"column"}
-          alignSelf={"center"}
-          position={"absolute"}
-          bottom={"2%"}
-          width={"90%"}
+          display="flex"
+          flexDirection="column"
+          alignSelf="center"
+          position="absolute"
+          bottom="2%"
+          width="90%"
         >
-          <Typography
-            variant="subtitle1"
-            color="primary"
-            fontWeight={600}
-            alignSelf={"end"}
-          >
+          <Typography variant="subtitle1" color="primary" fontWeight={600} alignSelf="end">
             Total: {updateValue()}
           </Typography>
-          <Box alignSelf={"end"}>
-            <Button
-              variant="contained"
-              color="primary"
-              style={{ marginTop: 16 }}
-            >
+          <Box alignSelf="end">
+            <Button variant="contained" color="primary" style={{ marginTop: 16 }}>
               Limpar
             </Button>
 
@@ -248,13 +207,13 @@ export const Cart = (): JSX.Element => {
               variant="contained"
               style={{ marginTop: 16 }}
               onClick={handleOpenModal}
-              sx={{ ml: 1.5, backgroundColor: "#250f40" }}
+              sx={{ ml: 1.5, backgroundColor: 'background.default' }}
             >
               Fazer Pedido
             </Button>
           </Box>
         </Box>
-      </div>
+      </Box>
     </Drawer>
   );
 };
