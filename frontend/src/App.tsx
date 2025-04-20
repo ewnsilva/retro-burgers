@@ -1,9 +1,10 @@
-import { Home } from 'pages';
 import { ThemeProvider } from '@mui/material';
-import './App.css';
-import { CartProvider, defaultTheme } from 'context';
 
-function App() {
+import { Home } from 'pages';
+import { CartProvider, defaultTheme } from 'context';
+import './App.css';
+
+export const App = () => {
   return (
     <ThemeProvider theme={defaultTheme}>
       <CartProvider>
@@ -13,6 +14,4 @@ function App() {
       </CartProvider>
     </ThemeProvider>
   );
-}
-
-export default App;
+};
