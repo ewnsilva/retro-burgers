@@ -31,12 +31,19 @@ export const Home = () => {
   );
 
   return (
-    <Box display="flex" flexDirection={'column'}>
+    <Box display="flex" flexDirection="column">
       <Header setSearch={setSearch} />
-      <Navigation setCategory={setCategory} categoty={category} />
+      <Navigation setCategory={setCategory} category={category} />
       {totalQuantity > 0 && <CartButton />}
       <Cart />
-      <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} marginX={'10%'}>
+      <Grid
+        container
+        rowSpacing={2}
+        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+        marginX="10%"
+        alignSelf="center"
+        maxWidth={1150}
+      >
         {filteredProducts.map(item => (
           <Grid key={item.id} size={3}>
             <ProductCard item={item} />
