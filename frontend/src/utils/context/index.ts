@@ -1,3 +1,3 @@
 export * from './CartContext';
-export * from './interface';
+export * from '../interfaces';
 export * from './Palette';
