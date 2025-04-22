@@ -1,6 +1,6 @@
-import { IProducts } from 'context';
 import React, { createContext, ReactNode, useState } from 'react';
-import { formatPrice } from 'utils';
+
+import { formatPrice, IProducts } from 'utils';
 
 interface CartProductsProps extends IProducts {
   totalPrice?: number;
