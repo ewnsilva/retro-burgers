@@ -11,10 +11,9 @@ import {
   CardMedia,
   SxProps,
 } from '@mui/material';
-import { Delete, Add, Remove } from '@mui/icons-material';
+import { Delete, Add, Remove, ShoppingCart } from '@mui/icons-material';
 
-import { useCart } from 'hooks';
-import { ShoppingCart } from '@mui/icons-material';
+import { useCart } from 'utils';
 
 const incrementQuantityStyle: SxProps = {
   py: 0,
