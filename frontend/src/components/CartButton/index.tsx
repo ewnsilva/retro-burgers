@@ -1,7 +1,7 @@
 import { ShoppingCart } from '@mui/icons-material';
 import { Badge, IconButton } from '@mui/material';
 
-import { useCart } from 'hooks';
+import { useCart } from 'utils';
 
 export const CartButton = (): JSX.Element => {
   const { setIsDrawerOpen, totalQuantity } = useCart();
