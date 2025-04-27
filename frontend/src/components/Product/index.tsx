@@ -1,16 +1,15 @@
 import {
-  Typography,
   Button,
   Card,
-  CardMedia,
   CardContent,
+  CardMedia,
   Grid2 as Grid,
   IconButton,
+  Typography,
 } from '@mui/material';
-import { ShoppingCart, Delete, Add, Remove } from '@mui/icons-material';
+import { Add, Delete, Remove, ShoppingCart } from '@mui/icons-material';
 
-import { IProductsList } from 'context';
-import { useCart } from 'utils/hooks';
+import { IProductsList, useCart } from 'utils';
 
 export const ProductCard: React.FC<IProductsList> = ({ item }) => {
   const { addToCart, isInCart, incrementQuantity, decrementQuantity, cartItems } = useCart();
@@ -22,19 +21,19 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
     <Card
       key={item.id}
       sx={{
-        display: 'flex',
-        flexDirection: 'column',
         backgroundColor: 'transparent',
         border: '2px solid white',
         borderRadius: 2,
+        display: 'flex',
+        flexDirection: 'column',
       }}
     >
       <CardContent
         sx={{
-          flexGrow: 1,
+          color: 'white',
           display: 'flex',
           flexDirection: 'column',
-          color: 'white',
+          flexGrow: 1,
         }}
       >
         <Grid container direction="column" spacing={1}>
@@ -103,10 +102,10 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
                 variant="contained"
                 onClick={() => addToCart(item)}
                 sx={{
-                  mt: 2,
+                  alignSelf: 'end',
                   backgroundColor: 'secondary.main',
                   border: '1px solid white',
-                  alignSelf: 'end',
+                  mt: 2,
                 }}
               >
                 <ShoppingCart color="inherit" />
