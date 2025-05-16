@@ -1,11 +1,19 @@
 import { Model, DataTypes, Sequelize } from "sequelize";
 import { ProductAttributes } from "../Interfaces/Product.interfaces";
 import { Category } from "modules/Category/Models/category";
+import { Additional } from "modules/Additionals/Models/additional";
 
 export class Product extends Model<ProductAttributes> {
   static associate() {
     Product.belongsTo(Category, {
       foreignKey: "category_id",
+    });
+
+    Product.belongsToMany(Additional, {
+      through: "product_additionals",
+      foreignKey: "product_id",
+      otherKey: "additional_id",
+      as: "additionals",
     });
   }
 }
@@ -49,5 +57,6 @@ export const ProductModel = (sequelize: Sequelize) => {
       tableName: "products",
     }
   );
+
   return Product;
 };
