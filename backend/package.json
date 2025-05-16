@@ -12,8 +12,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --watch './src/**/*.ts' --exec 'ts-node -r tsconfig-paths/register' server.ts",
-    "start": "nodemon --watch './src/**/*.ts' --exec \"ts-node -r tsconfig-paths/register\" server.ts"
+    "dev": "nodemon --watch \"./src/**/*.ts\" --exec \"ts-node -r tsconfig-paths/register\" server.ts",
+    "start": "nodemon --watch \"./src/**/*.ts\" --exec \"ts-node -r tsconfig-paths/register\" server.ts"
   },
   "keywords": [],
   "author": "",
