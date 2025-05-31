@@ -15,6 +15,7 @@ export class ProductServices extends Services<Product> {
           model: Additional,
           as: "additionals",
           through: { attributes: [] },
+          attributes: { exclude: ["createdAt", "updatedAt"] },
         },
       ],
     };
