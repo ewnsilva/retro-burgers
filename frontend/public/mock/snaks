@@ -1,55 +1,55 @@
 [
   {
-    "id": 9,
+    "id": 0,
     "image": "./images/SnackExample.jpg",
     "name": "Petisco de Carne",
     "description": "Espeto com carnes e linçuiças temperadas.",
     "price": 5.99
   },
   {
-    "id": 10,
+    "id": 1,
     "image": "./images/SnackExample.jpg",
     "name": "Quibe",
     "description": "Quibe recheado com carne moída temperada e hortelã.",
     "price": 4.99
   },
   {
-    "id": 11,
+    "id": 2,
     "image": "./images/SnackExample.jpg",
     "name": "Pastel de Queijo",
     "description": "Pastel crocante com recheio de queijo derretido.",
     "price": 6.49
   },
   {
-    "id": 12,
+    "id": 3,
     "image": "./images/SnackExample.jpg",
     "name": "Bolinha de Queijo",
     "description": "Bolinha de queijo cremosa com massa leve.",
     "price": 4.49
   },
   {
-    "id": 13,
+    "id": 4,
     "image": "./images/SnackExample.jpg",
     "name": "Esfiha de Carne",
     "description": "Esfiha aberta com recheio de carne temperada.",
     "price": 7.99
   },
   {
-    "id": 14,
+    "id": 5,
     "image": "./images/SnackExample.jpg",
     "name": "Empada de Frango",
     "description": "Empada recheada com frango desfiado e temperado.",
     "price": 6.99
   },
   {
-    "id": 15,
+    "id": 6,
     "image": "./images/SnackExample.jpg",
     "name": "Croissant de Presunto e Queijo",
     "description": "Croissant folhado com recheio de presunto e queijo.",
     "price": 8.49
   },
   {
-    "id": 16,
+    "id": 7,
     "image": "./images/SnackExample.jpg",
     "name": "Pão de Queijo",
     "description": "Clássico pão de queijo brasileiro, macio e delicioso.",
