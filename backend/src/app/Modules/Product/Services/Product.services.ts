@@ -27,4 +27,13 @@ export class ProductServices extends Services<Product> {
   async findById(id: number) {
     return await super.findById(id, this.defaultOptions);
   }
+
+  async findAllInCategory(id: number) {
+    const options = {
+      ...this.defaultOptions,
+      where: { category_id: id },
+    };
+
+    return await super.findAll(options);
+  }
 }
