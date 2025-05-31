@@ -1,10 +1,11 @@
 import { Services } from "shared/Services/Services";
 import { Additional } from "modules/Additionals/Models/additional";
 import { FindOptions } from "sequelize";
+import { Product } from "../Models/product";
 
-export class ProductServices extends Services {
+export class ProductServices extends Services<Product> {
   constructor() {
-    super("Product");
+    super(Product);
   }
 
   private get defaultOptions(): FindOptions {
