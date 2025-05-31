@@ -5,6 +5,7 @@ import {
   FindOptions,
   Model,
   ModelStatic,
+  ScopeOptions,
   WhereAttributeHashValue,
 } from "sequelize";
 import { models } from "shared/Models/Models";
@@ -18,14 +19,29 @@ export class Services<T extends Model> {
     ] as unknown as ModelStatic<T>;
   }
 
-  async findAll(options: FindOptions = {}): Promise<T[]> {
-    const queryOptions = getDefaultQueryOptions(options);
-    return this.model.findAll(queryOptions);
+  private getScopedModel(scopes?: ScopeOptions[]): ModelStatic<T> {
+    return scopes && scopes.length > 0 ? this.model.scope(scopes) : this.model;
   }
 
-  async findById(id: number, options: FindOptions = {}): Promise<T | null> {
+  async findAll(
+    scopes: ScopeOptions[] = [],
+    options: FindOptions = {}
+  ): Promise<T[]> {
     const queryOptions = getDefaultQueryOptions(options);
-    return this.model.findByPk(id, queryOptions);
+    const query = this.getScopedModel(scopes);
+
+    return query.findAll(queryOptions);
+  }
+
+  async findById(
+    id: number,
+    scopes: ScopeOptions[] = [],
+    options: FindOptions = {}
+  ): Promise<T | null> {
+    const queryOptions = getDefaultQueryOptions(options);
+    const query = this.getScopedModel(scopes);
+
+    return query.findByPk(id, queryOptions);
   }
 
   async create(data: any): Promise<T> {

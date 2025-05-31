@@ -11,9 +11,13 @@ export class ProductController extends Controller<ProductServices> {
 
   async findAllInCategory(req: Request, res: Response): Promise<void> {
     const { category_id: id } = req.params;
+    const { search } = req.query;
 
     try {
-      const products = await this.service.findAllInCategory(Number(id));
+      const products = await this.service.findAllInCategory(
+        Number(id),
+        search as string
+      );
       res.status(200).json(products);
     } catch (error: any) {
       res.status(500).json({ error: error.message });

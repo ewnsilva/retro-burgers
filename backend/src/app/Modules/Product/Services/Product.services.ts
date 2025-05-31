@@ -1,5 +1,6 @@
 import { Services } from "shared/Services/Services";
 import { Product } from "../Models/product";
+import { ScopeOptions } from "sequelize";
 
 export class ProductServices extends Services<Product> {
   constructor() {
@@ -10,12 +11,14 @@ export class ProductServices extends Services<Product> {
     return await super.findAll();
   }
 
-  async findAllInCategory(id: number) {
-    const options = {
-      where: { category_id: id },
-    };
+  async findAllInCategory(id: number, search?: string) {
+    const scopes: ScopeOptions[] = [{ method: ["byCategory", id] }];
 
-    return await super.findAll(options);
+    if (search) {
+      scopes.push({ method: ["bySearch", search] });
+    }
+
+    return await super.findAll(scopes);
   }
 
   async findById(id: number) {

@@ -1,4 +1,4 @@
-import { Model, DataTypes, Sequelize } from "sequelize";
+import { Model, DataTypes, Sequelize, Op } from "sequelize";
 import { ProductAttributes } from "../Interfaces/Product.interfaces";
 import { Category } from "modules/Category/Models/category";
 import { Additional } from "modules/Additionals/Models/additional";
@@ -17,6 +17,13 @@ export class Product extends Model<ProductAttributes> {
     });
   }
 }
+
+const additionalsInclude = {
+  model: Additional,
+  as: "additionals",
+  through: { attributes: [] },
+  attributes: { exclude: ["createdAt", "updatedAt"] },
+};
 
 export const ProductModel = (sequelize: Sequelize) => {
   Product.init(
@@ -56,14 +63,25 @@ export const ProductModel = (sequelize: Sequelize) => {
       modelName: "Product",
       tableName: "products",
       defaultScope: {
-        include: [
-          {
-            model: Additional,
-            as: "additionals",
-            through: { attributes: [] },
-            attributes: { exclude: ["createdAt", "updatedAt"] },
-          },
-        ],
+        include: [additionalsInclude],
+      },
+      scopes: {
+        byCategory(categoryId: number) {
+          return {
+            where: { category_id: categoryId },
+            include: [additionalsInclude],
+          };
+        },
+        bySearch(search: string) {
+          return {
+            where: {
+              title: {
+                [Op.like]: `%${search.toLowerCase()}%`,
+              },
+            },
+            include: [additionalsInclude],
+          };
+        },
       },
     }
   );
