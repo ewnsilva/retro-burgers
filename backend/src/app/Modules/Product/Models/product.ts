@@ -55,6 +55,16 @@ export const ProductModel = (sequelize: Sequelize) => {
       sequelize,
       modelName: "Product",
       tableName: "products",
+      defaultScope: {
+        include: [
+          {
+            model: Additional,
+            as: "additionals",
+            through: { attributes: [] },
+            attributes: { exclude: ["createdAt", "updatedAt"] },
+          },
+        ],
+      },
     }
   );
 
