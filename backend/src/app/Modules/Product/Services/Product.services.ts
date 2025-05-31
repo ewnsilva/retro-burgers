@@ -24,10 +24,6 @@ export class ProductServices extends Services<Product> {
     return await super.findAll(this.defaultOptions);
   }
 
-  async findById(id: number) {
-    return await super.findById(id, this.defaultOptions);
-  }
-
   async findAllInCategory(id: number) {
     const options = {
       ...this.defaultOptions,
@@ -35,5 +31,9 @@ export class ProductServices extends Services<Product> {
     };
 
     return await super.findAll(options);
+  }
+
+  async findById(id: number) {
+    return await super.findById(id, this.defaultOptions);
   }
 }
