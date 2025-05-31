@@ -1,6 +1,7 @@
-import { models } from "../Models/Models";
+import { getDefaultQueryOptions } from "shared/utils/getDefaultQueryOptions";
 
-import { Model } from "sequelize";
+import { FindOptions, Model } from "sequelize";
+import { models } from "shared/Models/Models";
 
 export class Services {
   private model: string;
@@ -9,12 +10,14 @@ export class Services {
     this.model = model;
   }
 
-  async findAll(): Promise<Model[]> {
-    return models[this.model as keyof typeof models].findAll();
+  async findAll(options: FindOptions = {}): Promise<Model[]> {
+    const queryOptions = getDefaultQueryOptions(options);
+    return models[this.model as keyof typeof models].findAll(queryOptions);
   }
 
-  async findById(id: number): Promise<Model | null> {
-    return models[this.model as keyof typeof models].findByPk(id);
+  async findById(id: number, options: FindOptions = {}): Promise<Model | null> {
+    const queryOptions = getDefaultQueryOptions(options);
+    return models[this.model as keyof typeof models].findByPk(id, queryOptions);
   }
 
   async create(data: any): Promise<Model> {

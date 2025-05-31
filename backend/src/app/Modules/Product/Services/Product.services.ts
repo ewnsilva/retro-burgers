@@ -1,14 +1,14 @@
 import { Services } from "shared/Services/Services";
 import { Additional } from "modules/Additionals/Models/additional";
-import { Product } from "../Models/product";
+import { FindOptions } from "sequelize";
 
 export class ProductServices extends Services {
   constructor() {
     super("Product");
   }
 
-  async findAll() {
-    return Product.findAll({
+  private get defaultOptions(): FindOptions {
+    return {
       include: [
         {
           model: Additional,
@@ -16,18 +16,14 @@ export class ProductServices extends Services {
           through: { attributes: [] },
         },
       ],
-    });
+    };
+  }
+
+  async findAll() {
+    return await super.findAll(this.defaultOptions);
   }
 
   async findById(id: number) {
-    return Product.findByPk(id, {
-      include: [
-        {
-          model: Additional,
-          as: "additionals",
-          through: { attributes: [] },
-        },
-      ],
-    });
+    return await super.findById(id, this.defaultOptions);
   }
 }
