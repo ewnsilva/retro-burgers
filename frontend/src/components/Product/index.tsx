@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Button,
   Card,
@@ -48,7 +49,12 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
               {item.name}
             </Typography>
           </Grid>
-          <CardMedia component="img" height="120" image={item.image} alt={item.name} />
+          <CardMedia
+            component="img"
+            height="120"
+            image="https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg"
+            alt={item.name}
+          />
           {item.description && (
             <Grid>
               <Typography

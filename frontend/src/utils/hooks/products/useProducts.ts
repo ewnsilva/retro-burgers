@@ -7,7 +7,7 @@ export const useProducts = () => {
   const [products, setProducts] = useState<IProducts[]>([{} as IProducts]);
 
   const fetchProducts = (category: number) => {
-    const url = `www.api.com/${category}`;
+    const url = `${process.env.REACT_APP_API_URL}/${category}`;
     api
       .get(url)
       .then(({ data }) => {

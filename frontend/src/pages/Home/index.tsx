@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Box, Grid2 as Grid } from '@mui/material';
 
@@ -7,13 +7,17 @@ import { useCart, useProducts } from 'utils';
 
 export const Home = () => {
   const { totalQuantity } = useCart();
-  const { products } = useProducts();
+  const { products, fetchProducts } = useProducts();
 
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState(0);
 
+  useEffect(() => {
+    fetchProducts(category);
+  }, [category]);
+
   const filteredProducts = products.filter(product =>
-    product.name.toLowerCase().includes(search.toLowerCase())
+    product?.name?.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
