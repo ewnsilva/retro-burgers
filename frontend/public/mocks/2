@@ -1,56 +1,56 @@
 [
   {
     "id": 0,
-    "image": "./images/DessertExample.jpg",
+    "image": "mocks/images/DessertExample.jpg",
     "name": "Brigadeiro",
     "description": "Doce brasileiro de chocolate coberto com granulado.",
     "price": 2.49
   },
   {
     "id": 1,
-    "image": "./images/DessertExample.jpg",
+    "image": "mocks/images/DessertExample.jpg",
     "name": "Beijinho",
     "description": "Doce de coco coberto com açúcar e um cravo no topo.",
     "price": 2.49
   },
   {
     "id": 2,
-    "image": "./images/DessertExample.jpg",
+    "image": "mocks/images/DessertExample.jpg",
     "name": "Torta de Limão",
     "description": "Torta com creme de limão e merengue por cima.",
     "price": 7.99
   },
   {
     "id": 3,
-    "image": "./images/DessertExample.jpg",
+    "image": "mocks/images/DessertExample.jpg",
     "name": "Bolo de Cenoura",
     "description": "Bolo de cenoura com cobertura de chocolate.",
     "price": 6.99
   },
   {
     "id": 4,
-    "image": "./images/DessertExample.jpg",
+    "image": "mocks/images/DessertExample.jpg",
     "name": "Churros",
     "description": "Churros recheados com doce de leite.",
     "price": 5.49
   },
   {
     "id": 5,
-    "image": "./images/DessertExample.jpg",
+    "image": "mocks/images/DessertExample.jpg",
     "name": "Pudim",
     "description": "Pudim de leite condensado com calda de caramelo.",
     "price": 8.99
   },
   {
     "id": 6,
-    "image": "./images/DessertExample.jpg",
+    "image": "mocks/images/DessertExample.jpg",
     "name": "Tiramisu",
     "description": "Clássica sobremesa italiana com café e mascarpone.",
     "price": 12.49
   },
   {
     "id": 7,
-    "image": "./images/DessertExample.jpg",
+    "image": "mocks/images/DessertExample.jpg",
     "name": "Brownie",
     "description": "Brownie de chocolate com pedaços de nozes.",
     "price": 6.49
