@@ -3,7 +3,7 @@ import { ChangeEvent } from 'react';
 import { Box, InputAdornment, TextField, Typography, useTheme } from '@mui/material';
 import { Fastfood, Search } from '@mui/icons-material';
 
-import { IHeader } from 'context';
+import { IHeader } from 'utils';
 
 export const Header = ({ setSearch }: IHeader): JSX.Element => {
   const theme = useTheme();
@@ -44,12 +44,14 @@ export const Header = ({ setSearch }: IHeader): JSX.Element => {
         variant="outlined"
         size="small"
         onChange={handleSearchChange}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <Search color="primary" />
-            </InputAdornment>
-          ),
+        slotProps={{
+          htmlInput: {
+            startAdornment: (
+              <InputAdornment position="start">
+                <Search color="primary" />
+              </InputAdornment>
+            ),
+          },
         }}
         sx={{ mr: '5%' }}
       />
