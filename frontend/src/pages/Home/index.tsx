@@ -4,15 +4,18 @@ import { Box, Grid2 as Grid } from '@mui/material';
 
 import { Cart, Header, Navigation, ProductCard, CartButton, Footer } from 'components';
 import { useCart, useProducts } from 'utils';
+import { useCategories } from 'utils/hooks/products/useCategories';
 
 export const Home = () => {
   const { totalQuantity } = useCart();
   const { products, fetchProducts } = useProducts();
+  const { categories, fetchCategories } = useCategories();
 
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState(0);
 
   useEffect(() => {
+    fetchCategories();
     fetchProducts(category);
   }, [category]);
 
@@ -23,7 +26,7 @@ export const Home = () => {
   return (
     <Box display="flex" flexDirection="column">
       <Header setSearch={setSearch} />
-      <Navigation setCategory={setCategory} category={category} />
+      <Navigation setCategory={setCategory} categories={categories} />
       {totalQuantity > 0 && <CartButton />}
       <Cart />
       <Grid

@@ -1,4 +1,5 @@
 import { Button, Box, useTheme, SxProps, Theme } from '@mui/material';
+import { ICategories } from 'utils';
 
 interface ButtonStyleProps {
   category: number;
@@ -7,8 +8,8 @@ interface ButtonStyleProps {
 
 export const Navigation: React.FC<{
   setCategory: React.Dispatch<React.SetStateAction<number>>;
-  category: number;
-}> = ({ setCategory, category }) => {
+  categories: ICategories[];
+}> = ({ setCategory, categories }) => {
   const theme = useTheme();
 
   const buttonStyle =
@@ -44,18 +45,15 @@ export const Navigation: React.FC<{
           justifyContent: 'center',
         }}
       >
-        <Button onClick={() => setCategory(0)} sx={buttonStyle({ category, selectedCategory: 0 })}>
-          Hamburguers
-        </Button>
-        <Button onClick={() => setCategory(1)} sx={buttonStyle({ category, selectedCategory: 1 })}>
-          Salgados
-        </Button>
-        <Button onClick={() => setCategory(2)} sx={buttonStyle({ category, selectedCategory: 2 })}>
-          Doces
-        </Button>
-        <Button onClick={() => setCategory(3)} sx={buttonStyle({ category, selectedCategory: 3 })}>
-          Bebidas
-        </Button>
+        {categories.map(category => (
+          <Button
+            key={category.id}
+            onClick={() => setCategory(category.id)}
+            sx={buttonStyle({ category: category.id, selectedCategory: 0 })}
+          >
+            {category.title}
+          </Button>
+        ))}
       </Box>
     </Box>
   );

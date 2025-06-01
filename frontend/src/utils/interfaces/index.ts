@@ -12,3 +12,8 @@ export interface IProducts {
 export interface IProductsList {
   item: IProducts;
 }
+
+export interface ICategories {
+  id: number;
+  title: string;
+}
