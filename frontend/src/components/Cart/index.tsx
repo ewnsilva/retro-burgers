@@ -31,10 +31,11 @@ const incrementQuantityStyle: SxProps = {
 export const Cart = (): JSX.Element => {
   const {
     cartItems,
-    removeItem,
-    incrementQuantity,
+    clearCart,
     decrementQuantity,
+    incrementQuantity,
     isDrawerOpen,
+    removeItem,
     setIsDrawerOpen,
     totalQuantity,
     updateValue,
@@ -198,7 +199,12 @@ export const Cart = (): JSX.Element => {
             Total: {updateValue()}
           </Typography>
           <Box alignSelf="end">
-            <Button variant="contained" color="primary" style={{ marginTop: 16 }}>
+            <Button
+              onClick={clearCart}
+              variant="contained"
+              color="primary"
+              style={{ marginTop: 16 }}
+            >
               Limpar
             </Button>
 
