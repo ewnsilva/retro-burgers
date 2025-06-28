@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, useState } from 'react';
+import React, { createContext, ReactNode, useMemo, useState } from 'react';
 
 import { formatPrice, IProducts } from 'utils';
 
@@ -8,17 +8,18 @@ interface CartProductsProps extends IProducts {
 }
 
 export interface CartContextProps {
-  cartItems: CartProductsProps[];
   addToCart: (item: CartProductsProps) => void;
-  removeItem: (id: number) => void;
-  updatePrice: (id: number, quantity: number) => void;
+  cartItems: CartProductsProps[];
+  clearCart: () => void;
+  decrementQuantity: (id: number) => void;
+  incrementQuantity: (id: number) => void;
   isDrawerOpen: boolean;
+  isInCart: (id: number) => boolean;
+  removeItem: (id: number) => void;
   setIsDrawerOpen: React.Dispatch<React.SetStateAction<boolean>>;
   totalQuantity: number;
+  updatePrice: (id: number, quantity: number) => void;
   updateValue: () => string;
-  isInCart: (id: number) => boolean;
-  incrementQuantity: (id: number) => void;
-  decrementQuantity: (id: number) => void;
 }
 
 export const CartContext = createContext<CartContextProps>({} as CartContextProps);
@@ -81,23 +82,39 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
   };
 
-  return (
-    <CartContext.Provider
-      value={{
-        addToCart,
-        cartItems,
-        decrementQuantity,
-        incrementQuantity,
-        isDrawerOpen,
-        isInCart,
-        removeItem,
-        setIsDrawerOpen,
-        totalQuantity,
-        updatePrice,
-        updateValue,
-      }}
-    >
-      {children}
-    </CartContext.Provider>
+  const clearCart = (): void => {
+    setCartItems([]);
+  };
+
+  const contextValue = useMemo(
+    () => ({
+      addToCart,
+      cartItems,
+      clearCart,
+      decrementQuantity,
+      incrementQuantity,
+      isDrawerOpen,
+      isInCart,
+      removeItem,
+      setIsDrawerOpen,
+      totalQuantity,
+      updatePrice,
+      updateValue,
+    }),
+    [
+      addToCart,
+      cartItems,
+      clearCart,
+      decrementQuantity,
+      incrementQuantity,
+      isDrawerOpen,
+      removeItem,
+      setIsDrawerOpen,
+      totalQuantity,
+      updatePrice,
+      updateValue,
+    ]
   );
+
+  return <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>;
 };
