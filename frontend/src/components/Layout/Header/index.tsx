@@ -1,4 +1,5 @@
 import { useState, ChangeEvent, MouseEvent } from 'react';
+
 import {
   Box,
   IconButton,
@@ -9,20 +10,31 @@ import {
   TextField,
   Tooltip,
   Typography,
-  useTheme as MuiUseTheme,
+  useTheme,
 } from '@mui/material';
-import { Fastfood, Menu as MenuIcon, MusicNote, MusicOff, Info, Search } from '@mui/icons-material';
+import {
+  Fastfood,
+  Menu as MenuIcon,
+  MusicNote,
+  MusicOff,
+  Info,
+  Search,
+  Check,
+} from '@mui/icons-material';
 
-import { useTheme } from '../../../utils/context/Theme';
+import { useTheme as useCustomTheme } from '../../../utils/context';
+import { useThemeMusic } from '../../../utils/hooks';
 import { IHeader } from 'utils';
 
 export const Header = ({ setSearch }: IHeader): JSX.Element => {
-  const theme = MuiUseTheme();
-  const { themeType, setThemeType } = useTheme();
+  const muiTheme = useTheme();
+  const { themeType, setThemeType, allThemeColors } = useCustomTheme();
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [showInfo, setShowInfo] = useState(false);
-  const [musicOn, setMusicOn] = useState(true);
+  const [musicOn, setMusicOn] = useState(false);
+
+  useThemeMusic({ themeType, musicEnabled: musicOn });
 
   const handleMenuClick = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -55,12 +67,12 @@ export const Header = ({ setSearch }: IHeader): JSX.Element => {
         }}
       >
         <Box display="flex" ml="2%" paddingY={2}>
-          <Fastfood htmlColor={theme.palette.primary.main} fontSize="large" />
+          <Fastfood htmlColor={muiTheme.palette.primary.main} fontSize="large" />
           <Typography
             variant="h4"
             ml={1}
             sx={{
-              backgroundImage: `radial-gradient(50% 50% at 50% 50%, ${theme.palette.background.default} 0%, ${theme.palette.primary.main} 100%)`,
+              backgroundImage: `radial-gradient(50% 50% at 50% 50%, ${muiTheme.palette.background.default} 0%, ${muiTheme.palette.primary.main} 100%)`,
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               fontWeight: 'bold',
@@ -95,24 +107,32 @@ export const Header = ({ setSearch }: IHeader): JSX.Element => {
 
       {/* MENU */}
       <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleCloseMenu}>
-        {(['synthwave', 'retrowave', 'darkwave'] as const).map(type => (
-          <MenuItem key={type} onClick={() => handleThemeChange(type)}>
-            <Box
-              sx={{
-                width: 30,
-                height: 30,
-                borderRadius: '4px',
-                background: `linear-gradient(135deg, ${
-                  type === 'synthwave'
-                    ? '#fa558a 50%, #feae5d 50%'
-                    : type === 'retrowave'
-                      ? '#fa558a 50%, #feae5d 50%'
-                      : '#fa558a 50%, #feae5d 50%'
-                })`,
-                marginRight: 1,
-              }}
-            />
-            {type}
+        {Object.entries(allThemeColors).map(([key, colors]) => (
+          <MenuItem
+            key={key}
+            selected={themeType === key}
+            onClick={() => handleThemeChange(key as typeof themeType)}
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              minWidth: 180,
+            }}
+          >
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <Box
+                sx={{
+                  width: 30,
+                  height: 30,
+                  borderRadius: 1,
+                  background: `linear-gradient(135deg, ${colors.primary} 50%, ${colors.secondary} 50%)`,
+                  border: '1px solid #ccc',
+                  marginRight: 1.5,
+                }}
+              />
+              <Typography textTransform="capitalize">{key}</Typography>
+            </Box>
+            {themeType === key && <Check color="primary" />}
           </MenuItem>
         ))}
         <MenuItem onClick={toggleMusic}>
