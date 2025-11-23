@@ -1,6 +1,6 @@
-import { createTheme } from '@mui/material';
+import { createTheme, ThemeOptions } from '@mui/material/styles';
 
-export const synthwaveTheme = createTheme({
+const synthwaveOptions: ThemeOptions = {
   palette: {
     primary: {
       main: '#fa558a',
@@ -15,7 +15,7 @@ export const synthwaveTheme = createTheme({
       contrastText: 'black',
     },
     background: {
-      default: '#250f40',
+      default: '#2b134c',
     },
   },
   typography: {
@@ -27,24 +27,24 @@ export const synthwaveTheme = createTheme({
       color: '#e5e5e5',
     },
   },
-});
+};
 
-export const retrowaveTheme = createTheme({
+const retrowaveOptions: ThemeOptions = {
   palette: {
     primary: {
-      main: '#1df7fd',
-      contrastText: '#ffffff',
+      main: '#46E1FF',
+      contrastText: '#1e6672',
     },
     secondary: {
-      main: '#FEFF50',
-      contrastText: '#e5e5e5',
+      main: '#c73cf2',
+      contrastText: '#ffffff',
     },
     info: {
-      main: '#fff4e0',
+      main: '#e5f9ff',
       contrastText: 'black',
     },
     background: {
-      default: '#250f40',
+      default: '#1e6672',
     },
   },
   typography: {
@@ -56,24 +56,24 @@ export const retrowaveTheme = createTheme({
       color: '#e5e5e5',
     },
   },
-});
+};
 
-export const darkwaveTheme = createTheme({
+const darkwaveOptions: ThemeOptions = {
   palette: {
     primary: {
-      main: '#fd1687',
+      main: '#d81594',
       contrastText: '#ffffff',
     },
     secondary: {
-      main: '#5123F4',
-      contrastText: '#e5e5e5',
+      main: '#39e5d7',
+      contrastText: '#591a43',
     },
     info: {
-      main: '#fff4e0',
+      main: '#f2daea',
       contrastText: 'black',
     },
     background: {
-      default: '#250f40',
+      default: '#591a43',
     },
   },
   typography: {
@@ -85,4 +85,8 @@ export const darkwaveTheme = createTheme({
       color: '#e5e5e5',
     },
   },
-});
+};
+
+export const synthwaveTheme = createTheme(synthwaveOptions);
+export const darkwaveTheme = createTheme(darkwaveOptions);
+export const retrowaveTheme = createTheme(retrowaveOptions);
