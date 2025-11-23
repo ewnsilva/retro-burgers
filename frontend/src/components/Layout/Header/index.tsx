@@ -150,7 +150,6 @@ export const Header = ({ setSearch }: IHeader): JSX.Element => {
         </MenuItem>
       </Menu>
 
-      {/* MODAL DE INFORMAÇÕES */}
       <Modal open={showInfo} onClose={() => setShowInfo(false)}>
         <Box
           sx={{

@@ -5,6 +5,10 @@ export const Footer = (): JSX.Element => {
     <Box
       component="footer"
       sx={{
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        right: 0,
         width: '100%',
         display: 'flex',
         justifyContent: 'space-between',
@@ -12,7 +16,7 @@ export const Footer = (): JSX.Element => {
       }}
     >
       <Box display="flex" ml="2%" paddingY={1}>
-        <Typography variant="h6" ml={1} sx={{ color: 'white' }}>
+        <Typography ml={1} sx={{ color: 'white' }}>
           © 2024 Retro-Burguers. Todos os direitos reservados
         </Typography>
       </Box>

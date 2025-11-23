@@ -33,6 +33,7 @@ export const Home = () => {
         marginX="10%"
         alignSelf="center"
         maxWidth={1150}
+        pb={10}
       >
         {filteredProducts.map(item => (
           <Grid key={item.id} size={3}>

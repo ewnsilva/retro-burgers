@@ -11,3 +11,12 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+* {
+  transition:
+    background-color 0.35s ease-in-out,
+    color 0.35s ease-in-out,
+    border-color 0.35s ease-in-out,
+    fill 0.35s ease-in-out,
+    stroke 0.35s ease-in-out;
+}
