@@ -77,11 +77,11 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
               >
                 <Grid>
                   {quantity === 1 ? (
-                    <IconButton onClick={() => decrementQuantity(item.id)} color="primary">
+                    <IconButton onClick={() => decrementQuantity(item.id)} color="error">
                       <Delete />
                     </IconButton>
                   ) : (
-                    <IconButton onClick={() => decrementQuantity(item.id)} color="primary">
+                    <IconButton onClick={() => decrementQuantity(item.id)} color="error">
                       <Remove />
                     </IconButton>
                   )}
