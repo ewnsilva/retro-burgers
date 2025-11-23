@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useMemo, useState } from 'react';
+import { createContext, ReactNode, useContext, useMemo, useState, useEffect } from 'react';
 import { ThemeProvider as MuiThemeProvider, Theme } from '@mui/material/styles';
 import { synthwaveTheme, retrowaveTheme, darkwaveTheme } from './Palette';
 
@@ -34,7 +34,16 @@ const themeMap: Record<ThemeType, Theme> = {
 };
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [themeType, setThemeType] = useState<ThemeType>('synthwave');
+  const getInitialTheme = (): ThemeType => {
+    const saved = localStorage.getItem('retroburguers-theme') as ThemeType | null;
+    return saved ?? 'synthwave';
+  };
+
+  const [themeType, setThemeType] = useState<ThemeType>(getInitialTheme);
+
+  useEffect(() => {
+    localStorage.setItem('retroburguers-theme', themeType);
+  }, [themeType]);
 
   const theme = useMemo(() => themeMap[themeType], [themeType]);
 
@@ -65,7 +74,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       currentColors,
       allThemeColors,
     }),
-    [themeType, theme, setThemeType, currentColors, allThemeColors]
+    [themeType, theme, currentColors, allThemeColors]
   );
 
   return (
