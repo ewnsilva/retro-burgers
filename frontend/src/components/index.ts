@@ -3,4 +3,8 @@ export * from './CartButton';
 export * from './Layout/Footer';
 export * from './Layout/Header';
 export * from './Layout/Navigation';
+export * from './MenuHint';
 export * from './Product';
+export * from './WelcomeModal';
+export * from './OrderSuccessModal';
+export * from './OrderSummaryModal';
