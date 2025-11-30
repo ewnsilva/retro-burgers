@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import {
   Drawer,
   IconButton,
@@ -13,6 +15,7 @@ import {
 } from '@mui/material';
 import { Delete, Add, Remove, ShoppingCart } from '@mui/icons-material';
 
+import { OrderSummaryModal, OrderSuccessModal } from 'components';
 import { useCart } from 'utils';
 
 const incrementQuantityStyle: SxProps = {
@@ -41,12 +44,15 @@ export const Cart = (): JSX.Element => {
     updateValue,
   } = useCart();
 
+  const [summaryOpen, setSummaryOpen] = useState(false);
+  const [successOpen, setSuccessOpen] = useState(false);
+
   const closeDrawer = () => {
     setIsDrawerOpen(false);
   };
 
   const handleOpenModal = () => {
-    closeDrawer();
+    setSummaryOpen(true);
   };
 
   return (
@@ -219,6 +225,24 @@ export const Cart = (): JSX.Element => {
           </Box>
         </Box>
       </Box>
+
+      <OrderSummaryModal
+        open={summaryOpen}
+        onClose={() => setSummaryOpen(false)}
+        onConfirm={() => {
+          setSummaryOpen(false);
+          setSuccessOpen(true);
+          clearCart();
+        }}
+      />
+
+      <OrderSuccessModal
+        open={successOpen}
+        onClose={() => {
+          setSuccessOpen(false);
+          closeDrawer();
+        }}
+      />
     </Drawer>
   );
 };

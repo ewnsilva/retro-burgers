@@ -98,7 +98,7 @@ export const Header = ({ setSearch }: IHeader): JSX.Element => {
             }}
           />
           <Tooltip title="Mais opções">
-            <IconButton onClick={handleMenuClick}>
+            <IconButton id="menu-icon-button" onClick={handleMenuClick}>
               <MenuIcon />
             </IconButton>
           </Tooltip>

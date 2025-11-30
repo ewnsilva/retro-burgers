@@ -2,7 +2,16 @@ import { useEffect, useState } from 'react';
 
 import { Box, Grid2 as Grid } from '@mui/material';
 
-import { Cart, Header, Navigation, ProductCard, CartButton, Footer } from 'components';
+import {
+  Cart,
+  CartButton,
+  Footer,
+  Header,
+  MenuHint,
+  Navigation,
+  ProductCard,
+  WelcomeModal,
+} from 'components';
 import { useCart, useProducts } from 'utils';
 
 export const Home = () => {
@@ -11,6 +20,7 @@ export const Home = () => {
 
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState(0);
+  const [showHint, setShowHint] = useState(false);
 
   useEffect(() => {
     fetchProducts(category);
@@ -22,6 +32,8 @@ export const Home = () => {
 
   return (
     <Box display="flex" flexDirection="column">
+      <WelcomeModal onFinish={() => setShowHint(true)} />
+      {showHint && <MenuHint />}
       <Header setSearch={setSearch} />
       <Navigation setCategory={setCategory} category={category} />
       {totalQuantity > 0 && <CartButton />}
