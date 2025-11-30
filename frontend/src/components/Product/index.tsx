@@ -8,18 +8,22 @@ import {
   Typography,
 } from '@mui/material';
 import { Add, Delete, Remove, ShoppingCart } from '@mui/icons-material';
+import { useMemo } from 'react';
 
 import { IProductsList, useCart } from 'utils';
 
 export const ProductCard: React.FC<IProductsList> = ({ item }) => {
   const { addToCart, isInCart, incrementQuantity, decrementQuantity, cartItems } = useCart();
 
-  const cartItem = cartItems.find(cartItem => cartItem.id === item.id);
-  const quantity = cartItem?.quantity || 0;
+  const cartItem = useMemo(
+    () => cartItems.find(cartItem => cartItem.id === item.id),
+    [cartItems, item.id]
+  );
+
+  const quantity = useMemo(() => cartItem?.quantity ?? 0, [cartItem]);
 
   return (
     <Card
-      key={item.id}
       sx={{
         backgroundColor: 'transparent',
         border: '2px solid white',
@@ -48,7 +52,9 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
               {item.name}
             </Typography>
           </Grid>
+
           <CardMedia component="img" height="120" image={item.image} alt={item.name} />
+
           {item.description && (
             <Grid>
               <Typography
@@ -63,10 +69,12 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
               </Typography>
             </Grid>
           )}
+
           <Grid display="flex" flexDirection="column">
             <Typography sx={{ mt: 2 }} color="secondary" alignSelf="start">
               R${item.price.toFixed(2)}
             </Typography>
+
             {isInCart(item.id) ? (
               <Grid
                 container

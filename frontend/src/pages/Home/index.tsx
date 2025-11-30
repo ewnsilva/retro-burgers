@@ -48,8 +48,8 @@ export const Home = () => {
         pb={10}
       >
         {filteredProducts.map(item => (
-          <Grid key={item.id} size={3}>
-            <ProductCard item={item} />
+          <Grid size={3} key={item.id}>
+            <ProductCard key={item.id} item={item} />
           </Grid>
         ))}
       </Grid>
