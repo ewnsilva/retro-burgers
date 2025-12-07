@@ -1,13 +1,14 @@
-import { ThemeProvider } from '@mui/material';
+import { CssBaseline } from '@mui/material';
 
 import { Home } from 'pages';
-import { CartProvider, defaultTheme } from 'utils';
+import { CartProvider, ThemeProvider } from 'utils';
 
 import './App.css';
 
 export const App = () => {
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider>
+      <CssBaseline />
       <CartProvider>
         <div className="App">
           <Home />

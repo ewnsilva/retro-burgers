@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 import {
   Drawer,
   IconButton,
@@ -13,6 +15,7 @@ import {
 } from '@mui/material';
 import { Delete, Add, Remove, ShoppingCart } from '@mui/icons-material';
 
+import { OrderSummaryModal, OrderSuccessModal } from 'components';
 import { useCart } from 'utils';
 
 const incrementQuantityStyle: SxProps = {
@@ -31,22 +34,32 @@ const incrementQuantityStyle: SxProps = {
 export const Cart = (): JSX.Element => {
   const {
     cartItems,
-    removeItem,
-    incrementQuantity,
-    decrementQuantity,
     isDrawerOpen,
-    setIsDrawerOpen,
     totalQuantity,
+    clearCart,
+    decrementQuantity,
+    incrementQuantity,
+    removeItem,
+    setIsDrawerOpen,
     updateValue,
   } = useCart();
+
+  const [summaryOpen, setSummaryOpen] = useState(false);
+  const [successOpen, setSuccessOpen] = useState(false);
 
   const closeDrawer = () => {
     setIsDrawerOpen(false);
   };
 
   const handleOpenModal = () => {
-    closeDrawer();
+    setSummaryOpen(true);
   };
+
+  useEffect(() => {
+    if (cartItems.length === 0) {
+      setIsDrawerOpen(false);
+    }
+  }, [cartItems, setIsDrawerOpen]);
 
   return (
     <Drawer anchor="right" open={isDrawerOpen} onClose={closeDrawer}>
@@ -67,10 +80,12 @@ export const Cart = (): JSX.Element => {
                   backgroundColor: 'primary.main',
                   p: 1.5,
                   borderRadius: 2,
+                  width: '2em',
+                  height: '2em',
                 }}
               />
             </Badge>
-            <Typography variant="h5" ml={2}>
+            <Typography variant="h5" ml={2} color="primary">
               Carrinho
             </Typography>
           </Box>
@@ -82,8 +97,8 @@ export const Cart = (): JSX.Element => {
               alignSelf: 'top',
               fontSize: 12,
               fontWeight: 600,
-              height: 18,
-              width: 18,
+              height: '1.8em',
+              width: '2em',
               borderRadius: 5,
               textAlign: 'center',
               color: 'primary.main',
@@ -133,6 +148,7 @@ export const Cart = (): JSX.Element => {
                           <Delete
                             sx={{
                               width: 15,
+                              color: 'background.default',
                             }}
                           />
                         </Box>
@@ -142,10 +158,10 @@ export const Cart = (): JSX.Element => {
                           onClick={() => decrementQuantity(item.id)}
                           sx={incrementQuantityStyle}
                         >
-                          <Remove sx={{ width: 15 }} />
+                          <Remove sx={{ width: 15, color: 'background.default' }} />
                         </Box>
                       )}
-                      <Typography variant="body1" sx={{ px: 1.5 }}>
+                      <Typography variant="body1" color="textSecondary" sx={{ px: 1.5 }}>
                         {item.quantity}
                       </Typography>
                       <Box
@@ -153,7 +169,7 @@ export const Cart = (): JSX.Element => {
                         onClick={() => incrementQuantity(item.id)}
                         sx={incrementQuantityStyle}
                       >
-                        <Add sx={{ width: 15 }} />
+                        <Add sx={{ width: 15, color: 'background.default' }} />
                       </Box>
                     </Box>
                   </Box>
@@ -175,7 +191,7 @@ export const Cart = (): JSX.Element => {
                         <Delete sx={{ width: 20, p: 0 }} />
                       </IconButton>
                     </Box>
-                    <Typography fontSize={12} color="secondary">
+                    <Typography fontSize={12} color="textSecondary">
                       R${item.price}
                     </Typography>
                   </Box>
@@ -198,7 +214,12 @@ export const Cart = (): JSX.Element => {
             Total: {updateValue()}
           </Typography>
           <Box alignSelf="end">
-            <Button variant="contained" color="primary" style={{ marginTop: 16 }}>
+            <Button
+              onClick={clearCart}
+              variant="outlined"
+              color="primary"
+              style={{ marginTop: 16 }}
+            >
               Limpar
             </Button>
 
@@ -206,13 +227,31 @@ export const Cart = (): JSX.Element => {
               variant="contained"
               style={{ marginTop: 16 }}
               onClick={handleOpenModal}
-              sx={{ ml: 1.5, backgroundColor: 'background.default' }}
+              sx={{ ml: 1.5 }}
             >
               Fazer Pedido
             </Button>
           </Box>
         </Box>
       </Box>
+
+      <OrderSummaryModal
+        open={summaryOpen}
+        onClose={() => setSummaryOpen(false)}
+        onConfirm={() => {
+          setSummaryOpen(false);
+          setSuccessOpen(true);
+          clearCart();
+        }}
+      />
+
+      <OrderSuccessModal
+        open={successOpen}
+        onClose={() => {
+          setSuccessOpen(false);
+          closeDrawer();
+        }}
+      />
     </Drawer>
   );
 };

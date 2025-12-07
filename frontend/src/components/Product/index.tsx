@@ -6,26 +6,33 @@ import {
   Grid2 as Grid,
   IconButton,
   Typography,
+  useTheme,
 } from '@mui/material';
 import { Add, Delete, Remove, ShoppingCart } from '@mui/icons-material';
+import { useMemo } from 'react';
 
 import { IProductsList, useCart } from 'utils';
 
 export const ProductCard: React.FC<IProductsList> = ({ item }) => {
+  const theme = useTheme();
   const { addToCart, isInCart, incrementQuantity, decrementQuantity, cartItems } = useCart();
 
-  const cartItem = cartItems.find(cartItem => cartItem.id === item.id);
-  const quantity = cartItem?.quantity || 0;
+  const cartItem = useMemo(
+    () => cartItems.find(cartItem => cartItem.id === item.id),
+    [cartItems, item.id]
+  );
+
+  const quantity = useMemo(() => cartItem?.quantity ?? 0, [cartItem]);
 
   return (
     <Card
-      key={item.id}
       sx={{
         backgroundColor: 'transparent',
         border: '2px solid white',
         borderRadius: 2,
         display: 'flex',
         flexDirection: 'column',
+        minWidth: 200,
       }}
     >
       <CardContent
@@ -48,7 +55,9 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
               {item.name}
             </Typography>
           </Grid>
+
           <CardMedia component="img" height="120" image={item.image} alt={item.name} />
+
           {item.description && (
             <Grid>
               <Typography
@@ -63,10 +72,12 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
               </Typography>
             </Grid>
           )}
+
           <Grid display="flex" flexDirection="column">
             <Typography sx={{ mt: 2 }} color="secondary" alignSelf="start">
               R${item.price.toFixed(2)}
             </Typography>
+
             {isInCart(item.id) ? (
               <Grid
                 container
@@ -77,11 +88,31 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
               >
                 <Grid>
                   {quantity === 1 ? (
-                    <IconButton onClick={() => decrementQuantity(item.id)} color="primary">
+                    <IconButton
+                      onClick={() => decrementQuantity(item.id)}
+                      color="error"
+                      sx={{
+                        transition: '0.25s',
+                        '&:hover': {
+                          boxShadow: `0 0 12px ${theme.palette.secondary.main}`,
+                          transform: 'scale(1.05)',
+                        },
+                      }}
+                    >
                       <Delete />
                     </IconButton>
                   ) : (
-                    <IconButton onClick={() => decrementQuantity(item.id)} color="primary">
+                    <IconButton
+                      onClick={() => decrementQuantity(item.id)}
+                      color="error"
+                      sx={{
+                        transition: '0.25s',
+                        '&:hover': {
+                          boxShadow: `0 0 12px ${theme.palette.secondary.main}`,
+                          transform: 'scale(1.05)',
+                        },
+                      }}
+                    >
                       <Remove />
                     </IconButton>
                   )}
@@ -92,7 +123,17 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
                 </Grid>
 
                 <Grid>
-                  <IconButton onClick={() => incrementQuantity(item.id)} color="secondary">
+                  <IconButton
+                    onClick={() => incrementQuantity(item.id)}
+                    color="secondary"
+                    sx={{
+                      transition: '0.25s',
+                      '&:hover': {
+                        boxShadow: `0 0 12px ${theme.palette.secondary.main}`,
+                        transform: 'scale(1.05)',
+                      },
+                    }}
+                  >
                     <Add />
                   </IconButton>
                 </Grid>
@@ -106,6 +147,9 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
                   backgroundColor: 'secondary.main',
                   border: '1px solid white',
                   mt: 2,
+                  ':hover': {
+                    backgroundColor: 'primary.main',
+                  },
                 }}
               >
                 <ShoppingCart color="inherit" />

@@ -15,12 +15,13 @@ export const Navigation: React.FC<{
     ({ category, selectedCategory }: ButtonStyleProps): SxProps<Theme> =>
     theme => ({
       width: 150,
-      color:
-        category === selectedCategory ? theme.palette.info.main : theme.palette.background.default,
+      fontSize: 16,
+      color: category === selectedCategory ? theme.palette.info.main : '#eeff00',
       fontWeight: 600,
+      transition: '0.25s',
       '&:hover': {
         color: theme.palette.info.main,
-        textDecoration: 'underline',
+        transform: 'scale(1.05)',
       },
     });
 

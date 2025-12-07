@@ -1,8 +1,17 @@
 import { useEffect, useState } from 'react';
 
-import { Box, Grid2 as Grid } from '@mui/material';
+import { Box, Grid2 as Grid, Grow } from '@mui/material';
 
-import { Cart, Header, Navigation, ProductCard, CartButton, Footer } from 'components';
+import {
+  Cart,
+  CartButton,
+  Footer,
+  Header,
+  MenuHint,
+  Navigation,
+  ProductCard,
+  WelcomeModal,
+} from 'components';
 import { useCart, useProducts } from 'utils';
 
 export const Home = () => {
@@ -11,6 +20,7 @@ export const Home = () => {
 
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState(0);
+  const [showHint, setShowHint] = useState(false);
 
   useEffect(() => {
     fetchProducts(category);
@@ -22,6 +32,8 @@ export const Home = () => {
 
   return (
     <Box display="flex" flexDirection="column">
+      <WelcomeModal onFinish={() => setShowHint(true)} />
+      {showHint && <MenuHint />}
       <Header setSearch={setSearch} />
       <Navigation setCategory={setCategory} category={category} />
       {totalQuantity > 0 && <CartButton />}
@@ -33,11 +45,14 @@ export const Home = () => {
         marginX="10%"
         alignSelf="center"
         maxWidth={1150}
+        pb={10}
       >
-        {filteredProducts.map(item => (
-          <Grid key={item.id} size={3}>
-            <ProductCard item={item} />
-          </Grid>
+        {filteredProducts.map((item, index) => (
+          <Grow in timeout={400 + index * 80} key={item.id}>
+            <Grid size={3}>
+              <ProductCard key={item.id} item={item} />
+            </Grid>
+          </Grow>
         ))}
       </Grid>
       <Footer />
