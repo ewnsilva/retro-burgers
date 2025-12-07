@@ -1,50 +1,58 @@
 [
   {
-    "id": 23,
-    "image": "mocks/images/DrinkExample.jpg",
-    "name": "Coca-Cola",
-    "price": 4.99
-  },
-  {
     "id": 24,
     "image": "mocks/images/DrinkExample.jpg",
-    "name": "Pepsi",
+    "name": "Coca-Cola",
+    "description": "",
     "price": 4.99
   },
   {
     "id": 25,
     "image": "mocks/images/DrinkExample.jpg",
-    "name": "Guaraná",
-    "price": 4.49
+    "name": "Pepsi",
+    "description": "",
+    "price": 4.99
   },
   {
     "id": 26,
     "image": "mocks/images/DrinkExample.jpg",
-    "name": "Água com Gás",
-    "price": 3.49
+    "name": "Guaraná",
+    "description": "",
+    "price": 4.49
   },
   {
     "id": 27,
     "image": "mocks/images/DrinkExample.jpg",
-    "name": "Água Mineral",
-    "price": 2.99
+    "name": "Água com Gás",
+    "description": "",
+    "price": 3.49
   },
   {
     "id": 28,
     "image": "mocks/images/DrinkExample.jpg",
-    "name": "Suco de Laranja",
-    "price": 5.99
+    "name": "Água Mineral",
+    "description": "",
+    "price": 2.99
   },
   {
     "id": 29,
     "image": "mocks/images/DrinkExample.jpg",
-    "name": "Suco de Uva",
+    "name": "Suco de Laranja",
+    "description": "",
     "price": 5.99
   },
   {
     "id": 30,
     "image": "mocks/images/DrinkExample.jpg",
+    "name": "Suco de Uva",
+    "description": "",
+    "price": 5.99
+  },
+  {
+    "id": 31,
+    "image": "mocks/images/DrinkExample.jpg",
     "name": "Chá Gelado",
+    "description": "",
     "price": 4.99
   }
 ]
