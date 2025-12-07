@@ -1,4 +1,3 @@
-// components/OrderSuccessModal.tsx
 import { Dialog, Box, Typography, Button, DialogContent, useTheme } from '@mui/material';
 
 type Props = {
@@ -10,13 +9,21 @@ export const OrderSuccessModal = ({ open, onClose }: Props) => {
   const theme = useTheme();
 
   return (
-    <Dialog open={open} onClose={onClose} maxWidth="xs">
+    <Dialog
+      open={open}
+      onClose={onClose}
+      maxWidth="xs"
+      PaperProps={{
+        sx: {
+          borderRadius: 5,
+          background: theme.palette.background.default,
+        },
+      }}
+    >
       <DialogContent
         sx={{
           textAlign: 'center',
           py: 5,
-          background: theme.palette.background.default,
-          borderRadius: 3,
         }}
       >
         <Box
@@ -42,7 +49,7 @@ export const OrderSuccessModal = ({ open, onClose }: Props) => {
           Pedido realizado!
         </Typography>
 
-        <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
+        <Typography variant="body1" color="textPrimary" sx={{ mb: 3 }}>
           Agradecemos pela preferência. Estamos preparando tudo com muito carinho. ❤️
         </Typography>
 
