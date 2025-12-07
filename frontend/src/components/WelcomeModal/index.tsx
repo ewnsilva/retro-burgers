@@ -53,12 +53,12 @@ export const WelcomeModal = ({ onFinish }: { onFinish: () => void }) => {
 
         <Typography
           sx={{
-            color: currentColors.secondary,
-            textShadow: `0 0 10px ${currentColors.secondary}`,
+            color: currentColors.primary,
+            textShadow: `0 0 10px ${currentColors.primary}`,
             mb: 3,
           }}
         >
-          Explore nosso cardápio com estilo {themeType.toUpperCase()}!
+          Explore nosso cardápio ao estilo Retro Anos 80!
         </Typography>
 
         <Button

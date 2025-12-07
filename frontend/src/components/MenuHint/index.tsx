@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { useTheme } from 'utils/context';
 
@@ -78,9 +78,9 @@ export const MenuHint = () => {
         }}
       >
         <Typography variant="h6" sx={{ color: currentColors.primary, mb: 1 }}>
-          Dica rápida!
+          <strong>Dica rápida!</strong>
         </Typography>
-        <Typography sx={{ mb: 2 }}>
+        <Typography color="primary" sx={{ mb: 2 }}>
           Aqui você pode trocar o <strong>tema visual</strong> do app e ativar a{' '}
           <strong>música retrô</strong> 🎵.
         </Typography>

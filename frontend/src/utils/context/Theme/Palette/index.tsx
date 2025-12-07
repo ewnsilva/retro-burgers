@@ -4,7 +4,7 @@ const synthwaveOptions: ThemeOptions = {
   palette: {
     primary: {
       main: '#fa558a',
-      contrastText: '#ffffff',
+      contrastText: '#e5e5e5',
     },
     secondary: {
       main: '#feae5d',
@@ -15,28 +15,26 @@ const synthwaveOptions: ThemeOptions = {
       contrastText: 'black',
     },
     background: {
-      default: '#2b134c',
+      default: '#220c3f',
+    },
+    text: {
+      primary: '#e5e5e5',
+      secondary: '#220c3f',
     },
   },
   typography: {
     fontFamily: 'arial',
-    h1: {
-      color: '#e5e5e5',
-    },
-    h2: {
-      color: '#e5e5e5',
-    },
   },
 };
 
 const retrowaveOptions: ThemeOptions = {
   palette: {
     primary: {
-      main: '#46E1FF',
-      contrastText: '#1e6672',
+      main: '#c73cf2',
+      contrastText: '#e5e5e5',
     },
     secondary: {
-      main: '#c73cf2',
+      main: '#46E1FF',
       contrastText: '#ffffff',
     },
     info: {
@@ -44,46 +42,42 @@ const retrowaveOptions: ThemeOptions = {
       contrastText: 'black',
     },
     background: {
-      default: '#1e6672',
+      default: '#0c373f',
+    },
+    text: {
+      primary: '#e5e5e5',
+      secondary: '#0c373f',
     },
   },
   typography: {
     fontFamily: 'arial',
-    h1: {
-      color: '#e5e5e5',
-    },
-    h2: {
-      color: '#e5e5e5',
-    },
   },
 };
 
 const darkwaveOptions: ThemeOptions = {
   palette: {
     primary: {
-      main: '#d81594',
-      contrastText: '#ffffff',
+      main: '#e5007e',
+      contrastText: '#e5e5e5',
     },
     secondary: {
-      main: '#39e5d7',
+      main: '#00e2c8',
       contrastText: '#591a43',
     },
     info: {
-      main: '#f2daea',
+      main: '#e5e5e5',
       contrastText: 'black',
     },
     background: {
-      default: '#591a43',
+      default: '#3f0c2d',
+    },
+    text: {
+      primary: '#e5e5e5',
+      secondary: '#3f0c2d',
     },
   },
   typography: {
     fontFamily: 'arial',
-    h1: {
-      color: '#e5e5e5',
-    },
-    h2: {
-      color: '#e5e5e5',
-    },
   },
 };
 

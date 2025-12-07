@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Box, Grid2 as Grid } from '@mui/material';
+import { Box, Grid2 as Grid, Grow } from '@mui/material';
 
 import {
   Cart,
@@ -47,10 +47,12 @@ export const Home = () => {
         maxWidth={1150}
         pb={10}
       >
-        {filteredProducts.map(item => (
-          <Grid size={3} key={item.id}>
-            <ProductCard key={item.id} item={item} />
-          </Grid>
+        {filteredProducts.map((item, index) => (
+          <Grow in timeout={400 + index * 80} key={item.id}>
+            <Grid size={3}>
+              <ProductCard key={item.id} item={item} />
+            </Grid>
+          </Grow>
         ))}
       </Grid>
       <Footer />

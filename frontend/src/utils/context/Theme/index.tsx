@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useContext, useMemo, useState, useEffect } from 'react';
-import { ThemeProvider as MuiThemeProvider, Theme } from '@mui/material/styles';
+import { ThemeProvider as MuiThemeProvider, Theme } from '@mui/material';
 import { synthwaveTheme, retrowaveTheme, darkwaveTheme } from './Palette';
 
 type ThemeType = 'synthwave' | 'retrowave' | 'darkwave';

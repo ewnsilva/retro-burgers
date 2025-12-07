@@ -1,9 +1,10 @@
 import { ShoppingCart } from '@mui/icons-material';
-import { Badge, IconButton } from '@mui/material';
+import { Badge, IconButton, useTheme } from '@mui/material';
 
 import { useCart } from 'utils';
 
 export const CartButton = (): JSX.Element => {
+  const theme = useTheme();
   const { setIsDrawerOpen, totalQuantity } = useCart();
 
   const openDrawer = () => {
@@ -13,14 +14,24 @@ export const CartButton = (): JSX.Element => {
   return (
     <IconButton
       onClick={openDrawer}
-      style={{
+      sx={{
         position: 'fixed',
         top: '15%',
         right: 16,
-        backgroundColor: 'primary.main',
+        transition: '0.25s',
+        '&:hover': {
+          boxShadow: `0 0 12px ${theme.palette.secondary.main}`,
+          transform: 'scale(1.05)',
+        },
       }}
     >
-      <Badge badgeContent={totalQuantity} sx={{ color: 'white' }}>
+      <Badge
+        badgeContent={totalQuantity}
+        sx={{
+          color: `${theme.palette.secondary.main}`,
+          transition: '0.25s',
+        }}
+      >
         <ShoppingCart />
       </Badge>
     </IconButton>

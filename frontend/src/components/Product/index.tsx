@@ -6,6 +6,7 @@ import {
   Grid2 as Grid,
   IconButton,
   Typography,
+  useTheme,
 } from '@mui/material';
 import { Add, Delete, Remove, ShoppingCart } from '@mui/icons-material';
 import { useMemo } from 'react';
@@ -13,6 +14,7 @@ import { useMemo } from 'react';
 import { IProductsList, useCart } from 'utils';
 
 export const ProductCard: React.FC<IProductsList> = ({ item }) => {
+  const theme = useTheme();
   const { addToCart, isInCart, incrementQuantity, decrementQuantity, cartItems } = useCart();
 
   const cartItem = useMemo(
@@ -30,6 +32,7 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
         borderRadius: 2,
         display: 'flex',
         flexDirection: 'column',
+        minWidth: 200,
       }}
     >
       <CardContent
@@ -85,11 +88,31 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
               >
                 <Grid>
                   {quantity === 1 ? (
-                    <IconButton onClick={() => decrementQuantity(item.id)} color="error">
+                    <IconButton
+                      onClick={() => decrementQuantity(item.id)}
+                      color="error"
+                      sx={{
+                        transition: '0.25s',
+                        '&:hover': {
+                          boxShadow: `0 0 12px ${theme.palette.secondary.main}`,
+                          transform: 'scale(1.05)',
+                        },
+                      }}
+                    >
                       <Delete />
                     </IconButton>
                   ) : (
-                    <IconButton onClick={() => decrementQuantity(item.id)} color="error">
+                    <IconButton
+                      onClick={() => decrementQuantity(item.id)}
+                      color="error"
+                      sx={{
+                        transition: '0.25s',
+                        '&:hover': {
+                          boxShadow: `0 0 12px ${theme.palette.secondary.main}`,
+                          transform: 'scale(1.05)',
+                        },
+                      }}
+                    >
                       <Remove />
                     </IconButton>
                   )}
@@ -100,7 +123,17 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
                 </Grid>
 
                 <Grid>
-                  <IconButton onClick={() => incrementQuantity(item.id)} color="secondary">
+                  <IconButton
+                    onClick={() => incrementQuantity(item.id)}
+                    color="secondary"
+                    sx={{
+                      transition: '0.25s',
+                      '&:hover': {
+                        boxShadow: `0 0 12px ${theme.palette.secondary.main}`,
+                        transform: 'scale(1.05)',
+                      },
+                    }}
+                  >
                     <Add />
                   </IconButton>
                 </Grid>
@@ -114,6 +147,9 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
                   backgroundColor: 'secondary.main',
                   border: '1px solid white',
                   mt: 2,
+                  ':hover': {
+                    backgroundColor: 'primary.main',
+                  },
                 }}
               >
                 <ShoppingCart color="inherit" />
