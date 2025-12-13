@@ -1,5 +1,6 @@
 import { Box, Menu, MenuItem, Typography } from '@mui/material';
-import { MusicNote, MusicOff, Info, Check } from '@mui/icons-material';
+import { MusicNote, MusicOff, Info, Check, Language } from '@mui/icons-material';
+import { useLanguage } from 'utils';
 
 type HeaderMenuProps = {
   allThemeColors: Record<string, { primary: string; secondary: string }>;
@@ -24,6 +25,8 @@ export const HeaderMenu = ({
   onThemeChange,
   toggleMusic,
 }: HeaderMenuProps): JSX.Element => {
+  const { t, language, changeLanguage } = useLanguage();
+
   return (
     <Menu anchorEl={anchorEl} open={open} onClose={onClose}>
       {Object.entries(allThemeColors).map(([key, colors]) => (
@@ -38,7 +41,7 @@ export const HeaderMenu = ({
             minWidth: 180,
           }}
         >
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Box display="flex" alignItems="center">
             <Box
               sx={{
                 width: 30,
@@ -46,7 +49,7 @@ export const HeaderMenu = ({
                 borderRadius: 1,
                 background: `linear-gradient(135deg, ${colors.primary} 50%, ${colors.secondary} 50%)`,
                 border: '1px solid #ccc',
-                marginRight: 1.5,
+                mr: 1.5,
               }}
             />
             <Typography textTransform="capitalize" color="textSecondary">
@@ -64,8 +67,18 @@ export const HeaderMenu = ({
         ) : (
           <MusicOff sx={{ color: 'background.default' }} />
         )}
-        <Typography ml={1} color="textSecondary">
-          {musicOn ? 'Música ativada' : 'Música desativada'}
+        <Typography color="textSecondary" ml={1}>
+          {musicOn ? t('menu.musicOn') : t('menu.musicOff')}
+        </Typography>
+      </MenuItem>
+
+      <MenuItem
+        onClick={() => changeLanguage(language === 'pt' ? 'en' : 'pt')}
+        sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+      >
+        <Language sx={{ color: 'background.default' }} />
+        <Typography color="textSecondary">
+          {language === 'pt' ? 'Português 🇧🇷' : 'English 🇺🇸'}
         </Typography>
       </MenuItem>
 
@@ -76,8 +89,8 @@ export const HeaderMenu = ({
         }}
       >
         <Info sx={{ color: 'background.default' }} />
-        <Typography ml={1} color="textSecondary">
-          Mais informações
+        <Typography color="textSecondary" ml={1}>
+          {t('menu.moreInfo')}
         </Typography>
       </MenuItem>
     </Menu>
