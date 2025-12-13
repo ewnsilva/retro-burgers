@@ -1,0 +1,13 @@
+{
+  "menu": {
+    "musicOn": "Música ativada",
+    "musicOff": "Música desativada",
+    "moreInfo": "Mais informações"
+  },
+  "cart": {
+    "title": "Carrinho",
+    "total": "Total",
+    "clear": "Limpar",
+    "order": "Fazer Pedido"
+  }
+}

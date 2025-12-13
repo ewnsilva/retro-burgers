@@ -1,0 +1,13 @@
+{
+  "menu": {
+    "musicOn": "Music enabled",
+    "musicOff": "Music disabled",
+    "moreInfo": "More information"
+  },
+  "cart": {
+    "title": "Cart",
+    "total": "Total",
+    "clear": "Clear",
+    "order": "Place Order"
+  }
+}
