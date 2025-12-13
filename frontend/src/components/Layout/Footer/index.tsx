@@ -5,7 +5,7 @@ export const Footer = (): JSX.Element => {
     <Box
       component="footer"
       sx={{
-        position: 'fixed',
+        position: { xs: 'relative', md: 'fixed' },
         bottom: 0,
         left: 0,
         right: 0,

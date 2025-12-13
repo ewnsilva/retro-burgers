@@ -50,10 +50,12 @@ export const Header = ({ setSearch }: IHeader): JSX.Element => {
         sx={{
           width: '100%',
           display: 'flex',
-          flexDirection: 'row',
+          flexDirection: { xs: 'column', sm: 'row' },
           alignItems: 'center',
           justifyContent: 'space-between',
+          gap: { xs: 1, sm: 0 },
           backgroundColor: 'info.main',
+          py: { xs: 1, sm: 0 },
         }}
       >
         <Box display="flex" ml="2%" paddingY={2}>
@@ -65,6 +67,7 @@ export const Header = ({ setSearch }: IHeader): JSX.Element => {
               backgroundImage: `radial-gradient(50% 50% at 50% 50%, ${muiTheme.palette.background.default} 0%, ${muiTheme.palette.primary.main} 100%)`,
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
+              fontSize: { xs: '1.5rem', sm: '2rem' },
               fontWeight: 'bold',
               display: 'inline-block',
             }}
@@ -80,7 +83,7 @@ export const Header = ({ setSearch }: IHeader): JSX.Element => {
             size="small"
             onChange={handleSearchChange}
             sx={{
-              minWidth: '200px',
+              minWidth: { xs: '100%', sm: 200 },
               '& .MuiInputBase-input': {
                 color: 'primary.main',
               },

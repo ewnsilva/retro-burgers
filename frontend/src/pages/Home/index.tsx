@@ -49,7 +49,7 @@ export const Home = () => {
       >
         {filteredProducts.map((item, index) => (
           <Grow in timeout={400 + index * 80} key={item.id}>
-            <Grid size={3}>
+            <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
               <ProductCard key={item.id} item={item} />
             </Grid>
           </Grow>

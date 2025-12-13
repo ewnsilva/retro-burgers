@@ -7,6 +7,7 @@ import {
   IconButton,
   Typography,
   useTheme,
+  useMediaQuery,
 } from '@mui/material';
 import { Add, Delete, Remove, ShoppingCart } from '@mui/icons-material';
 import { useMemo } from 'react';
@@ -14,6 +15,7 @@ import { useMemo } from 'react';
 import { IProductsList, useCart } from 'utils';
 
 export const ProductCard: React.FC<IProductsList> = ({ item }) => {
+  const matchesXs = useMediaQuery('(max-width: 465px)');
   const theme = useTheme();
   const { addToCart, isInCart, incrementQuantity, decrementQuantity, cartItems } = useCart();
 
@@ -32,7 +34,8 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
         borderRadius: 2,
         display: 'flex',
         flexDirection: 'column',
-        minWidth: 200,
+        width: '100%',
+        minWidth: { xs: '100%', sm: 200 },
       }}
     >
       <CardContent
@@ -50,22 +53,32 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
               variant="h6"
               component="div"
               fontWeight={600}
-              sx={{ fontSize: { xs: '0.8rem', sm: '1rem' }, height: 35 }}
+              sx={{
+                fontSize: { xs: '0.85rem', sm: '1rem' },
+                minHeight: { sm: 35 },
+              }}
             >
               {item.name}
             </Typography>
           </Grid>
 
-          <CardMedia component="img" height="120" image={item.image} alt={item.name} />
+          <CardMedia
+            component="img"
+            image={item.image}
+            alt={item.name}
+            sx={{
+              height: { xs: 100, sm: 120 },
+              objectFit: 'contain',
+            }}
+          />
 
           {item.description && (
             <Grid>
               <Typography
                 variant="body2"
                 sx={{
-                  fontSize: { xs: '0.65rem', sm: '0.75rem' },
-                  height: 50,
-                  my: 2,
+                  fontSize: { xs: '0.7rem', sm: '0.75rem' },
+                  my: 1.5,
                 }}
               >
                 {item.description}
@@ -82,8 +95,8 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
               <Grid
                 container
                 alignItems="center"
-                justifyContent="space-around"
-                spacing={1}
+                justifyContent="space-between"
+                spacing={2}
                 sx={{ mt: 2 }}
               >
                 <Grid>
@@ -140,6 +153,7 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
               </Grid>
             ) : (
               <Button
+                fullWidth={matchesXs}
                 variant="contained"
                 onClick={() => addToCart(item)}
                 sx={{

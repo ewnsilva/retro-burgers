@@ -19,8 +19,9 @@ import { OrderSummaryModal, OrderSuccessModal } from 'components';
 import { useCart } from 'utils';
 
 const incrementQuantityStyle: SxProps = {
-  py: 0,
-  px: 1,
+  py: { xs: 1, sm: 0 },
+  px: { xs: 1.5, sm: 1 },
+  minWidth: 36,
   backgroundColor: 'secondary.main',
   borderTopLeftRadius: 5,
   borderBottomLeftRadius: 5,
@@ -56,7 +57,7 @@ export const Cart = (): JSX.Element => {
   };
 
   useEffect(() => {
-    if (cartItems.length === 0) {
+    if (cartItems.length === 0 && !successOpen) {
       setIsDrawerOpen(false);
     }
   }, [cartItems, setIsDrawerOpen]);
@@ -67,7 +68,7 @@ export const Cart = (): JSX.Element => {
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          width: 350,
+          width: { xs: '100vw', sm: 350 },
           height: '100%',
           backgroundColor: 'info.main',
         }}
@@ -85,7 +86,7 @@ export const Cart = (): JSX.Element => {
                 }}
               />
             </Badge>
-            <Typography variant="h5" ml={2} color="primary">
+            <Typography variant="h5" ml={2} color="primary" sx={{ fontSize: { xs: 18, sm: 20 } }}>
               Carrinho
             </Typography>
           </Box>
@@ -114,7 +115,7 @@ export const Cart = (): JSX.Element => {
         </Box>
 
         {cartItems?.length > 0 && (
-          <List sx={{ width: '90%', alignSelf: 'center' }}>
+          <List sx={{ width: '90%', alignSelf: 'center', flexGrow: 1, overflowY: 'auto' }}>
             {cartItems.map(item => (
               <Paper
                 key={item.id}
