@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import {
   Button,
   Card,
@@ -10,13 +11,14 @@ import {
   useMediaQuery,
 } from '@mui/material';
 import { Add, Delete, Remove, ShoppingCart } from '@mui/icons-material';
-import { useMemo } from 'react';
 
 import { IProductsList, useCart } from 'utils';
+import * as styles from './Product.styles';
 
 export const ProductCard: React.FC<IProductsList> = ({ item }) => {
   const matchesXs = useMediaQuery('(max-width: 465px)');
   const theme = useTheme();
+
   const { addToCart, isInCart, incrementQuantity, decrementQuantity, cartItems } = useCart();
 
   const cartItem = useMemo(
@@ -27,148 +29,75 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
   const quantity = useMemo(() => cartItem?.quantity ?? 0, [cartItem]);
 
   return (
-    <Card
-      sx={{
-        backgroundColor: 'transparent',
-        border: '2px solid white',
-        borderRadius: 2,
-        display: 'flex',
-        flexDirection: 'column',
-        width: '100%',
-        minWidth: { xs: '100%', sm: 200 },
-      }}
-    >
-      <CardContent
-        sx={{
-          color: 'white',
-          display: 'flex',
-          flexDirection: 'column',
-          flexGrow: 1,
-        }}
-      >
-        <Grid container direction="column" spacing={1}>
+    <Card sx={styles.card}>
+      <CardContent>
+        <Grid container display="flex" direction="column" spacing={1} sx={styles.cardContent}>
           <Grid>
-            <Typography
-              gutterBottom
-              variant="h6"
-              component="div"
-              fontWeight={600}
-              sx={{
-                fontSize: { xs: '0.85rem', sm: '1rem' },
-                minHeight: { sm: 35 },
-              }}
-            >
+            <Typography gutterBottom variant="h6" component="div" sx={styles.title}>
               {item.name}
             </Typography>
           </Grid>
 
-          <CardMedia
-            component="img"
-            image={item.image}
-            alt={item.name}
-            sx={{
-              height: { xs: 100, sm: 120 },
-              objectFit: 'contain',
-            }}
-          />
+          <CardMedia component="img" image={item.image} alt={item.name} sx={styles.image} />
 
           {item.description && (
             <Grid>
-              <Typography
-                variant="body2"
-                sx={{
-                  fontSize: { xs: '0.7rem', sm: '0.75rem' },
-                  my: 1.5,
-                }}
-              >
+              <Typography variant="body2" sx={styles.description}>
                 {item.description}
               </Typography>
             </Grid>
           )}
 
-          <Grid display="flex" flexDirection="column">
-            <Typography sx={{ mt: 2 }} color="secondary" alignSelf="start">
-              R${item.price.toFixed(2)}
+          <Grid display="flex" mt="auto" flexDirection="column">
+            <Typography color="secondary" alignSelf="start">
+              R$ {item.price.toFixed(2)}
             </Typography>
 
-            {isInCart(item.id) ? (
-              <Grid
-                container
-                alignItems="center"
-                justifyContent="space-between"
-                spacing={2}
-                sx={{ mt: 2 }}
-              >
-                <Grid>
-                  {quantity === 1 ? (
+            <Grid
+              container
+              alignItems="center"
+              justifyContent={isInCart(item.id) ? 'space-between' : 'flex-end'}
+              spacing={2}
+              sx={styles.quantityControls}
+            >
+              {isInCart(item.id) ? (
+                <>
+                  <Grid>
                     <IconButton
-                      onClick={() => decrementQuantity(item.id)}
+                      onClick={() =>
+                        quantity === 1 ? decrementQuantity(item.id) : decrementQuantity(item.id)
+                      }
                       color="error"
-                      sx={{
-                        transition: '0.25s',
-                        '&:hover': {
-                          boxShadow: `0 0 12px ${theme.palette.secondary.main}`,
-                          transform: 'scale(1.05)',
-                        },
-                      }}
+                      sx={styles.iconButton(theme)}
                     >
-                      <Delete />
+                      {quantity === 1 ? <Delete /> : <Remove />}
                     </IconButton>
-                  ) : (
+                  </Grid>
+
+                  <Grid>
+                    <Typography variant="body1">{quantity}</Typography>
+                  </Grid>
+
+                  <Grid>
                     <IconButton
-                      onClick={() => decrementQuantity(item.id)}
-                      color="error"
-                      sx={{
-                        transition: '0.25s',
-                        '&:hover': {
-                          boxShadow: `0 0 12px ${theme.palette.secondary.main}`,
-                          transform: 'scale(1.05)',
-                        },
-                      }}
+                      onClick={() => incrementQuantity(item.id)}
+                      color="secondary"
+                      sx={styles.iconButton(theme)}
                     >
-                      <Remove />
+                      <Add />
                     </IconButton>
-                  )}
-                </Grid>
-
-                <Grid>
-                  <Typography variant="body1">{quantity}</Typography>
-                </Grid>
-
-                <Grid>
-                  <IconButton
-                    onClick={() => incrementQuantity(item.id)}
-                    color="secondary"
-                    sx={{
-                      transition: '0.25s',
-                      '&:hover': {
-                        boxShadow: `0 0 12px ${theme.palette.secondary.main}`,
-                        transform: 'scale(1.05)',
-                      },
-                    }}
-                  >
-                    <Add />
-                  </IconButton>
-                </Grid>
-              </Grid>
-            ) : (
-              <Button
-                fullWidth={matchesXs}
-                variant="contained"
-                onClick={() => addToCart(item)}
-                sx={{
-                  alignSelf: 'end',
-                  backgroundColor: 'secondary.main',
-                  border: '1px solid white',
-                  mt: 2,
-                  ':hover': {
-                    backgroundColor: 'primary.main',
-                  },
-                }}
-              >
-                <ShoppingCart color="inherit" />
-              </Button>
-            )}
+                  </Grid>
+                </>
+              ) : (
+                <Button
+                  variant="contained"
+                  onClick={() => addToCart(item)}
+                  sx={styles.addButton(matchesXs)}
+                >
+                  <ShoppingCart color="inherit" />
+                </Button>
+              )}
+            </Grid>
           </Grid>
         </Grid>
       </CardContent>

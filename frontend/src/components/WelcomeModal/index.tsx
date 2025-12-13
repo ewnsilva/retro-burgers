@@ -3,7 +3,7 @@ import { Box, Modal, Typography, Button } from '@mui/material';
 import { useTheme } from 'utils/context';
 
 export const WelcomeModal = ({ onFinish }: { onFinish: () => void }) => {
-  const { currentColors, themeType } = useTheme();
+  const { currentColors } = useTheme();
 
   const [open, setOpen] = useState(false);
 
@@ -75,7 +75,6 @@ export const WelcomeModal = ({ onFinish }: { onFinish: () => void }) => {
           Vamos lá!
         </Button>
 
-        {/* Animação neon */}
         <style>
           {`
             @keyframes neonGlow {

@@ -1,5 +1,3 @@
-import { useState, ChangeEvent, MouseEvent } from 'react';
-
 import {
   Box,
   IconButton,
@@ -11,67 +9,32 @@ import {
 } from '@mui/material';
 import { Fastfood, Menu as MenuIcon, Search } from '@mui/icons-material';
 
-import { useTheme as useCustomTheme } from '../../../utils/context';
-import { useThemeMusic } from '../../../utils/hooks';
-import { InfoModal, HeaderMenu } from 'components';
-import { IHeader } from 'utils';
+import { HeaderMenu, InfoModal } from 'components';
+import { useHeaderLogic } from './Header.logic';
+import * as styles from './Header.styles';
 
-export const Header = ({ setSearch }: IHeader): JSX.Element => {
-  const muiTheme = useTheme();
-  const { themeType, setThemeType, allThemeColors } = useCustomTheme();
-
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const [showInfo, setShowInfo] = useState(false);
-  const [musicOn, setMusicOn] = useState(false);
-
-  useThemeMusic({ themeType, musicEnabled: musicOn });
-
-  const handleMenuClick = (event: MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleCloseMenu = () => setAnchorEl(null);
-
-  const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setSearch(event.target.value);
-  };
-
-  const handleThemeChange = (type: typeof themeType) => {
-    setThemeType(type);
-    handleCloseMenu();
-  };
-
-  const toggleMusic = () => setMusicOn(prev => !prev);
+export const Header = ({ setSearch }: { setSearch: (value: string) => void }): JSX.Element => {
+  const theme = useTheme();
+  const {
+    themeType,
+    allThemeColors,
+    anchorEl,
+    showInfo,
+    musicOn,
+    handleMenuClick,
+    handleCloseMenu,
+    handleSearchChange,
+    handleThemeChange,
+    toggleMusic,
+    setShowInfo,
+  } = useHeaderLogic(setSearch);
 
   return (
     <>
-      <Box
-        component="header"
-        sx={{
-          width: '100%',
-          display: 'flex',
-          flexDirection: { xs: 'column', sm: 'row' },
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: { xs: 1, sm: 0 },
-          backgroundColor: 'info.main',
-          py: { xs: 1, sm: 0 },
-        }}
-      >
+      <Box component="header" sx={styles.headerContainer(theme)}>
         <Box display="flex" ml="2%" paddingY={2}>
-          <Fastfood htmlColor={muiTheme.palette.primary.main} fontSize="large" />
-          <Typography
-            variant="h4"
-            ml={1}
-            sx={{
-              backgroundImage: `radial-gradient(50% 50% at 50% 50%, ${muiTheme.palette.background.default} 0%, ${muiTheme.palette.primary.main} 100%)`,
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              fontSize: { xs: '1.5rem', sm: '2rem' },
-              fontWeight: 'bold',
-              display: 'inline-block',
-            }}
-          >
+          <Fastfood htmlColor={theme.palette.primary.main} fontSize="large" />
+          <Typography variant="h4" ml={1} sx={styles.logoText(theme)}>
             Retro-Burgers
           </Typography>
         </Box>
@@ -82,12 +45,7 @@ export const Header = ({ setSearch }: IHeader): JSX.Element => {
             color="primary"
             size="small"
             onChange={handleSearchChange}
-            sx={{
-              minWidth: { xs: '100%', sm: 200 },
-              '& .MuiInputBase-input': {
-                color: 'primary.main',
-              },
-            }}
+            sx={styles.searchField}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
