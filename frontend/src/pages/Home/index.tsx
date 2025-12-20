@@ -12,11 +12,12 @@ import {
   ProductCard,
   WelcomeModal,
 } from 'components';
-import { useCart, useProducts } from 'utils';
+import { useCart, useProducts, IProducts, useLanguage } from 'utils';
 
 export const Home = () => {
   const { totalQuantity } = useCart();
   const { products, fetchProducts } = useProducts();
+  const { language } = useLanguage();
 
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState(0);
@@ -26,9 +27,13 @@ export const Home = () => {
     fetchProducts(category);
   }, [category]);
 
-  const filteredProducts = products.filter(product =>
-    product?.name?.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredProducts = products.filter((product: IProducts) => {
+    if (language === 'pt') {
+      return product?.namePt?.toLowerCase().includes(search.toLowerCase());
+    } else {
+      return product?.nameEn?.toLowerCase().includes(search.toLowerCase());
+    }
+  });
 
   return (
     <Box display="flex" flexDirection="column">
