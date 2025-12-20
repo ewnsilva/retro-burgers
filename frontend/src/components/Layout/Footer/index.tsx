@@ -1,11 +1,14 @@
 import { Box, Typography } from '@mui/material';
+import { useLanguage } from 'utils';
 
 export const Footer = (): JSX.Element => {
+  const { t } = useLanguage();
+
   return (
     <Box
       component="footer"
       sx={{
-        position: 'fixed',
+        position: { xs: 'relative', md: 'fixed' },
         bottom: 0,
         left: 0,
         right: 0,
@@ -17,7 +20,7 @@ export const Footer = (): JSX.Element => {
     >
       <Box display="flex" ml="2%" paddingY={1}>
         <Typography ml={1} sx={{ color: 'white' }}>
-          © 2024 Retro-Burguers. Todos os direitos reservados
+          {t('footer.copyright')}
         </Typography>
       </Box>
     </Box>

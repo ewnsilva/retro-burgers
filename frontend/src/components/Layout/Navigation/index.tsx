@@ -1,4 +1,5 @@
 import { Button, Box, useTheme, SxProps, Theme } from '@mui/material';
+import { useLanguage } from 'utils';
 
 interface ButtonStyleProps {
   category: number;
@@ -10,14 +11,15 @@ export const Navigation: React.FC<{
   category: number;
 }> = ({ setCategory, category }) => {
   const theme = useTheme();
+  const { t } = useLanguage();
 
   const buttonStyle =
     ({ category, selectedCategory }: ButtonStyleProps): SxProps<Theme> =>
     theme => ({
-      width: 150,
-      fontSize: 16,
-      color: category === selectedCategory ? theme.palette.info.main : '#eeff00',
+      width: { xs: '45%', sm: 150 },
+      fontSize: { xs: 12, sm: 16 },
       fontWeight: 600,
+      color: category === selectedCategory ? theme.palette.info.main : '#eeff00',
       transition: '0.25s',
       '&:hover': {
         color: theme.palette.info.main,
@@ -46,16 +48,16 @@ export const Navigation: React.FC<{
         }}
       >
         <Button onClick={() => setCategory(0)} sx={buttonStyle({ category, selectedCategory: 0 })}>
-          Hamburguers
+          {t('navigation.burgers')}
         </Button>
         <Button onClick={() => setCategory(1)} sx={buttonStyle({ category, selectedCategory: 1 })}>
-          Salgados
+          {t('navigation.snacks')}
         </Button>
         <Button onClick={() => setCategory(2)} sx={buttonStyle({ category, selectedCategory: 2 })}>
-          Doces
+          {t('navigation.desserts')}
         </Button>
         <Button onClick={() => setCategory(3)} sx={buttonStyle({ category, selectedCategory: 3 })}>
-          Bebidas
+          {t('navigation.drinks')}
         </Button>
       </Box>
     </Box>

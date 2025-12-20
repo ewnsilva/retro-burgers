@@ -16,7 +16,7 @@ export const CartButton = (): JSX.Element => {
       onClick={openDrawer}
       sx={{
         position: 'fixed',
-        top: '15%',
+        top: '20%',
         right: 16,
         transition: '0.25s',
         '&:hover': {

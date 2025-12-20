@@ -1,4 +1,5 @@
 import { Dialog, Box, Typography, Button, DialogContent, useTheme } from '@mui/material';
+import { useLanguage } from 'utils';
 
 type Props = {
   open: boolean;
@@ -7,6 +8,7 @@ type Props = {
 
 export const OrderSuccessModal = ({ open, onClose }: Props) => {
   const theme = useTheme();
+  const { t } = useLanguage();
 
   return (
     <Dialog
@@ -46,15 +48,15 @@ export const OrderSuccessModal = ({ open, onClose }: Props) => {
             textShadow: `0 0 10px ${theme.palette.primary.main}`,
           }}
         >
-          Pedido realizado!
+          {t('orderSuccess.title')}
         </Typography>
 
         <Typography variant="body1" color="textPrimary" sx={{ mb: 3 }}>
-          Agradecemos pela preferência. Estamos preparando tudo com muito carinho. ❤️
+          {t('orderSuccess.message')} ❤️
         </Typography>
 
         <Button variant="contained" onClick={onClose} fullWidth>
-          Fechar
+          {t('orderSuccess.close')}
         </Button>
       </DialogContent>
     </Dialog>

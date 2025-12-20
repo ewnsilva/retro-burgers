@@ -4,9 +4,12 @@ export interface IHeader {
 export interface IProducts {
   id: number;
   image: string;
-  name: string;
-  description?: string;
-  price: number;
+  namePt: string;
+  descriptionPt?: string;
+  pricePt: number;
+  nameEn: string;
+  descriptionEn?: string;
+  priceEn: number;
 }
 
 export interface IProductsList {

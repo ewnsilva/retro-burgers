@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react';
-
 import {
   Drawer,
   IconButton,
@@ -11,177 +9,87 @@ import {
   Box,
   Badge,
   CardMedia,
-  SxProps,
 } from '@mui/material';
 import { Delete, Add, Remove, ShoppingCart } from '@mui/icons-material';
 
 import { OrderSummaryModal, OrderSuccessModal } from 'components';
-import { useCart } from 'utils';
-
-const incrementQuantityStyle: SxProps = {
-  py: 0,
-  px: 1,
-  backgroundColor: 'secondary.main',
-  borderTopLeftRadius: 5,
-  borderBottomLeftRadius: 5,
-  border: '1px solid transparent',
-  borderRightColor: 'background.default',
-  '&:hover': {
-    cursor: 'pointer',
-  },
-};
+import { useLanguage } from 'utils';
+import { useCartLogic } from './Cart.logic';
+import * as styles from './Cart.styles';
 
 export const Cart = (): JSX.Element => {
+  const { t, language } = useLanguage();
   const {
     cartItems,
     isDrawerOpen,
     totalQuantity,
+    summaryOpen,
+    successOpen,
+    closeDrawer,
+    openSummary,
+    confirmOrder,
+    setSummaryOpen,
+    setSuccessOpen,
     clearCart,
     decrementQuantity,
     incrementQuantity,
     removeItem,
-    setIsDrawerOpen,
     updateValue,
-  } = useCart();
-
-  const [summaryOpen, setSummaryOpen] = useState(false);
-  const [successOpen, setSuccessOpen] = useState(false);
-
-  const closeDrawer = () => {
-    setIsDrawerOpen(false);
-  };
-
-  const handleOpenModal = () => {
-    setSummaryOpen(true);
-  };
-
-  useEffect(() => {
-    if (cartItems.length === 0) {
-      setIsDrawerOpen(false);
-    }
-  }, [cartItems, setIsDrawerOpen]);
+  } = useCartLogic();
 
   return (
     <Drawer anchor="right" open={isDrawerOpen} onClose={closeDrawer}>
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          width: 350,
-          height: '100%',
-          backgroundColor: 'info.main',
-        }}
-      >
+      <Box sx={styles.drawerContainer}>
         <Box display="flex" width="90%" m={2} justifyContent="space-between">
           <Box display="flex" alignItems="center">
-            <Badge badgeContent={totalQuantity} color="secondary" sx={{ color: 'white' }}>
-              <ShoppingCart
-                sx={{
-                  backgroundColor: 'primary.main',
-                  p: 1.5,
-                  borderRadius: 2,
-                  width: '2em',
-                  height: '2em',
-                }}
-              />
+            <Badge badgeContent={totalQuantity} color="secondary">
+              <ShoppingCart sx={styles.iconTitle} />
             </Badge>
-            <Typography variant="h5" ml={2} color="primary">
-              Carrinho
+            <Typography ml={2} fontSize={{ xs: 18, sm: 20 }} color="primary">
+              {t('cart.title')}
             </Typography>
           </Box>
-          <Typography
-            onClick={closeDrawer}
-            sx={{
-              border: '2px solid',
-              borderColor: 'primary.main',
-              alignSelf: 'top',
-              fontSize: 12,
-              fontWeight: 600,
-              height: '1.8em',
-              width: '2em',
-              borderRadius: 5,
-              textAlign: 'center',
-              color: 'primary.main',
-              '&:hover': {
-                cursor: 'pointer',
-                backgroundColor: 'primary.main',
-                color: 'white',
-              },
-            }}
-          >
+          <Typography onClick={closeDrawer} sx={{ cursor: 'pointer' }}>
             X
           </Typography>
         </Box>
 
-        {cartItems?.length > 0 && (
-          <List sx={{ width: '90%', alignSelf: 'center' }}>
-            {cartItems.map(item => (
-              <Paper
-                key={item.id}
-                elevation={5}
-                sx={{
-                  mb: 1,
-                  backgroundColor: 'info.main',
-                  border: '1.2px solid',
-                  borderColor: 'background.default',
-                }}
-              >
-                <Box key={item.id} sx={{ display: 'flex', alignItems: 'top', p: 1.5 }}>
-                  <Box display="flex" flexDirection="column">
-                    <CardMedia component="img" height="70" image={item.image} alt={item.name} />
-                    <Box
-                      sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        border: '1px solid',
-                        borderColor: 'background.default',
-                        borderRadius: 1,
-                        mt: 1,
-                      }}
-                    >
-                      {item.quantity === 1 ? (
-                        <Box
-                          color="error"
-                          onClick={() => removeItem(item.id)}
-                          sx={incrementQuantityStyle}
-                        >
-                          <Delete
-                            sx={{
-                              width: 15,
-                              color: 'background.default',
-                            }}
-                          />
-                        </Box>
-                      ) : (
-                        <Box
-                          color="error"
-                          onClick={() => decrementQuantity(item.id)}
-                          sx={incrementQuantityStyle}
-                        >
-                          <Remove sx={{ width: 15, color: 'background.default' }} />
-                        </Box>
-                      )}
-                      <Typography variant="body1" color="textSecondary" sx={{ px: 1.5 }}>
-                        {item.quantity}
-                      </Typography>
-                      <Box
-                        color="primary"
-                        onClick={() => incrementQuantity(item.id)}
-                        sx={incrementQuantityStyle}
-                      >
-                        <Add sx={{ width: 15, color: 'background.default' }} />
+        <List sx={{ width: '90%', alignSelf: 'center', flexGrow: 1, overflowY: 'auto' }}>
+          {cartItems.map(item => (
+            <Paper key={item.id} elevation={5} sx={styles.backgroundProduct}>
+              <Box display="flex" p={1.5}>
+                <Box display="flex" flexDirection="column">
+                  <CardMedia component="img" height="70" image={item.image} />
+                  <Box display="flex" mt={1} alignItems="center">
+                    {item.quantity === 1 ? (
+                      <Box onClick={() => removeItem(item.id)} sx={styles.incrementQuantityStyle}>
+                        <Delete sx={styles.quantityIcons} />
                       </Box>
+                    ) : (
+                      <Box
+                        onClick={() => decrementQuantity(item.id)}
+                        sx={styles.incrementQuantityStyle}
+                      >
+                        <Remove sx={styles.quantityIcons} />
+                      </Box>
+                    )}
+                    <Typography color="textSecondary" px={1.5}>
+                      <strong>{item.quantity}</strong>
+                    </Typography>
+                    <Box
+                      onClick={() => incrementQuantity(item.id)}
+                      sx={styles.incrementQuantityStyle}
+                    >
+                      <Add sx={styles.quantityIcons} />
                     </Box>
                   </Box>
-                  <Box ml={2} width="100%">
-                    <Box display="flex" justifyContent="space-between">
-                      <Typography
-                        fontSize={14}
-                        fontWeight={600}
-                        sx={{ color: 'background.default' }}
-                      >
-                        {item.name}
-                      </Typography>
+                </Box>
+                <Box ml={2} flexGrow={1}>
+                  <Box display="flex" justifyContent="space-between">
+                    <Typography color="textSecondary" fontWeight={600}>
+                      {item.namePt}
+                    </Typography>
+                    {Number(item.quantity) > 1 && (
                       <IconButton
                         color="primary"
                         size="small"
@@ -190,46 +98,31 @@ export const Cart = (): JSX.Element => {
                       >
                         <Delete sx={{ width: 20, p: 0 }} />
                       </IconButton>
-                    </Box>
-                    <Typography fontSize={12} color="textSecondary">
-                      R${item.price}
-                    </Typography>
+                    )}
                   </Box>
+                  <Typography color="textSecondary" fontSize={12}>
+                    {language === 'pt' ? 'R$ ' : 'U$ '}
+                    {item.pricePt}
+                  </Typography>
                 </Box>
-              </Paper>
-            ))}
-          </List>
-        )}
+              </Box>
+            </Paper>
+          ))}
+        </List>
 
         <Divider />
-        <Box
-          display="flex"
-          flexDirection="column"
-          alignSelf="center"
-          position="absolute"
-          bottom="2%"
-          width="90%"
-        >
+
+        <Box sx={styles.footerContainer}>
           <Typography variant="subtitle1" color="primary" fontWeight={600} alignSelf="end">
-            Total: {updateValue()}
+            {t('cart.total')}
+            {updateValue()}
           </Typography>
-          <Box alignSelf="end">
-            <Button
-              onClick={clearCart}
-              variant="outlined"
-              color="primary"
-              style={{ marginTop: 16 }}
-            >
+          <Box display="flex" gap={1} mt={2} alignSelf="end">
+            <Button variant="outlined" color="primary" onClick={clearCart}>
               Limpar
             </Button>
-
-            <Button
-              variant="contained"
-              style={{ marginTop: 16 }}
-              onClick={handleOpenModal}
-              sx={{ ml: 1.5 }}
-            >
-              Fazer Pedido
+            <Button variant="contained" onClick={openSummary}>
+              {t('cart.order')}
             </Button>
           </Box>
         </Box>
@@ -238,11 +131,7 @@ export const Cart = (): JSX.Element => {
       <OrderSummaryModal
         open={summaryOpen}
         onClose={() => setSummaryOpen(false)}
-        onConfirm={() => {
-          setSummaryOpen(false);
-          setSuccessOpen(true);
-          clearCart();
-        }}
+        onConfirm={confirmOrder}
       />
 
       <OrderSuccessModal
