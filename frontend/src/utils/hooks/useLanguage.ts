@@ -5,7 +5,7 @@ export const useLanguage = () => {
 
   const changeLanguage = (lng: 'pt' | 'en') => {
     i18n.changeLanguage(lng);
-    localStorage.setItem('language', lng);
+    localStorage.setItem('retroburguers-language', lng);
   };
 
   return {
