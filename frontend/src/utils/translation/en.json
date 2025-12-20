@@ -1,13 +1,60 @@
 {
-  "menu": {
+  "header": {
+    "search": "Search",
+    "moreOptions": "More options"
+  },
+  "headerMenu": {
     "musicOn": "Music enabled",
     "musicOff": "Music disabled",
     "moreInfo": "More information"
   },
   "cart": {
     "title": "Cart",
-    "total": "Total",
+    "total": "Total: ",
     "clear": "Clear",
     "order": "Place Order"
+  },
+  "infoModal": {
+    "description": "Description",
+    "text": "This project is a personal experiment called Retro-Burgers, featuring visual themes inspired by synthwave/retrowave aesthetics. It uses Material UI, React, and modern UI concepts to create a fun and stylish experience."
+  },
+  "footer": {
+    "copyright": "© 2026 Retro-Burguers. All rights reserved."
+  },
+  "navigation": {
+    "burgers": "Burgers",
+    "snacks": "Snacks",
+    "desserts": "Desserts",
+    "drinks": "Drinks"
+  },
+  "menuHint": {
+    "title": "Quick tip!",
+    "text": {
+      "beforeTheme": "Here you can change the ",
+      "theme": "visual theme",
+      "middle": " of the app and enable the ",
+      "music": "retro music"
+    },
+    "button": "Got it!"
+  },
+  "orderSuccess": {
+    "title": "Order placed!",
+    "message": "Thank you for your preference. We are preparing everything with great care.",
+    "close": "Close"
+  },
+  "orderSummary": {
+    "title": "Order Summary",
+    "total": "Total:",
+    "edit": "Make changes",
+    "confirm": "Confirm Order"
+  },
+  "currency": {
+    "brl": "R$ ",
+    "usd": "$ "
+  },
+  "welcome": {
+    "title": "Welcome!",
+    "subtitle": "Explore our menu with a Retro 80s style!",
+    "cta": "Let’s go!"
   }
 }
