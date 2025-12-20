@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { useTheme } from 'utils/context';
+import { useLanguage } from 'utils';
 import * as styles from './MenuHint.styles';
 
 export const MenuHint = () => {
   const { currentColors } = useTheme();
+  const { t } = useLanguage();
   const [show, setShow] = useState(false);
   const [coords, setCoords] = useState<DOMRect | null>(null);
 
@@ -30,12 +32,14 @@ export const MenuHint = () => {
 
       <Box sx={styles.hintBox(coords, currentColors.secondary)}>
         <Typography variant="h6" sx={styles.title(currentColors.primary)}>
-          <strong>Dica rápida!</strong>
+          <strong>{t('menuHint.title')}</strong>
         </Typography>
 
         <Typography color="primary" sx={styles.text}>
-          Aqui você pode trocar o <strong>tema visual</strong> do app e ativar a{' '}
-          <strong>música retrô</strong> 🎵.
+          {t('menuHint.text.beforeTheme')}
+          <strong>{t('menuHint.text.theme')}</strong>
+          {t('menuHint.text.middle')}
+          <strong>{t('menuHint.text.music')}</strong> 🎵.
         </Typography>
 
         <Button
@@ -44,7 +48,7 @@ export const MenuHint = () => {
           sx={styles.button(currentColors.primary, currentColors.secondary)}
           onClick={() => setShow(false)}
         >
-          Entendi!
+          {t('menuHint.button')}
         </Button>
       </Box>
 

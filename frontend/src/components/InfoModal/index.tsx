@@ -1,4 +1,5 @@
 import { Modal, Box, Typography, useTheme } from '@mui/material';
+import { useLanguage } from 'utils';
 
 interface InfoModalProps {
   open: boolean;
@@ -7,6 +8,7 @@ interface InfoModalProps {
 
 export const InfoModal = ({ open, onClose }: InfoModalProps) => {
   const theme = useTheme();
+  const { t } = useLanguage();
 
   return (
     <Modal open={open} onClose={onClose}>
@@ -27,14 +29,10 @@ export const InfoModal = ({ open, onClose }: InfoModalProps) => {
         }}
       >
         <Typography variant="h6" mb={2}>
-          Descrição
+          {t('infoModal.description')}
         </Typography>
 
-        <Typography variant="body1">
-          Este projeto é um experimento pessoal chamado <strong>Retro-Burgers</strong>, com temas
-          visuais inspirados na estética synthwave/retrowave. Ele usa Material UI, React e conceitos
-          modernos de UI para criar uma experiência divertida e estilosa.
-        </Typography>
+        <Typography variant="body1">{t('infoModal.text')}</Typography>
       </Box>
     </Modal>
   );

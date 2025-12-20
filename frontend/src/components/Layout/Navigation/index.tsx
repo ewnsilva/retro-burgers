@@ -1,4 +1,5 @@
 import { Button, Box, useTheme, SxProps, Theme } from '@mui/material';
+import { useLanguage } from 'utils';
 
 interface ButtonStyleProps {
   category: number;
@@ -10,6 +11,7 @@ export const Navigation: React.FC<{
   category: number;
 }> = ({ setCategory, category }) => {
   const theme = useTheme();
+  const { t } = useLanguage();
 
   const buttonStyle =
     ({ category, selectedCategory }: ButtonStyleProps): SxProps<Theme> =>
@@ -46,16 +48,16 @@ export const Navigation: React.FC<{
         }}
       >
         <Button onClick={() => setCategory(0)} sx={buttonStyle({ category, selectedCategory: 0 })}>
-          Hamburguers
+          {t('navigation.burgers')}
         </Button>
         <Button onClick={() => setCategory(1)} sx={buttonStyle({ category, selectedCategory: 1 })}>
-          Salgados
+          {t('navigation.snacks')}
         </Button>
         <Button onClick={() => setCategory(2)} sx={buttonStyle({ category, selectedCategory: 2 })}>
-          Doces
+          {t('navigation.desserts')}
         </Button>
         <Button onClick={() => setCategory(3)} sx={buttonStyle({ category, selectedCategory: 3 })}>
-          Bebidas
+          {t('navigation.drinks')}
         </Button>
       </Box>
     </Box>

@@ -1,9 +1,15 @@
 import { useEffect, useState } from 'react';
 import { Box, Modal, Typography, Button } from '@mui/material';
 import { useTheme } from 'utils/context';
+import { useLanguage } from 'utils';
 
-export const WelcomeModal = ({ onFinish }: { onFinish: () => void }) => {
+type Props = {
+  onFinish: () => void;
+};
+
+export const WelcomeModal = ({ onFinish }: Props) => {
   const { currentColors } = useTheme();
+  const { t } = useLanguage();
 
   const [open, setOpen] = useState(false);
 
@@ -48,7 +54,7 @@ export const WelcomeModal = ({ onFinish }: { onFinish: () => void }) => {
             mb: 1,
           }}
         >
-          Bem-vindo!
+          {t('welcome.title')}
         </Typography>
 
         <Typography
@@ -58,7 +64,7 @@ export const WelcomeModal = ({ onFinish }: { onFinish: () => void }) => {
             mb: 3,
           }}
         >
-          Explore nosso cardápio ao estilo Retro Anos 80!
+          {t('welcome.subtitle')}
         </Typography>
 
         <Button
@@ -72,7 +78,7 @@ export const WelcomeModal = ({ onFinish }: { onFinish: () => void }) => {
             boxShadow: `0 0 10px ${currentColors.primary}`,
           }}
         >
-          Vamos lá!
+          {t('welcome.cta')}
         </Button>
 
         <style>

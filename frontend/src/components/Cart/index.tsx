@@ -13,10 +13,12 @@ import {
 import { Delete, Add, Remove, ShoppingCart } from '@mui/icons-material';
 
 import { OrderSummaryModal, OrderSuccessModal } from 'components';
+import { useLanguage } from 'utils';
 import { useCartLogic } from './Cart.logic';
 import * as styles from './Cart.styles';
 
 export const Cart = (): JSX.Element => {
+  const { t, language } = useLanguage();
   const {
     cartItems,
     isDrawerOpen,
@@ -44,7 +46,7 @@ export const Cart = (): JSX.Element => {
               <ShoppingCart sx={styles.iconTitle} />
             </Badge>
             <Typography ml={2} fontSize={{ xs: 18, sm: 20 }} color="primary">
-              Carrinho
+              {t('cart.title')}
             </Typography>
           </Box>
           <Typography onClick={closeDrawer} sx={{ cursor: 'pointer' }}>
@@ -85,7 +87,7 @@ export const Cart = (): JSX.Element => {
                 <Box ml={2} flexGrow={1}>
                   <Box display="flex" justifyContent="space-between">
                     <Typography color="textSecondary" fontWeight={600}>
-                      {item.name}
+                      {item.namePt}
                     </Typography>
                     {Number(item.quantity) > 1 && (
                       <IconButton
@@ -99,7 +101,8 @@ export const Cart = (): JSX.Element => {
                     )}
                   </Box>
                   <Typography color="textSecondary" fontSize={12}>
-                    R${item.price}
+                    {language === 'pt' ? 'R$ ' : 'U$ '}
+                    {item.pricePt}
                   </Typography>
                 </Box>
               </Box>
@@ -111,14 +114,15 @@ export const Cart = (): JSX.Element => {
 
         <Box sx={styles.footerContainer}>
           <Typography variant="subtitle1" color="primary" fontWeight={600} alignSelf="end">
-            Total: {updateValue()}
+            {t('cart.total')}
+            {updateValue()}
           </Typography>
           <Box display="flex" gap={1} mt={2} alignSelf="end">
             <Button variant="outlined" color="primary" onClick={clearCart}>
               Limpar
             </Button>
             <Button variant="contained" onClick={openSummary}>
-              Fazer Pedido
+              {t('cart.order')}
             </Button>
           </Box>
         </Box>

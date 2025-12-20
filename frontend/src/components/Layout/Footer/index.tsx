@@ -1,6 +1,9 @@
 import { Box, Typography } from '@mui/material';
+import { useLanguage } from 'utils';
 
 export const Footer = (): JSX.Element => {
+  const { t } = useLanguage();
+
   return (
     <Box
       component="footer"
@@ -17,7 +20,7 @@ export const Footer = (): JSX.Element => {
     >
       <Box display="flex" ml="2%" paddingY={1}>
         <Typography ml={1} sx={{ color: 'white' }}>
-          © 2024 Retro-Burguers. Todos os direitos reservados
+          {t('footer.copyright')}
         </Typography>
       </Box>
     </Box>

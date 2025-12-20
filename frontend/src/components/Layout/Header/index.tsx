@@ -12,9 +12,12 @@ import { Fastfood, Menu as MenuIcon, Search } from '@mui/icons-material';
 import { HeaderMenu, InfoModal } from 'components';
 import { useHeaderLogic } from './Header.logic';
 import * as styles from './Header.styles';
+import { useLanguage } from 'utils';
 
 export const Header = ({ setSearch }: { setSearch: (value: string) => void }): JSX.Element => {
   const theme = useTheme();
+  const { t } = useLanguage();
+
   const {
     themeType,
     allThemeColors,
@@ -38,9 +41,10 @@ export const Header = ({ setSearch }: { setSearch: (value: string) => void }): J
             Retro-Burgers
           </Typography>
         </Box>
+
         <Box display="flex" alignItems="center" gap={1} mr="5%">
           <TextField
-            label="Pesquisa"
+            label={t('header.search')}
             variant="outlined"
             color="primary"
             size="small"
@@ -54,7 +58,8 @@ export const Header = ({ setSearch }: { setSearch: (value: string) => void }): J
               ),
             }}
           />
-          <Tooltip title="Mais opções">
+
+          <Tooltip title={t('header.moreOptions')}>
             <IconButton id="menu-icon-button" onClick={handleMenuClick}>
               <MenuIcon />
             </IconButton>

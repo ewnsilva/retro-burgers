@@ -12,12 +12,14 @@ import {
 } from '@mui/material';
 import { Add, Delete, Remove, ShoppingCart } from '@mui/icons-material';
 
-import { IProductsList, useCart } from 'utils';
+import { IProductsList, useCart, useLanguage } from 'utils';
 import * as styles from './Product.styles';
 
 export const ProductCard: React.FC<IProductsList> = ({ item }) => {
-  const matchesXs = useMediaQuery('(max-width: 465px)');
   const theme = useTheme();
+  const matchesXs = useMediaQuery('(max-width: 465px)');
+
+  const { language, t } = useLanguage();
 
   const { addToCart, isInCart, incrementQuantity, decrementQuantity, cartItems } = useCart();
 
@@ -28,29 +30,34 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
 
   const quantity = useMemo(() => cartItem?.quantity ?? 0, [cartItem]);
 
+  const name = language === 'pt' ? item.namePt : item.nameEn;
+  const description = language === 'pt' ? item.descriptionPt : item.descriptionEn;
+  const price = language === 'pt' ? item.pricePt : item.priceEn;
+
   return (
     <Card sx={styles.card}>
       <CardContent>
         <Grid container display="flex" direction="column" spacing={1} sx={styles.cardContent}>
           <Grid>
             <Typography gutterBottom variant="h6" component="div" sx={styles.title}>
-              {item.name}
+              {name}
             </Typography>
           </Grid>
 
-          <CardMedia component="img" image={item.image} alt={item.name} sx={styles.image} />
+          <CardMedia component="img" image={item.image} alt={item.namePt} sx={styles.image} />
 
-          {item.description && (
+          {description && (
             <Grid>
               <Typography variant="body2" sx={styles.description}>
-                {item.description}
+                {description}
               </Typography>
             </Grid>
           )}
 
           <Grid display="flex" mt="auto" flexDirection="column">
             <Typography color="secondary" alignSelf="start">
-              R$ {item.price.toFixed(2)}
+              {language === 'pt' ? t('currency.brl') : t('currency.usd')}
+              {price.toFixed(2)}
             </Typography>
 
             <Grid
@@ -64,9 +71,7 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
                 <>
                   <Grid>
                     <IconButton
-                      onClick={() =>
-                        quantity === 1 ? decrementQuantity(item.id) : decrementQuantity(item.id)
-                      }
+                      onClick={() => decrementQuantity(item.id)}
                       color="error"
                       sx={styles.iconButton(theme)}
                     >

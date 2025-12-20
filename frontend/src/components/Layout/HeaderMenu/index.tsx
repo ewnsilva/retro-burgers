@@ -68,7 +68,7 @@ export const HeaderMenu = ({
           <MusicOff sx={{ color: 'background.default' }} />
         )}
         <Typography color="textSecondary" ml={1}>
-          {musicOn ? t('menu.musicOn') : t('menu.musicOff')}
+          {musicOn ? t('headerMenu.musicOn') : t('headerMenu.musicOff')}
         </Typography>
       </MenuItem>
 
@@ -90,7 +90,7 @@ export const HeaderMenu = ({
       >
         <Info sx={{ color: 'background.default' }} />
         <Typography color="textSecondary" ml={1}>
-          {t('menu.moreInfo')}
+          {t('headerMenu.moreInfo')}
         </Typography>
       </MenuItem>
     </Menu>
