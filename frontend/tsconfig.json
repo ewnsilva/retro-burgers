@@ -2,21 +2,32 @@
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "src/",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "ignoreDeprecations": "6.0",
-    "isolatedModules": true,
-    "jsx": "react-jsx",
-    "lib": ["dom", "dom.iterable", "esnext"],
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "components/*": ["src/components/*"],
+      "pages/*": ["src/pages/*"],
+      "utils/*": ["src/utils/*"],
+      "constants/*": ["src/utils/constants/*"],
+      "context/*": ["src/utils/context/*"],
+      "interfaces/*": ["src/utils/interfaces/*"],
+      "translation/*": ["src/utils/translation/*"]
+    },
+
+    "target": "es2017",
     "module": "esnext",
-    "moduleResolution": "node",
-    "noEmit": true,
-    "noFallthroughCasesInSwitch": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+
+    "jsx": "react-jsx",
+
     "strict": true,
-    "target": "es5"
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "public"]
+  "include": ["src"]
 }
