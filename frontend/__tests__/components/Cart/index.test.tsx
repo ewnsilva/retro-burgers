@@ -37,10 +37,12 @@ const baseCartLogicMock = {
   updateValue: vi.fn(() => 'R$ 20,00'),
 };
 
-vi.mock('components', () => ({
+vi.mock('../../../src/components/OrderSummaryModal', () => ({
   OrderSummaryModal: ({ open }: { open: boolean }) =>
     open ? <div data-testid="order-summary-modal" /> : null,
+}));
 
+vi.mock('../../../src/components/OrderSuccessModal', () => ({
   OrderSuccessModal: ({ open }: { open: boolean }) =>
     open ? <div data-testid="order-success-modal" /> : null,
 }));
