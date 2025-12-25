@@ -1,6 +1,8 @@
 import React, { createContext, ReactNode, useMemo, useState } from 'react';
 
-import { formatPrice, IProducts, useLanguage } from 'utils';
+import { useLanguage } from 'utils/hooks/useLanguage';
+import { formatPrice } from 'utils/constants/formatPrice';
+import { IProducts } from 'utils/interfaces';
 
 interface CartProductsProps extends IProducts {
   totalPrice?: number;
@@ -43,11 +45,11 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const addToCart = (item: CartProductsProps) => {
     const existingItem = cartItems.find(cartItem => cartItem.id === item.id);
-    if (!existingItem) {
+    if (existingItem) {
+      updatePrice(item.id, existingItem.quantity ? existingItem.quantity + 1 : 1);
+    } else {
       const newItem = { ...item, quantity: 1, totalPrice: item.pricePt };
       setCartItems(prevState => [...prevState, newItem]);
-    } else {
-      updatePrice(item.id, existingItem.quantity ? existingItem.quantity + 1 : 1);
     }
   };
 
@@ -67,7 +69,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const incrementQuantity = (id: number): void => {
     const existingItem = cartItems.find(item => item.id === id);
-    if (existingItem && existingItem.quantity !== undefined) {
+    if (existingItem?.quantity !== undefined) {
       updatePrice(id, existingItem.quantity + 1);
     }
   };

@@ -8,7 +8,9 @@ import {
   Box,
   Divider,
 } from '@mui/material';
-import { useCart, useLanguage } from 'utils';
+
+import { useCart } from 'utils/hooks/products/useCart';
+import { useLanguage } from 'utils/hooks/useLanguage';
 
 type Props = {
   open: boolean;

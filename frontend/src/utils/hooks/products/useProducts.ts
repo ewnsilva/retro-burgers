@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-import { IProducts, useAxios } from 'utils';
+import { useAxios } from 'utils/hooks/useAxios';
+import { IProducts } from 'utils/interfaces';
 
 export const useProducts = () => {
   const { api } = useAxios();

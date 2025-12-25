@@ -1,5 +1,5 @@
 import { Button, Box, useTheme, SxProps, Theme } from '@mui/material';
-import { useLanguage } from 'utils';
+import { useLanguage } from 'utils/hooks/useLanguage';
 
 interface ButtonStyleProps {
   category: number;

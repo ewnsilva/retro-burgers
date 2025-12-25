@@ -1,6 +1,6 @@
 import { Box, Menu, MenuItem, Typography } from '@mui/material';
 import { MusicNote, MusicOff, Info, Check, Language } from '@mui/icons-material';
-import { useLanguage } from 'utils';
+import { useLanguage } from 'utils/hooks/useLanguage';
 
 type HeaderMenuProps = {
   allThemeColors: Record<string, { primary: string; secondary: string }>;

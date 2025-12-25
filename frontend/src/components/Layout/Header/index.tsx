@@ -9,10 +9,11 @@ import {
 } from '@mui/material';
 import { Fastfood, Menu as MenuIcon, Search } from '@mui/icons-material';
 
-import { HeaderMenu, InfoModal } from 'components';
+import { InfoModal } from 'components/InfoModal';
+import { HeaderMenu } from 'components/Layout';
 import { useHeaderLogic } from './Header.logic';
 import * as styles from './Header.styles';
-import { useLanguage } from 'utils';
+import { useLanguage } from 'utils/hooks/useLanguage';
 
 export const Header = ({ setSearch }: { setSearch: (value: string) => void }): JSX.Element => {
   const theme = useTheme();

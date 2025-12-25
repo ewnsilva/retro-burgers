@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useCart } from 'utils';
+import { useCart } from 'utils/hooks/products/useCart';
 
 export const useCartLogic = () => {
   const {

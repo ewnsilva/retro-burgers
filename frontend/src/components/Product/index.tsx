@@ -12,7 +12,10 @@ import {
 } from '@mui/material';
 import { Add, Delete, Remove, ShoppingCart } from '@mui/icons-material';
 
-import { IProductsList, useCart, useLanguage } from 'utils';
+import { useLanguage } from 'utils/hooks/useLanguage';
+import { useCart } from 'utils/hooks/products/useCart';
+import { IProductsList } from 'utils/interfaces';
+
 import * as styles from './Product.styles';
 
 export const ProductCard: React.FC<IProductsList> = ({ item }) => {

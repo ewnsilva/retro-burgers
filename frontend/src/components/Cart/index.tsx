@@ -12,8 +12,9 @@ import {
 } from '@mui/material';
 import { Delete, Add, Remove, ShoppingCart } from '@mui/icons-material';
 
-import { OrderSummaryModal, OrderSuccessModal } from 'components';
-import { useLanguage } from 'utils';
+import { OrderSuccessModal } from 'components/OrderSuccessModal';
+import { OrderSummaryModal } from 'components/OrderSummaryModal';
+import { useLanguage } from 'utils/hooks/useLanguage';
 import { useCartLogic } from './Cart.logic';
 import * as styles from './Cart.styles';
 

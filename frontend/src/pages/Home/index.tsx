@@ -2,17 +2,17 @@ import { useEffect, useState } from 'react';
 
 import { Box, Grid2 as Grid, Grow } from '@mui/material';
 
-import {
-  Cart,
-  CartButton,
-  Footer,
-  Header,
-  MenuHint,
-  Navigation,
-  ProductCard,
-  WelcomeModal,
-} from 'components';
-import { useCart, useProducts, IProducts, useLanguage } from 'utils';
+import { Cart } from 'components/Cart';
+import { CartButton } from 'components/CartButton';
+import { Footer, Header, Navigation } from 'components/Layout';
+import { MenuHint } from 'components/MenuHint';
+import { ProductCard } from 'components/Product';
+import { WelcomeModal } from 'components/WelcomeModal';
+
+import { useLanguage } from 'utils/hooks/useLanguage';
+import { useCart } from 'utils/hooks/products/useCart';
+import { useProducts } from 'utils/hooks/products/useProducts';
+import { IProducts } from 'utils/interfaces';
 
 export const Home = () => {
   const { totalQuantity } = useCart();
