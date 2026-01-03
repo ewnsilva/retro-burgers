@@ -4,7 +4,7 @@ import type { TFunction } from 'i18next';
 
 import { InfoModal } from '../../../src/components/InfoModal';
 
-vi.mock('utils', () => ({
+vi.mock('../../../src/utils/hooks/useLanguage', () => ({
   useLanguage: vi.fn(),
 }));
 
@@ -28,9 +28,9 @@ describe('InfoModal component', () => {
   beforeEach(async () => {
     vi.clearAllMocks();
 
-    const utils = await import('../../../src/utils');
+    const hooks = await import('../../../src/utils/hooks/useLanguage');
 
-    vi.mocked(utils.useLanguage).mockReturnValue({
+    vi.mocked(hooks.useLanguage).mockReturnValue({
       t: ((key: string) => key) as unknown as TFunction<'translation'>,
       language: 'pt',
       changeLanguage: vi.fn(),

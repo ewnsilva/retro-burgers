@@ -28,7 +28,7 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "noFallthroughCasesInSwitch": true,
-    "types": ["node", "jest", "@testing-library/jest-dom"]
+    "types": ["node", "@testing-library/jest-dom"]
   },
   "include": ["src"]
 }

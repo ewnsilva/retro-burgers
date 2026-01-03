@@ -3,14 +3,14 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import type { TFunction } from 'i18next';
 
 import { MenuHint } from '../../../src/components/MenuHint';
-import * as themeContext from '../../../src/utils/context';
+import * as themeContext from '../../../src/utils/context/Theme';
 import { useLanguage } from '../../../src/utils/hooks/useLanguage';
 
 vi.mock('../../../src/utils/hooks/useLanguage', () => ({
   useLanguage: vi.fn(),
 }));
 
-vi.mock('../../../src/utils/context', () => ({
+vi.mock('../../../src/utils/context/Theme', () => ({
   useTheme: vi.fn(),
 }));
 

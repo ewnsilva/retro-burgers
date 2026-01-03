@@ -3,9 +3,9 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import type { TFunction } from 'i18next';
 
 import { Footer } from '../../../../src/components/Layout/Footer';
-import * as utils from '../../../../src/utils';
+import { useLanguage } from '../../../../src/utils/hooks/useLanguage';
 
-vi.mock('../../../../src/utils', () => ({
+vi.mock('../../../../src/utils/hooks/useLanguage', () => ({
   useLanguage: vi.fn(),
 }));
 
@@ -13,7 +13,7 @@ describe('Footer component', () => {
   beforeEach(() => {
     vi.clearAllMocks();
 
-    vi.mocked(utils.useLanguage).mockReturnValue({
+    vi.mocked(useLanguage).mockReturnValue({
       t: ((key: string) => key) as unknown as TFunction<'translation'>,
       language: 'pt',
       changeLanguage: vi.fn(),

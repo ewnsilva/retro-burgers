@@ -4,13 +4,13 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { WelcomeModal } from '../../../src/components/WelcomeModal';
 
 import { useLanguage } from '../../../src/utils/hooks/useLanguage';
-import { useTheme } from '../../../src/utils/context';
+import { useTheme } from '../../../src/utils/context/Theme';
 
 vi.mock('../../../src/utils/hooks/useLanguage', () => ({
   useLanguage: vi.fn(),
 }));
 
-vi.mock('../../../src/utils/context', () => ({
+vi.mock('../../../src/utils/context/Theme', () => ({
   useTheme: vi.fn(),
 }));
 

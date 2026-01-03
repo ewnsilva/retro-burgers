@@ -3,11 +3,15 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 
 import { OrderSummaryModal } from '../../../src/components/OrderSummaryModal';
 
-import { useLanguage, useCart } from '../../../src/utils/hooks';
+import { useLanguage } from '../../../src/utils/hooks/useLanguage';
+import { useCart } from '../../../src/utils/hooks/products/useCart';
 
-vi.mock('../../../src/utils/hooks', () => ({
-  useCart: vi.fn(),
+vi.mock('../../../src/utils/hooks/useLanguage', () => ({
   useLanguage: vi.fn(),
+}));
+
+vi.mock('../../../src/utils/hooks/products/useCart', () => ({
+  useCart: vi.fn(),
 }));
 
 const mockCartItems = [
