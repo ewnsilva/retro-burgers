@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
 import { useAxios } from 'utils/hooks/useAxios';
-import { IProducts } from 'utils/interfaces';
+import { IAdditional, IProducts } from 'utils/interfaces';
 
 export const useProducts = () => {
   const { api } = useAxios();
+  const [additionals, setAdditionals] = useState<IAdditional[]>([{} as IAdditional]);
   const [products, setProducts] = useState<IProducts[]>([{} as IProducts]);
 
   const fetchProducts = (category: number) => {
@@ -17,5 +18,15 @@ export const useProducts = () => {
       .catch(err => console.log(err.response));
   };
 
-  return { fetchProducts, products };
+  const fetchAdditionals = () => {
+    const url = `${process.env.REACT_APP_API_URL}/additionals`;
+    api
+      .get(url)
+      .then(({ data }) => {
+        setAdditionals(data);
+      })
+      .catch(err => console.log(err.response));
+  };
+
+  return { fetchProducts, fetchAdditionals, additionals, products };
 };
