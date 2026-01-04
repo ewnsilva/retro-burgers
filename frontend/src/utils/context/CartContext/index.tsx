@@ -2,11 +2,13 @@ import React, { createContext, ReactNode, useMemo, useState } from 'react';
 
 import { useLanguage } from 'utils/hooks/useLanguage';
 import { formatPrice } from 'utils/constants/formatPrice';
-import { IProducts } from 'utils/interfaces';
+import { IAdditional, IProducts } from 'utils/interfaces';
 
 interface CartProductsProps extends IProducts {
   totalPrice?: number;
   quantity?: number;
+  isCustom?: boolean;
+  additionals?: IAdditional[];
 }
 
 export interface CartContextProps {
@@ -37,19 +39,49 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const updatePrice = (id: number, quantity: number): void => {
     setCartItems(prevState =>
-      prevState.map(item =>
-        item.id === id ? { ...item, quantity, totalPrice: quantity * item.pricePt } : item
-      )
+      prevState.map(item => {
+        if (item.id !== id) return item;
+
+        const basePrice = language === 'pt' ? item.pricePt : item.priceEn;
+        const additionalsPrice =
+          item.isCustom && item.additionals
+            ? item.additionals.reduce((sum, add) => {
+                const price = language === 'pt' ? add.pricePt : add.priceEn;
+                if (add.type === 'quantity') {
+                  return sum + price * (add.quantity ?? 0);
+                }
+                return sum + price;
+              }, 0)
+            : 0;
+
+        return {
+          ...item,
+          quantity,
+          totalPrice: quantity * (basePrice + additionalsPrice),
+        };
+      })
     );
   };
 
   const addToCart = (item: CartProductsProps) => {
+    if (item.isCustom) {
+      setCartItems(prev => [...prev, item]);
+      return;
+    }
+
     const existingItem = cartItems.find(cartItem => cartItem.id === item.id);
+    const price = language === 'pt' ? item.pricePt : item.priceEn;
+
     if (existingItem) {
-      updatePrice(item.id, existingItem.quantity ? existingItem.quantity + 1 : 1);
+      updatePrice(item.id, (existingItem.quantity ?? 0) + 1);
     } else {
-      const newItem = { ...item, quantity: 1, totalPrice: item.pricePt };
-      setCartItems(prevState => [...prevState, newItem]);
+      const newItem = {
+        ...item,
+        quantity: 1,
+        totalPrice: price,
+        isCustom: false,
+      };
+      setCartItems(prev => [...prev, newItem]);
     }
   };
 
