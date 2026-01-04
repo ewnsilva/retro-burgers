@@ -1,0 +1,82 @@
+[
+  {
+    "id": 0,
+    "namePt": "Carne de Hambúrguer",
+    "pricePt": 6.99,
+    "nameEn": "Beef Patty",
+    "priceEn": 1.4,
+    "type": "quantity"
+  },
+  {
+    "id": 3,
+    "namePt": "Bacon",
+    "pricePt": 4.99,
+    "nameEn": "Bacon",
+    "priceEn": 1,
+    "type": "quantity"
+  },
+  {
+    "id": 4,
+    "namePt": "Pepperoni",
+    "pricePt": 4.49,
+    "nameEn": "Pepperoni",
+    "priceEn": 0.9,
+    "type": "quantity"
+  },
+  {
+    "id": 9,
+    "namePt": "Ovo",
+    "pricePt": 2.99,
+    "nameEn": "Egg",
+    "priceEn": 0.6,
+    "type": "quantity"
+  },
+  {
+    "id": 1,
+    "namePt": "Queijo Cheddar",
+    "pricePt": 3.49,
+    "nameEn": "Cheddar Cheese",
+    "priceEn": 0.7,
+    "type": "boolean"
+  },
+  {
+    "id": 2,
+    "namePt": "Queijo Suíço",
+    "pricePt": 3.99,
+    "nameEn": "Swiss Cheese",
+    "priceEn": 0.8,
+    "type": "boolean"
+  },
+  {
+    "id": 5,
+    "namePt": "Alface",
+    "pricePt": 1.99,
+    "nameEn": "Lettuce",
+    "priceEn": 0.4,
+    "type": "boolean"
+  },
+  {
+    "id": 6,
+    "namePt": "Tomate",
+    "pricePt": 1.99,
+    "nameEn": "Tomato",
+    "priceEn": 0.4,
+    "type": "boolean"
+  },
+  {
+    "id": 7,
+    "namePt": "Cebola Caramelizada",
+    "pricePt": 2.99,
+    "nameEn": "Caramelized Onion",
+    "priceEn": 0.6,
+    "type": "boolean"
+  },
+  {
+    "id": 8,
+    "namePt": "Picles",
+    "pricePt": 1.79,
+    "nameEn": "Pickles",
+    "priceEn": 0.35,
+    "type": "boolean"
+  }
+]
