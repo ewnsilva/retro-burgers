@@ -14,6 +14,11 @@
     "clear": "Limpar",
     "order": "Fazer Pedido"
   },
+  "costumizeBurgerModal": {
+    "costumizeTitle": "Costumizar Adicionais",
+    "add": "Adicionar",
+    "cancel": "Cancelar"
+  },
   "infoModal": {
     "description": "Descrição",
     "text": "Este projeto é um experimento pessoal chamado Retro-Burgers, com temas visuais inspirados na estética synthwave/retrowave. Ele usa Material UI, React e conceitos modernos de UI para criar uma experiência divertida e estilosa."
