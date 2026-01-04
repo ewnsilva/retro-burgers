@@ -7,6 +7,7 @@ import {
   Typography,
   Box,
   Divider,
+  Chip,
 } from '@mui/material';
 
 import { useCart } from 'utils/hooks/products/useCart';
@@ -22,34 +23,45 @@ export const OrderSummaryModal = ({ open, onClose, onConfirm }: Props) => {
   const { language, t } = useLanguage();
   const { cartItems, updateValue } = useCart();
 
+  const renderAdditionals = (item: any) => {
+    if (!item.isCustom || !item.additionals?.length) return null;
+
+    return (
+      <Box mt={0.5} ml={1}>
+        {item.additionals.map((add: any) => (
+          <Typography key={add.id} variant="caption" color="textSecondary" display="block">
+            • {language === 'pt' ? add.namePt : add.nameEn}
+            {add.type === 'quantity' && add.quantity ? ` x${add.quantity}` : ''}
+          </Typography>
+        ))}
+      </Box>
+    );
+  };
+
   return (
-    <Dialog
-      open={open}
-      onClose={onClose}
-      maxWidth="sm"
-      fullWidth
-      sx={{
-        '& .MuiPaper-root': {
-          backgroundColor: 'background.default',
-        },
-      }}
-    >
+    <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
       <DialogTitle variant="h5" fontWeight={700} color="primary">
         {t('orderSummary.title')}
       </DialogTitle>
 
       <DialogContent dividers>
         {cartItems.map(item => (
-          <Box key={item.id} display="flex" justifyContent="space-between" mb={1}>
-            <Typography fontWeight={600} color="info">
-              {language === 'pt' ? item.namePt : item.nameEn} x{item.quantity}
-            </Typography>
-            <Typography color="info">
-              {language === 'pt' ? t('currency.brl') : t('currency.usd')}
-              {language === 'pt'
-                ? (Number(item.pricePt) * Number(item.quantity)).toFixed(2)
-                : (Number(item.priceEn) * Number(item.quantity)).toFixed(2)}
-            </Typography>
+          <Box key={item.id} mb={1}>
+            <Box display="flex" justifyContent="space-between">
+              <Typography fontWeight={600} color="textSecondary" alignItems="center">
+                {language === 'pt' ? item.namePt : item.nameEn} x{item.quantity}{' '}
+                {item.isCustom && (
+                  <Chip label="Custom" size="small" color="secondary" sx={{ ml: 0.5 }} />
+                )}
+              </Typography>
+
+              <Typography color="textSecondary">
+                {language === 'pt' ? t('currency.brl') : t('currency.usd')}
+                {Number(item.totalPrice).toFixed(2)}
+              </Typography>
+            </Box>
+
+            {renderAdditionals(item)}
           </Box>
         ))}
 
@@ -60,12 +72,11 @@ export const OrderSummaryModal = ({ open, onClose, onConfirm }: Props) => {
         </Typography>
       </DialogContent>
 
-      <DialogActions sx={{ px: 3, py: 2 }}>
-        <Button onClick={onClose} color="secondary" variant="outlined">
+      <DialogActions>
+        <Button onClick={onClose} variant="outlined">
           {t('orderSummary.edit')}
         </Button>
-
-        <Button onClick={onConfirm} variant="contained" color="primary">
+        <Button onClick={onConfirm} variant="contained">
           {t('orderSummary.confirm')}
         </Button>
       </DialogActions>
