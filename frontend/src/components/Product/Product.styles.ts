@@ -47,11 +47,26 @@ export const iconButton = (theme: Theme): SxProps<Theme> => ({
   },
 });
 
+export const buttonBox = (fullWidth: boolean): SxProps<Theme> => ({
+  display: 'flex',
+  alignItems: 'flex-end',
+  columnGap: 2,
+  width: fullWidth ? '100%' : 'auto',
+});
+
 export const addButton = (fullWidth: boolean): SxProps<Theme> => ({
   backgroundColor: 'secondary.main',
   border: '1px solid white',
   justifySelf: 'flex-end',
   width: fullWidth ? '100%' : 'auto',
+  ':hover': {
+    backgroundColor: 'primary.main',
+  },
+});
+
+export const personalizeButton = (fullWidth: boolean): SxProps<Theme> => ({
+  minWidth: '50px',
+  width: fullWidth ? '30%' : 'auto',
   ':hover': {
     backgroundColor: 'primary.main',
   },

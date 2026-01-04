@@ -9,8 +9,9 @@ import {
   Typography,
   useTheme,
   useMediaQuery,
+  Box,
 } from '@mui/material';
-import { Add, Delete, Remove, ShoppingCart } from '@mui/icons-material';
+import { Add, Delete, LunchDining, Remove, ShoppingCart } from '@mui/icons-material';
 
 import { useLanguage } from 'utils/hooks/useLanguage';
 import { useCart } from 'utils/hooks/products/useCart';
@@ -18,7 +19,12 @@ import { IProductsList } from 'utils/interfaces';
 
 import * as styles from './Product.styles';
 
-export const ProductCard: React.FC<IProductsList> = ({ item }) => {
+export const ProductCard: React.FC<IProductsList> = ({
+  item,
+  category,
+  setCustomizeOpen,
+  setSelectedProduct,
+}) => {
   const theme = useTheme();
   const matchesXs = useMediaQuery('(max-width: 465px)');
 
@@ -60,7 +66,7 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
           <Grid display="flex" mt="auto" flexDirection="column">
             <Typography color="secondary" alignSelf="start">
               {language === 'pt' ? t('currency.brl') : t('currency.usd')}
-              {price.toFixed(2)}
+              {Number(price).toFixed(2)}
             </Typography>
 
             <Grid
@@ -97,13 +103,30 @@ export const ProductCard: React.FC<IProductsList> = ({ item }) => {
                   </Grid>
                 </>
               ) : (
-                <Button
-                  variant="contained"
-                  onClick={() => addToCart(item)}
-                  sx={styles.addButton(matchesXs)}
-                >
-                  <ShoppingCart color="inherit" />
-                </Button>
+                <Box sx={styles.buttonBox(matchesXs)}>
+                  {category === 0 && (
+                    <Button
+                      variant="outlined"
+                      onClick={() => {
+                        setSelectedProduct(item);
+                        setCustomizeOpen(true);
+                      }}
+                      size={matchesXs ? 'medium' : 'small'}
+                      color="inherit"
+                      sx={styles.personalizeButton(matchesXs)}
+                    >
+                      <LunchDining />
+                    </Button>
+                  )}
+                  <Button
+                    variant="contained"
+                    onClick={() => addToCart(item)}
+                    size="medium"
+                    sx={styles.addButton(matchesXs)}
+                  >
+                    <ShoppingCart color="inherit" />
+                  </Button>
+                </Box>
               )}
             </Grid>
           </Grid>

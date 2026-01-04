@@ -12,7 +12,7 @@ const synthwaveOptions: ThemeOptions = {
     },
     info: {
       main: '#fff4e0',
-      contrastText: 'black',
+      contrastText: '#220c3f',
     },
     background: {
       default: '#220c3f',
@@ -39,7 +39,7 @@ const retrowaveOptions: ThemeOptions = {
     },
     info: {
       main: '#e5f9ff',
-      contrastText: 'black',
+      contrastText: '#0c373f',
     },
     background: {
       default: '#0c373f',
@@ -66,7 +66,7 @@ const darkwaveOptions: ThemeOptions = {
     },
     info: {
       main: '#e5e5e5',
-      contrastText: 'black',
+      contrastText: '#3f0c2d',
     },
     background: {
       default: '#3f0c2d',
