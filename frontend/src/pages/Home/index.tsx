@@ -4,6 +4,7 @@ import { Box, Grid2 as Grid, Grow } from '@mui/material';
 
 import { Cart } from 'components/Cart';
 import { CartButton } from 'components/CartButton';
+import { CustomizeBurgerModal } from 'components/CostumizeBurgerModal';
 import { Footer, Header, Navigation } from 'components/Layout';
 import { MenuHint } from 'components/MenuHint';
 import { ProductCard } from 'components/Product';
@@ -15,16 +16,19 @@ import { useProducts } from 'utils/hooks/products/useProducts';
 import { IProducts } from 'utils/interfaces';
 
 export const Home = () => {
-  const { totalQuantity } = useCart();
-  const { products, fetchProducts } = useProducts();
+  const { totalQuantity, addToCart } = useCart();
+  const { products, fetchProducts, additionals, fetchAdditionals } = useProducts();
   const { language } = useLanguage();
 
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState(0);
   const [showHint, setShowHint] = useState(false);
+  const [customizeOpen, setCustomizeOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<IProducts>({} as IProducts);
 
   useEffect(() => {
     fetchProducts(category);
+    fetchAdditionals();
   }, [category]);
 
   const filteredProducts = products.filter((product: IProducts) => {
@@ -55,12 +59,29 @@ export const Home = () => {
         {filteredProducts.map((item, index) => (
           <Grow in timeout={400 + index * 80} key={item.id}>
             <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-              <ProductCard key={item.id} item={item} />
+              <ProductCard
+                key={item.id}
+                category={category}
+                item={item}
+                setCustomizeOpen={setCustomizeOpen}
+                setSelectedProduct={setSelectedProduct}
+              />
             </Grid>
           </Grow>
         ))}
       </Grid>
       <Footer />
+
+      <CustomizeBurgerModal
+        open={customizeOpen}
+        product={selectedProduct}
+        additionals={additionals}
+        onClose={() => {
+          fetchAdditionals();
+          setCustomizeOpen(false);
+        }}
+        onConfirm={addToCart}
+      />
     </Box>
   );
 };
