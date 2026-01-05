@@ -20,8 +20,17 @@ const mockCartItems = [
     namePt: 'Hambúrguer',
     nameEn: 'Burger',
     quantity: 2,
-    pricePt: 10,
-    priceEn: 2,
+    totalPrice: 20,
+    isCustom: true,
+    additionals: [
+      {
+        id: 10,
+        namePt: 'Queijo extra',
+        nameEn: 'Extra cheese',
+        type: 'quantity',
+        quantity: 1,
+      },
+    ],
   },
 ];
 
@@ -35,7 +44,6 @@ describe('OrderSummaryModal component', () => {
     vi.mocked(useLanguage).mockReturnValue({
       language: 'pt',
       t: (key: string) => key,
-      changeLanguage: vi.fn(),
     } as any);
 
     vi.mocked(useCart).mockReturnValue({
@@ -45,20 +53,28 @@ describe('OrderSummaryModal component', () => {
   });
 
   it('renders the modal when open is true', () => {
-    render(<OrderSummaryModal open={true} onClose={onCloseMock} onConfirm={onConfirmMock} />);
+    render(<OrderSummaryModal open onClose={onCloseMock} onConfirm={onConfirmMock} />);
 
     expect(screen.getByText('orderSummary.title')).toBeTruthy();
     expect(screen.getByText('Hambúrguer x2')).toBeTruthy();
     expect(screen.getByText('currency.brl20.00')).toBeTruthy();
+    expect(screen.getByText(/orderSummary\.total\s*R\$\s*20\.00/)).toBeTruthy();
+  });
 
-    expect(screen.getByText(/orderSummary\.total/)).toBeTruthy();
+  it('renders custom chip when item is custom', () => {
+    render(<OrderSummaryModal open onClose={onCloseMock} onConfirm={onConfirmMock} />);
 
-    expect(screen.getByText('orderSummary.edit')).toBeTruthy();
-    expect(screen.getByText('orderSummary.confirm')).toBeTruthy();
+    expect(screen.getByText('Custom')).toBeTruthy();
+  });
+
+  it('renders additionals when item is custom', () => {
+    render(<OrderSummaryModal open onClose={onCloseMock} onConfirm={onConfirmMock} />);
+
+    expect(screen.getByText('• Queijo extra x1')).toBeTruthy();
   });
 
   it('calls onClose when edit button is clicked', () => {
-    render(<OrderSummaryModal open={true} onClose={onCloseMock} onConfirm={onConfirmMock} />);
+    render(<OrderSummaryModal open onClose={onCloseMock} onConfirm={onConfirmMock} />);
 
     fireEvent.click(screen.getByText('orderSummary.edit'));
 
@@ -66,23 +82,23 @@ describe('OrderSummaryModal component', () => {
   });
 
   it('calls onConfirm when confirm button is clicked', () => {
-    render(<OrderSummaryModal open={true} onClose={onCloseMock} onConfirm={onConfirmMock} />);
+    render(<OrderSummaryModal open onClose={onCloseMock} onConfirm={onConfirmMock} />);
 
     fireEvent.click(screen.getByText('orderSummary.confirm'));
 
     expect(onConfirmMock).toHaveBeenCalledTimes(1);
   });
 
-  it('renders product name and price in English when language is en', () => {
+  it('renders product name, additionals and price in English', () => {
     vi.mocked(useLanguage).mockReturnValueOnce({
       language: 'en',
       t: (key: string) => key,
-      changeLanguage: vi.fn(),
     } as any);
 
-    render(<OrderSummaryModal open={true} onClose={onCloseMock} onConfirm={onConfirmMock} />);
+    render(<OrderSummaryModal open onClose={onCloseMock} onConfirm={onConfirmMock} />);
 
     expect(screen.getByText('Burger x2')).toBeTruthy();
-    expect(screen.getByText('currency.usd4.00')).toBeTruthy();
+    expect(screen.getByText('• Extra cheese x1')).toBeTruthy();
+    expect(screen.getByText('currency.usd20.00')).toBeTruthy();
   });
 });

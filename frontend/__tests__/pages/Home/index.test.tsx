@@ -5,10 +5,13 @@ import React from 'react';
 import { Home } from '../../../src/pages/Home';
 
 const fetchProductsMock = vi.fn();
+const fetchAdditionalsMock = vi.fn();
+const addToCartMock = vi.fn();
 
 vi.mock('../../../src/utils/hooks/products/useCart', () => ({
   useCart: () => ({
     totalQuantity: 0,
+    addToCart: addToCartMock,
   }),
 }));
 
@@ -26,7 +29,9 @@ vi.mock('../../../src/utils/hooks/products/useProducts', () => ({
         nameEn: 'Fries',
       },
     ],
+    additionals: [],
     fetchProducts: fetchProductsMock,
+    fetchAdditionals: fetchAdditionalsMock,
   }),
 }));
 
@@ -80,6 +85,11 @@ vi.mock('../../../src/components/WelcomeModal', () => ({
   ),
 }));
 
+vi.mock('../../../src/components/CostumizeBurgerModal', () => ({
+  CustomizeBurgerModal: ({ open }: { open: boolean }) =>
+    open ? <div data-testid="customize-modal" /> : null,
+}));
+
 describe('Home page', () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -94,10 +104,11 @@ describe('Home page', () => {
     expect(screen.getByTestId('navigation')).toBeTruthy();
   });
 
-  it('calls fetchProducts on mount with initial category', () => {
+  it('calls fetchProducts and fetchAdditionals on mount with initial category', () => {
     render(<Home />);
 
     expect(fetchProductsMock).toHaveBeenCalledWith(0);
+    expect(fetchAdditionalsMock).toHaveBeenCalled();
   });
 
   it('calls fetchProducts again when category changes', () => {
@@ -129,6 +140,6 @@ describe('Home page', () => {
   it('does not render CartButton when cart is empty', () => {
     render(<Home />);
 
-    expect(screen.queryByTestId('cart-button')).toBeNull();
+    expect(screen.queryByTestId('cart-button')).not.toBeTruthy();
   });
 });
