@@ -51,7 +51,7 @@ vi.mock('../../../src/components/Layout/Header', () => ({
 
 vi.mock('../../../src/components/Layout/Navigation', () => ({
   Navigation: ({ setCategory }: any) => (
-    <button data-testid="navigation" onClick={() => setCategory(1)}>
+    <button data-testid="navigation" onClick={() => setCategory(2)}>
       navigation
     </button>
   ),
@@ -107,7 +107,7 @@ describe('Home page', () => {
   it('calls fetchProducts and fetchAdditionals on mount with initial category', () => {
     render(<Home />);
 
-    expect(fetchProductsMock).toHaveBeenCalledWith(0);
+    expect(fetchProductsMock).toHaveBeenCalledWith(1);
     expect(fetchAdditionalsMock).toHaveBeenCalled();
   });
 
