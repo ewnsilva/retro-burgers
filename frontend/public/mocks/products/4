@@ -1,7 +1,7 @@
 [
   {
     "id": 24,
-    "image": "mocks/images/DrinkExample.jpg",
+    "image": "./mocks/images/DrinkExample.jpg",
     "namePt": "Coca-Cola",
     "descriptionPt": "",
     "pricePt": 7.99,
@@ -11,7 +11,7 @@
   },
   {
     "id": 25,
-    "image": "mocks/images/DrinkExample.jpg",
+    "image": "./mocks/images/DrinkExample.jpg",
     "namePt": "Pepsi",
     "descriptionPt": "",
     "pricePt": 6.99,
@@ -21,7 +21,7 @@
   },
   {
     "id": 26,
-    "image": "mocks/images/DrinkExample.jpg",
+    "image": "./mocks/images/DrinkExample.jpg",
     "namePt": "Guaraná",
     "descriptionPt": "",
     "pricePt": 6.49,
@@ -31,7 +31,7 @@
   },
   {
     "id": 27,
-    "image": "mocks/images/DrinkExample.jpg",
+    "image": "./mocks/images/DrinkExample.jpg",
     "namePt": "Água com Gás",
     "descriptionPt": "",
     "pricePt": 5.9,
@@ -41,7 +41,7 @@
   },
   {
     "id": 28,
-    "image": "mocks/images/DrinkExample.jpg",
+    "image": "./mocks/images/DrinkExample.jpg",
     "namePt": "Água Mineral",
     "descriptionPt": "",
     "pricePt": 5,
@@ -51,7 +51,7 @@
   },
   {
     "id": 29,
-    "image": "mocks/images/DrinkExample.jpg",
+    "image": "./mocks/images/DrinkExample.jpg",
     "namePt": "Suco de Laranja",
     "descriptionPt": "",
     "pricePt": 10.99,
@@ -61,7 +61,7 @@
   },
   {
     "id": 30,
-    "image": "mocks/images/DrinkExample.jpg",
+    "image": "./mocks/images/DrinkExample.jpg",
     "namePt": "Suco de Uva",
     "descriptionPt": "",
     "pricePt": 10.99,
@@ -71,7 +71,7 @@
   },
   {
     "id": 31,
-    "image": "mocks/images/DrinkExample.jpg",
+    "image": "./mocks/images/DrinkExample.jpg",
     "namePt": "Chá Gelado",
     "descriptionPt": "",
     "pricePt": 7.99,

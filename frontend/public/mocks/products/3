@@ -1,7 +1,7 @@
 [
   {
     "id": 16,
-    "image": "mocks/images/DessertExample.jpg",
+    "image": "./mocks/images/DessertExample.jpg",
     "namePt": "Brigadeiro",
     "descriptionPt": "Doce brasileiro de chocolate coberto com granulado.",
     "pricePt": 5.49,
@@ -11,7 +11,7 @@
   },
   {
     "id": 17,
-    "image": "mocks/images/DessertExample.jpg",
+    "image": "./mocks/images/DessertExample.jpg",
     "namePt": "Beijinho",
     "descriptionPt": "Doce de coco coberto com açúcar e um cravo no topo.",
     "pricePt": 5.49,
@@ -21,7 +21,7 @@
   },
   {
     "id": 18,
-    "image": "mocks/images/DessertExample.jpg",
+    "image": "./mocks/images/DessertExample.jpg",
     "namePt": "Torta de Limão",
     "descriptionPt": "Torta com creme de limão e merengue por cima.",
     "pricePt": 7.99,
@@ -31,7 +31,7 @@
   },
   {
     "id": 19,
-    "image": "mocks/images/DessertExample.jpg",
+    "image": "./mocks/images/DessertExample.jpg",
     "namePt": "Bolo de Cenoura",
     "descriptionPt": "Bolo de cenoura com cobertura de chocolate.",
     "pricePt": 6.99,
@@ -41,7 +41,7 @@
   },
   {
     "id": 20,
-    "image": "mocks/images/DessertExample.jpg",
+    "image": "./mocks/images/DessertExample.jpg",
     "namePt": "Churros",
     "descriptionPt": "Churros recheados com doce de leite.",
     "pricePt": 5.49,
@@ -51,7 +51,7 @@
   },
   {
     "id": 21,
-    "image": "mocks/images/DessertExample.jpg",
+    "image": "./mocks/images/DessertExample.jpg",
     "namePt": "Pudim",
     "descriptionPt": "Pudim de leite condensado com calda de caramelo.",
     "pricePt": 8.99,
@@ -61,7 +61,7 @@
   },
   {
     "id": 22,
-    "image": "mocks/images/DessertExample.jpg",
+    "image": "./mocks/images/DessertExample.jpg",
     "namePt": "Tiramisu",
     "descriptionPt": "Clássica sobremesa italiana com café e mascarpone.",
     "pricePt": 12.49,
@@ -71,7 +71,7 @@
   },
   {
     "id": 23,
-    "image": "mocks/images/DessertExample.jpg",
+    "image": "./mocks/images/DessertExample.jpg",
     "namePt": "Brownie",
     "descriptionPt": "Brownie de chocolate com pedaços de nozes.",
     "pricePt": 6.49,
