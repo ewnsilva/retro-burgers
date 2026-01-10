@@ -9,13 +9,14 @@ export const useProducts = () => {
   const [products, setProducts] = useState<IProducts[]>([{} as IProducts]);
 
   const fetchProducts = (category: number) => {
-    const url = `${process.env.REACT_APP_API_URL}/${category}`;
+    const url = `${process.env.REACT_APP_API_URL}/products/${category}`;
     api
       .get(url)
       .then(({ data }) => {
+        console.log('products:', data);
         setProducts(data);
       })
-      .catch(err => console.log(err.response));
+      .catch(err => console.log(err));
   };
 
   const fetchAdditionals = () => {
@@ -23,9 +24,10 @@ export const useProducts = () => {
     api
       .get(url)
       .then(({ data }) => {
+        console.log('additionals:', data);
         setAdditionals(data);
       })
-      .catch(err => console.log(err.response));
+      .catch(err => console.log(err));
   };
 
   return { fetchProducts, fetchAdditionals, additionals, products };
