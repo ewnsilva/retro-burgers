@@ -4,16 +4,25 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "fs": "^0.0.1-security",
-    "nodemon": "^3.1.7"
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7",
+    "sequelize": "^6.37.5",
+    "sqlite3": "^5.1.7",
+    "tsconfig-paths": "^4.2.0"
   },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch \"./src/**/*.ts\" --exec \"ts-node -r tsconfig-paths/register\" server.ts",
+    "start": "nodemon --watch \"./src/**/*.ts\" --exec \"ts-node -r tsconfig-paths/register\" server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "description": "",
   "devDependencies": {
-    "@types/cors": "^2.8.17",
-    "@types/express": "^5.0.1",
-    "@types/node": "^22.14.1",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.8.4",
+    "sequelize-cli": "^6.6.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.6.3"
   }
 }
