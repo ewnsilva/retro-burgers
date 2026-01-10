@@ -11,9 +11,9 @@
     "baseUrl": "./",
     "paths": {
       "modules/*": ["src/app/Modules/*"],
-      "shared/*": ["src/app/Shared/*"],
-    }
+      "shared/*": ["src/app/Shared/*"]
+    },
+    "typeRoots": ["./src/types", "./node_modules/@types"]
   },
-  "include": ["src/**/*"],
-  "exclude": ["dist", "node_modules"]
+  "include": ["src/**/*"]
 }

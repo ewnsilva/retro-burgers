@@ -1,28 +1,33 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
   "license": "MIT",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "nodemon --watch \"src/**/*.ts\" --exec \"ts-node --files -r tsconfig-paths/register\" server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
   "dependencies": {
-    "express": "^4.21.1",
-    "nodemon": "^3.1.7",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
     "sequelize": "^6.37.5",
     "sqlite3": "^5.1.7",
     "tsconfig-paths": "^4.2.0"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --watch \"./src/**/*.ts\" --exec \"ts-node -r tsconfig-paths/register\" server.ts",
-    "start": "nodemon --watch \"./src/**/*.ts\" --exec \"ts-node -r tsconfig-paths/register\" server.ts"
-  },
-  "keywords": [],
-  "author": "",
-  "description": "",
   "devDependencies": {
-    "@types/express": "^5.0.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
     "@types/node": "^22.8.4",
+    "nodemon": "^3.1.11",
     "sequelize-cli": "^6.6.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3"
+  },
+  "dependenciesMeta": {
+    "sqlite3@5.1.7": {
+      "unplugged": true
+    }
   }
 }
