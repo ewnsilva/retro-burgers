@@ -33,22 +33,42 @@ export const ProductModel = (sequelize: Sequelize) => {
         autoIncrement: true,
         primaryKey: true,
       },
-      title: {
+
+      image: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      description: {
+
+      namePt: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      price: {
+
+      descriptionPt: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+
+      pricePt: {
         type: DataTypes.FLOAT,
         allowNull: false,
       },
-      logo: {
+
+      nameEn: {
         type: DataTypes.STRING,
         allowNull: false,
       },
+
+      descriptionEn: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+
+      priceEn: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
+      },
+
       category_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -72,12 +92,14 @@ export const ProductModel = (sequelize: Sequelize) => {
             include: [additionalsInclude],
           };
         },
+
         bySearch(search: string) {
           return {
             where: {
-              title: {
-                [Op.like]: `%${search.toLowerCase()}%`,
-              },
+              [Op.or]: [
+                { namePt: { [Op.like]: `%${search}%` } },
+                { nameEn: { [Op.like]: `%${search}%` } },
+              ],
             },
             include: [additionalsInclude],
           };
