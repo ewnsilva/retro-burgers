@@ -104,7 +104,7 @@ export const ProductCard: React.FC<IProductsList> = ({
                 </>
               ) : (
                 <Box sx={styles.buttonBox(matchesXs)}>
-                  {category === 0 && (
+                  {category === 1 && (
                     <Button
                       variant="outlined"
                       onClick={() => {

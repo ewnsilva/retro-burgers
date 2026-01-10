@@ -21,7 +21,7 @@ export const Home = () => {
   const { language } = useLanguage();
 
   const [search, setSearch] = useState('');
-  const [category, setCategory] = useState(0);
+  const [category, setCategory] = useState(1);
   const [showHint, setShowHint] = useState(false);
   const [customizeOpen, setCustomizeOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<IProducts>({} as IProducts);
