@@ -15,7 +15,7 @@ vi.mock('../../../../src/utils/hooks/useAxios', () => ({
 describe('useProducts hook', () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    process.env.REACT_APP_API_URL = 'http://api.test/products';
+    process.env.REACT_APP_API_URL = 'http://api.test';
   });
 
   it('should initialize with default products state', () => {
@@ -57,10 +57,10 @@ describe('useProducts hook', () => {
     const { result } = renderHook(() => useProducts());
 
     await act(async () => {
-      result.current.fetchProducts(5);
+      result.current.fetchProducts(0);
     });
 
-    expect(consoleSpy).toHaveBeenCalledWith(error.response);
+    expect(consoleSpy).toHaveBeenCalledWith(error);
 
     consoleSpy.mockRestore();
   });
