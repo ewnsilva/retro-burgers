@@ -19,7 +19,7 @@ export const useProducts = () => {
       .then(({ data }) => {
         setProducts(data);
       })
-      .catch(err => {
+      .catch(() => {
         navigate('/error');
       });
   };
