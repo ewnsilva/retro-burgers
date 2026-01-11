@@ -43,6 +43,8 @@ export const ProductCard: React.FC<IProductsList> = ({
   const description = language === 'pt' ? item.descriptionPt : item.descriptionEn;
   const price = language === 'pt' ? item.pricePt : item.priceEn;
 
+  const API_URL = process.env.REACT_APP_API_URL ?? '';
+
   return (
     <Card sx={styles.card}>
       <CardContent>
@@ -53,7 +55,12 @@ export const ProductCard: React.FC<IProductsList> = ({
             </Typography>
           </Grid>
 
-          <CardMedia component="img" image={item.image} alt={item.namePt} sx={styles.image} />
+          <CardMedia
+            component="img"
+            image={`${API_URL}${item.image}`}
+            alt={item.namePt}
+            sx={styles.image}
+          />
 
           {description && (
             <Grid>

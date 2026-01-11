@@ -1,4 +1,3 @@
-// hooks/useThemeMusic.ts
 import { useEffect, useRef } from 'react';
 import { Howl } from 'howler';
 
@@ -9,10 +8,12 @@ interface UseThemeMusicProps {
   musicEnabled: boolean;
 }
 
+const API_URL = process.env.REACT_APP_API_URL ?? '';
+
 const MUSIC_MAP: Record<ThemeType, string> = {
-  synthwave: '/audio/synthwave.mp3',
-  retrowave: '/audio/retrowave.mp3',
-  darkwave: '/audio/darkwave.mp3',
+  synthwave: `${API_URL}/audio/synthwave.mp3`,
+  retrowave: `${API_URL}/audio/retrowave.mp3`,
+  darkwave: `${API_URL}/audio/darkwave.mp3`,
 };
 
 export const useThemeMusic = ({ themeType, musicEnabled }: UseThemeMusicProps) => {
