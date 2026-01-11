@@ -16,19 +16,21 @@ import { useProducts } from 'utils/hooks/products/useProducts';
 import { IProducts } from 'utils/interfaces';
 
 export const Home = () => {
-  const { totalQuantity, addToCart } = useCart();
-  const { products, fetchProducts, additionals, fetchAdditionals } = useProducts();
   const { language } = useLanguage();
+  const { products, fetchProducts, additionals, fetchAdditionals } = useProducts();
+  const { totalQuantity, addToCart } = useCart();
 
-  const [search, setSearch] = useState('');
   const [category, setCategory] = useState(1);
-  const [showHint, setShowHint] = useState(false);
   const [customizeOpen, setCustomizeOpen] = useState(false);
+  const [search, setSearch] = useState('');
   const [selectedProduct, setSelectedProduct] = useState<IProducts>({} as IProducts);
+  const [showHint, setShowHint] = useState(false);
 
   useEffect(() => {
     fetchProducts(category);
-    fetchAdditionals();
+    if (category === 1) {
+      fetchAdditionals();
+    }
   }, [category]);
 
   const filteredProducts = products.filter((product: IProducts) => {
