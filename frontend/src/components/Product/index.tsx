@@ -25,10 +25,11 @@ export const ProductCard: React.FC<IProductsList> = ({
   setCustomizeOpen,
   setSelectedProduct,
 }) => {
+  const { language, t } = useLanguage();
   const theme = useTheme();
   const matchesXs = useMediaQuery('(max-width: 465px)');
 
-  const { language, t } = useLanguage();
+  const API_URL = process.env.REACT_APP_API_URL ?? '';
 
   const { addToCart, isInCart, incrementQuantity, decrementQuantity, cartItems } = useCart();
 
@@ -42,8 +43,6 @@ export const ProductCard: React.FC<IProductsList> = ({
   const name = language === 'pt' ? item.namePt : item.nameEn;
   const description = language === 'pt' ? item.descriptionPt : item.descriptionEn;
   const price = language === 'pt' ? item.pricePt : item.priceEn;
-
-  const API_URL = process.env.REACT_APP_API_URL ?? '';
 
   return (
     <Card sx={styles.card}>

@@ -40,6 +40,8 @@ export const Cart = (): JSX.Element => {
     updateValue,
   } = useCartLogic();
 
+  const API_URL = process.env.REACT_APP_API_URL ?? '';
+
   const renderAdditionals = (item: any) => {
     if (!item.isCustom || !item.additionals?.length) return null;
 
@@ -87,12 +89,19 @@ export const Cart = (): JSX.Element => {
           </Typography>
         </Box>
 
-        <List sx={{ width: '90%', alignSelf: 'center', flexGrow: 1, overflowY: 'auto' }}>
+        <List
+          sx={{
+            width: '90%',
+            alignSelf: 'center',
+            flex: 1,
+            overflowY: 'auto',
+          }}
+        >
           {cartItems.map(item => (
             <Paper key={item.id} elevation={5} sx={styles.backgroundProduct}>
               <Box display="flex" p={1.5}>
                 <Box display="flex" flexDirection="column">
-                  <CardMedia component="img" height="70" image={item.image} />
+                  <CardMedia component="img" height="70" image={`${API_URL}${item.image}`} />
                   <Box display="flex" mt={1} alignItems="center">
                     {item.quantity === 1 ? (
                       <Box onClick={() => removeItem(item.id)} sx={styles.incrementQuantityStyle}>
