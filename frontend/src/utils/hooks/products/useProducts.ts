@@ -1,10 +1,14 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { useAxios } from 'utils/hooks/useAxios';
 import { IAdditional, IProducts } from 'utils/interfaces';
 
 export const useProducts = () => {
   const { api } = useAxios();
+
+  const navigate = useNavigate();
+
   const [additionals, setAdditionals] = useState<IAdditional[]>([{} as IAdditional]);
   const [products, setProducts] = useState<IProducts[]>([{} as IProducts]);
 
@@ -13,10 +17,11 @@ export const useProducts = () => {
     api
       .get(url)
       .then(({ data }) => {
-        console.log('products:', data);
         setProducts(data);
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        navigate('/error');
+      });
   };
 
   const fetchAdditionals = () => {
@@ -24,7 +29,6 @@ export const useProducts = () => {
     api
       .get(url)
       .then(({ data }) => {
-        console.log('additionals:', data);
         setAdditionals(data);
       })
       .catch(err => console.log(err));
