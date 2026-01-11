@@ -21,10 +21,27 @@ export const AdditionalModel = (sequelize: Sequelize) => {
         autoIncrement: true,
         primaryKey: true,
       },
-      title: {
+
+      namePt: {
         type: DataTypes.STRING,
         allowNull: false,
       },
+
+      nameEn: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+
+      pricePt: {
+        type: DataTypes.DECIMAL(10, 2),
+        allowNull: false,
+      },
+
+      priceEn: {
+        type: DataTypes.DECIMAL(10, 2),
+        allowNull: false,
+      },
+
       type: {
         type: DataTypes.ENUM("quantity", "boolean"),
         allowNull: false,
@@ -34,6 +51,7 @@ export const AdditionalModel = (sequelize: Sequelize) => {
       sequelize,
       modelName: "Additional",
       tableName: "additionals",
+      timestamps: false,
     }
   );
 
