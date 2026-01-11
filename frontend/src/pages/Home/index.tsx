@@ -14,6 +14,7 @@ import { useLanguage } from 'utils/hooks/useLanguage';
 import { useCart } from 'utils/hooks/products/useCart';
 import { useProducts } from 'utils/hooks/products/useProducts';
 import { IProducts } from 'utils/interfaces';
+import { OrderSuccessModal } from '@/components/OrderSuccessModal';
 
 export const Home = () => {
   const { language } = useLanguage();
@@ -22,6 +23,7 @@ export const Home = () => {
 
   const [category, setCategory] = useState(1);
   const [customizeOpen, setCustomizeOpen] = useState(false);
+  const [orderSuccessOpen, setOrderSuccessOpen] = useState(false);
   const [search, setSearch] = useState('');
   const [selectedProduct, setSelectedProduct] = useState<IProducts>({} as IProducts);
   const [showHint, setShowHint] = useState(false);
@@ -48,7 +50,7 @@ export const Home = () => {
       <Header setSearch={setSearch} />
       <Navigation setCategory={setCategory} category={category} />
       {totalQuantity > 0 && <CartButton />}
-      <Cart />
+      <Cart onOrderSuccess={() => setOrderSuccessOpen(true)} />
       <Grid
         container
         rowSpacing={2}
@@ -84,6 +86,8 @@ export const Home = () => {
         }}
         onConfirm={addToCart}
       />
+
+      <OrderSuccessModal open={orderSuccessOpen} onClose={() => setOrderSuccessOpen(false)} />
     </Box>
   );
 };

@@ -13,26 +13,27 @@ import {
 } from '@mui/material';
 import { Delete, Add, Remove, ShoppingCart } from '@mui/icons-material';
 
-import { OrderSuccessModal } from 'components/OrderSuccessModal';
 import { OrderSummaryModal } from 'components/OrderSummaryModal';
 import { useLanguage } from 'utils/hooks/useLanguage';
 import { useCartLogic } from './Cart.logic';
 import * as styles from './Cart.styles';
 import { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from 'react';
 
-export const Cart = (): JSX.Element => {
+interface CartProps {
+  onOrderSuccess: () => void;
+}
+
+export const Cart = ({ onOrderSuccess }: CartProps): JSX.Element => {
   const { t, language } = useLanguage();
   const {
     cartItems,
     isDrawerOpen,
     totalQuantity,
     summaryOpen,
-    successOpen,
     closeDrawer,
     openSummary,
     confirmOrder,
     setSummaryOpen,
-    setSuccessOpen,
     clearCart,
     decrementQuantity,
     incrementQuantity,
@@ -180,13 +181,9 @@ export const Cart = (): JSX.Element => {
       <OrderSummaryModal
         open={summaryOpen}
         onClose={() => setSummaryOpen(false)}
-        onConfirm={confirmOrder}
-      />
-
-      <OrderSuccessModal
-        open={successOpen}
-        onClose={() => {
-          setSuccessOpen(false);
+        onConfirm={() => {
+          confirmOrder();
+          onOrderSuccess();
           closeDrawer();
         }}
       />
