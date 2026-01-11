@@ -12,7 +12,7 @@ export const drawerContainer: SxProps<Theme> = {
   display: 'flex',
   flexDirection: 'column',
   width: { xs: '100vw', sm: 375 },
-  height: '100%',
+  height: '100vh',
   backgroundColor: 'info.main',
 };
 
@@ -49,8 +49,7 @@ export const footerContainer: SxProps<Theme> = {
   display: 'flex',
   flexDirection: 'column',
   alignSelf: 'center',
-  position: 'absolute',
-  mt: 'auto',
-  bottom: '2%',
   width: '90%',
+  py: 2,
+  borderTop: '1px solid',
 };

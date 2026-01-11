@@ -1,0 +1,4 @@
+export const development = {
+  dialect: "sqlite",
+  storage: "./src/database/database.sqlite",
+};

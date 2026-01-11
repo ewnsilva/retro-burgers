@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useCart } from 'utils';
+import { useCart } from 'utils/hooks/products/useCart';
 
 export const useCartLogic = () => {
   const {
@@ -15,7 +15,6 @@ export const useCartLogic = () => {
   } = useCart();
 
   const [summaryOpen, setSummaryOpen] = useState(false);
-  const [successOpen, setSuccessOpen] = useState(false);
 
   const closeDrawer = () => {
     setIsDrawerOpen(false);
@@ -27,27 +26,24 @@ export const useCartLogic = () => {
 
   const confirmOrder = () => {
     setSummaryOpen(false);
-    setSuccessOpen(true);
     clearCart();
   };
 
   useEffect(() => {
-    if (cartItems.length === 0 && !successOpen) {
+    if (cartItems.length === 0) {
       setIsDrawerOpen(false);
     }
-  }, [cartItems, successOpen, setIsDrawerOpen]);
+  }, [cartItems]);
 
   return {
     cartItems,
     isDrawerOpen,
     totalQuantity,
     summaryOpen,
-    successOpen,
     closeDrawer,
     openSummary,
     confirmOrder,
     setSummaryOpen,
-    setSuccessOpen,
     clearCart,
     decrementQuantity,
     incrementQuantity,

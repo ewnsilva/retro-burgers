@@ -1,6 +1,6 @@
 import { useState, ChangeEvent, MouseEvent } from 'react';
-import { useTheme as useCustomTheme } from '../../../utils/context';
-import { useThemeMusic } from '../../../utils/hooks';
+import { useTheme as useCustomTheme } from 'utils/context/Theme';
+import { useThemeMusic } from 'utils/hooks/musics';
 
 export const useHeaderLogic = (setSearch: (value: string) => void) => {
   const { themeType, setThemeType, allThemeColors } = useCustomTheme();

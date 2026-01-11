@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Box, Modal, Typography, Button } from '@mui/material';
-import { useTheme } from 'utils/context';
-import { useLanguage } from 'utils';
+import { useTheme } from 'utils/context/Theme';
+import { useLanguage } from 'utils/hooks/useLanguage';
 
 type Props = {
   onFinish: () => void;

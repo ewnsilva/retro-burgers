@@ -1,0 +1,82 @@
+[
+  {
+    "id": 8,
+    "image": "/images/SnackExample.jpg",
+    "namePt": "Petisco de Carne",
+    "descriptionPt": "Espeto com carnes e linguiças temperadas.",
+    "pricePt": 10.99,
+    "nameEn": "Meat Skewer",
+    "descriptionEn": "Skewer with seasoned meats and sausages.",
+    "priceEn": 2.2
+  },
+  {
+    "id": 9,
+    "image": "/images/SnackExample.jpg",
+    "namePt": "Quibe",
+    "descriptionPt": "Quibe recheado com carne moída temperada e hortelã.",
+    "pricePt": 8.99,
+    "nameEn": "Kibbeh",
+    "descriptionEn": "Kibbeh stuffed with seasoned ground beef and mint.",
+    "priceEn": 1.8
+  },
+  {
+    "id": 10,
+    "image": "/images/SnackExample.jpg",
+    "namePt": "Pastel de Queijo",
+    "descriptionPt": "Pastel crocante com recheio de queijo derretido.",
+    "pricePt": 6.49,
+    "nameEn": "Cheese Pastry",
+    "descriptionEn": "Crispy pastry filled with melted cheese.",
+    "priceEn": 1.3
+  },
+  {
+    "id": 11,
+    "image": "/images/SnackExample.jpg",
+    "namePt": "Bolinha de Queijo",
+    "descriptionPt": "Bolinha de queijo cremosa com massa leve.",
+    "pricePt": 5.49,
+    "nameEn": "Cheese Balls",
+    "descriptionEn": "Creamy cheese balls with a light dough.",
+    "priceEn": 1.1
+  },
+  {
+    "id": 12,
+    "image": "/images/SnackExample.jpg",
+    "namePt": "Esfiha de Carne",
+    "descriptionPt": "Esfiha aberta com recheio de carne temperada.",
+    "pricePt": 7.99,
+    "nameEn": "Beef Sfiha",
+    "descriptionEn": "Open-faced sfiha filled with seasoned beef.",
+    "priceEn": 1.6
+  },
+  {
+    "id": 13,
+    "image": "/images/SnackExample.jpg",
+    "namePt": "Empada de Frango",
+    "descriptionPt": "Empada recheada com frango desfiado e temperado.",
+    "pricePt": 6.99,
+    "nameEn": "Chicken Pie",
+    "descriptionEn": "Pie filled with seasoned shredded chicken.",
+    "priceEn": 1.4
+  },
+  {
+    "id": 14,
+    "image": "/images/SnackExample.jpg",
+    "namePt": "Croissant de Presunto e Queijo",
+    "descriptionPt": "Croissant folhado com recheio de presunto e queijo.",
+    "pricePt": 8.49,
+    "nameEn": "Ham and Cheese Croissant",
+    "descriptionEn": "Flaky croissant filled with ham and cheese.",
+    "priceEn": 1.7
+  },
+  {
+    "id": 15,
+    "image": "/images/SnackExample.jpg",
+    "namePt": "Pão de Queijo",
+    "descriptionPt": "Clássico pão de queijo brasileiro, macio e delicioso.",
+    "pricePt": 2.5,
+    "nameEn": "Cheese Bread",
+    "descriptionEn": "Classic Brazilian cheese bread, soft and delicious.",
+    "priceEn": 0.5
+  }
+]

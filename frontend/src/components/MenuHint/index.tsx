@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Box, Typography, Button } from '@mui/material';
-import { useTheme } from 'utils/context';
-import { useLanguage } from 'utils';
+import { useTheme } from 'utils/context/Theme';
+import { useLanguage } from 'utils/hooks/useLanguage';
 import * as styles from './MenuHint.styles';
 
 export const MenuHint = () => {

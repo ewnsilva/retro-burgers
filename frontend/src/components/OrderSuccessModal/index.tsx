@@ -1,5 +1,5 @@
 import { Dialog, Box, Typography, Button, DialogContent, useTheme } from '@mui/material';
-import { useLanguage } from 'utils';
+import { useLanguage } from 'utils/hooks/useLanguage';
 
 type Props = {
   open: boolean;

@@ -1,48 +1,47 @@
-import { useEffect, useState } from 'react';
-
 import { Box, Grid2 as Grid, Grow } from '@mui/material';
 
-import {
-  Cart,
-  CartButton,
-  Footer,
-  Header,
-  MenuHint,
-  Navigation,
-  ProductCard,
-  WelcomeModal,
-} from 'components';
-import { useCart, useProducts, IProducts, useLanguage } from 'utils';
+import { Cart } from 'components/Cart';
+import { CartButton } from 'components/CartButton';
+import { CustomizeBurgerModal } from 'components/CostumizeBurgerModal';
+import { Footer, Header, Navigation } from 'components/Layout';
+import { MenuHint } from 'components/MenuHint';
+import { ProductCard } from 'components/Product';
+import { WelcomeModal } from 'components/WelcomeModal';
+import { OrderSuccessModal } from 'components/OrderSuccessModal';
+
+import { useHomeLogic } from './Home.logic';
 
 export const Home = () => {
-  const { totalQuantity } = useCart();
-  const { products, fetchProducts } = useProducts();
-  const { language } = useLanguage();
-
-  const [search, setSearch] = useState('');
-  const [category, setCategory] = useState(0);
-  const [showHint, setShowHint] = useState(false);
-
-  useEffect(() => {
-    fetchProducts(category);
-  }, [category]);
-
-  const filteredProducts = products.filter((product: IProducts) => {
-    if (language === 'pt') {
-      return product?.namePt?.toLowerCase().includes(search.toLowerCase());
-    } else {
-      return product?.nameEn?.toLowerCase().includes(search.toLowerCase());
-    }
-  });
+  const {
+    additionals,
+    category,
+    customizeOpen,
+    filteredProducts,
+    orderSuccessOpen,
+    selectedProduct,
+    showHint,
+    totalQuantity,
+    addToCart,
+    fetchAdditionals,
+    setCategory,
+    setCustomizeOpen,
+    setOrderSuccessOpen,
+    setSearch,
+    setSelectedProduct,
+    setShowHint,
+  } = useHomeLogic();
 
   return (
     <Box display="flex" flexDirection="column">
       <WelcomeModal onFinish={() => setShowHint(true)} />
       {showHint && <MenuHint />}
+
       <Header setSearch={setSearch} />
       <Navigation setCategory={setCategory} category={category} />
+
       {totalQuantity > 0 && <CartButton />}
-      <Cart />
+      <Cart onOrderSuccess={() => setOrderSuccessOpen(true)} />
+
       <Grid
         container
         rowSpacing={2}
@@ -55,12 +54,31 @@ export const Home = () => {
         {filteredProducts.map((item, index) => (
           <Grow in timeout={400 + index * 80} key={item.id}>
             <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-              <ProductCard key={item.id} item={item} />
+              <ProductCard
+                category={category}
+                item={item}
+                setCustomizeOpen={setCustomizeOpen}
+                setSelectedProduct={setSelectedProduct}
+              />
             </Grid>
           </Grow>
         ))}
       </Grid>
+
       <Footer />
+
+      <CustomizeBurgerModal
+        open={customizeOpen}
+        product={selectedProduct}
+        additionals={additionals}
+        onClose={() => {
+          fetchAdditionals();
+          setCustomizeOpen(false);
+        }}
+        onConfirm={addToCart}
+      />
+
+      <OrderSuccessModal open={orderSuccessOpen} onClose={() => setOrderSuccessOpen(false)} />
     </Box>
   );
 };

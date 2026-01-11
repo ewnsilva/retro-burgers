@@ -1,7 +1,7 @@
 import { ShoppingCart } from '@mui/icons-material';
 import { Badge, IconButton, useTheme } from '@mui/material';
 
-import { useCart } from 'utils';
+import { useCart } from 'utils/hooks/products/useCart';
 
 export const CartButton = (): JSX.Element => {
   const theme = useTheme();

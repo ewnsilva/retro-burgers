@@ -1,0 +1,82 @@
+[
+  {
+    "id": 24,
+    "image": "/images/DrinkExample.jpg",
+    "namePt": "Coca-Cola",
+    "descriptionPt": "",
+    "pricePt": 7.99,
+    "nameEn": "Coca-Cola",
+    "descriptionEn": "",
+    "priceEn": 1.6
+  },
+  {
+    "id": 25,
+    "image": "/images/DrinkExample.jpg",
+    "namePt": "Pepsi",
+    "descriptionPt": "",
+    "pricePt": 6.99,
+    "nameEn": "Pepsi",
+    "descriptionEn": "",
+    "priceEn": 1.4
+  },
+  {
+    "id": 26,
+    "image": "/images/DrinkExample.jpg",
+    "namePt": "Guaraná",
+    "descriptionPt": "",
+    "pricePt": 6.49,
+    "nameEn": "Guarana",
+    "descriptionEn": "",
+    "priceEn": 1.3
+  },
+  {
+    "id": 27,
+    "image": "/images/DrinkExample.jpg",
+    "namePt": "Água com Gás",
+    "descriptionPt": "",
+    "pricePt": 5.9,
+    "nameEn": "Sparkling Water",
+    "descriptionEn": "",
+    "priceEn": 1.18
+  },
+  {
+    "id": 28,
+    "image": "/images/DrinkExample.jpg",
+    "namePt": "Água Mineral",
+    "descriptionPt": "",
+    "pricePt": 5,
+    "nameEn": "Mineral Water",
+    "descriptionEn": "",
+    "priceEn": 1
+  },
+  {
+    "id": 29,
+    "image": "/images/DrinkExample.jpg",
+    "namePt": "Suco de Laranja",
+    "descriptionPt": "",
+    "pricePt": 10.99,
+    "nameEn": "Orange Juice",
+    "descriptionEn": "",
+    "priceEn": 2.2
+  },
+  {
+    "id": 30,
+    "image": "/images/DrinkExample.jpg",
+    "namePt": "Suco de Uva",
+    "descriptionPt": "",
+    "pricePt": 10.99,
+    "nameEn": "Grape Juice",
+    "descriptionEn": "",
+    "priceEn": 2.2
+  },
+  {
+    "id": 31,
+    "image": "/images/DrinkExample.jpg",
+    "namePt": "Chá Gelado",
+    "descriptionPt": "",
+    "pricePt": 7.99,
+    "nameEn": "Iced Tea",
+    "descriptionEn": "",
+    "priceEn": 1.6
+  }
+]

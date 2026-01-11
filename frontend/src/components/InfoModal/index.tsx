@@ -1,5 +1,5 @@
 import { Modal, Box, Typography, useTheme } from '@mui/material';
-import { useLanguage } from 'utils';
+import { useLanguage } from 'utils/hooks/useLanguage';
 
 interface InfoModalProps {
   open: boolean;

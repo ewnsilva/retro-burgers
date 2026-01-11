@@ -1,4 +1,4 @@
-import axios, { AxiosInstance } from 'axios';
+import axios, { AxiosError, AxiosInstance } from 'axios';
 
 type UseAxios = {
   api: AxiosInstance;
@@ -7,11 +7,14 @@ type UseAxios = {
 const api = axios.create();
 
 api.interceptors.response.use(
-  (response: any) => response,
-  (error: { response: { status: number } }) => {
-    if (error.response.status === 404) {
+  response => response,
+  (error: AxiosError) => {
+    const status = error.response?.status;
+
+    if (status === 404) {
       alert('Não encontrado.');
     }
+
     return Promise.reject(error);
   }
 );

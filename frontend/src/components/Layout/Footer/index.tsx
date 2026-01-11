@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import { useLanguage } from 'utils';
+import { useLanguage } from 'utils/hooks/useLanguage';
 
 export const Footer = (): JSX.Element => {
   const { t } = useLanguage();
