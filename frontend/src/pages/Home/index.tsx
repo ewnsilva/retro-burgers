@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-
 import { Box, Grid2 as Grid, Grow } from '@mui/material';
 
 import { Cart } from 'components/Cart';
@@ -9,48 +7,41 @@ import { Footer, Header, Navigation } from 'components/Layout';
 import { MenuHint } from 'components/MenuHint';
 import { ProductCard } from 'components/Product';
 import { WelcomeModal } from 'components/WelcomeModal';
+import { OrderSuccessModal } from 'components/OrderSuccessModal';
 
-import { useLanguage } from 'utils/hooks/useLanguage';
-import { useCart } from 'utils/hooks/products/useCart';
-import { useProducts } from 'utils/hooks/products/useProducts';
-import { IProducts } from 'utils/interfaces';
-import { OrderSuccessModal } from '@/components/OrderSuccessModal';
+import { useHomeLogic } from './Home.logic';
 
 export const Home = () => {
-  const { language } = useLanguage();
-  const { products, fetchProducts, additionals, fetchAdditionals } = useProducts();
-  const { totalQuantity, addToCart } = useCart();
-
-  const [category, setCategory] = useState(1);
-  const [customizeOpen, setCustomizeOpen] = useState(false);
-  const [orderSuccessOpen, setOrderSuccessOpen] = useState(false);
-  const [search, setSearch] = useState('');
-  const [selectedProduct, setSelectedProduct] = useState<IProducts>({} as IProducts);
-  const [showHint, setShowHint] = useState(false);
-
-  useEffect(() => {
-    fetchProducts(category);
-    if (category === 1) {
-      fetchAdditionals();
-    }
-  }, [category]);
-
-  const filteredProducts = products.filter((product: IProducts) => {
-    if (language === 'pt') {
-      return product?.namePt?.toLowerCase().includes(search.toLowerCase());
-    } else {
-      return product?.nameEn?.toLowerCase().includes(search.toLowerCase());
-    }
-  });
+  const {
+    additionals,
+    category,
+    customizeOpen,
+    filteredProducts,
+    orderSuccessOpen,
+    selectedProduct,
+    showHint,
+    totalQuantity,
+    addToCart,
+    fetchAdditionals,
+    setCategory,
+    setCustomizeOpen,
+    setOrderSuccessOpen,
+    setSearch,
+    setSelectedProduct,
+    setShowHint,
+  } = useHomeLogic();
 
   return (
     <Box display="flex" flexDirection="column">
       <WelcomeModal onFinish={() => setShowHint(true)} />
       {showHint && <MenuHint />}
+
       <Header setSearch={setSearch} />
       <Navigation setCategory={setCategory} category={category} />
+
       {totalQuantity > 0 && <CartButton />}
       <Cart onOrderSuccess={() => setOrderSuccessOpen(true)} />
+
       <Grid
         container
         rowSpacing={2}
@@ -64,7 +55,6 @@ export const Home = () => {
           <Grow in timeout={400 + index * 80} key={item.id}>
             <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
               <ProductCard
-                key={item.id}
                 category={category}
                 item={item}
                 setCustomizeOpen={setCustomizeOpen}
@@ -74,6 +64,7 @@ export const Home = () => {
           </Grow>
         ))}
       </Grid>
+
       <Footer />
 
       <CustomizeBurgerModal
