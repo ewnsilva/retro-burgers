@@ -61,5 +61,10 @@
     "title": "Welcome!",
     "subtitle": "Explore our menu with a Retro 80s style!",
     "cta": "Let’s go!"
+  },
+  "error": {
+    "title": "Oops! Page not found.",
+    "description": "An error occurred while fetching data. Please try again.",
+    "button": "Try again"
   }
 }

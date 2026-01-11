@@ -61,5 +61,10 @@
     "title": "Bem-vindo!",
     "subtitle": "Explore nosso cardápio ao estilo Retro Anos 80!",
     "cta": "Vamos lá!"
+  },
+  "error": {
+    "title": "Ops! Algo deu errado.",
+    "description": "Ocorreu um erro ao buscar os dados. Por favor, tente novamente.",
+    "button": "Tentar novamente"
   }
 }
