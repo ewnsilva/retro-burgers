@@ -28,14 +28,13 @@ describe('useCartLogic', () => {
     });
   });
 
-  it('it starts with summaryOpen and successOpen set to false.', () => {
+  it('starts with summaryOpen set to false', () => {
     const { result } = renderHook(() => useCartLogic());
 
     expect(result.current.summaryOpen).toBe(false);
-    expect(result.current.successOpen).toBe(false);
   });
 
-  it('close the drawer when you call closeDrawer.', () => {
+  it('closes the drawer when calling closeDrawer', () => {
     const { result } = renderHook(() => useCartLogic());
 
     act(() => {
@@ -45,7 +44,7 @@ describe('useCartLogic', () => {
     expect(setIsDrawerOpen).toHaveBeenCalledWith(false);
   });
 
-  it('confirm the order correctly', () => {
+  it('confirms the order correctly', () => {
     const { result } = renderHook(() => useCartLogic());
 
     act(() => {
@@ -59,11 +58,10 @@ describe('useCartLogic', () => {
     });
 
     expect(result.current.summaryOpen).toBe(false);
-    expect(result.current.successOpen).toBe(true);
     expect(clearCart).toHaveBeenCalledTimes(1);
   });
 
-  it('the drawer closes automatically when the cart is empty.', () => {
+  it('closes the drawer automatically when the cart is empty', () => {
     vi.mocked(useCart).mockReturnValueOnce({
       cartItems: [],
       isDrawerOpen: true,

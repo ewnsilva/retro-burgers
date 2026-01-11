@@ -1,44 +1,11 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
-import React from 'react';
 
 import { Home } from '../../../src/pages/Home';
+import { useHomeLogic } from '../../../src/pages/Home/Home.logic';
 
-const fetchProductsMock = vi.fn();
-const fetchAdditionalsMock = vi.fn();
-const addToCartMock = vi.fn();
-
-vi.mock('../../../src/utils/hooks/products/useCart', () => ({
-  useCart: () => ({
-    totalQuantity: 0,
-    addToCart: addToCartMock,
-  }),
-}));
-
-vi.mock('../../../src/utils/hooks/products/useProducts', () => ({
-  useProducts: () => ({
-    products: [
-      {
-        id: 1,
-        namePt: 'Hambúrguer',
-        nameEn: 'Burger',
-      },
-      {
-        id: 2,
-        namePt: 'Batata',
-        nameEn: 'Fries',
-      },
-    ],
-    additionals: [],
-    fetchProducts: fetchProductsMock,
-    fetchAdditionals: fetchAdditionalsMock,
-  }),
-}));
-
-vi.mock('../../../src/utils/hooks/useLanguage', () => ({
-  useLanguage: () => ({
-    language: 'pt',
-  }),
+vi.mock('../../../src/pages/Home/Home.logic', () => ({
+  useHomeLogic: vi.fn(),
 }));
 
 vi.mock('../../../src/components/Layout/Header', () => ({
@@ -62,7 +29,11 @@ vi.mock('../../../src/components/Layout/Footer', () => ({
 }));
 
 vi.mock('../../../src/components/Cart', () => ({
-  Cart: () => <div data-testid="cart">cart</div>,
+  Cart: ({ onOrderSuccess }: { onOrderSuccess: () => void }) => (
+    <button data-testid="cart" onClick={onOrderSuccess}>
+      cart
+    </button>
+  ),
 }));
 
 vi.mock('../../../src/components/CartButton', () => ({
@@ -90,9 +61,41 @@ vi.mock('../../../src/components/CostumizeBurgerModal', () => ({
     open ? <div data-testid="customize-modal" /> : null,
 }));
 
-describe('Home page', () => {
+vi.mock('../../../src/components/OrderSuccessModal', () => ({
+  OrderSuccessModal: ({ open }: { open: boolean }) =>
+    open ? <div data-testid="order-success-modal" /> : null,
+}));
+
+describe('Home component', () => {
+  const mockLogic = {
+    filteredProducts: [
+      { id: 1, namePt: 'Hambúrguer' },
+      { id: 2, namePt: 'Batata' },
+    ],
+    additionals: [],
+    totalQuantity: 0,
+
+    category: 1,
+    customizeOpen: false,
+    orderSuccessOpen: false,
+    search: '',
+    selectedProduct: {},
+    showHint: false,
+
+    setCategory: vi.fn(),
+    setCustomizeOpen: vi.fn(),
+    setOrderSuccessOpen: vi.fn(),
+    setSearch: vi.fn(),
+    setSelectedProduct: vi.fn(),
+    setShowHint: vi.fn(),
+
+    addToCart: vi.fn(),
+    fetchAdditionals: vi.fn(),
+  };
+
   beforeEach(() => {
     vi.clearAllMocks();
+    vi.mocked(useHomeLogic).mockReturnValue(mockLogic as any);
   });
 
   it('renders base layout components', () => {
@@ -104,35 +107,36 @@ describe('Home page', () => {
     expect(screen.getByTestId('navigation')).toBeTruthy();
   });
 
-  it('calls fetchProducts and fetchAdditionals on mount with initial category', () => {
+  it('renders product cards', () => {
     render(<Home />);
 
-    expect(fetchProductsMock).toHaveBeenCalledWith(1);
-    expect(fetchAdditionalsMock).toHaveBeenCalled();
+    const products = screen.getAllByTestId('product-card');
+    expect(products).toHaveLength(2);
   });
 
-  it('calls fetchProducts again when category changes', () => {
-    render(<Home />);
-
-    fireEvent.click(screen.getByTestId('navigation'));
-
-    expect(fetchProductsMock).toHaveBeenCalledWith(1);
-  });
-
-  it('filters products based on search text', () => {
+  it('calls setSearch when Header triggers search', () => {
     render(<Home />);
 
     fireEvent.click(screen.getByTestId('header-search'));
 
-    const products = screen.getAllByTestId('product-card');
-    expect(products).toHaveLength(1);
-    expect(products[0].textContent).toContain('Hambúrguer');
+    expect(mockLogic.setSearch).toHaveBeenCalledWith('hamb');
+  });
+
+  it('calls setCategory when Navigation changes category', () => {
+    render(<Home />);
+
+    fireEvent.click(screen.getByTestId('navigation'));
+
+    expect(mockLogic.setCategory).toHaveBeenCalledWith(2);
   });
 
   it('renders MenuHint after WelcomeModal finishes', () => {
-    render(<Home />);
+    vi.mocked(useHomeLogic).mockReturnValueOnce({
+      ...mockLogic,
+      showHint: true,
+    } as any);
 
-    fireEvent.click(screen.getByTestId('welcome-modal'));
+    render(<Home />);
 
     expect(screen.getByTestId('menu-hint')).toBeTruthy();
   });
@@ -140,6 +144,14 @@ describe('Home page', () => {
   it('does not render CartButton when cart is empty', () => {
     render(<Home />);
 
-    expect(screen.queryByTestId('cart-button')).not.toBeTruthy();
+    expect(screen.queryByTestId('cart-button')).toBeNull();
+  });
+
+  it('opens OrderSuccessModal when Cart triggers success', () => {
+    render(<Home />);
+
+    fireEvent.click(screen.getByTestId('cart'));
+
+    expect(mockLogic.setOrderSuccessOpen).toHaveBeenCalledWith(true);
   });
 });

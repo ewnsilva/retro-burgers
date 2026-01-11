@@ -36,7 +36,6 @@ describe('useAxios hook', () => {
 
     await import('../../../src/utils/hooks/useAxios');
 
-    // Agora o interceptor EXISTE
     expect(responseUseMock).toHaveBeenCalledOnce();
 
     const [, onRejected] = responseUseMock.mock.calls[0];

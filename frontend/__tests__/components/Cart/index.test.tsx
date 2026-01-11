@@ -69,7 +69,13 @@ describe('Cart component', () => {
   });
 
   it('renders the shopping cart with items', () => {
-    render(<Cart />);
+    render(
+      <Cart
+        onOrderSuccess={function (): void {
+          throw new Error('Function not implemented.');
+        }}
+      />
+    );
 
     expect(screen.getByText('cart.title')).toBeTruthy();
     expect(screen.getByText('Hambúrguer')).toBeTruthy();
@@ -78,7 +84,13 @@ describe('Cart component', () => {
   });
 
   it('close the drawer by clicking the X.', () => {
-    render(<Cart />);
+    render(
+      <Cart
+        onOrderSuccess={function (): void {
+          throw new Error('Function not implemented.');
+        }}
+      />
+    );
 
     fireEvent.click(screen.getByText('X'));
 
@@ -86,7 +98,13 @@ describe('Cart component', () => {
   });
 
   it('clearCart is called when you click Clear.', () => {
-    render(<Cart />);
+    render(
+      <Cart
+        onOrderSuccess={function (): void {
+          throw new Error('Function not implemented.');
+        }}
+      />
+    );
 
     fireEvent.click(screen.getByText('Limpar'));
 
@@ -94,7 +112,13 @@ describe('Cart component', () => {
   });
 
   it('open the order summary by clicking on Place Order.', () => {
-    render(<Cart />);
+    render(
+      <Cart
+        onOrderSuccess={function (): void {
+          throw new Error('Function not implemented.');
+        }}
+      />
+    );
 
     fireEvent.click(screen.getByText('cart.order'));
 
@@ -102,7 +126,13 @@ describe('Cart component', () => {
   });
 
   it('increases and decreases the quantity of the item.', () => {
-    render(<Cart />);
+    render(
+      <Cart
+        onOrderSuccess={function (): void {
+          throw new Error('Function not implemented.');
+        }}
+      />
+    );
 
     fireEvent.click(screen.getByTestId('AddIcon'));
     fireEvent.click(screen.getByTestId('RemoveIcon'));
@@ -117,19 +147,14 @@ describe('Cart component', () => {
       summaryOpen: true,
     });
 
-    render(<Cart />);
+    render(
+      <Cart
+        onOrderSuccess={function (): void {
+          throw new Error('Function not implemented.');
+        }}
+      />
+    );
 
     expect(screen.getByTestId('order-summary-modal')).toBeTruthy();
-  });
-
-  it('renders the success modal when successOpen = true.', () => {
-    vi.mocked(useCartLogic).mockReturnValueOnce({
-      ...baseCartLogicMock,
-      successOpen: true,
-    });
-
-    render(<Cart />);
-
-    expect(screen.getByTestId('order-success-modal')).toBeTruthy();
   });
 });

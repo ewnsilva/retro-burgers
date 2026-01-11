@@ -3,6 +3,7 @@ import { renderHook, act, waitFor } from '@testing-library/react';
 import { useProducts } from '../../../../src/utils/hooks/products/useProducts';
 
 const getMock = vi.fn();
+const navigateMock = vi.fn();
 
 vi.mock('../../../../src/utils/hooks/useAxios', () => ({
   useAxios: () => ({
@@ -11,6 +12,15 @@ vi.mock('../../../../src/utils/hooks/useAxios', () => ({
     },
   }),
 }));
+
+vi.mock('react-router-dom', async () => {
+  const actual = await vi.importActual<typeof import('react-router-dom')>('react-router-dom');
+
+  return {
+    ...actual,
+    useNavigate: () => navigateMock,
+  };
+});
 
 describe('useProducts hook', () => {
   beforeEach(() => {
@@ -45,14 +55,8 @@ describe('useProducts hook', () => {
     expect(getMock).toHaveBeenCalledWith('http://api.test/products/10');
   });
 
-  it('should not crash when API request fails', async () => {
-    const error = {
-      response: { status: 500 },
-    };
-
-    getMock.mockRejectedValueOnce(error);
-
-    const consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
+  it('should navigate to /error when API request fails', async () => {
+    getMock.mockRejectedValueOnce(new Error('API error'));
 
     const { result } = renderHook(() => useProducts());
 
@@ -60,8 +64,8 @@ describe('useProducts hook', () => {
       result.current.fetchProducts(0);
     });
 
-    expect(consoleSpy).toHaveBeenCalledWith(error);
-
-    consoleSpy.mockRestore();
+    await waitFor(() => {
+      expect(navigateMock).toHaveBeenCalledWith('/error');
+    });
   });
 });
