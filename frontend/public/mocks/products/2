@@ -1,7 +1,7 @@
 [
   {
     "id": 8,
-    "image": "./mocks/images/SnackExample.jpg",
+    "image": "/images/SnackExample.jpg",
     "namePt": "Petisco de Carne",
     "descriptionPt": "Espeto com carnes e linguiças temperadas.",
     "pricePt": 10.99,
@@ -11,7 +11,7 @@
   },
   {
     "id": 9,
-    "image": "./mocks/images/SnackExample.jpg",
+    "image": "/images/SnackExample.jpg",
     "namePt": "Quibe",
     "descriptionPt": "Quibe recheado com carne moída temperada e hortelã.",
     "pricePt": 8.99,
@@ -21,7 +21,7 @@
   },
   {
     "id": 10,
-    "image": "./mocks/images/SnackExample.jpg",
+    "image": "/images/SnackExample.jpg",
     "namePt": "Pastel de Queijo",
     "descriptionPt": "Pastel crocante com recheio de queijo derretido.",
     "pricePt": 6.49,
@@ -31,7 +31,7 @@
   },
   {
     "id": 11,
-    "image": "./mocks/images/SnackExample.jpg",
+    "image": "/images/SnackExample.jpg",
     "namePt": "Bolinha de Queijo",
     "descriptionPt": "Bolinha de queijo cremosa com massa leve.",
     "pricePt": 5.49,
@@ -41,7 +41,7 @@
   },
   {
     "id": 12,
-    "image": "./mocks/images/SnackExample.jpg",
+    "image": "/images/SnackExample.jpg",
     "namePt": "Esfiha de Carne",
     "descriptionPt": "Esfiha aberta com recheio de carne temperada.",
     "pricePt": 7.99,
@@ -51,7 +51,7 @@
   },
   {
     "id": 13,
-    "image": "./mocks/images/SnackExample.jpg",
+    "image": "/images/SnackExample.jpg",
     "namePt": "Empada de Frango",
     "descriptionPt": "Empada recheada com frango desfiado e temperado.",
     "pricePt": 6.99,
@@ -61,7 +61,7 @@
   },
   {
     "id": 14,
-    "image": "./mocks/images/SnackExample.jpg",
+    "image": "/images/SnackExample.jpg",
     "namePt": "Croissant de Presunto e Queijo",
     "descriptionPt": "Croissant folhado com recheio de presunto e queijo.",
     "pricePt": 8.49,
@@ -71,7 +71,7 @@
   },
   {
     "id": 15,
-    "image": "./mocks/images/SnackExample.jpg",
+    "image": "/images/SnackExample.jpg",
     "namePt": "Pão de Queijo",
     "descriptionPt": "Clássico pão de queijo brasileiro, macio e delicioso.",
     "pricePt": 2.5,
