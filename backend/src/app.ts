@@ -6,11 +6,24 @@ import { routes } from "shared/Routes/Routes";
 
 const app = express();
 
-app.use(cors());
-app.use(express.json());
+// app.use("/images", express.static(path.resolve(__dirname, "../public/images")));
+// app.use("/audio", express.static(path.resolve(__dirname, "../public/audio")));
 
-app.use("/images", express.static(path.resolve(__dirname, "../public/images")));
-app.use("/audio", express.static(path.resolve(__dirname, "../public/audio")));
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL || "http://localhost:3000",
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
+app.use((req, res, next) => {
+  res.set("Cache-Control", "no-store");
+  next();
+});
+
+app.use(express.json());
 
 sequelize
   .authenticate()

@@ -34,38 +34,23 @@ export const ProductModel = (sequelize: Sequelize) => {
         primaryKey: true,
       },
 
-      image: {
+      logo: {
         type: DataTypes.STRING,
         allowNull: false,
       },
 
-      namePt: {
-        type: DataTypes.STRING,
+      title: {
+        type: DataTypes.JSON,
         allowNull: false,
       },
 
-      descriptionPt: {
-        type: DataTypes.STRING,
+      description: {
+        type: DataTypes.JSON,
         allowNull: false,
       },
 
-      pricePt: {
-        type: DataTypes.FLOAT,
-        allowNull: false,
-      },
-
-      nameEn: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-
-      descriptionEn: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-
-      priceEn: {
-        type: DataTypes.FLOAT,
+      price: {
+        type: DataTypes.JSON,
         allowNull: false,
       },
 
@@ -92,13 +77,18 @@ export const ProductModel = (sequelize: Sequelize) => {
             include: [additionalsInclude],
           };
         },
-
         bySearch(search: string) {
           return {
             where: {
               [Op.or]: [
-                { namePt: { [Op.like]: `%${search}%` } },
-                { nameEn: { [Op.like]: `%${search}%` } },
+                sequelize.where(
+                  sequelize.fn("json_extract", sequelize.col("title"), "$.pt"),
+                  { [Op.like]: `%${search}%` }
+                ),
+                sequelize.where(
+                  sequelize.fn("json_extract", sequelize.col("title"), "$.en"),
+                  { [Op.like]: `%${search}%` }
+                ),
               ],
             },
             include: [additionalsInclude],

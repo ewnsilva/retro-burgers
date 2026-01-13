@@ -22,23 +22,8 @@ export const AdditionalModel = (sequelize: Sequelize) => {
         primaryKey: true,
       },
 
-      namePt: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-
-      nameEn: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-
-      pricePt: {
-        type: DataTypes.DECIMAL(10, 2),
-        allowNull: false,
-      },
-
-      priceEn: {
-        type: DataTypes.DECIMAL(10, 2),
+      title: {
+        type: DataTypes.JSON,
         allowNull: false,
       },
 

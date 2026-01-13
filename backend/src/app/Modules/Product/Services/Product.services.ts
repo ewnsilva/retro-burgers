@@ -7,10 +7,6 @@ export class ProductServices extends Services<Product> {
     super(Product);
   }
 
-  async findAll() {
-    return await super.findAll();
-  }
-
   async findAllInCategory(id: number, search?: string) {
     const scopes: ScopeOptions[] = [{ method: ["byCategory", id] }];
 
@@ -21,7 +17,4 @@ export class ProductServices extends Services<Product> {
     return await super.findAll(scopes);
   }
 
-  async findById(id: number) {
-    return await super.findById(id);
-  }
 }

@@ -1,12 +1,23 @@
+export interface ProductTitle {
+  pt: string;
+  en: string;
+}
+
+export interface ProductDescription {
+  pt: string;
+  en: string;
+}
+
+export interface ProductPrice {
+  brl: string;
+  usd: string;
+}
+
 export interface ProductAttributes {
   id?: number;
-  image: string;
-  namePt: string;
-  descriptionPt?: string;
-  pricePt: number;
-  nameEn: string;
-  descriptionEn?: string;
-  priceEn: number;
-  logo?: string;
+  logo: string;
+  title: ProductTitle;
+  description: ProductDescription;
+  price: ProductPrice;
   category_id: number;
 }

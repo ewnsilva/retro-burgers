@@ -1,9 +1,11 @@
+export interface AdditionalTitle {
+  pt: string;
+  en: string;
+}
+
 export interface AdditionalAttributes {
-  id: number;
-  namePt: string;
-  nameEn: string;
-  pricePt: number;
-  priceEn: number;
+  id?: number;
+  title: AdditionalTitle;
   type: "quantity" | "boolean";
   quantity?: number;
 }
