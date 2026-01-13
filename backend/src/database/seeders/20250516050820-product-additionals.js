@@ -16,7 +16,14 @@ module.exports = {
           const title =
             typeof a.title === "string" ? JSON.parse(a.title) : a.title;
 
-          return title && names.includes(title.pt);
+            return title && names.includes(title.pt);
+
+          // const price =
+          //   typeof a.price === "string" ? JSON.parse(a.price) : a.price;
+
+          // return (
+          //   title && names.includes(title.pt) && price && price.brl !== "0.00"
+          // );
         })
         .map((a) => a.id);
 

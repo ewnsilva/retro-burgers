@@ -27,6 +27,11 @@ export const AdditionalModel = (sequelize: Sequelize) => {
         allowNull: false,
       },
 
+      price: {
+        type: DataTypes.JSON,
+        allowNull: false,
+      },
+
       type: {
         type: DataTypes.ENUM("quantity", "boolean"),
         allowNull: false,

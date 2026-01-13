@@ -16,5 +16,4 @@ export class ProductServices extends Services<Product> {
 
     return await super.findAll(scopes);
   }
-
 }
