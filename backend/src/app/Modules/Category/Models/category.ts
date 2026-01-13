@@ -19,9 +19,9 @@ export const CategoryModel = (sequelize: Sequelize) => {
         primaryKey: true,
       },
       title: {
-        type: DataTypes.STRING,
+        type: DataTypes.JSON,
         allowNull: false,
-      },
+      },      
     },
     {
       sequelize,

@@ -3,13 +3,31 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface) {
+    const now = new Date();
+
     await queryInterface.bulkInsert(
       "categories",
       [
-        { title: "Salgados", createdAt: new Date(), updatedAt: new Date() },
-        { title: "Hambúrgueres", createdAt: new Date(), updatedAt: new Date() },
-        { title: "Bebidas", createdAt: new Date(), updatedAt: new Date() },
-        { title: "Doces", createdAt: new Date(), updatedAt: new Date() },
+        {
+          title: JSON.stringify({ pt: "Salgados", en: "Snacks" }),
+          createdAt: now,
+          updatedAt: now,
+        },
+        {
+          title: JSON.stringify({ pt: "Hambúrgueres", en: "Burgers" }),
+          createdAt: now,
+          updatedAt: now,
+        },
+        {
+          title: JSON.stringify({ pt: "Bebidas", en: "Drinks" }),
+          createdAt: now,
+          updatedAt: now,
+        },
+        {
+          title: JSON.stringify({ pt: "Doces", en: "Desserts" }),
+          createdAt: now,
+          updatedAt: now,
+        },
       ],
       {}
     );
