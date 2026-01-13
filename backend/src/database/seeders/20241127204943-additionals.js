@@ -6,24 +6,27 @@ module.exports = {
     const additionals = [
       // Hamburguer
       {
-        title: JSON.stringify({ pt: "Hamburguer", en: "Burger" }),
+        title: JSON.stringify({
+          pt: "Hamburguer extra",
+          en: "Extra burger patty",
+        }),
         type: "quantity",
-        price: JSON.stringify({ brl: "5.00", usd: "1.00" }),
+        price: JSON.stringify({ brl: "6.00", usd: "1.20" }),
       },
       {
-        title: JSON.stringify({ pt: "Queijo", en: "Cheese" }),
+        title: JSON.stringify({ pt: "Queijo extra", en: "Extra cheese" }),
         type: "quantity",
-        price: JSON.stringify({ brl: "2.50", usd: "0.50" }),
+        price: JSON.stringify({ brl: "3.00", usd: "0.60" }),
       },
       {
         title: JSON.stringify({ pt: "Bacon", en: "Bacon" }),
         type: "quantity",
-        price: JSON.stringify({ brl: "3.50", usd: "0.70" }),
+        price: JSON.stringify({ brl: "4.00", usd: "0.80" }),
       },
       {
-        title: JSON.stringify({ pt: "Peperoni", en: "Pepperoni" }),
+        title: JSON.stringify({ pt: "Pepperoni", en: "Pepperoni" }),
         type: "quantity",
-        price: JSON.stringify({ brl: "3.00", usd: "0.60" }),
+        price: JSON.stringify({ brl: "3.50", usd: "0.70" }),
       },
       {
         title: JSON.stringify({ pt: "Tomate", en: "Tomato" }),
@@ -48,7 +51,7 @@ module.exports = {
       {
         title: JSON.stringify({ pt: "Onion Rings", en: "Onion Rings" }),
         type: "boolean",
-        price: JSON.stringify({ brl: "1.00", usd: "0.20" }),
+        price: JSON.stringify({ brl: "1.50", usd: "0.30" }),
       },
       {
         title: JSON.stringify({ pt: "Azeitona", en: "Olive" }),
@@ -63,12 +66,12 @@ module.exports = {
       {
         title: JSON.stringify({ pt: "Maionese", en: "Mayonnaise" }),
         type: "boolean",
-        price: JSON.stringify({ brl: "1.00", usd: "0.20" }),
+        price: JSON.stringify({ brl: "0.50", usd: "0.10" }),
       },
       {
         title: JSON.stringify({ pt: "Mostarda", en: "Mustard" }),
         type: "boolean",
-        price: JSON.stringify({ brl: "1.00", usd: "0.20" }),
+        price: JSON.stringify({ brl: "0.50", usd: "0.10" }),
       },
       {
         title: JSON.stringify({ pt: "Ketchup", en: "Ketchup" }),
@@ -91,8 +94,6 @@ module.exports = {
         type: "boolean",
         price: JSON.stringify({ brl: "1.50", usd: "0.30" }),
       },
-
-      // Snacks
       {
         title: JSON.stringify({ pt: "Pimenta", en: "Pepper" }),
         type: "boolean",
@@ -107,28 +108,17 @@ module.exports = {
         price: JSON.stringify({ brl: "1.50", usd: "0.30" }),
       },
       {
-        title: JSON.stringify({ pt: "Barbecue", en: "Barbecue" }),
+        title: JSON.stringify({ pt: "Barbecue", en: "Barbecue sauce" }),
         type: "boolean",
-        price: JSON.stringify({ brl: "0.50", usd: "0.10" }),
+        price: JSON.stringify({ brl: "1.00", usd: "0.20" }),
       },
       {
-        title: JSON.stringify({ pt: "Catupiry", en: "Catupiry" }),
+        title: JSON.stringify({ pt: "Catupiry", en: "Catupiry cheese" }),
         type: "boolean",
-        price: JSON.stringify({ brl: "0.50", usd: "0.10" }),
+        price: JSON.stringify({ brl: "1.50", usd: "0.30" }),
       },
 
-      // Drinks
-      {
-        title: JSON.stringify({ pt: "Canudo", en: "Straw" }),
-        type: "boolean",
-        price: JSON.stringify({ brl: "0.50", usd: "0.10" }),
-      },
-      {
-        title: JSON.stringify({ pt: "Gelo", en: "Ice" }),
-        type: "boolean",
-        price: JSON.stringify({ brl: "0.50", usd: "0.10" }),
-      },
-      // Sweets
+      // Desserts
       {
         title: JSON.stringify({
           pt: "Granulado",
@@ -161,21 +151,34 @@ module.exports = {
       {
         title: JSON.stringify({
           pt: "Raspas de coco",
-          en: "Coconut flakes",
+          en: "Coconut flakes"
         }),
         type: "boolean",
         price: JSON.stringify({ brl: "1.50", usd: "0.30" }),
       },
+      // Drinks
+      {
+        title: JSON.stringify({ pt: "Gelo", en: "Ice" }),
+        type: "boolean",
+        price: JSON.stringify({ brl: "0.50", usd: "0.10" }),
+      },
+      {
+        title: JSON.stringify({ pt: "Canudo", en: "Straw" }),
+        type: "boolean",
+        price: JSON.stringify({ brl: "0.30", usd: "0.06" }),
+      },
     ];
 
     const now = new Date();
-    const dataToInsert = additionals.map((item) => ({
-      ...item,
-      createdAt: now,
-      updatedAt: now,
-    }));
 
-    await queryInterface.bulkInsert("additionals", dataToInsert);
+    await queryInterface.bulkInsert(
+      "additionals",
+      additionals.map((item) => ({
+        ...item,
+        createdAt: now,
+        updatedAt: now,
+      }))
+    );
   },
 
   async down(queryInterface) {
