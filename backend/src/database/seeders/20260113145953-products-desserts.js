@@ -4,7 +4,7 @@
 module.exports = {
   async up(queryInterface) {
     const logo =
-      "https://github.com/user-attachments/assets/69f9f505-50ff-4bf3-922c-745734ea3adc";
+      "https://i.ibb.co/0RHpC2cy/Dessert-Example.jpg";
 
     const desserts = [
       {

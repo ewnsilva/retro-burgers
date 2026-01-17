@@ -4,7 +4,7 @@
 module.exports = {
   async up(queryInterface) {
     const logo =
-      "https://github.com/user-attachments/assets/b7618de8-1078-4fec-8bcf-3a2dc0a459e8";
+      "https://i.ibb.co/1GFh6shX/Drink-Example.jpg";
 
     const drinks = [
       { pt: "Coca-Cola", en: "Coca-Cola", price: 7.99 },
