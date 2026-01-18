@@ -1,82 +1,826 @@
 [
   {
-    "id": 8,
-    "image": "/images/SnackExample.jpg",
-    "namePt": "Petisco de Carne",
-    "descriptionPt": "Espeto com carnes e linguiças temperadas.",
-    "pricePt": 10.99,
-    "nameEn": "Meat Skewer",
-    "descriptionEn": "Skewer with seasoned meats and sausages.",
-    "priceEn": 2.2
-  },
-  {
     "id": 9,
-    "image": "/images/SnackExample.jpg",
-    "namePt": "Quibe",
-    "descriptionPt": "Quibe recheado com carne moída temperada e hortelã.",
-    "pricePt": 8.99,
-    "nameEn": "Kibbeh",
-    "descriptionEn": "Kibbeh stuffed with seasoned ground beef and mint.",
-    "priceEn": 1.8
+    "logo": "/mocks/images/SnackExample.jpg",
+    "title": {
+      "pt": "Petisco de Carne",
+      "en": "Meat Skewer"
+    },
+    "description": {
+      "pt": "Espeto com carnes e linguiças temperadas.",
+      "en": "Skewer with seasoned meats and sausages."
+    },
+    "price": {
+      "brl": "10.99",
+      "usd": "2.20"
+    },
+    "category_id": 2,
+    "additionals": [
+      {
+        "id": 13,
+        "title": {
+          "pt": "Mostarda",
+          "en": "Mustard"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 15,
+        "title": {
+          "pt": "Molho especial",
+          "en": "Special sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 16,
+        "title": {
+          "pt": "Cheddar cremoso",
+          "en": "Creamy cheddar"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 17,
+        "title": {
+          "pt": "Pimenta",
+          "en": "Pepper"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 18,
+        "title": {
+          "pt": "Molho verde",
+          "en": "Green sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 19,
+        "title": {
+          "pt": "Barbecue",
+          "en": "Barbecue sauce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 20,
+        "title": {
+          "pt": "Catupiry",
+          "en": "Catupiry cheese"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 10,
-    "image": "/images/SnackExample.jpg",
-    "namePt": "Pastel de Queijo",
-    "descriptionPt": "Pastel crocante com recheio de queijo derretido.",
-    "pricePt": 6.49,
-    "nameEn": "Cheese Pastry",
-    "descriptionEn": "Crispy pastry filled with melted cheese.",
-    "priceEn": 1.3
+    "logo": "/mocks/images/SnackExample.jpg",
+    "title": {
+      "pt": "Quibe",
+      "en": "Kibbeh"
+    },
+    "description": {
+      "pt": "Quibe recheado com carne moída temperada e hortelã.",
+      "en": "Kibbeh stuffed with seasoned ground beef and mint."
+    },
+    "price": {
+      "brl": "8.99",
+      "usd": "1.80"
+    },
+    "category_id": 2,
+    "additionals": [
+      {
+        "id": 13,
+        "title": {
+          "pt": "Mostarda",
+          "en": "Mustard"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 15,
+        "title": {
+          "pt": "Molho especial",
+          "en": "Special sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 16,
+        "title": {
+          "pt": "Cheddar cremoso",
+          "en": "Creamy cheddar"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 17,
+        "title": {
+          "pt": "Pimenta",
+          "en": "Pepper"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 18,
+        "title": {
+          "pt": "Molho verde",
+          "en": "Green sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 19,
+        "title": {
+          "pt": "Barbecue",
+          "en": "Barbecue sauce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 20,
+        "title": {
+          "pt": "Catupiry",
+          "en": "Catupiry cheese"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 11,
-    "image": "/images/SnackExample.jpg",
-    "namePt": "Bolinha de Queijo",
-    "descriptionPt": "Bolinha de queijo cremosa com massa leve.",
-    "pricePt": 5.49,
-    "nameEn": "Cheese Balls",
-    "descriptionEn": "Creamy cheese balls with a light dough.",
-    "priceEn": 1.1
+    "logo": "/mocks/images/SnackExample.jpg",
+    "title": {
+      "pt": "Pastel de Queijo",
+      "en": "Cheese Pastry"
+    },
+    "description": {
+      "pt": "Pastel crocante com recheio de queijo derretido.",
+      "en": "Crispy pastry filled with melted cheese."
+    },
+    "price": {
+      "brl": "6.49",
+      "usd": "1.30"
+    },
+    "category_id": 2,
+    "additionals": [
+      {
+        "id": 13,
+        "title": {
+          "pt": "Mostarda",
+          "en": "Mustard"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 15,
+        "title": {
+          "pt": "Molho especial",
+          "en": "Special sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 16,
+        "title": {
+          "pt": "Cheddar cremoso",
+          "en": "Creamy cheddar"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 17,
+        "title": {
+          "pt": "Pimenta",
+          "en": "Pepper"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 18,
+        "title": {
+          "pt": "Molho verde",
+          "en": "Green sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 19,
+        "title": {
+          "pt": "Barbecue",
+          "en": "Barbecue sauce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 20,
+        "title": {
+          "pt": "Catupiry",
+          "en": "Catupiry cheese"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 12,
-    "image": "/images/SnackExample.jpg",
-    "namePt": "Esfiha de Carne",
-    "descriptionPt": "Esfiha aberta com recheio de carne temperada.",
-    "pricePt": 7.99,
-    "nameEn": "Beef Sfiha",
-    "descriptionEn": "Open-faced sfiha filled with seasoned beef.",
-    "priceEn": 1.6
+    "logo": "/mocks/images/SnackExample.jpg",
+    "title": {
+      "pt": "Bolinha de Queijo",
+      "en": "Cheese Balls"
+    },
+    "description": {
+      "pt": "Bolinha de queijo cremosa com massa leve.",
+      "en": "Creamy cheese balls with a light dough."
+    },
+    "price": {
+      "brl": "5.49",
+      "usd": "1.10"
+    },
+    "category_id": 2,
+    "additionals": [
+      {
+        "id": 13,
+        "title": {
+          "pt": "Mostarda",
+          "en": "Mustard"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 15,
+        "title": {
+          "pt": "Molho especial",
+          "en": "Special sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 16,
+        "title": {
+          "pt": "Cheddar cremoso",
+          "en": "Creamy cheddar"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 17,
+        "title": {
+          "pt": "Pimenta",
+          "en": "Pepper"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 18,
+        "title": {
+          "pt": "Molho verde",
+          "en": "Green sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 19,
+        "title": {
+          "pt": "Barbecue",
+          "en": "Barbecue sauce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 20,
+        "title": {
+          "pt": "Catupiry",
+          "en": "Catupiry cheese"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 13,
-    "image": "/images/SnackExample.jpg",
-    "namePt": "Empada de Frango",
-    "descriptionPt": "Empada recheada com frango desfiado e temperado.",
-    "pricePt": 6.99,
-    "nameEn": "Chicken Pie",
-    "descriptionEn": "Pie filled with seasoned shredded chicken.",
-    "priceEn": 1.4
+    "logo": "/mocks/images/SnackExample.jpg",
+    "title": {
+      "pt": "Esfiha de Carne",
+      "en": "Beef Sfiha"
+    },
+    "description": {
+      "pt": "Esfiha aberta com recheio de carne temperada.",
+      "en": "Open-faced sfiha filled with seasoned beef."
+    },
+    "price": {
+      "brl": "7.99",
+      "usd": "1.60"
+    },
+    "category_id": 2,
+    "additionals": [
+      {
+        "id": 13,
+        "title": {
+          "pt": "Mostarda",
+          "en": "Mustard"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 15,
+        "title": {
+          "pt": "Molho especial",
+          "en": "Special sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 16,
+        "title": {
+          "pt": "Cheddar cremoso",
+          "en": "Creamy cheddar"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 17,
+        "title": {
+          "pt": "Pimenta",
+          "en": "Pepper"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 18,
+        "title": {
+          "pt": "Molho verde",
+          "en": "Green sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 19,
+        "title": {
+          "pt": "Barbecue",
+          "en": "Barbecue sauce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 20,
+        "title": {
+          "pt": "Catupiry",
+          "en": "Catupiry cheese"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 14,
-    "image": "/images/SnackExample.jpg",
-    "namePt": "Croissant de Presunto e Queijo",
-    "descriptionPt": "Croissant folhado com recheio de presunto e queijo.",
-    "pricePt": 8.49,
-    "nameEn": "Ham and Cheese Croissant",
-    "descriptionEn": "Flaky croissant filled with ham and cheese.",
-    "priceEn": 1.7
+    "logo": "/mocks/images/SnackExample.jpg",
+    "title": {
+      "pt": "Empada de Frango",
+      "en": "Chicken Pie"
+    },
+    "description": {
+      "pt": "Empada recheada com frango desfiado e temperado.",
+      "en": "Pie filled with seasoned shredded chicken."
+    },
+    "price": {
+      "brl": "6.99",
+      "usd": "1.40"
+    },
+    "category_id": 2,
+    "additionals": [
+      {
+        "id": 13,
+        "title": {
+          "pt": "Mostarda",
+          "en": "Mustard"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 15,
+        "title": {
+          "pt": "Molho especial",
+          "en": "Special sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 16,
+        "title": {
+          "pt": "Cheddar cremoso",
+          "en": "Creamy cheddar"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 17,
+        "title": {
+          "pt": "Pimenta",
+          "en": "Pepper"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 18,
+        "title": {
+          "pt": "Molho verde",
+          "en": "Green sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 19,
+        "title": {
+          "pt": "Barbecue",
+          "en": "Barbecue sauce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 20,
+        "title": {
+          "pt": "Catupiry",
+          "en": "Catupiry cheese"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 15,
-    "image": "/images/SnackExample.jpg",
-    "namePt": "Pão de Queijo",
-    "descriptionPt": "Clássico pão de queijo brasileiro, macio e delicioso.",
-    "pricePt": 2.5,
-    "nameEn": "Cheese Bread",
-    "descriptionEn": "Classic Brazilian cheese bread, soft and delicious.",
-    "priceEn": 0.5
+    "logo": "/mocks/images/SnackExample.jpg",
+    "title": {
+      "pt": "Croissant de Presunto e Queijo",
+      "en": "Ham and Cheese Croissant"
+    },
+    "description": {
+      "pt": "Croissant folhado com recheio de presunto e queijo.",
+      "en": "Flaky croissant filled with ham and cheese."
+    },
+    "price": {
+      "brl": "8.49",
+      "usd": "1.70"
+    },
+    "category_id": 2,
+    "additionals": [
+      {
+        "id": 13,
+        "title": {
+          "pt": "Mostarda",
+          "en": "Mustard"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 15,
+        "title": {
+          "pt": "Molho especial",
+          "en": "Special sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 16,
+        "title": {
+          "pt": "Cheddar cremoso",
+          "en": "Creamy cheddar"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 17,
+        "title": {
+          "pt": "Pimenta",
+          "en": "Pepper"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 18,
+        "title": {
+          "pt": "Molho verde",
+          "en": "Green sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 19,
+        "title": {
+          "pt": "Barbecue",
+          "en": "Barbecue sauce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 20,
+        "title": {
+          "pt": "Catupiry",
+          "en": "Catupiry cheese"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "logo": "/mocks/images/SnackExample.jpg",
+    "title": {
+      "pt": "Pão de Queijo",
+      "en": "Cheese Bread"
+    },
+    "description": {
+      "pt": "Clássico pão de queijo brasileiro, macio e delicioso.",
+      "en": "Classic Brazilian cheese bread, soft and delicious."
+    },
+    "price": {
+      "brl": "2.50",
+      "usd": "0.50"
+    },
+    "category_id": 2,
+    "additionals": [
+      {
+        "id": 13,
+        "title": {
+          "pt": "Mostarda",
+          "en": "Mustard"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 15,
+        "title": {
+          "pt": "Molho especial",
+          "en": "Special sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 16,
+        "title": {
+          "pt": "Cheddar cremoso",
+          "en": "Creamy cheddar"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 17,
+        "title": {
+          "pt": "Pimenta",
+          "en": "Pepper"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 18,
+        "title": {
+          "pt": "Molho verde",
+          "en": "Green sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 19,
+        "title": {
+          "pt": "Barbecue",
+          "en": "Barbecue sauce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 20,
+        "title": {
+          "pt": "Catupiry",
+          "en": "Catupiry cheese"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
   }
 ]

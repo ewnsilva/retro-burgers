@@ -1,82 +1,1978 @@
 [
   {
-    "id": 0,
-    "image": "/images/BurguerExample.jpg",
-    "namePt": "Classic Burger",
-    "descriptionPt": "Um hambúrguer tradicional com carne suculenta, alface, tomate e molho especial.",
-    "pricePt": 19.99,
-    "nameEn": "Classic Burger",
-    "descriptionEn": "A traditional burger with juicy beef, lettuce, tomato, and special sauce.",
-    "priceEn": 4
-  },
-  {
     "id": 1,
-    "image": "/images/BurguerExample.jpg",
-    "namePt": "Cheese Lover",
-    "descriptionPt": "Hambúrguer com dupla camada de queijo cheddar e carne grelhada no ponto certo.",
-    "pricePt": 22.99,
-    "nameEn": "Cheese Lover",
-    "descriptionEn": "Burger with double layers of cheddar cheese and perfectly grilled beef.",
-    "priceEn": 4.6
+    "logo": "/mocks/images/BurguerExample.jpg",
+    "title": {
+      "pt": "Classic Burger",
+      "en": "Classic Burger"
+    },
+    "description": {
+      "pt": "Um hambúrguer tradicional com carne suculenta, alface, tomate e molho especial.",
+      "en": "A traditional burger with juicy beef, lettuce, tomato, and special sauce."
+    },
+    "price": {
+      "brl": "19.99",
+      "usd": "4.00"
+    },
+    "category_id": 1,
+    "additionals": [
+      {
+        "id": 2,
+        "title": {
+          "pt": "Queijo extra",
+          "en": "Extra cheese"
+        },
+        "price": {
+          "brl": "3.00",
+          "usd": "0.60"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 3,
+        "title": {
+          "pt": "Bacon",
+          "en": "Bacon"
+        },
+        "price": {
+          "brl": "4.00",
+          "usd": "0.80"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 4,
+        "title": {
+          "pt": "Pepperoni",
+          "en": "Pepperoni"
+        },
+        "price": {
+          "brl": "3.50",
+          "usd": "0.70"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 5,
+        "title": {
+          "pt": "Tomate",
+          "en": "Tomato"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 6,
+        "title": {
+          "pt": "Cebola",
+          "en": "Onion"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 7,
+        "title": {
+          "pt": "Alface",
+          "en": "Lettuce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 8,
+        "title": {
+          "pt": "Picles",
+          "en": "Pickles"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 9,
+        "title": {
+          "pt": "Onion Rings",
+          "en": "Onion Rings"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 10,
+        "title": {
+          "pt": "Azeitona",
+          "en": "Olive"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 11,
+        "title": {
+          "pt": "Doritos",
+          "en": "Doritos"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 12,
+        "title": {
+          "pt": "Maionese",
+          "en": "Mayonnaise"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 13,
+        "title": {
+          "pt": "Mostarda",
+          "en": "Mustard"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 14,
+        "title": {
+          "pt": "Ketchup",
+          "en": "Ketchup"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 15,
+        "title": {
+          "pt": "Molho especial",
+          "en": "Special sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 16,
+        "title": {
+          "pt": "Cheddar cremoso",
+          "en": "Creamy cheddar"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 17,
+        "title": {
+          "pt": "Pimenta",
+          "en": "Pepper"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 18,
+        "title": {
+          "pt": "Molho verde",
+          "en": "Green sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 19,
+        "title": {
+          "pt": "Barbecue",
+          "en": "Barbecue sauce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 20,
+        "title": {
+          "pt": "Catupiry",
+          "en": "Catupiry cheese"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 2,
-    "image": "/images/BurguerExample.jpg",
-    "namePt": "Bacon Deluxe",
-    "descriptionPt": "Carne grelhada com fatias crocantes de bacon, queijo e molho barbecue.",
-    "pricePt": 24.99,
-    "nameEn": "Bacon Deluxe",
-    "descriptionEn": "Grilled beef with crispy bacon slices, cheese, and barbecue sauce.",
-    "priceEn": 5
+    "logo": "/mocks/images/BurguerExample.jpg",
+    "title": {
+      "pt": "Cheese Lover",
+      "en": "Cheese Lover"
+    },
+    "description": {
+      "pt": "Hambúrguer com dupla camada de queijo cheddar e carne grelhada no ponto certo.",
+      "en": "Burger with double layers of cheddar cheese and perfectly grilled beef."
+    },
+    "price": {
+      "brl": "22.99",
+      "usd": "4.60"
+    },
+    "category_id": 1,
+    "additionals": [
+      {
+        "id": 2,
+        "title": {
+          "pt": "Queijo extra",
+          "en": "Extra cheese"
+        },
+        "price": {
+          "brl": "3.00",
+          "usd": "0.60"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 3,
+        "title": {
+          "pt": "Bacon",
+          "en": "Bacon"
+        },
+        "price": {
+          "brl": "4.00",
+          "usd": "0.80"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 4,
+        "title": {
+          "pt": "Pepperoni",
+          "en": "Pepperoni"
+        },
+        "price": {
+          "brl": "3.50",
+          "usd": "0.70"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 5,
+        "title": {
+          "pt": "Tomate",
+          "en": "Tomato"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 6,
+        "title": {
+          "pt": "Cebola",
+          "en": "Onion"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 7,
+        "title": {
+          "pt": "Alface",
+          "en": "Lettuce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 8,
+        "title": {
+          "pt": "Picles",
+          "en": "Pickles"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 9,
+        "title": {
+          "pt": "Onion Rings",
+          "en": "Onion Rings"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 10,
+        "title": {
+          "pt": "Azeitona",
+          "en": "Olive"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 11,
+        "title": {
+          "pt": "Doritos",
+          "en": "Doritos"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 12,
+        "title": {
+          "pt": "Maionese",
+          "en": "Mayonnaise"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 13,
+        "title": {
+          "pt": "Mostarda",
+          "en": "Mustard"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 14,
+        "title": {
+          "pt": "Ketchup",
+          "en": "Ketchup"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 15,
+        "title": {
+          "pt": "Molho especial",
+          "en": "Special sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 16,
+        "title": {
+          "pt": "Cheddar cremoso",
+          "en": "Creamy cheddar"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 17,
+        "title": {
+          "pt": "Pimenta",
+          "en": "Pepper"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 18,
+        "title": {
+          "pt": "Molho verde",
+          "en": "Green sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 19,
+        "title": {
+          "pt": "Barbecue",
+          "en": "Barbecue sauce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 20,
+        "title": {
+          "pt": "Catupiry",
+          "en": "Catupiry cheese"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 3,
-    "image": "/images/BurguerExample.jpg",
-    "namePt": "Veggie Delight",
-    "descriptionPt": "Hambúrguer vegetariano com um mix de grãos, queijo, alface e guacamole.",
-    "pricePt": 18.99,
-    "nameEn": "Veggie Delight",
-    "descriptionEn": "Vegetarian burger with a mix of grains, cheese, lettuce, and guacamole.",
-    "priceEn": 3.8
+    "logo": "/mocks/images/BurguerExample.jpg",
+    "title": {
+      "pt": "Bacon Deluxe",
+      "en": "Bacon Deluxe"
+    },
+    "description": {
+      "pt": "Carne grelhada com fatias crocantes de bacon, queijo e molho barbecue.",
+      "en": "Grilled beef with crispy bacon slices, cheese, and barbecue sauce."
+    },
+    "price": {
+      "brl": "24.99",
+      "usd": "5.00"
+    },
+    "category_id": 1,
+    "additionals": [
+      {
+        "id": 2,
+        "title": {
+          "pt": "Queijo extra",
+          "en": "Extra cheese"
+        },
+        "price": {
+          "brl": "3.00",
+          "usd": "0.60"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 3,
+        "title": {
+          "pt": "Bacon",
+          "en": "Bacon"
+        },
+        "price": {
+          "brl": "4.00",
+          "usd": "0.80"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 4,
+        "title": {
+          "pt": "Pepperoni",
+          "en": "Pepperoni"
+        },
+        "price": {
+          "brl": "3.50",
+          "usd": "0.70"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 5,
+        "title": {
+          "pt": "Tomate",
+          "en": "Tomato"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 6,
+        "title": {
+          "pt": "Cebola",
+          "en": "Onion"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 7,
+        "title": {
+          "pt": "Alface",
+          "en": "Lettuce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 8,
+        "title": {
+          "pt": "Picles",
+          "en": "Pickles"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 9,
+        "title": {
+          "pt": "Onion Rings",
+          "en": "Onion Rings"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 10,
+        "title": {
+          "pt": "Azeitona",
+          "en": "Olive"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 11,
+        "title": {
+          "pt": "Doritos",
+          "en": "Doritos"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 12,
+        "title": {
+          "pt": "Maionese",
+          "en": "Mayonnaise"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 13,
+        "title": {
+          "pt": "Mostarda",
+          "en": "Mustard"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 14,
+        "title": {
+          "pt": "Ketchup",
+          "en": "Ketchup"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 15,
+        "title": {
+          "pt": "Molho especial",
+          "en": "Special sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 16,
+        "title": {
+          "pt": "Cheddar cremoso",
+          "en": "Creamy cheddar"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 17,
+        "title": {
+          "pt": "Pimenta",
+          "en": "Pepper"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 18,
+        "title": {
+          "pt": "Molho verde",
+          "en": "Green sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 19,
+        "title": {
+          "pt": "Barbecue",
+          "en": "Barbecue sauce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 20,
+        "title": {
+          "pt": "Catupiry",
+          "en": "Catupiry cheese"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 4,
-    "image": "/images/BurguerExample.jpg",
-    "namePt": "Spicy Jalapeño",
-    "descriptionPt": "Hambúrguer apimentado com jalapeños, pimenta caiena e molho picante.",
-    "pricePt": 21.99,
-    "nameEn": "Spicy Jalapeño",
-    "descriptionEn": "Spicy burger with jalapeños, cayenne pepper, and hot sauce.",
-    "priceEn": 4.4
+    "logo": "/mocks/images/BurguerExample.jpg",
+    "title": {
+      "pt": "Veggie Delight",
+      "en": "Veggie Delight"
+    },
+    "description": {
+      "pt": "Hambúrguer vegetariano com um mix de grãos, queijo, alface e guacamole.",
+      "en": "Vegetarian burger with a mix of grains, cheese, lettuce, and guacamole."
+    },
+    "price": {
+      "brl": "18.99",
+      "usd": "3.80"
+    },
+    "category_id": 1,
+    "additionals": [
+      {
+        "id": 2,
+        "title": {
+          "pt": "Queijo extra",
+          "en": "Extra cheese"
+        },
+        "price": {
+          "brl": "3.00",
+          "usd": "0.60"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 3,
+        "title": {
+          "pt": "Bacon",
+          "en": "Bacon"
+        },
+        "price": {
+          "brl": "4.00",
+          "usd": "0.80"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 4,
+        "title": {
+          "pt": "Pepperoni",
+          "en": "Pepperoni"
+        },
+        "price": {
+          "brl": "3.50",
+          "usd": "0.70"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 5,
+        "title": {
+          "pt": "Tomate",
+          "en": "Tomato"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 6,
+        "title": {
+          "pt": "Cebola",
+          "en": "Onion"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 7,
+        "title": {
+          "pt": "Alface",
+          "en": "Lettuce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 8,
+        "title": {
+          "pt": "Picles",
+          "en": "Pickles"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 9,
+        "title": {
+          "pt": "Onion Rings",
+          "en": "Onion Rings"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 10,
+        "title": {
+          "pt": "Azeitona",
+          "en": "Olive"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 11,
+        "title": {
+          "pt": "Doritos",
+          "en": "Doritos"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 12,
+        "title": {
+          "pt": "Maionese",
+          "en": "Mayonnaise"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 13,
+        "title": {
+          "pt": "Mostarda",
+          "en": "Mustard"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 14,
+        "title": {
+          "pt": "Ketchup",
+          "en": "Ketchup"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 15,
+        "title": {
+          "pt": "Molho especial",
+          "en": "Special sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 16,
+        "title": {
+          "pt": "Cheddar cremoso",
+          "en": "Creamy cheddar"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 17,
+        "title": {
+          "pt": "Pimenta",
+          "en": "Pepper"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 18,
+        "title": {
+          "pt": "Molho verde",
+          "en": "Green sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 19,
+        "title": {
+          "pt": "Barbecue",
+          "en": "Barbecue sauce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 20,
+        "title": {
+          "pt": "Catupiry",
+          "en": "Catupiry cheese"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 5,
-    "image": "/images/BurguerExample.jpg",
-    "namePt": "Mushroom Swiss",
-    "descriptionPt": "Hambúrguer com cogumelos salteados, queijo suíço e cebolas caramelizadas.",
-    "pricePt": 23.49,
-    "nameEn": "Mushroom Swiss",
-    "descriptionEn": "Burger with sautéed mushrooms, Swiss cheese, and caramelized onions.",
-    "priceEn": 4.7
+    "logo": "/mocks/images/BurguerExample.jpg",
+    "title": {
+      "pt": "Spicy Jalapeño",
+      "en": "Spicy Jalapeño"
+    },
+    "description": {
+      "pt": "Hambúrguer apimentado com jalapeños, pimenta caiena e molho picante.",
+      "en": "Spicy burger with jalapeños, cayenne pepper, and hot sauce."
+    },
+    "price": {
+      "brl": "21.99",
+      "usd": "4.40"
+    },
+    "category_id": 1,
+    "additionals": [
+      {
+        "id": 2,
+        "title": {
+          "pt": "Queijo extra",
+          "en": "Extra cheese"
+        },
+        "price": {
+          "brl": "3.00",
+          "usd": "0.60"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 3,
+        "title": {
+          "pt": "Bacon",
+          "en": "Bacon"
+        },
+        "price": {
+          "brl": "4.00",
+          "usd": "0.80"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 4,
+        "title": {
+          "pt": "Pepperoni",
+          "en": "Pepperoni"
+        },
+        "price": {
+          "brl": "3.50",
+          "usd": "0.70"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 5,
+        "title": {
+          "pt": "Tomate",
+          "en": "Tomato"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 6,
+        "title": {
+          "pt": "Cebola",
+          "en": "Onion"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 7,
+        "title": {
+          "pt": "Alface",
+          "en": "Lettuce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 8,
+        "title": {
+          "pt": "Picles",
+          "en": "Pickles"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 9,
+        "title": {
+          "pt": "Onion Rings",
+          "en": "Onion Rings"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 10,
+        "title": {
+          "pt": "Azeitona",
+          "en": "Olive"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 11,
+        "title": {
+          "pt": "Doritos",
+          "en": "Doritos"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 12,
+        "title": {
+          "pt": "Maionese",
+          "en": "Mayonnaise"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 13,
+        "title": {
+          "pt": "Mostarda",
+          "en": "Mustard"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 14,
+        "title": {
+          "pt": "Ketchup",
+          "en": "Ketchup"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 15,
+        "title": {
+          "pt": "Molho especial",
+          "en": "Special sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 16,
+        "title": {
+          "pt": "Cheddar cremoso",
+          "en": "Creamy cheddar"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 17,
+        "title": {
+          "pt": "Pimenta",
+          "en": "Pepper"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 18,
+        "title": {
+          "pt": "Molho verde",
+          "en": "Green sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 19,
+        "title": {
+          "pt": "Barbecue",
+          "en": "Barbecue sauce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 20,
+        "title": {
+          "pt": "Catupiry",
+          "en": "Catupiry cheese"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 6,
-    "image": "/images/BurguerExample.jpg",
-    "namePt": "Chicken Crispy",
-    "descriptionPt": "Delicioso hambúrguer de frango empanado, alface, tomate e maionese.",
-    "pricePt": 20.99,
-    "nameEn": "Chicken Crispy",
-    "descriptionEn": "Delicious crispy chicken burger with lettuce, tomato, and mayonnaise.",
-    "priceEn": 4.2
+    "logo": "/mocks/images/BurguerExample.jpg",
+    "title": {
+      "pt": "Mushroom Swiss",
+      "en": "Mushroom Swiss"
+    },
+    "description": {
+      "pt": "Hambúrguer com cogumelos salteados, queijo suíço e cebolas caramelizadas.",
+      "en": "Burger with sautéed mushrooms, Swiss cheese, and caramelized onions."
+    },
+    "price": {
+      "brl": "23.49",
+      "usd": "4.70"
+    },
+    "category_id": 1,
+    "additionals": [
+      {
+        "id": 2,
+        "title": {
+          "pt": "Queijo extra",
+          "en": "Extra cheese"
+        },
+        "price": {
+          "brl": "3.00",
+          "usd": "0.60"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 3,
+        "title": {
+          "pt": "Bacon",
+          "en": "Bacon"
+        },
+        "price": {
+          "brl": "4.00",
+          "usd": "0.80"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 4,
+        "title": {
+          "pt": "Pepperoni",
+          "en": "Pepperoni"
+        },
+        "price": {
+          "brl": "3.50",
+          "usd": "0.70"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 5,
+        "title": {
+          "pt": "Tomate",
+          "en": "Tomato"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 6,
+        "title": {
+          "pt": "Cebola",
+          "en": "Onion"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 7,
+        "title": {
+          "pt": "Alface",
+          "en": "Lettuce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 8,
+        "title": {
+          "pt": "Picles",
+          "en": "Pickles"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 9,
+        "title": {
+          "pt": "Onion Rings",
+          "en": "Onion Rings"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 10,
+        "title": {
+          "pt": "Azeitona",
+          "en": "Olive"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 11,
+        "title": {
+          "pt": "Doritos",
+          "en": "Doritos"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 12,
+        "title": {
+          "pt": "Maionese",
+          "en": "Mayonnaise"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 13,
+        "title": {
+          "pt": "Mostarda",
+          "en": "Mustard"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 14,
+        "title": {
+          "pt": "Ketchup",
+          "en": "Ketchup"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 15,
+        "title": {
+          "pt": "Molho especial",
+          "en": "Special sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 16,
+        "title": {
+          "pt": "Cheddar cremoso",
+          "en": "Creamy cheddar"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 17,
+        "title": {
+          "pt": "Pimenta",
+          "en": "Pepper"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 18,
+        "title": {
+          "pt": "Molho verde",
+          "en": "Green sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 19,
+        "title": {
+          "pt": "Barbecue",
+          "en": "Barbecue sauce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 20,
+        "title": {
+          "pt": "Catupiry",
+          "en": "Catupiry cheese"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 7,
-    "image": "/images/BurguerExample.jpg",
-    "namePt": "Double Trouble",
-    "descriptionPt": "Dois hambúrgueres suculentos, queijo duplo, bacon e molho especial.",
-    "pricePt": 26.99,
-    "nameEn": "Double Trouble",
-    "descriptionEn": "Two juicy beef patties with double cheese, bacon, and special sauce.",
-    "priceEn": 5.4
+    "logo": "/mocks/images/BurguerExample.jpg",
+    "title": {
+      "pt": "Chicken Crispy",
+      "en": "Chicken Crispy"
+    },
+    "description": {
+      "pt": "Delicioso hambúrguer de frango empanado, alface, tomate e maionese.",
+      "en": "Delicious crispy chicken burger with lettuce, tomato, and mayonnaise."
+    },
+    "price": {
+      "brl": "20.99",
+      "usd": "4.20"
+    },
+    "category_id": 1,
+    "additionals": [
+      {
+        "id": 2,
+        "title": {
+          "pt": "Queijo extra",
+          "en": "Extra cheese"
+        },
+        "price": {
+          "brl": "3.00",
+          "usd": "0.60"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 3,
+        "title": {
+          "pt": "Bacon",
+          "en": "Bacon"
+        },
+        "price": {
+          "brl": "4.00",
+          "usd": "0.80"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 4,
+        "title": {
+          "pt": "Pepperoni",
+          "en": "Pepperoni"
+        },
+        "price": {
+          "brl": "3.50",
+          "usd": "0.70"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 5,
+        "title": {
+          "pt": "Tomate",
+          "en": "Tomato"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 6,
+        "title": {
+          "pt": "Cebola",
+          "en": "Onion"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 7,
+        "title": {
+          "pt": "Alface",
+          "en": "Lettuce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 8,
+        "title": {
+          "pt": "Picles",
+          "en": "Pickles"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 9,
+        "title": {
+          "pt": "Onion Rings",
+          "en": "Onion Rings"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 10,
+        "title": {
+          "pt": "Azeitona",
+          "en": "Olive"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 11,
+        "title": {
+          "pt": "Doritos",
+          "en": "Doritos"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 12,
+        "title": {
+          "pt": "Maionese",
+          "en": "Mayonnaise"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 13,
+        "title": {
+          "pt": "Mostarda",
+          "en": "Mustard"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 14,
+        "title": {
+          "pt": "Ketchup",
+          "en": "Ketchup"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 15,
+        "title": {
+          "pt": "Molho especial",
+          "en": "Special sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 16,
+        "title": {
+          "pt": "Cheddar cremoso",
+          "en": "Creamy cheddar"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 17,
+        "title": {
+          "pt": "Pimenta",
+          "en": "Pepper"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 18,
+        "title": {
+          "pt": "Molho verde",
+          "en": "Green sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 19,
+        "title": {
+          "pt": "Barbecue",
+          "en": "Barbecue sauce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 20,
+        "title": {
+          "pt": "Catupiry",
+          "en": "Catupiry cheese"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "logo": "/mocks/images/BurguerExample.jpg",
+    "title": {
+      "pt": "Double Trouble",
+      "en": "Double Trouble"
+    },
+    "description": {
+      "pt": "Dois hambúrgueres suculentos, queijo duplo, bacon e molho especial.",
+      "en": "Two juicy beef patties with double cheese, bacon, and special sauce."
+    },
+    "price": {
+      "brl": "26.99",
+      "usd": "5.40"
+    },
+    "category_id": 1,
+    "additionals": [
+      {
+        "id": 2,
+        "title": {
+          "pt": "Queijo extra",
+          "en": "Extra cheese"
+        },
+        "price": {
+          "brl": "3.00",
+          "usd": "0.60"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 3,
+        "title": {
+          "pt": "Bacon",
+          "en": "Bacon"
+        },
+        "price": {
+          "brl": "4.00",
+          "usd": "0.80"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 4,
+        "title": {
+          "pt": "Pepperoni",
+          "en": "Pepperoni"
+        },
+        "price": {
+          "brl": "3.50",
+          "usd": "0.70"
+        },
+        "type": "quantity"
+      },
+      {
+        "id": 5,
+        "title": {
+          "pt": "Tomate",
+          "en": "Tomato"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 6,
+        "title": {
+          "pt": "Cebola",
+          "en": "Onion"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 7,
+        "title": {
+          "pt": "Alface",
+          "en": "Lettuce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 8,
+        "title": {
+          "pt": "Picles",
+          "en": "Pickles"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 9,
+        "title": {
+          "pt": "Onion Rings",
+          "en": "Onion Rings"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 10,
+        "title": {
+          "pt": "Azeitona",
+          "en": "Olive"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 11,
+        "title": {
+          "pt": "Doritos",
+          "en": "Doritos"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 12,
+        "title": {
+          "pt": "Maionese",
+          "en": "Mayonnaise"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 13,
+        "title": {
+          "pt": "Mostarda",
+          "en": "Mustard"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 14,
+        "title": {
+          "pt": "Ketchup",
+          "en": "Ketchup"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 15,
+        "title": {
+          "pt": "Molho especial",
+          "en": "Special sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 16,
+        "title": {
+          "pt": "Cheddar cremoso",
+          "en": "Creamy cheddar"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 17,
+        "title": {
+          "pt": "Pimenta",
+          "en": "Pepper"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 18,
+        "title": {
+          "pt": "Molho verde",
+          "en": "Green sauce"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 19,
+        "title": {
+          "pt": "Barbecue",
+          "en": "Barbecue sauce"
+        },
+        "price": {
+          "brl": "1.00",
+          "usd": "0.20"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 20,
+        "title": {
+          "pt": "Catupiry",
+          "en": "Catupiry cheese"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
   }
 ]

@@ -1,82 +1,442 @@
 [
   {
-    "id": 16,
-    "image": "/images/DessertExample.jpg",
-    "namePt": "Brigadeiro",
-    "descriptionPt": "Doce brasileiro de chocolate coberto com granulado.",
-    "pricePt": 5.49,
-    "nameEn": "Brigadeiro",
-    "descriptionEn": "Traditional Brazilian chocolate truffle covered with chocolate sprinkles.",
-    "priceEn": 1.1
-  },
-  {
     "id": 17,
-    "image": "/images/DessertExample.jpg",
-    "namePt": "Beijinho",
-    "descriptionPt": "Doce de coco coberto com açúcar e um cravo no topo.",
-    "pricePt": 5.49,
-    "nameEn": "Beijinho",
-    "descriptionEn": "Brazilian coconut candy topped with sugar and a clove.",
-    "priceEn": 1.1
+    "logo": "/mocks/images/DessertExample.jpg",
+    "title": {
+      "pt": "Brigadeiro",
+      "en": "Brigadeiro"
+    },
+    "description": {
+      "pt": "Doce brasileiro de chocolate coberto com granulado.",
+      "en": "Traditional Brazilian chocolate truffle covered with chocolate sprinkles."
+    },
+    "price": {
+      "brl": "5.49",
+      "usd": "1.10"
+    },
+    "category_id": 3,
+    "additionals": [
+      {
+        "id": 21,
+        "title": {
+          "pt": "Granulado",
+          "en": "Sprinkles"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 22,
+        "title": {
+          "pt": "Chantilly",
+          "en": "Whipped cream"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 23,
+        "title": {
+          "pt": "Calda de chocolate",
+          "en": "Chocolate syrup"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 18,
-    "image": "/images/DessertExample.jpg",
-    "namePt": "Torta de Limão",
-    "descriptionPt": "Torta com creme de limão e merengue por cima.",
-    "pricePt": 7.99,
-    "nameEn": "Lemon Pie",
-    "descriptionEn": "Pie filled with lemon cream and topped with meringue.",
-    "priceEn": 1.6
+    "logo": "/mocks/images/DessertExample.jpg",
+    "title": {
+      "pt": "Beijinho",
+      "en": "Beijinho"
+    },
+    "description": {
+      "pt": "Doce de coco coberto com açúcar e um cravo no topo.",
+      "en": "Brazilian coconut candy topped with sugar and a clove."
+    },
+    "price": {
+      "brl": "5.49",
+      "usd": "1.10"
+    },
+    "category_id": 3,
+    "additionals": [
+      {
+        "id": 21,
+        "title": {
+          "pt": "Granulado",
+          "en": "Sprinkles"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 22,
+        "title": {
+          "pt": "Chantilly",
+          "en": "Whipped cream"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 23,
+        "title": {
+          "pt": "Calda de chocolate",
+          "en": "Chocolate syrup"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 19,
-    "image": "/images/DessertExample.jpg",
-    "namePt": "Bolo de Cenoura",
-    "descriptionPt": "Bolo de cenoura com cobertura de chocolate.",
-    "pricePt": 6.99,
-    "nameEn": "Carrot Cake",
-    "descriptionEn": "Carrot cake topped with chocolate frosting.",
-    "priceEn": 1.4
+    "logo": "/mocks/images/DessertExample.jpg",
+    "title": {
+      "pt": "Torta de Limão",
+      "en": "Lemon Pie"
+    },
+    "description": {
+      "pt": "Torta com creme de limão e merengue por cima.",
+      "en": "Pie filled with lemon cream and topped with meringue."
+    },
+    "price": {
+      "brl": "7.99",
+      "usd": "1.60"
+    },
+    "category_id": 3,
+    "additionals": [
+      {
+        "id": 21,
+        "title": {
+          "pt": "Granulado",
+          "en": "Sprinkles"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 22,
+        "title": {
+          "pt": "Chantilly",
+          "en": "Whipped cream"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 23,
+        "title": {
+          "pt": "Calda de chocolate",
+          "en": "Chocolate syrup"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 20,
-    "image": "/images/DessertExample.jpg",
-    "namePt": "Churros",
-    "descriptionPt": "Churros recheados com doce de leite.",
-    "pricePt": 5.49,
-    "nameEn": "Churros",
-    "descriptionEn": "Churros filled with dulce de leche.",
-    "priceEn": 1.1
+    "logo": "/mocks/images/DessertExample.jpg",
+    "title": {
+      "pt": "Bolo de Cenoura",
+      "en": "Carrot Cake"
+    },
+    "description": {
+      "pt": "Bolo de cenoura com cobertura de chocolate.",
+      "en": "Carrot cake topped with chocolate frosting."
+    },
+    "price": {
+      "brl": "6.99",
+      "usd": "1.40"
+    },
+    "category_id": 3,
+    "additionals": [
+      {
+        "id": 21,
+        "title": {
+          "pt": "Granulado",
+          "en": "Sprinkles"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 22,
+        "title": {
+          "pt": "Chantilly",
+          "en": "Whipped cream"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 23,
+        "title": {
+          "pt": "Calda de chocolate",
+          "en": "Chocolate syrup"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 21,
-    "image": "/images/DessertExample.jpg",
-    "namePt": "Pudim",
-    "descriptionPt": "Pudim de leite condensado com calda de caramelo.",
-    "pricePt": 8.99,
-    "nameEn": "Flan",
-    "descriptionEn": "Condensed milk flan topped with caramel sauce.",
-    "priceEn": 1.8
+    "logo": "/mocks/images/DessertExample.jpg",
+    "title": {
+      "pt": "Churros",
+      "en": "Churros"
+    },
+    "description": {
+      "pt": "Churros recheados com doce de leite.",
+      "en": "Churros filled with dulce de leche."
+    },
+    "price": {
+      "brl": "5.49",
+      "usd": "1.10"
+    },
+    "category_id": 3,
+    "additionals": [
+      {
+        "id": 21,
+        "title": {
+          "pt": "Granulado",
+          "en": "Sprinkles"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 22,
+        "title": {
+          "pt": "Chantilly",
+          "en": "Whipped cream"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 23,
+        "title": {
+          "pt": "Calda de chocolate",
+          "en": "Chocolate syrup"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 22,
-    "image": "/images/DessertExample.jpg",
-    "namePt": "Tiramisu",
-    "descriptionPt": "Clássica sobremesa italiana com café e mascarpone.",
-    "pricePt": 12.49,
-    "nameEn": "Tiramisu",
-    "descriptionEn": "Classic Italian dessert made with coffee and mascarpone.",
-    "priceEn": 2.5
+    "logo": "/mocks/images/DessertExample.jpg",
+    "title": {
+      "pt": "Pudim",
+      "en": "Flan"
+    },
+    "description": {
+      "pt": "Pudim de leite condensado com calda de caramelo.",
+      "en": "Condensed milk flan topped with caramel sauce."
+    },
+    "price": {
+      "brl": "8.99",
+      "usd": "1.80"
+    },
+    "category_id": 3,
+    "additionals": [
+      {
+        "id": 21,
+        "title": {
+          "pt": "Granulado",
+          "en": "Sprinkles"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 22,
+        "title": {
+          "pt": "Chantilly",
+          "en": "Whipped cream"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 23,
+        "title": {
+          "pt": "Calda de chocolate",
+          "en": "Chocolate syrup"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 23,
-    "image": "/images/DessertExample.jpg",
-    "namePt": "Brownie",
-    "descriptionPt": "Brownie de chocolate com pedaços de nozes.",
-    "pricePt": 6.49,
-    "nameEn": "Brownie",
-    "descriptionEn": "Chocolate brownie with walnut pieces.",
-    "priceEn": 1.3
+    "logo": "/mocks/images/DessertExample.jpg",
+    "title": {
+      "pt": "Tiramisu",
+      "en": "Tiramisu"
+    },
+    "description": {
+      "pt": "Clássica sobremesa italiana com café e mascarpone.",
+      "en": "Classic Italian dessert made with coffee and mascarpone."
+    },
+    "price": {
+      "brl": "12.49",
+      "usd": "2.50"
+    },
+    "category_id": 3,
+    "additionals": [
+      {
+        "id": 21,
+        "title": {
+          "pt": "Granulado",
+          "en": "Sprinkles"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 22,
+        "title": {
+          "pt": "Chantilly",
+          "en": "Whipped cream"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 23,
+        "title": {
+          "pt": "Calda de chocolate",
+          "en": "Chocolate syrup"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "logo": "/mocks/images/DessertExample.jpg",
+    "title": {
+      "pt": "Brownie",
+      "en": "Brownie"
+    },
+    "description": {
+      "pt": "Brownie de chocolate com pedaços de nozes.",
+      "en": "Chocolate brownie with walnut pieces."
+    },
+    "price": {
+      "brl": "6.49",
+      "usd": "1.30"
+    },
+    "category_id": 3,
+    "additionals": [
+      {
+        "id": 21,
+        "title": {
+          "pt": "Granulado",
+          "en": "Sprinkles"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 22,
+        "title": {
+          "pt": "Chantilly",
+          "en": "Whipped cream"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 23,
+        "title": {
+          "pt": "Calda de chocolate",
+          "en": "Chocolate syrup"
+        },
+        "price": {
+          "brl": "1.50",
+          "usd": "0.30"
+        },
+        "type": "boolean"
+      }
+    ]
   }
 ]

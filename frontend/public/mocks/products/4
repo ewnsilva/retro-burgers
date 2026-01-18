@@ -1,82 +1,346 @@
 [
   {
-    "id": 24,
-    "image": "/images/DrinkExample.jpg",
-    "namePt": "Coca-Cola",
-    "descriptionPt": "",
-    "pricePt": 7.99,
-    "nameEn": "Coca-Cola",
-    "descriptionEn": "",
-    "priceEn": 1.6
-  },
-  {
     "id": 25,
-    "image": "/images/DrinkExample.jpg",
-    "namePt": "Pepsi",
-    "descriptionPt": "",
-    "pricePt": 6.99,
-    "nameEn": "Pepsi",
-    "descriptionEn": "",
-    "priceEn": 1.4
+    "logo": "/mocks/images/DrinkExample.jpg",
+    "title": {
+      "pt": "Coca-Cola",
+      "en": "Coca-Cola"
+    },
+    "description": {
+      "pt": "",
+      "en": ""
+    },
+    "price": {
+      "brl": "7.99",
+      "usd": "1.60"
+    },
+    "category_id": 4,
+    "additionals": [
+      {
+        "id": 26,
+        "title": {
+          "pt": "Gelo",
+          "en": "Ice"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 27,
+        "title": {
+          "pt": "Canudo",
+          "en": "Straw"
+        },
+        "price": {
+          "brl": "0.30",
+          "usd": "0.06"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 26,
-    "image": "/images/DrinkExample.jpg",
-    "namePt": "Guaraná",
-    "descriptionPt": "",
-    "pricePt": 6.49,
-    "nameEn": "Guarana",
-    "descriptionEn": "",
-    "priceEn": 1.3
+    "logo": "/mocks/images/DrinkExample.jpg",
+    "title": {
+      "pt": "Pepsi",
+      "en": "Pepsi"
+    },
+    "description": {
+      "pt": "",
+      "en": ""
+    },
+    "price": {
+      "brl": "6.99",
+      "usd": "1.40"
+    },
+    "category_id": 4,
+    "additionals": [
+      {
+        "id": 26,
+        "title": {
+          "pt": "Gelo",
+          "en": "Ice"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 27,
+        "title": {
+          "pt": "Canudo",
+          "en": "Straw"
+        },
+        "price": {
+          "brl": "0.30",
+          "usd": "0.06"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 27,
-    "image": "/images/DrinkExample.jpg",
-    "namePt": "Água com Gás",
-    "descriptionPt": "",
-    "pricePt": 5.9,
-    "nameEn": "Sparkling Water",
-    "descriptionEn": "",
-    "priceEn": 1.18
+    "logo": "/mocks/images/DrinkExample.jpg",
+    "title": {
+      "pt": "Guaraná",
+      "en": "Guarana"
+    },
+    "description": {
+      "pt": "",
+      "en": ""
+    },
+    "price": {
+      "brl": "6.49",
+      "usd": "1.30"
+    },
+    "category_id": 4,
+    "additionals": [
+      {
+        "id": 26,
+        "title": {
+          "pt": "Gelo",
+          "en": "Ice"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 27,
+        "title": {
+          "pt": "Canudo",
+          "en": "Straw"
+        },
+        "price": {
+          "brl": "0.30",
+          "usd": "0.06"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 28,
-    "image": "/images/DrinkExample.jpg",
-    "namePt": "Água Mineral",
-    "descriptionPt": "",
-    "pricePt": 5,
-    "nameEn": "Mineral Water",
-    "descriptionEn": "",
-    "priceEn": 1
+    "logo": "/mocks/images/DrinkExample.jpg",
+    "title": {
+      "pt": "Água com Gás",
+      "en": "Sparkling Water"
+    },
+    "description": {
+      "pt": "",
+      "en": ""
+    },
+    "price": {
+      "brl": "5.90",
+      "usd": "1.18"
+    },
+    "category_id": 4,
+    "additionals": [
+      {
+        "id": 26,
+        "title": {
+          "pt": "Gelo",
+          "en": "Ice"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 27,
+        "title": {
+          "pt": "Canudo",
+          "en": "Straw"
+        },
+        "price": {
+          "brl": "0.30",
+          "usd": "0.06"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 29,
-    "image": "/images/DrinkExample.jpg",
-    "namePt": "Suco de Laranja",
-    "descriptionPt": "",
-    "pricePt": 10.99,
-    "nameEn": "Orange Juice",
-    "descriptionEn": "",
-    "priceEn": 2.2
+    "logo": "/mocks/images/DrinkExample.jpg",
+    "title": {
+      "pt": "Água Mineral",
+      "en": "Mineral Water"
+    },
+    "description": {
+      "pt": "",
+      "en": ""
+    },
+    "price": {
+      "brl": "5.00",
+      "usd": "1.00"
+    },
+    "category_id": 4,
+    "additionals": [
+      {
+        "id": 26,
+        "title": {
+          "pt": "Gelo",
+          "en": "Ice"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 27,
+        "title": {
+          "pt": "Canudo",
+          "en": "Straw"
+        },
+        "price": {
+          "brl": "0.30",
+          "usd": "0.06"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 30,
-    "image": "/images/DrinkExample.jpg",
-    "namePt": "Suco de Uva",
-    "descriptionPt": "",
-    "pricePt": 10.99,
-    "nameEn": "Grape Juice",
-    "descriptionEn": "",
-    "priceEn": 2.2
+    "logo": "/mocks/images/DrinkExample.jpg",
+    "title": {
+      "pt": "Suco de Laranja",
+      "en": "Orange Juice"
+    },
+    "description": {
+      "pt": "",
+      "en": ""
+    },
+    "price": {
+      "brl": "10.99",
+      "usd": "2.20"
+    },
+    "category_id": 4,
+    "additionals": [
+      {
+        "id": 26,
+        "title": {
+          "pt": "Gelo",
+          "en": "Ice"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 27,
+        "title": {
+          "pt": "Canudo",
+          "en": "Straw"
+        },
+        "price": {
+          "brl": "0.30",
+          "usd": "0.06"
+        },
+        "type": "boolean"
+      }
+    ]
   },
   {
     "id": 31,
-    "image": "/images/DrinkExample.jpg",
-    "namePt": "Chá Gelado",
-    "descriptionPt": "",
-    "pricePt": 7.99,
-    "nameEn": "Iced Tea",
-    "descriptionEn": "",
-    "priceEn": 1.6
+    "logo": "/mocks/images/DrinkExample.jpg",
+    "title": {
+      "pt": "Suco de Uva",
+      "en": "Grape Juice"
+    },
+    "description": {
+      "pt": "",
+      "en": ""
+    },
+    "price": {
+      "brl": "10.99",
+      "usd": "2.20"
+    },
+    "category_id": 4,
+    "additionals": [
+      {
+        "id": 26,
+        "title": {
+          "pt": "Gelo",
+          "en": "Ice"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 27,
+        "title": {
+          "pt": "Canudo",
+          "en": "Straw"
+        },
+        "price": {
+          "brl": "0.30",
+          "usd": "0.06"
+        },
+        "type": "boolean"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "logo": "/mocks/images/DrinkExample.jpg",
+    "title": {
+      "pt": "Chá Gelado",
+      "en": "Iced Tea"
+    },
+    "description": {
+      "pt": "",
+      "en": ""
+    },
+    "price": {
+      "brl": "7.99",
+      "usd": "1.60"
+    },
+    "category_id": 4,
+    "additionals": [
+      {
+        "id": 26,
+        "title": {
+          "pt": "Gelo",
+          "en": "Ice"
+        },
+        "price": {
+          "brl": "0.50",
+          "usd": "0.10"
+        },
+        "type": "boolean"
+      },
+      {
+        "id": 27,
+        "title": {
+          "pt": "Canudo",
+          "en": "Straw"
+        },
+        "price": {
+          "brl": "0.30",
+          "usd": "0.06"
+        },
+        "type": "boolean"
+      }
+    ]
   }
 ]
