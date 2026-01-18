@@ -13,6 +13,7 @@ import { useHomeLogic } from './Home.logic';
 
 export const Home = () => {
   const {
+    categories,
     category,
     customizeOpen,
     filteredProducts,
@@ -35,7 +36,7 @@ export const Home = () => {
       {showHint && <MenuHint />}
 
       <Header setSearch={setSearch} />
-      <Navigation setCategory={setCategory} category={category} />
+      <Navigation setCategory={setCategory} category={category} categories={categories} />
 
       {totalQuantity > 0 && <CartButton />}
       <Cart onOrderSuccess={() => setOrderSuccessOpen(true)} />
@@ -53,7 +54,6 @@ export const Home = () => {
           <Grow in timeout={400 + index * 80} key={item.id}>
             <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
               <ProductCard
-                category={category}
                 item={item}
                 setCustomizeOpen={setCustomizeOpen}
                 setSelectedProduct={setSelectedProduct}

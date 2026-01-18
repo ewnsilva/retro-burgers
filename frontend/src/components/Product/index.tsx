@@ -21,7 +21,6 @@ import * as styles from './Product.styles';
 
 export const ProductCard: React.FC<IProductsList> = ({
   item,
-  category,
   setCustomizeOpen,
   setSelectedProduct,
 }) => {

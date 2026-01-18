@@ -1,5 +1,6 @@
 import { Button, Box, useTheme, SxProps, Theme } from '@mui/material';
 import { useLanguage } from 'utils/hooks/useLanguage';
+import { ICategory } from 'utils/interfaces';
 
 interface ButtonStyleProps {
   category: number;
@@ -7,11 +8,12 @@ interface ButtonStyleProps {
 }
 
 export const Navigation: React.FC<{
-  setCategory: React.Dispatch<React.SetStateAction<number>>;
-  category: number;
-}> = ({ setCategory, category }) => {
+  setCategory: React.Dispatch<React.SetStateAction<number | null>>;
+  category: number | null;
+  categories: ICategory[];
+}> = ({ setCategory, category, categories }) => {
   const theme = useTheme();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const buttonStyle =
     ({ category, selectedCategory }: ButtonStyleProps): SxProps<Theme> =>
@@ -47,18 +49,18 @@ export const Navigation: React.FC<{
           justifyContent: 'center',
         }}
       >
-        <Button onClick={() => setCategory(1)} sx={buttonStyle({ category, selectedCategory: 1 })}>
-          {t('navigation.burgers')}
-        </Button>
-        <Button onClick={() => setCategory(2)} sx={buttonStyle({ category, selectedCategory: 2 })}>
-          {t('navigation.snacks')}
-        </Button>
-        <Button onClick={() => setCategory(3)} sx={buttonStyle({ category, selectedCategory: 3 })}>
-          {t('navigation.desserts')}
-        </Button>
-        <Button onClick={() => setCategory(4)} sx={buttonStyle({ category, selectedCategory: 4 })}>
-          {t('navigation.drinks')}
-        </Button>
+        {categories.map(cat => (
+          <Button
+            key={cat.id}
+            onClick={() => setCategory(cat.id)}
+            sx={buttonStyle({
+              category: category || 0,
+              selectedCategory: cat.id,
+            })}
+          >
+            {t(`${cat.title[language as 'pt' | 'en']}`)}
+          </Button>
+        ))}
       </Box>
     </Box>
   );
