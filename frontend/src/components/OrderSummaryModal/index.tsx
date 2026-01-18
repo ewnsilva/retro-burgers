@@ -12,6 +12,7 @@ import {
 
 import { useCart } from 'utils/hooks/products/useCart';
 import { useLanguage } from 'utils/hooks/useLanguage';
+import { IAdditionals, ICartProducts } from 'utils/interfaces';
 
 type Props = {
   open: boolean;
@@ -23,14 +24,14 @@ export const OrderSummaryModal = ({ open, onClose, onConfirm }: Props) => {
   const { language, t } = useLanguage();
   const { cartItems, updateValue } = useCart();
 
-  const renderAdditionals = (item: any) => {
+  const renderAdditionals = (item: ICartProducts) => {
     if (!item.isCustom || !item.additionals?.length) return null;
 
     return (
-      <Box mt={0.5} ml={1}>
-        {item.additionals.map((add: any) => (
+      <Box mt={0.5}>
+        {item.additionals.map((add: IAdditionals) => (
           <Typography key={add.id} variant="caption" color="textSecondary" display="block">
-            • {language === 'pt' ? add.namePt : add.nameEn}
+            • {language === 'pt' ? add.title?.pt : add.title?.en}
             {add.type === 'quantity' && add.quantity ? ` x${add.quantity}` : ''}
           </Typography>
         ))}
@@ -48,8 +49,13 @@ export const OrderSummaryModal = ({ open, onClose, onConfirm }: Props) => {
         {cartItems.map(item => (
           <Box key={item.id} mb={1}>
             <Box display="flex" justifyContent="space-between">
-              <Typography fontWeight={600} color="textSecondary" alignItems="center">
-                {language === 'pt' ? item.namePt : item.nameEn} x{item.quantity}{' '}
+              <Typography
+                component="div"
+                fontWeight={600}
+                color="textSecondary"
+                alignItems="center"
+              >
+                {language === 'pt' ? item.title?.pt : item.title?.en} x{item.quantity}{' '}
                 {item.isCustom && (
                   <Chip label="Custom" size="small" color="secondary" sx={{ ml: 0.5 }} />
                 )}

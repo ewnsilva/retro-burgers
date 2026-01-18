@@ -29,8 +29,6 @@ export const ProductCard: React.FC<IProductsList> = ({
   const theme = useTheme();
   const matchesXs = useMediaQuery('(max-width: 465px)');
 
-  const API_URL = process.env.REACT_APP_API_URL ?? '';
-
   const { addToCart, isInCart, incrementQuantity, decrementQuantity, cartItems } = useCart();
 
   const cartItem = useMemo(
@@ -40,9 +38,9 @@ export const ProductCard: React.FC<IProductsList> = ({
 
   const quantity = useMemo(() => cartItem?.quantity ?? 0, [cartItem]);
 
-  const name = language === 'pt' ? item.namePt : item.nameEn;
-  const description = language === 'pt' ? item.descriptionPt : item.descriptionEn;
-  const price = language === 'pt' ? item.pricePt : item.priceEn;
+  const name = language === 'pt' ? item.title?.pt : item.title?.en;
+  const description = language === 'pt' ? item.description?.pt : item.description?.en;
+  const price = language === 'pt' ? Number(item.price?.brl) : Number(item.price?.usd);
 
   return (
     <Card sx={styles.card}>
@@ -56,8 +54,8 @@ export const ProductCard: React.FC<IProductsList> = ({
 
           <CardMedia
             component="img"
-            image={`${API_URL}${item.image}`}
-            alt={item.namePt}
+            image={item.logo}
+            alt={language === 'pt' ? item.title?.pt : item.title?.en}
             sx={styles.image}
           />
 
@@ -110,20 +108,18 @@ export const ProductCard: React.FC<IProductsList> = ({
                 </>
               ) : (
                 <Box sx={styles.buttonBox(matchesXs)}>
-                  {category === 1 && (
-                    <Button
-                      variant="outlined"
-                      onClick={() => {
-                        setSelectedProduct(item);
-                        setCustomizeOpen(true);
-                      }}
-                      size={matchesXs ? 'medium' : 'small'}
-                      color="inherit"
-                      sx={styles.personalizeButton(matchesXs)}
-                    >
-                      <LunchDining />
-                    </Button>
-                  )}
+                  <Button
+                    variant="outlined"
+                    onClick={() => {
+                      setSelectedProduct(item);
+                      setCustomizeOpen(true);
+                    }}
+                    size={matchesXs ? 'medium' : 'small'}
+                    color="inherit"
+                    sx={styles.personalizeButton(matchesXs)}
+                  >
+                    <LunchDining />
+                  </Button>
                   <Button
                     variant="contained"
                     onClick={() => addToCart(item)}

@@ -15,9 +15,10 @@ import { Delete, Add, Remove, ShoppingCart } from '@mui/icons-material';
 
 import { OrderSummaryModal } from 'components/OrderSummaryModal';
 import { useLanguage } from 'utils/hooks/useLanguage';
+import { IAdditionals, ICartProducts } from 'utils/interfaces';
+
 import { useCartLogic } from './Cart.logic';
 import * as styles from './Cart.styles';
-import { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from 'react';
 
 interface CartProps {
   onOrderSuccess: () => void;
@@ -41,34 +42,17 @@ export const Cart = ({ onOrderSuccess }: CartProps): JSX.Element => {
     updateValue,
   } = useCartLogic();
 
-  const API_URL = process.env.REACT_APP_API_URL ?? '';
-
-  const renderAdditionals = (item: any) => {
+  const renderAdditionals = (item: ICartProducts) => {
     if (!item.isCustom || !item.additionals?.length) return null;
 
     return (
       <Box mt={0.5}>
-        {item.additionals.map(
-          (add: {
-            id: Key | null | undefined;
-            namePt:
-              | string
-              | number
-              | boolean
-              | ReactElement<any, string | JSXElementConstructor<any>>
-              | Iterable<ReactNode>
-              | ReactPortal
-              | null
-              | undefined;
-            type: string;
-            quantity: any;
-          }) => (
-            <Typography key={add.id} variant="caption" color="textSecondary" display="block">
-              • {add.namePt}
-              {add.type === 'quantity' && add.quantity ? ` x${add.quantity}` : ''}
-            </Typography>
-          )
-        )}
+        {item.additionals.map((add: IAdditionals) => (
+          <Typography key={add.id} variant="caption" color="textSecondary" display="block">
+            • {language === 'pt' ? add.title?.pt : add.title?.en}
+            {add.type === 'quantity' && add.quantity ? ` x${add.quantity}` : ''}
+          </Typography>
+        ))}
       </Box>
     );
   };
@@ -102,7 +86,7 @@ export const Cart = ({ onOrderSuccess }: CartProps): JSX.Element => {
             <Paper key={item.id} elevation={5} sx={styles.backgroundProduct}>
               <Box display="flex" p={1.5}>
                 <Box display="flex" flexDirection="column">
-                  <CardMedia component="img" height="70" image={`${API_URL}${item.image}`} />
+                  <CardMedia component="img" height="70" image={item.logo} />
                   <Box display="flex" mt={1} alignItems="center">
                     {item.quantity === 1 ? (
                       <Box onClick={() => removeItem(item.id)} sx={styles.incrementQuantityStyle}>
@@ -130,8 +114,8 @@ export const Cart = ({ onOrderSuccess }: CartProps): JSX.Element => {
                 <Box ml={2} flexGrow={1}>
                   <Box display="flex" justifyContent="space-between">
                     <Box>
-                      <Typography color="textSecondary" alignItems="center">
-                        {item.namePt}
+                      <Typography component="div" color="textSecondary" alignItems="center">
+                        {language === 'pt' ? item.title?.pt : item.title?.en}
                         {item.isCustom && (
                           <Chip label="Custom" size="small" color="secondary" sx={{ ml: 0.5 }} />
                         )}
@@ -152,7 +136,7 @@ export const Cart = ({ onOrderSuccess }: CartProps): JSX.Element => {
                   </Box>
                   <Typography color="textSecondary" fontSize={12}>
                     {language === 'pt' ? 'R$ ' : 'U$ '}
-                    {item.pricePt}
+                    {language === 'pt' ? item.price?.brl : item.price?.usd}
                   </Typography>
                 </Box>
               </Box>
@@ -169,7 +153,7 @@ export const Cart = ({ onOrderSuccess }: CartProps): JSX.Element => {
           </Typography>
           <Box display="flex" gap={1} mt={2} alignSelf="end">
             <Button variant="outlined" color="primary" onClick={clearCart}>
-              Limpar
+              {t('cart.clear')}
             </Button>
             <Button variant="contained" onClick={openSummary}>
               {t('cart.order')}

@@ -2,20 +2,13 @@ import React, { createContext, ReactNode, useMemo, useState } from 'react';
 
 import { useLanguage } from 'utils/hooks/useLanguage';
 import { formatPrice } from 'utils/constants/formatPrice';
-import { IAdditional, IProducts } from 'utils/interfaces';
-
-interface CartProductsProps extends IProducts {
-  totalPrice?: number;
-  quantity?: number;
-  isCustom?: boolean;
-  additionals?: IAdditional[];
-}
+import { ICartProducts } from 'utils/interfaces';
 
 export interface CartContextProps {
-  cartItems: CartProductsProps[];
+  cartItems: ICartProducts[];
   isDrawerOpen: boolean;
   totalQuantity: number;
-  addToCart: (item: CartProductsProps) => void;
+  addToCart: (item: ICartProducts) => void;
   clearCart: () => void;
   decrementQuantity: (id: number) => void;
   incrementQuantity: (id: number) => void;
@@ -31,7 +24,7 @@ export const CartContext = createContext<CartContextProps>({} as CartContextProp
 export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const { language } = useLanguage();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [cartItems, setCartItems] = useState<CartProductsProps[]>([]);
+  const [cartItems, setCartItems] = useState<ICartProducts[]>([]);
 
   const removeItem = (id: number): void => {
     setCartItems(prevState => prevState.filter(item => item.id !== id));
@@ -42,13 +35,13 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       prevState.map(item => {
         if (item.id !== id) return item;
 
-        const basePrice = language === 'pt' ? item.pricePt : item.priceEn;
+        const basePrice = language === 'pt' ? item.price?.brl : item.price?.usd;
         const additionalsPrice =
           item.isCustom && item.additionals
             ? item.additionals.reduce((sum, add) => {
-                const price = language === 'pt' ? add.pricePt : add.priceEn;
+                const price = language === 'pt' ? Number(add.price?.brl) : Number(add.price?.usd);
                 if (add.type === 'quantity') {
-                  return sum + price * (add.quantity ?? 0);
+                  return sum + Number(price) * Number(add.quantity ?? 0);
                 }
                 return sum + price;
               }, 0)
@@ -57,23 +50,23 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         return {
           ...item,
           quantity,
-          totalPrice: quantity * (basePrice + additionalsPrice),
+          totalPrice: quantity * (Number(basePrice) + Number(additionalsPrice)),
         };
       })
     );
   };
 
-  const addToCart = (item: CartProductsProps) => {
+  const addToCart = (item: ICartProducts) => {
     if (item.isCustom) {
       setCartItems(prev => [...prev, item]);
       return;
     }
 
     const existingItem = cartItems.find(cartItem => cartItem.id === item.id);
-    const price = language === 'pt' ? item.pricePt : item.priceEn;
+    const price = language === 'pt' ? Number(item.price?.brl) : Number(item.price?.usd);
 
     if (existingItem) {
-      updatePrice(item.id, (existingItem.quantity ?? 0) + 1);
+      updatePrice(item.id, Number(existingItem.quantity ?? 0) + 1);
     } else {
       const newItem = {
         ...item,
@@ -85,11 +78,11 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
   };
 
-  const totalQuantity = cartItems.reduce((sum, item) => sum + (item.quantity || 0), 0);
+  const totalQuantity = cartItems.reduce((sum, item) => sum + Number(item.quantity || 0), 0);
 
   const updateValue = () => {
     const total = cartItems.reduce(
-      (previousValue, currentValue) => previousValue + (currentValue.totalPrice || 0),
+      (previousValue, currentValue) => Number(previousValue) + Number(currentValue.totalPrice || 0),
       0
     );
     return formatPrice(total, language);

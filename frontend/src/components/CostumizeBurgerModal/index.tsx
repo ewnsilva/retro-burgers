@@ -14,12 +14,12 @@ import {
 import { Add, Remove } from '@mui/icons-material';
 
 import { useLanguage } from 'utils/hooks/useLanguage';
-import { IAdditional, IProducts } from 'utils/interfaces';
+import { IAdditionals, IProducts, ICartProducts } from 'utils/interfaces';
 
 interface CustomizeBurgerModalProps {
   open: boolean;
   product: IProducts | null;
-  additionals: IAdditional[];
+  additionals: IAdditionals[];
   onClose: () => void;
   onConfirm: (customProduct: any) => void;
 }
@@ -33,32 +33,26 @@ export const CustomizeBurgerModal = ({
 }: CustomizeBurgerModalProps) => {
   const { language, t } = useLanguage();
 
-  const [selectedAdditionals, setSelectedAdditionals] = useState<IAdditional[]>([]);
-
-  useEffect(() => {
-    if (!open) {
-      setSelectedAdditionals([]);
-    }
-  }, [open]);
+  const [selectedAdditionals, setSelectedAdditionals] = useState<IAdditionals[]>([]);
 
   const basePrice = useMemo(() => {
     if (!product) return 0;
-    return language === 'pt' ? product.pricePt : product.priceEn;
+    return language === 'pt' ? product.price?.brl : product.price?.usd;
   }, [product, language]);
 
   const totalAdditionalsPrice = useMemo(() => {
     return selectedAdditionals.reduce((sum, add) => {
-      const price = language === 'pt' ? add.pricePt : add.priceEn;
+      const price = language === 'pt' ? Number(add.price?.brl) : Number(add.price?.usd);
       if (add.type === 'quantity') {
-        return sum + price * (add.quantity ?? 0);
+        return sum + price * Number(add.quantity ?? 0);
       }
       return sum + price;
     }, 0);
   }, [selectedAdditionals, language]);
 
-  const totalPrice = basePrice + totalAdditionalsPrice;
+  const totalPrice = Number(basePrice) + Number(totalAdditionalsPrice);
 
-  const toggleBooleanAdditional = (additional: IAdditional) => {
+  const toggleBooleanAdditional = (additional: IAdditionals) => {
     setSelectedAdditionals(prev =>
       prev.some(a => a.id === additional.id)
         ? prev.filter(a => a.id !== additional.id)
@@ -66,7 +60,7 @@ export const CustomizeBurgerModal = ({
     );
   };
 
-  const changeQuantityAdditional = (additional: IAdditional, delta: number) => {
+  const changeQuantityAdditional = (additional: IAdditionals, delta: number) => {
     setSelectedAdditionals(prev => {
       const existing = prev.find(a => a.id === additional.id);
 
@@ -89,11 +83,10 @@ export const CustomizeBurgerModal = ({
   const handleConfirm = () => {
     if (!product) return;
 
-    const customProduct = {
+    const customProduct: ICartProducts = {
       ...product,
       id: Date.now(),
-      namePt: `${product.namePt}`,
-      nameEn: `${product.nameEn}`,
+      title: product.title,
       quantity: 1,
       totalPrice,
       isCustom: true,
@@ -104,12 +97,18 @@ export const CustomizeBurgerModal = ({
     onClose();
   };
 
+  useEffect(() => {
+    if (!open) {
+      setSelectedAdditionals([]);
+    }
+  }, [open]);
+
   if (!product) return null;
 
   return (
     <Dialog open={open} onClose={onClose} fullWidth maxWidth="sm">
       <DialogTitle color="primary" fontWeight={700}>
-        {product.namePt}
+        {language === 'pt' ? product.title?.pt : product.title?.en}
       </DialogTitle>
 
       <DialogContent>
@@ -117,15 +116,15 @@ export const CustomizeBurgerModal = ({
           {t('costumizeBurgerModal.costumizeTitle')}
         </Typography>
 
-        {additionals.map(additional => {
+        {additionals?.map(additional => {
           const selected = selectedAdditionals.find(a => a.id === additional.id);
-          const price = language === 'pt' ? additional.pricePt : additional.priceEn;
+          const price = language === 'pt' ? additional.price?.brl : additional.price?.usd;
 
           return (
             <Box key={additional.id} py={1}>
               <Box display="flex" justifyContent="space-between" alignItems="center">
                 <Typography color="textSecondary">
-                  {language === 'pt' ? additional.namePt : additional.nameEn}
+                  {language === 'pt' ? additional.title?.pt : additional.title?.en}
                 </Typography>
 
                 {additional.type === 'boolean' ? (

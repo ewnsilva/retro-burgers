@@ -2,14 +2,13 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { useAxios } from 'utils/hooks/useAxios';
-import { IAdditional, IProducts } from 'utils/interfaces';
+import { IProducts } from 'utils/interfaces';
 
 export const useProducts = () => {
   const { api } = useAxios();
 
   const navigate = useNavigate();
 
-  const [additionals, setAdditionals] = useState<IAdditional[]>([{} as IAdditional]);
   const [products, setProducts] = useState<IProducts[]>([{} as IProducts]);
 
   const fetchProducts = (category: number) => {
@@ -24,15 +23,5 @@ export const useProducts = () => {
       });
   };
 
-  const fetchAdditionals = () => {
-    const url = `${process.env.REACT_APP_API_URL}/additionals`;
-    api
-      .get(url)
-      .then(({ data }) => {
-        setAdditionals(data);
-      })
-      .catch(err => console.log(err));
-  };
-
-  return { fetchProducts, fetchAdditionals, additionals, products };
+  return { fetchProducts, products };
 };

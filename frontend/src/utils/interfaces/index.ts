@@ -4,24 +4,38 @@ export interface IHeader {
 
 export type AdditionalType = 'quantity' | 'boolean';
 
-export interface IAdditional {
+export interface ILanguages {
+  pt: string;
+  en: string;
+}
+
+export interface IPrice {
+  brl: string;
+  usd: string;
+}
+
+export interface IAdditionals {
   id: number;
-  namePt: string;
-  nameEn: string;
-  pricePt: number;
-  priceEn: number;
   type: AdditionalType;
+  price: IPrice;
+  title: ILanguages;
   quantity?: number;
 }
 export interface IProducts {
+  additionals: IAdditionals[];
+  category_id: number;
+  description: ILanguages;
   id: number;
-  image: string;
-  namePt: string;
-  descriptionPt?: string;
-  pricePt: number;
-  nameEn: string;
-  descriptionEn?: string;
-  priceEn: number;
+  logo: string;
+  price: IPrice;
+  title: ILanguages;
+}
+
+export interface ICartProducts extends IProducts {
+  totalPrice?: number;
+  quantity?: number;
+  isCustom?: boolean;
+  additionals: IAdditionals[];
 }
 
 export interface IProductsList {

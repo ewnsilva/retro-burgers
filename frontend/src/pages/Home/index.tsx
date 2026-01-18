@@ -13,7 +13,6 @@ import { useHomeLogic } from './Home.logic';
 
 export const Home = () => {
   const {
-    additionals,
     category,
     customizeOpen,
     filteredProducts,
@@ -22,7 +21,6 @@ export const Home = () => {
     showHint,
     totalQuantity,
     addToCart,
-    fetchAdditionals,
     setCategory,
     setCustomizeOpen,
     setOrderSuccessOpen,
@@ -70,9 +68,8 @@ export const Home = () => {
       <CustomizeBurgerModal
         open={customizeOpen}
         product={selectedProduct}
-        additionals={additionals}
+        additionals={selectedProduct.additionals}
         onClose={() => {
-          fetchAdditionals();
           setCustomizeOpen(false);
         }}
         onConfirm={addToCart}

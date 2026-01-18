@@ -7,7 +7,7 @@ import { IProducts } from 'utils/interfaces';
 
 export const useHomeLogic = () => {
   const { language } = useLanguage();
-  const { products, fetchProducts, additionals, fetchAdditionals } = useProducts();
+  const { products, fetchProducts } = useProducts();
   const { totalQuantity, addToCart } = useCart();
 
   const [category, setCategory] = useState(1);
@@ -19,21 +19,17 @@ export const useHomeLogic = () => {
 
   useEffect(() => {
     fetchProducts(category);
-    if (category === 1) {
-      fetchAdditionals();
-    }
   }, [category]);
 
   const filteredProducts = products.filter((product: IProducts) => {
     if (language === 'pt') {
-      return product?.namePt?.toLowerCase().includes(search.toLowerCase());
+      return product?.title?.pt?.toLowerCase().includes(search.toLowerCase()) || '';
     }
-    return product?.nameEn?.toLowerCase().includes(search.toLowerCase());
+    return product?.title?.en?.toLowerCase().includes(search.toLowerCase()) || '';
   });
 
   return {
     filteredProducts,
-    additionals,
     totalQuantity,
 
     category,
@@ -51,6 +47,5 @@ export const useHomeLogic = () => {
     setShowHint,
 
     addToCart,
-    fetchAdditionals,
   };
 };
