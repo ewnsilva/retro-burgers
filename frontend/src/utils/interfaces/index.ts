@@ -14,6 +14,11 @@ export interface IPrice {
   usd: string;
 }
 
+export interface ICategory {
+  id: number;
+  title: ILanguages;
+}
+
 export interface IAdditionals {
   id: number;
   type: AdditionalType;
@@ -39,7 +44,6 @@ export interface ICartProducts extends IProducts {
 }
 
 export interface IProductsList {
-  category: number;
   item: IProducts;
   setSelectedProduct: (item: IProducts) => void;
   setCustomizeOpen: (boolean: boolean) => void;
