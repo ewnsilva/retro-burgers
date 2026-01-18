@@ -12,6 +12,7 @@
     "title": "Carrinho",
     "total": "Total: ",
     "clear": "Limpar",
+    "includeAdditionals": "Incluir Adicionais",
     "order": "Fazer Pedido"
   },
   "costumizeBurgerModal": {

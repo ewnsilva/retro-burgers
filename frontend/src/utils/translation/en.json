@@ -12,6 +12,7 @@
     "title": "Cart",
     "total": "Total: ",
     "clear": "Clear",
+    "includeAdditionals": "Include Additionals",
     "order": "Place Order"
   },
   "costumizeBurgerModal": {

@@ -8,6 +8,7 @@ import {
   Grid2 as Grid,
   IconButton,
   Skeleton,
+  Tooltip,
   Typography,
   useMediaQuery,
   useTheme,
@@ -157,18 +158,20 @@ export const ProductCard: React.FC<IProductsList> = ({
                 </>
               ) : (
                 <Box sx={styles.buttonBox(matchesXs)}>
-                  <Button
-                    variant="outlined"
-                    onClick={() => {
-                      setSelectedProduct(item);
-                      setCustomizeOpen(true);
-                    }}
-                    size={matchesXs ? 'medium' : 'small'}
-                    color="inherit"
-                    sx={styles.personalizeButton(matchesXs)}
-                  >
-                    <LunchDining />
-                  </Button>
+                  <Tooltip title={t('cart.includeAdditionals')} arrow>
+                    <Button
+                      variant="outlined"
+                      onClick={() => {
+                        setSelectedProduct(item);
+                        setCustomizeOpen(true);
+                      }}
+                      size={matchesXs ? 'medium' : 'small'}
+                      color="inherit"
+                      sx={styles.personalizeButton(matchesXs)}
+                    >
+                      <LunchDining />
+                    </Button>
+                  </Tooltip>
                   <Button
                     variant="contained"
                     onClick={() => addToCart(item)}
