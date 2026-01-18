@@ -27,6 +27,7 @@ export const title: SxProps<Theme> = {
 export const image: SxProps<Theme> = {
   height: { xs: 100, sm: 135 },
   objectFit: 'contain',
+  transition: 'opacity .3s ease',
 };
 
 export const description: SxProps<Theme> = {

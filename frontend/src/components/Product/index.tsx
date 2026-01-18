@@ -1,17 +1,18 @@
-import { useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import {
+  Box,
   Button,
   Card,
   CardContent,
   CardMedia,
   Grid2 as Grid,
   IconButton,
+  Skeleton,
   Typography,
-  useTheme,
   useMediaQuery,
-  Box,
+  useTheme,
 } from '@mui/material';
-import { Add, Delete, LunchDining, Remove, ShoppingCart } from '@mui/icons-material';
+import { Add, BrokenImage, Delete, LunchDining, Remove, ShoppingCart } from '@mui/icons-material';
 
 import { useLanguage } from 'utils/hooks/useLanguage';
 import { useCart } from 'utils/hooks/products/useCart';
@@ -29,6 +30,9 @@ export const ProductCard: React.FC<IProductsList> = ({
   const matchesXs = useMediaQuery('(max-width: 465px)');
 
   const { addToCart, isInCart, incrementQuantity, decrementQuantity, cartItems } = useCart();
+
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   const cartItem = useMemo(
     () => cartItems.find(cartItem => cartItem.id === item.id),
@@ -51,12 +55,58 @@ export const ProductCard: React.FC<IProductsList> = ({
             </Typography>
           </Grid>
 
-          <CardMedia
-            component="img"
-            image={item.logo}
-            alt={language === 'pt' ? item.title?.pt : item.title?.en}
-            sx={styles.image}
-          />
+          <Box sx={{ position: 'relative' }}>
+            {!imageLoaded && !imageError && (
+              <Skeleton
+                variant="rectangular"
+                sx={{
+                  ...styles.image,
+                  opacity: imageLoaded ? 1 : 0,
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                }}
+              />
+            )}
+
+            {!imageError && (
+              <CardMedia
+                component="img"
+                image={item.logo}
+                alt={language === 'pt' ? item.title?.pt : item.title?.en}
+                sx={{
+                  ...styles.image,
+                  opacity: imageLoaded ? 1 : 0,
+                  display: imageLoaded ? 'block' : 'none',
+                }}
+                onLoad={() => setImageLoaded(true)}
+                onError={() => {
+                  setImageError(true);
+                  setImageLoaded(true);
+                }}
+              />
+            )}
+
+            {imageError && (
+              <Box
+                sx={{
+                  ...styles.image,
+                  opacity: imageLoaded ? 1 : 0,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  backgroundColor: 'action.hover',
+                }}
+              >
+                <BrokenImage
+                  sx={{
+                    fontSize: 48,
+                    color: 'text.secondary',
+                  }}
+                />
+              </Box>
+            )}
+          </Box>
 
           {description && (
             <Grid>

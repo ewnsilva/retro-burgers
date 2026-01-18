@@ -10,9 +10,12 @@ export const useProducts = () => {
 
   const [products, setProducts] = useState<IProducts[]>([]);
   const [categories, setCategories] = useState<ICategory[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchProducts = (category: number) => {
     const url = `${process.env.REACT_APP_API_URL}/products/${category}`;
+
+    setIsLoading(true);
     api
       .get(url)
       .then(({ data }) => {
@@ -20,10 +23,14 @@ export const useProducts = () => {
       })
       .catch(() => {
         navigate('/error');
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 
   const fetchCategories = () => {
+    setIsLoading(true);
     const url = `${process.env.REACT_APP_API_URL}/categories`;
     api
       .get(url)
@@ -32,12 +39,16 @@ export const useProducts = () => {
       })
       .catch(() => {
         navigate('/error');
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 
   return {
     products,
     categories,
+    isLoading,
     fetchProducts,
     fetchCategories,
   };
