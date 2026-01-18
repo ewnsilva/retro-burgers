@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": {
+      "pt": "Hambúrgueres",
+      "en": "Burgers"
+    }
+  },
+  {
+    "id": 2,
+    "title": {
+      "pt": "Salgados",
+      "en": "Snacks"
+    }
+  },
+  {
+    "id": 3,
+    "title": {
+      "pt": "Doces",
+      "en": "Desserts"
+    }
+  },
+  {
+    "id": 4,
+    "title": {
+      "pt": "Bebidas",
+      "en": "Drinks"
+    }
+  }
+]
