@@ -3,8 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface) {
-    const logo =
-      "https://github.com/user-attachments/assets/1f3037f3-d875-4a9f-b794-7b83c1b1f159";
+    const logo = "https://i.ibb.co/SXGCPKxB/Burguer-Example.jpg";
 
     const burgers = [
       {
