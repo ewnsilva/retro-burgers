@@ -37,6 +37,7 @@
     "@testing-library/react": "^16.3.1",
     "@types/howler": "^2.2.12",
     "@vitejs/plugin-react-swc": "^4.2.2",
+    "copy-webpack-plugin": "11",
     "cross-env": "^10.1.0",
     "css-loader": "^7.1.2",
     "dotenv": "^17.2.3",

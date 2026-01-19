@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const env =
   dotenv.config({
@@ -61,6 +62,21 @@ module.exports = {
     }),
 
     new webpack.DefinePlugin(envKeys),
+
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'public/audio'),
+          to: 'audio',
+          noErrorOnMissing: true,
+        },
+        {
+          from: path.resolve(__dirname, 'public/robots.txt'),
+          to: 'robots.txt',
+          noErrorOnMissing: true,
+        },
+      ],
+    }),
   ],
 
   devServer: {
