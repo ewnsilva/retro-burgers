@@ -1,4 +1,4 @@
-import { Box, Grid2 as Grid, Grow, CircularProgress } from '@mui/material';
+import { Box, Grid2 as Grid, Grow, CircularProgress, Typography } from '@mui/material';
 
 import { Cart } from 'components/Cart';
 import { CartButton } from 'components/CartButton';
@@ -10,17 +10,20 @@ import { WelcomeModal } from 'components/WelcomeModal';
 import { OrderSuccessModal } from 'components/OrderSuccessModal';
 
 import { useHomeLogic } from './Home.logic';
+import { useLanguage } from '@/utils/hooks/useLanguage';
 
 export const Home = () => {
+  const { t } = useLanguage();
   const {
     categories,
     category,
-    showLoading,
     customizeOpen,
     filteredProducts,
+    hasNoResults,
     orderSuccessOpen,
     selectedProduct,
     showHint,
+    showLoading,
     totalQuantity,
     addToCart,
     setCategory,
@@ -42,11 +45,32 @@ export const Home = () => {
       {totalQuantity > 0 && <CartButton />}
       <Cart onOrderSuccess={() => setOrderSuccessOpen(true)} />
 
-      {showLoading ? (
+      {showLoading && (
         <Box display="flex" justifyContent="center" alignItems="center" height="50vh">
           <CircularProgress size={150} />
         </Box>
-      ) : (
+      )}
+
+      {!showLoading && hasNoResults && (
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          height="50vh"
+          textAlign="center"
+        >
+          <Box>
+            <Typography variant="h5" fontWeight={600}>
+              {t('home.noResults.title')}
+            </Typography>
+            <Typography variant="body1" color="text.secondary" mt={1}>
+              {t('home.noResults.description')}
+            </Typography>
+          </Box>
+        </Box>
+      )}
+
+      {!showLoading && !hasNoResults && (
         <Grid
           container
           rowSpacing={2}

@@ -24,7 +24,9 @@ export const useHomeLogic = () => {
     return title?.toLowerCase().includes(search.toLowerCase());
   });
 
-  const showLoading = isLoading || !categories.length || !filteredProducts.length;
+  const hasSearch = search.trim().length > 0;
+  const hasNoResults = hasSearch && !filteredProducts.length;
+  const showLoading = isLoading || !categories.length;
 
   useEffect(() => {
     fetchCategories();
@@ -44,6 +46,7 @@ export const useHomeLogic = () => {
 
   return {
     filteredProducts,
+    hasNoResults,
     totalQuantity,
     showLoading,
 

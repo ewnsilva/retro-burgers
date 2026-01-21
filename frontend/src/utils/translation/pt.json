@@ -67,5 +67,11 @@
     "title": "Ops! Algo deu errado.",
     "description": "Ocorreu um erro ao buscar os dados. Por favor, tente novamente.",
     "button": "Tentar novamente"
+  },
+  "home": {
+    "noResults": {
+      "title": "Nenhum produto encontrado",
+      "description": "Tente ajustar sua busca ou verificar a categoria selecionada."
+    }
   }
 }

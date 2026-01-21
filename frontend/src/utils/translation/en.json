@@ -67,5 +67,11 @@
     "title": "Oops! Page not found.",
     "description": "An error occurred while fetching data. Please try again.",
     "button": "Try again"
+  },
+  "home": {
+    "noResults": {
+      "title": "No products found",
+      "description": "Try adjusting your search or checking the selected category."
+    }
   }
 }
