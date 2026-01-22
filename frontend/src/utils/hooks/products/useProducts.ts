@@ -1,55 +1,40 @@
-import { useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 
 import { useAxios } from 'utils/hooks/useAxios';
 import { IProducts, ICategory } from 'utils/interfaces';
 
-export const useProducts = () => {
+export const useProducts = (category?: number | null) => {
   const { api } = useAxios();
   const navigate = useNavigate();
 
-  const [products, setProducts] = useState<IProducts[]>([]);
-  const [categories, setCategories] = useState<ICategory[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const categoriesQuery = useQuery<ICategory[], Error>({
+    queryKey: ['categories'],
+    queryFn: async () => {
+      const { data } = await api.get(`${process.env.REACT_APP_API_URL}/categories`);
+      return data;
+    },
+  });
 
-  const fetchProducts = (category: number) => {
-    const url = `${process.env.REACT_APP_API_URL}/products/${category}`;
+  const productsQuery = useQuery<IProducts[], Error>({
+    queryKey: ['products', category],
+    enabled: !!category,
+    queryFn: async () => {
+      const { data } = await api.get(`${process.env.REACT_APP_API_URL}/products/${category}`);
+      return data;
+    },
+  });
 
-    setIsLoading(true);
-    api
-      .get(url)
-      .then(({ data }) => {
-        setProducts(data);
-      })
-      .catch(() => {
-        navigate('/error');
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  };
-
-  const fetchCategories = () => {
-    setIsLoading(true);
-    const url = `${process.env.REACT_APP_API_URL}/categories`;
-    api
-      .get(url)
-      .then(({ data }) => {
-        setCategories(data);
-      })
-      .catch(() => {
-        navigate('/error');
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  };
+  if (categoriesQuery.isError || productsQuery.isError) {
+    navigate('/error');
+  }
 
   return {
-    products,
-    categories,
-    isLoading,
-    fetchProducts,
-    fetchCategories,
+    categories: categoriesQuery.data ?? [],
+    products: productsQuery.data ?? [],
+
+    isLoading: categoriesQuery.isLoading || productsQuery.isLoading,
+
+    isError: categoriesQuery.isError || productsQuery.isError,
   };
 };
