@@ -6,12 +6,13 @@ import { useProducts } from 'utils/hooks/products/useProducts';
 import { IProducts } from 'utils/interfaces';
 
 export const useHomeLogic = () => {
+  const [category, setCategory] = useState<number | null>(null);
+
   const { language } = useLanguage();
-  const { products, categories, isLoading, fetchProducts, fetchCategories } = useProducts();
+  const { products, categories, isLoading } = useProducts(category);
 
   const { totalQuantity, addToCart } = useCart();
 
-  const [category, setCategory] = useState<number | null>(null);
   const [customizeOpen, setCustomizeOpen] = useState(false);
   const [orderSuccessOpen, setOrderSuccessOpen] = useState(false);
   const [search, setSearch] = useState('');
@@ -29,20 +30,10 @@ export const useHomeLogic = () => {
   const showLoading = isLoading || !categories.length;
 
   useEffect(() => {
-    fetchCategories();
-  }, []);
-
-  useEffect(() => {
     if (categories.length && category === null) {
       setCategory(categories[0].id);
     }
   }, [categories]);
-
-  useEffect(() => {
-    if (category !== null) {
-      fetchProducts(category);
-    }
-  }, [category]);
 
   return {
     filteredProducts,
