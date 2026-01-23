@@ -4,6 +4,7 @@ import type { TFunction } from 'i18next';
 
 import { Navigation } from '../../../../src/components/Layout/Navigation';
 import { useLanguage } from '../../../../src/utils/hooks/useLanguage';
+import { ICategory } from '../../../../src/utils/interfaces';
 
 vi.mock('../../../../src/utils/hooks/useLanguage', () => ({
   useLanguage: vi.fn(),
@@ -11,6 +12,25 @@ vi.mock('../../../../src/utils/hooks/useLanguage', () => ({
 
 describe('Navigation component', () => {
   const setCategoryMock = vi.fn();
+
+  const mockCategories: ICategory[] = [
+    {
+      id: 1,
+      title: { pt: 'Hambúrgueres', en: 'Burgers' },
+    },
+    {
+      id: 2,
+      title: { pt: 'Porções', en: 'Snacks' },
+    },
+    {
+      id: 3,
+      title: { pt: 'Sobremesas', en: 'Desserts' },
+    },
+    {
+      id: 4,
+      title: { pt: 'Bebidas', en: 'Drinks' },
+    },
+  ];
 
   beforeEach(() => {
     vi.clearAllMocks();
@@ -23,42 +43,42 @@ describe('Navigation component', () => {
   });
 
   it('renders all navigation options', () => {
-    render(<Navigation category={1} setCategory={setCategoryMock} />);
+    render(<Navigation category={1} setCategory={setCategoryMock} categories={mockCategories} />);
 
-    expect(screen.getByText('navigation.burgers')).toBeTruthy();
-    expect(screen.getByText('navigation.snacks')).toBeTruthy();
-    expect(screen.getByText('navigation.desserts')).toBeTruthy();
-    expect(screen.getByText('navigation.drinks')).toBeTruthy();
+    expect(screen.getByText('Hambúrgueres')).toBeTruthy();
+    expect(screen.getByText('Porções')).toBeTruthy();
+    expect(screen.getByText('Sobremesas')).toBeTruthy();
+    expect(screen.getByText('Bebidas')).toBeTruthy();
   });
 
-  it('the `setCategory(1)` function is called when Burgers is clicked.', () => {
-    render(<Navigation category={1} setCategory={setCategoryMock} />);
+  it('calls setCategory(1) when Hambúrgueres is clicked', () => {
+    render(<Navigation category={1} setCategory={setCategoryMock} categories={mockCategories} />);
 
-    fireEvent.click(screen.getByText('navigation.burgers'));
+    fireEvent.click(screen.getByText('Hambúrgueres'));
 
     expect(setCategoryMock).toHaveBeenCalledWith(1);
   });
 
-  it('calls setCategory(2) when Snacks is clicked.', () => {
-    render(<Navigation category={2} setCategory={setCategoryMock} />);
+  it('calls setCategory(2) when Porções is clicked', () => {
+    render(<Navigation category={2} setCategory={setCategoryMock} categories={mockCategories} />);
 
-    fireEvent.click(screen.getByText('navigation.snacks'));
+    fireEvent.click(screen.getByText('Porções'));
 
     expect(setCategoryMock).toHaveBeenCalledWith(2);
   });
 
-  it('call setCategory(3) when clicking on Desserts', () => {
-    render(<Navigation category={3} setCategory={setCategoryMock} />);
+  it('calls setCategory(3) when Sobremesas is clicked', () => {
+    render(<Navigation category={3} setCategory={setCategoryMock} categories={mockCategories} />);
 
-    fireEvent.click(screen.getByText('navigation.desserts'));
+    fireEvent.click(screen.getByText('Sobremesas'));
 
     expect(setCategoryMock).toHaveBeenCalledWith(3);
   });
 
-  it('call setCategory(4) when clicking on Drinks', () => {
-    render(<Navigation category={4} setCategory={setCategoryMock} />);
+  it('calls setCategory(4) when Bebidas is clicked', () => {
+    render(<Navigation category={4} setCategory={setCategoryMock} categories={mockCategories} />);
 
-    fireEvent.click(screen.getByText('navigation.drinks'));
+    fireEvent.click(screen.getByText('Bebidas'));
 
     expect(setCategoryMock).toHaveBeenCalledWith(4);
   });
