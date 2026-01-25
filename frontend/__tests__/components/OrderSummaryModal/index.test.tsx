@@ -59,6 +59,7 @@ describe('OrderSummaryModal component', () => {
     render(<OrderSummaryModal open onClose={onCloseMock} onConfirm={onConfirmMock} />);
 
     expect(screen.getByText('orderSummary.title')).toBeTruthy();
+
     expect(screen.getByText(content => content.includes('Hambúrguer'))).toBeTruthy();
 
     expect(

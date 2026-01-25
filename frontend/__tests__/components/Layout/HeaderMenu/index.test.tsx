@@ -33,7 +33,7 @@ describe('HeaderMenu component', () => {
     });
   });
 
-  it('renderiza os temas disponíveis', () => {
+  it('render available themes', () => {
     render(
       <HeaderMenu
         allThemeColors={allThemeColors}

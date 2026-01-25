@@ -66,6 +66,15 @@ vi.mock('../../../src/components/OrderSuccessModal', () => ({
     open ? <div data-testid="order-success-modal" /> : null,
 }));
 
+vi.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (key: string) => key,
+    i18n: {
+      changeLanguage: vi.fn(),
+    },
+  }),
+}));
+
 describe('Home component', () => {
   const mockLogic = {
     filteredProducts: [
