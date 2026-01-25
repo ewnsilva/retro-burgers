@@ -7,7 +7,7 @@
   </a>
 </div>
 
-<hr />
+</p>
 
 <p align="justify">
   A <strong>full-stack</strong> application created to practice and reinforce knowledge in

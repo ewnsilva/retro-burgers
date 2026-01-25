@@ -7,7 +7,7 @@
   </strong>
 </div>
 
-<hr />
+</p>
 
 <p align="justify">
   Aplicação <strong>full-stack</strong> criada para treinar e reforçar conhecimentos em
