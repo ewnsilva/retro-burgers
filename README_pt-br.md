@@ -1,94 +1,94 @@
 <h1 align="center">🍔 Retro-Burguers</h1>
 
 <p align="justify">
-  A <strong>full-stack</strong> application created to practice and reinforce knowledge in
-  <strong>React</strong>, <strong>Node.js</strong>, and <strong>automated testing</strong>,
-  simulating a snack and drink e-commerce with a strong focus on
-  <strong>frontend architecture</strong>, <strong>UX</strong>,
-  <strong>internationalization</strong>, and <strong>best practices</strong>.
+  Aplicação <strong>full-stack</strong> criada para treinar e reforçar conhecimentos em
+  <strong>React</strong>, <strong>Node.js</strong> e <strong>testes automatizados</strong>,
+  simulando e-commerce de lanches e bebidas com forte foco em
+  <strong>arquitetura frontend</strong>, <strong>UX</strong>,
+  <strong>internacionalização</strong> e <strong>boas práticas</strong>.
 </p>
 
 <p align="justify">
-  The project follows the technical and organizational rigor used by
-  <strong>mid-level</strong> and <strong>senior</strong> professionals, featuring scalable,
-  strongly typed, and tested code.
+  O projeto segue rigor técnico e organizacional utilizado por profissionais
+  de nível <strong>pleno</strong> e <strong>sênior</strong>, com código escalável,
+  tipado e testado.
 </p>
 
 <p align="justify">
-  🎨 Visuals inspired by the <strong>Synthwave / Miami Vice (80s)</strong> style,
-  with multiple themes, dynamic soundtracks, and smooth animations.
+  🎨 Visual inspirado no estilo <strong>Synthwave / Miami Vice (anos 80)</strong>,
+  com múltiplos temas, trilhas sonoras dinâmicas e animações suaves.
 </p>
 
 <hr />
 
-<h2 id="overview"  align="justify">📸 Overview</h2>
+<h2 id="visao-geral" align="justify">📸 Visão Geral</h2>
 
 <div align="center">
   <img src="https://private-user-images.githubusercontent.com/83819706/540299511-6e0be0f4-b1b6-4db7-a1a2-46061f05b83b.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI0NTQsIm5iZiI6MTc2OTM4MjE1NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk1MTEtNmUwYmUwZjQtYjFiNi00ZGI3LWExYTItNDYwNjFmMDViODNiLlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDIzNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTExOTMxMTVkM2Q4Yjg3ZDlhNmM5YTc1MzU2Y2M4OWZhZTI4MjdmNjA3NTg1MzQyZGZlYzUwZTdhZDVlMjcxM2UmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.KLPcNVfr_RiZUJvKOTiV9sO-mCI5gheAPKRnZrgVnnw"
        width="900" />
-  <p><em>Figure 1. Application main page.</em></p>
+  <p><em>Figura 1. Página principal do aplicativo.</em></p>
 </div>
 
 <hr />
 
-<h2>📌 Table of Contents</h2>
+<h2>📌 Índice</h2>
 
 <ul>
-  <li><a href="#overview">📸 Overview</a></li>
-  <li><a href="#features">✨ Features</a></li>
-  <li><a href="#featured-technologies">🧰 Featured Technologies</a></li>
-  <li><a href="#architecture">🏗️ Architecture</a></li>
-  <li><a href="#technical-decisions">🧠 Technical Decisions & Trade-offs</a></li>
-  <li><a href="#technical-highlights">⭐ Technical Highlights</a></li>
-  <li><a href="#known-limitations">⚠️ Known Limitations</a></li>
-  <li><a href="#next-steps">🚀 Next Steps & Possible Evolutions</a></li>
-  <li><a href="#how-to-use">🔍 How to Use</a></li>
-  <li><a href="#customization">🖌️ Customization</a></li>
-  <li><a href="#development">🛠️ Development</a></li>
-  <li><a href="#how-to-run">▶️ How to Run the Project</a></li>
-  <li><a href="#acknowledgments">🤝 Acknowledgments</a></li>
+  <li><a href="#visao-geral">📸 Visão Geral</a></li>
+  <li><a href="#funcionalidades">✨ Funcionalidades</a></li>
+  <li><a href="#tecnologias">🧰 Tecnologias em Destaque</a></li>
+  <li><a href="#arquitetura">🏗️ Arquitetura</a></li>
+  <li><a href="#decisoes-tecnicas">🧠 Decisões Técnicas & Trade-offs</a></li>
+  <li><a href="#destaques-tecnicos">⭐ Destaques Técnicos</a></li>
+  <li><a href="#limitacoes">⚠️ Limitações Conhecidas</a></li>
+  <li><a href="#proximos-passos">🚀 Próximos Passos & Possíveis Evoluções</a></li>
+  <li><a href="#como-usar">🔍 Como Usar</a></li>
+  <li><a href="#extras">🖌️ Personalização</a></li>
+  <li><a href="#desenvolvimento">🛠️ Desenvolvimento</a></li>
+  <li><a href="#como-executar">▶️ Como Executar o Projeto</a></li>
+  <li><a href="#agradecimentos">🤝 Agradecimentos</a></li>
 </ul>
 
 <hr />
 
-<h2 id="features">✨ Features</h2>
+<h2 id="funcionalidades">✨ Funcionalidades</h2>
 
 <h3>🛍️ E-commerce</h3>
 <ul>
-  <li>Dynamic category navigation (via API)</li>
-  <li>Product listing with animations</li>
-  <li>Product details and customization with add-ons</li>
-  <li>Persistent shopping cart</li>
-  <li>Order summary modal</li>
-  <li>Order confirmation with visual feedback</li>
+  <li>Navegação por categorias dinâmicas (via API)</li>
+  <li>Listagem de produtos com animações</li>
+  <li>Detalhes do produto e personalização com adicionais</li>
+  <li>Carrinho de compras persistente</li>
+  <li>Modal de resumo do pedido</li>
+  <li>Confirmação de pedido com feedback visual</li>
 </ul>
 
-<h3>🌐 Internationalization</h3>
+<h3>🌐 Internacionalização</h3>
 <ul>
-  <li>Portuguese 🇧🇷 and English 🇺🇸</li>
-  <li>Dynamic language switching</li>
-  <li>Backend prepared for multiple languages</li>
+  <li>Português 🇧🇷 e Inglês 🇺🇸</li>
+  <li>Troca dinâmica de idioma</li>
+  <li>Backend preparado para múltiplos idiomas</li>
 </ul>
 
-<h3>🎨 Themes and Experience</h3>
+<h3>🎨 Temas e Experiência</h3>
 <ul>
-  <li>3 Synthwave-style visual themes</li>
-  <li>Exclusive soundtrack for each theme</li>
-  <li>Loading animations (Skeletons)</li>
-  <li>Visual fallback for broken images</li>
+  <li>3 temas visuais no estilo Synthwave</li>
+  <li>Trilha sonora exclusiva para cada tema</li>
+  <li>Animações de carregamento (Skeletons)</li>
+  <li>Fallback visual para imagens com erro</li>
 </ul>
 
-<h3>🧪 Quality and Testing</h3>
+<h3>🧪 Qualidade e Testes</h3>
 <ul>
-  <li>Unit tests with Vitest</li>
-  <li>Component and hook testing</li>
+  <li>Testes unitários com Vitest</li>
+  <li>Testes de componentes e hooks</li>
   <li>ESLint + Prettier</li>
-  <li>Strongly typed code with TypeScript</li>
+  <li>Código fortemente tipado com TypeScript</li>
 </ul>
 
 <hr />
 
-<h2 id="featured-technologies">🧰 Featured Technologies</h2>
+<h2 id="tecnologias">🧰 Tecnologias em Destaque</h2>
 
 <h3>Front-end</h3>
 <ul>
@@ -99,7 +99,7 @@
   <li>Material UI</li>
   <li>i18n</li>
   <li>Axios</li>
-  <li>Howler (soundtrack)</li>
+  <li>Howler (trilha sonora)</li>
   <li>Webpack</li>
   <li>Vitest</li>
   <li>Testing Library</li>
@@ -121,32 +121,32 @@
 
 <hr />
 
-<h2 id="architecture">🏗️ Architecture</h2>
+<h2 id="arquitetura">🏗️ Arquitetura</h2>
 
 <h3>Frontend</h3>
 <ul>
-  <li>Clear separation between UI components and logic</li>
-  <li>Logic hooks (<code>Home.Logic.ts</code>, <code>useProducts.ts</code>, etc.)</li>
-  <li>Domain hooks (cart, language, theme)</li>
-  <li>100% dynamic navigation and categories via API</li>
-  <li>Predictable and isolated local states</li>
-  <li>Isolation of external dependencies during development</li>
+  <li>Separação clara entre componentes de UI e lógica</li>
+  <li>Hooks de lógica (<code>Home.Logic.ts</code>, <code>useProducts.ts</code>, etc.)</li>
+  <li>Hooks de domínio (cart, language, theme)</li>
+  <li>Navegação e categorias 100% dinâmicas via API</li>
+  <li>Estados locais previsíveis e isolados</li>
+  <li>Isolamento de dependências externas em desenvolvimento</li>
 </ul>
 
 <h3>Backend</h3>
 <ul>
-  <li>Simple and objective REST API</li>
-  <li>Endpoints organized by domain</li>
-  <li>SQLite database versioned via migrations</li>
+  <li>API REST simples e objetiva</li>
+  <li>Endpoints organizados por domínio</li>
+  <li>Banco SQLite versionado via migrations</li>
 </ul>
 
-<h3>Main Endpoints</h3>
+<h3>Endpoints Principais</h3>
 <ul>
   <li><code>GET /categories</code></li>
   <li><code>GET /products/:categoryId</code></li>
 </ul>
 
-<p>Example response with multi-language support:</p>
+<p>Exemplo de resposta com suporte a múltiplos idiomas:</p>
 
 <pre>
 {
@@ -159,230 +159,233 @@
 
 <hr />
 
-<h2 id="technical-decisions">🧠 Technical Decisions & Trade-offs</h2>
+<h2 id="decisoes-tecnicas">🧠 Decisões Técnicas & Trade-offs</h2>
 
 <p align="justify">
-  Architectural decisions were made consciously to balance simplicity, 
-  maintainability, and scalability, considering the project's scope and objectives.
+  Algumas decisões arquiteturais foram tomadas de forma consciente
+  visando equilíbrio entre simplicidade, manutenibilidade e escalabilidade,
+  considerando o escopo e os objetivos do projeto.
 </p>
 
 <ul>
   <li>
     <strong>React Query</strong><br />
-    Used for remote state management, caching, and data synchronization 
-    with the API, reducing the need for more complex global solutions.
+    Utilizado para gerenciamento de estado remoto, cache e sincronização de dados
+    com a API, reduzindo a necessidade de soluções globais mais complexas.
   </li>
 
   <li>
-    <strong>Absence of Redux</strong><br />
-    The project prioritizes hooks and local/contextual state, avoiding 
-    unnecessary complexity for the current application domain.
+    <strong>Ausência de Redux</strong><br />
+    O projeto prioriza hooks e estado local/contextual, evitando complexidade
+    desnecessária para o domínio atual da aplicação.
   </li>
 
   <li>
-    <strong>Hook-based Architecture</strong><br />
-    Clear separation between UI, presentation logic, and domain rules, 
-    promoting reusability, testability, and readability.
+    <strong>Arquitetura baseada em Hooks</strong><br />
+    Separação clara entre UI, lógica de apresentação e regras de domínio,
+    favorecendo reutilização, testabilidade e legibilidade.
   </li>
 
   <li>
-    <strong>SQLite on Backend</strong><br />
-    A pragmatic choice to facilitate setup, versioning, and portability, 
-    while keeping the focus on data modeling and business rules.
+    <strong>SQLite no Backend</strong><br />
+    Escolha pragmática para facilitar setup, versionamento e portabilidade,
+    mantendo foco na modelagem de dados e regras de negócio.
   </li>
 
   <li>
-    <strong>Internationalization from the API</strong><br />
-    Backend responses already account for multiple languages, 
-    preventing rework and facilitating future expansion.
+    <strong>Internacionalização desde a API</strong><br />
+    As respostas do backend já contemplam múltiplos idiomas,
+    evitando retrabalho e facilitando expansão futura.
   </li>
 </ul>
 
 <hr />
 
-<h2 id="technical-highlights">⭐ Technical Highlights</h2>
+<h2 id="destaques-tecnicos">⭐ Destaques Técnicos</h2>
 <ul>
-  <li>Reusable and well-typed hooks</li>
-  <li>No hardcoded data (everything via API)</li>
-  <li>UX optimized for loading and errors</li>
-  <li>Architecture ready for scale (React Query ready)</li>
-  <li>Clear separation of concerns</li>
+  <li>Hooks reutilizáveis e bem tipados</li>
+  <li>Nenhum dado hardcoded (tudo via API)</li>
+  <li>UX otimizada para loading e erros</li>
+  <li>Arquitetura preparada para escala (React Query ready)</li>
+  <li>Separação clara de responsabilidades</li>
 </ul>
 
 <hr />
 
-<h2 id="known-limitations">⚠️ Known Limitations</h2>
+<h2 id="limitacoes">⚠️ Limitações Conhecidas</h2>
 
 <p align="justify">
-  This project was developed with a focus on learning, architecture, and best practices. 
-  Some common features in production applications were intentionally kept out of scope.
+  Este projeto foi desenvolvido com foco em aprendizado, arquitetura e boas práticas.
+  Algumas funcionalidades comuns em aplicações de produção foram
+  intencionalmente mantidas fora do escopo.
 </p>
 
 <ul>
-  <li>No authentication or user profiles.</li>
-  <li>No integration with real payment gateways.</li>
-  <li>The backend is not optimized for high concurrency or horizontal scaling.</li>
-  <li>No persistence for completed orders.</li>
-  <li>Automated tests are focused on the frontend.</li>
+  <li>Não há autenticação ou perfis de usuário.</li>
+  <li>Não existe integração com gateways reais de pagamento.</li>
+  <li>O backend não foi otimizado para alta concorrência ou escalabilidade horizontal.</li>
+  <li>Não há persistência de pedidos finalizados.</li>
+  <li>Testes automatizados estão focados no frontend.</li>
 </ul>
 
 <hr />
 
-<h2 id="next-steps">🚀 Next Steps & Possible Evolutions</h2>
+<h2 id="proximos-passos">🚀 Próximos Passos & Possíveis Evoluções</h2>
 
 <p align="justify">
-  Natural improvements and evolutions for this project include:
+  Algumas melhorias e evoluções naturais para este projeto incluem:
 </p>
 
 <ul>
-  <li>Implementation of authentication and user management.</li>
-  <li>Order persistence and purchase history.</li>
-  <li>End-to-end (E2E) tests for critical flow validation.</li>
-  <li>Backend caching and pagination.</li>
-  <li>Containerization with Docker for environment standardization.</li>
-  <li>CI/CD pipeline.</li>
+  <li>Implementação de autenticação e gerenciamento de usuários.</li>
+  <li>Persistência de pedidos e histórico de compras.</li>
+  <li>Testes end-to-end (E2E) para validação de fluxos críticos.</li>
+  <li>Cache e paginação no backend.</li>
+  <li>Containerização com Docker para padronização de ambiente.</li>
+  <li>Pipeline de CI/CD.</li>
 </ul>
 
 <hr />
 
-<h2 id="how-to-use">🔍 How to Use</h2>
+<h2 id="como-usar">🔍 Como Usar</h2>
 
 <p align="justify">
-  The application works as an <strong>online menu</strong>. 
-  Users can search for products, navigate through categories, 
-  and add items to the cart with a single click.
+  A aplicação funciona como um <strong>cardápio online</strong>.
+  O usuário pode pesquisar produtos, navegar por categorias
+  e adicionar itens ao carrinho com apenas um clique.
 </p>
 
 <div align="center">
   <img src="https://private-user-images.githubusercontent.com/83819706/540299517-9637ce91-a7d0-4039-82df-406ce2d37086.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk1MTctOTYzN2NlOTEtYTdkMC00MDM5LTgyZGYtNDA2Y2UyZDM3MDg2LlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTUxMjU0ZDhkYzJiNzljODBmNWE1OTczMjUyMmU2ZDVhNmEwN2EyOWM1ZGYyYzM1OTVmNWQwYWVmNDM0YjM4ZTImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.enQusoxkS2uyGHHoeMFXJrEcuhIU2BseYimyaCzI5YU" width="550" />
-  <p><em>Figure 2. Product selection.</em></p>
+  <p><em>Figura 2. Seleção de produtos.</em></p>
 </div>
 
 <p align="justify">
-  In addition to adding products to the cart, there is an extra option to customize the desired product, which can be seen to the left of the "add to cart" button.
+  Além de poder adicionar os produtos ao carrinho, existe uma opção extra que permite customizar o produto desejado, como pode ser visto ao lado esquerdo do botão de adicionar ao carrinho.
 </p>
 
 <div align="center">
   <img src="https://private-user-images.githubusercontent.com/83819706/540299684-a6de4d15-d97d-49e5-8e2f-187928369494.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk2ODQtYTZkZTRkMTUtZDk3ZC00OWU1LThlMmYtMTg3OTI4MzY5NDk0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTg0NTMzMGQ4NTg4YTgwNzM3ZTBiZGRhNTc3ODZhMGUzNzNlYjgwYzVjMmUzZjkwMWI3ODJjYjY2ODYzODhhYmQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.kp3ke9hZgeeY4XpB_P1nyGFvm4EbzhLXW0oh3lldsT4" width="550" />
- <p><em>Figure 3. Add-ons button.</em></p>
+  <p><em>Figura 3. Botão de adicionais.</em></p>
 </div>
 
 <p align="justify">
-  After clicking, a screen will be displayed where the user can include a series of add-ons to the product before adding it to the order list.
+  Após o clique, será exibido uma tela em que o usuário poderia incluir uma série de adicionais ao produto antes de adicionar a lista de pedidos.
 </p>
 
 <div align="center">
   <img src="https://private-user-images.githubusercontent.com/83819706/540299691-1b37b1fd-b1eb-46d9-80e8-382740c7fe48.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk2OTEtMWIzN2IxZmQtYjFlYi00NmQ5LTgwZTgtMzgyNzQwYzdmZTQ4LlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTZkZmI2ZWQwOGZmY2UwODdkYzczNGY3ODNhYTlmM2JhMTVkODI1MGEzMjNlNzBiNTEzY2I5MTk2YjI2ZjYyMmYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.jUPxoJsgaxMY1JoOSts4-nYZ64qGScqCdMw05Vtq5sE" width="550" />
- <p><em>Figure 4. Add-ons list.</em></p>
+  <p><em>Figura 4. Lista de adicionais.</em></p>
 </div>
 
 <p align="justify">
-  After navigating through categories and adding the desired products, the user can click the cart button on the right side of the screen to view the order list, where they can change quantities or remove items from the list.
+  Depois de navegar entre categorias e adicionar os produtos desejados, o usuário poderá clicar no botão de carrinho ao lado direito da tela para exibir a lista de pedidos, podendo alterar quantidade ou efetuar a exclusão da lista.
 </p>
 
 <div align="center">
   <img src="https://private-user-images.githubusercontent.com/83819706/540299697-45d3bc01-f51d-4715-aecb-8f7ed17a598f.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk2OTctNDVkM2JjMDEtZjUxZC00NzE1LWFlY2ItOGY3ZWQxN2E1OThmLlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTkxMmM0NTU2MDcwZjdlMjEzMjJhZWJjMmViNTA1NGYxMjY0OWFkYjQ4Zjg3YjU0YzlkNDJjNDgyMmU4NGIxYzkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.B6cIVV8in4gGd8j8nCzk72PkeyTw2t1PZrR6pq76GAM" width="550" />
- <p><em>Figure 5. Product cart.</em></p>
+  <p><em>Figura 5. Carrinho de produtos.</em></p>
 </div>
 
 <p align="justify">
-  By clicking "Place Order," a modal will open for the user to check products and their respective quantities. If everything is correct, they can confirm, and the application will display a "purchase completed" message, as seen in the images below.
+  Ao clicar em fazer pedido, será aberto um modal para o usuário conferir produtos e suas respectivas quantidades. Estando tudo certo, poderá confirmar e o aplicativo irá exibir uma mensagem de compra realizada, conforme pode ser visto nas imagens abaixo
 </p>
 
 <div align="center">
   <img src="https://private-user-images.githubusercontent.com/83819706/540299700-052faa58-d9ed-4e70-99bc-d63184177c52.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk3MDAtMDUyZmFhNTgtZDllZC00ZTcwLTk5YmMtZDYzMTg0MTc3YzUyLlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWY3OTFhNjFkYTMxNTFiNzVhYzk4YzhhNWRhY2IwOTY0YzQxOTFhYzAwZmE3ODYyN2UxODY2NTBlOTc2NzM1ZDUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.vuXhIJuGovf6jft75IUCqWA-miUlgc4uv_cJO-5BqtQ" width="550" />
- <p><em>Figure 6. Order confirmation.</em></p>
+  <p><em>Figura 6. Confirmação do pedido.</em></p>
 </div>
 
 <div align="center">
   <img src="https://private-user-images.githubusercontent.com/83819706/540301726-e93fe981-e7fc-4df0-81c7-8edc43b80dd6.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODQxMzUsIm5iZiI6MTc2OTM4MzgzNSwicGF0aCI6Ii84MzgxOTcwNi81NDAzMDE3MjYtZTkzZmU5ODEtZTdmYy00ZGYwLTgxYzctOGVkYzQzYjgwZGQ2LlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMzAzNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTg0YWYwMTBmNjc0MzI4NjIwZTQ1ZjI2M2I1YjAwZjkyOWE1ZDA5M2NmYzRiMmVmZjJmNWRiYWY1NGM2MDZlZjgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.APQ8dBZxdHmY5qGu8Ue_t_a5HQae7TvRw1k3idoa3Xc" width="550" />
-  <p><em>Figure 7. Order placed screen.</em></p>
+  <p><em>Figura 7. Tela de pedido realizado.</em></p>
 </div>
 
 <hr />
 
-<h2 id="customization">🖌️ Customization</h2>
+<h2 id="extras">🖌️ Personalização</h2>
 
 <p>
-  The application menu allows for personalizing the user experience, 
-  including theme switching, activating the soundtrack, 
-  and language toggling.
+  O menu da aplicação permite personalizar a experiência do usuário,
+  incluindo troca de temas, ativação de trilha sonora
+  e alternância de idioma.
 </p>
 
 <div align="center">
   <img src="https://private-user-images.githubusercontent.com/83819706/540299718-fe2616f1-a525-49cc-b0a8-3e02ed65a16e.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk3MTgtZmUyNjE2ZjEtYTUyNS00OWNjLWIwYTgtM2UwMmVkNjVhMTZlLlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTkzNTk0ODBkMGY5ZWYwNzRjNDQ1MmRiNjI3MzJkNGM5MmMxMjMxYTZlMjVmYzg0YzViZDQyODI4YWM0Y2ZjNjgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.r1MHI4F0KHOQikzroa39bzOErK14jcQSgmtmktvVM4E" width="550" />
-  <p><em>Figure 8. Personalization tip.</em></p>
+  <p><em>Figura 8. Dica de personalização.</em></p>
 </div>
 
 <div align="center">
   <img src="https://private-user-images.githubusercontent.com/83819706/540299727-0dd54722-c007-445c-800d-38d386fe795f.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk3MjctMGRkNTQ3MjItYzAwNy00NDVjLTgwMGQtMzhkMzg2ZmU3OTVmLlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWFkNDMyOWVmYjg5YmJmMjQ0NDUzZGMwZGJlZmIwNzJjYTJhN2YzMjNkNmYxNTRiNGNjOTk4ZGVkZGE2ZmZiZjImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.G9XbB7al79NTt5skpZWGo8iJYTNFuC3ncwfGw4JcvgI" width="350" />
-  <p><em>Figure 9. Application menu.</em></p>
+  <p><em>Figura 9. Menu da aplicação.</em></p>
 </div>
 
 <div align="center">
   <img src="https://private-user-images.githubusercontent.com/83819706/540299733-ff94d330-8621-4176-ba28-a560cd5c35ca.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk3MzMtZmY5NGQzMzAtODYyMS00MTc2LWJhMjgtYTU2MGNkNWMzNWNhLlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWU1ZTc5YTQ3NDhmMjk1MTQxOTI4OTMwNDdlMzcxNzBjNDhjMGU1MGM4MTg4OGFjNTllYjMxZjA3ODEzYjQ2NmUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.hRkMCfnLQ_-uA28PdgH4Nw-byaTISxEcODIJS5LD_ek" width="550" />
-  <p><em>Figure 10. Retrowave Theme.</em></p>
+  <p><em>Figura 10. Tema Retrowave.</em></p>
 </div>
 
 <div align="center">
   <img src="https://private-user-images.githubusercontent.com/83819706/540299741-e2e088fd-4c69-489b-b185-b4339040ac1d.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk3NDEtZTJlMDg4ZmQtNGM2OS00ODliLWIxODUtYjQzMzkwNDBhYzFkLlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTZkM2U2MDk2ZDI0MWZjZjFlMTc3NzExNGVhOTBkM2M1NDQzYjNiMWE2ODVhZTdkZDEzNjM1ZTFkYjlkY2UzODQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.-KPCMBN6BYCPOVlqorrGfiM7jj87PYNyh1yQoBUsG24" width="550" />
-  <p><em>Figure 11. Darkwave Theme.</em></p>
+  <p><em>Figura 11. Tema Darkwave.</em></p>
 </div>
 
 <hr />
 
-<h2 id="development">🛠️ Development</h2>
+<h2  id="desenvolvimento">🛠️ Desenvolvimento</h2>
 
 <p align="justify">
-  The project began with the planning of the application interface, following UI/UX Design criteria using the Figma tool.
+  O projeto teve início com o planejamento da interface da aplicação, seguindo critérios de Design Ui/Ui, através da ferramenta Figma.
 </p>
 
 <div align="center">
   <img src="https://private-user-images.githubusercontent.com/83819706/540299750-6fa035a9-0679-4400-8761-ecaf6f1e3e4c.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk3NTAtNmZhMDM1YTktMDY3OS00NDAwLTg3NjEtZWNhZjZmMWUzZTRjLlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWEwZWEzNjgwMTY0MTE0OWQyNTcxMzI2ZjIyMTdlNTFmNjZiMmI5MGU1YjE3ZTdjY2NiMTE0ZTRmZGMwZjc2YzMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Wf7_xjDNfq6mEe69vo-81RRNaM6fcqbMyWTqDMbu0gY" width="550" />
-  <p><em>Figure 12. Mocks designed in Figma.</em></p>
+  <p><em>Figura 12. Mocks projetados no Figma.</em></p>
 </div>
 
 <p align="justify">
-  Once the interface was decided, the business rules for the application were established, along with the planning for how data would be stored and returned by the backend.
+  Decidido a interface, foi estabelecido as regras de negócio que a aplicação teria e o planejamento de como serão armazenados os dados e como eles seriam retornados pelo backend.
 </p>
 
 <div align="center">
   <img src="https://private-user-images.githubusercontent.com/83819706/540299757-0be02cbf-a38c-4e3e-aaf8-629389a9b14c.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk3NTctMGJlMDJjYmYtYTM4Yy00ZTNlLWFhZjgtNjI5Mzg5YTliMTRjLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTNkNTAwZWE5OGZiNGJmYzUxN2FjNjdjMDMwMzU4NmE4OWZmNDA4MGRlNGJlZTk1NDZiYjM2ZDJkNzQ0OWE4ZTUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.ye0mGRAye4mxN2LLIZC92WKfQBDDyaQI43vBFQLQZ0I" width="550" />
-<p><em>Figure 13. Relational database model.</em></p>
+  <p><em>Figura 13. Modelo relacional do banco de dados.</em></p>
 </div>
 
 <p align="justify">
-  Subsequently, the development of the frontend and backend followed, aiming for clean and organized segmentation to facilitate future maintenance.
+  A seguir, foi dado o seguimento ao desenvolvimento em si do front-end e back-end, onde teve como objetivo uma segmentação limpa e organizada, de forma que pudesse facilitar uma possível manutenção que o projeto possa sofrer no futuro.
 </p>
 
 <div align="center">
   <img src="https://private-user-images.githubusercontent.com/83819706/540299763-05eb6d82-8101-4c34-80c5-fff6d48baa6a.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk3NjMtMDVlYjZkODItODEwMS00YzM0LTgwYzUtZmZmNmQ0OGJhYTZhLlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTMwYTNhYTMwODJlZGZhNDYwNWNhOGYxYjVhMDA5NmYxNThiYmMwYWIwMTgwMWEyMGVhZjkxZTdlNTUwYjkyMTkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.64b4sCPU-9XLayhAM3APOvb6P4rGvcafmCKFSeVcG7Y" width="250" />
-<p><em>Figure 14. Directory organization.</em></p>
+  <p><em>Figura 14. Organização de diretórios.</em></p>
 </div>
 
 <p align="justify">
-  Finally, unit tests were created for all frontend files to ensure security and quality in the application's performance.
+  Por fim, foram criados testes unitários para todos os arquivos do front-end para garantir segurança e qualidade no funcionamento da aplicação.
 </p>
 
 <div align="center">
   <img src="https://private-user-images.githubusercontent.com/83819706/540299769-099fe6d3-3f60-4670-b1c9-cc25d83487da.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk3NjktMDk5ZmU2ZDMtM2Y2MC00NjcwLWIxYzktY2MyNWQ4MzQ4N2RhLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTlkMmFjMDc1YmM0NTA5NmNlNWQxNDM4ZWVhMjk0Y2ZiMzUxMDllM2I5ZDI0N2JjM2E0Mzc5MzNmMmFlZWU1YWEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.AdIid0a__-hDavcmwJ0k0BzD-VEOzWONC8erYPgZqec" width="550" />
-<p><em>Figure 15. Unit tests.</em></p>
+  <p><em>Figura 15. Testes unitários.</em></p>
 </div>
 
 <hr />
-<h2 id="how-to-run">▶️ How to Run the Project</h2>
+
+<h2 id="como-executar">▶️ Como Executar o Projeto</h2>
 
 <p>
-  The repository is organized into two main folders:
-  <strong>frontend</strong> and <strong>backend</strong>.
-  Each part of the application must be run independently, 
-  after accessing the corresponding directory.
+  O repositório é organizado em duas pastas principais:
+  <strong>frontend</strong> e <strong>backend</strong>.
+  Cada parte da aplicação deve ser executada de forma independente,
+  acessando previamente o diretório correspondente.
 </p>
 
-<h3>📋 Prerequisites</h3>
+<h3>📋 Pré-requisitos</h3>
 <ul>
   <li>Node.js <strong>&gt;= 18</strong></li>
-  <li>Yarn or NPM</li>
+  <li>Yarn ou NPM</li>
 </ul>
 
 <hr />
@@ -390,14 +393,14 @@
 <h3>🔧 Backend</h3>
 
 <p>
-  Access the backend folder before running the commands:
+  Acesse a pasta do backend antes de executar os comandos:
 </p>
 
 <pre>
 cd backend
 </pre>
 
-<p>Install dependencies, set up the database, and start the server:</p>
+<p>Instale as dependências, configure o banco de dados e inicie o servidor:</p>
 
 <pre>
 yarn install
@@ -406,7 +409,7 @@ yarn dev
 </pre>
 
 <p>
-  The server will be available at:
+  O servidor estará disponível em:
   <br />
   <a href="http://localhost:3001" target="_blank">
     http://localhost:3001
@@ -418,14 +421,14 @@ yarn dev
 <h3>🎨 Frontend</h3>
 
 <p>
-  In another terminal, access the frontend folder:
+  Em outro terminal, acesse a pasta do frontend:
 </p>
 
 <pre>
 cd frontend
 </pre>
 
-<p>Install dependencies and start the application:</p>
+<p>Instale as dependências e inicie a aplicação:</p>
 
 <pre>
 yarn install
@@ -433,7 +436,7 @@ yarn dev
 </pre>
 
 <p>
-  The application will be available at:
+  A aplicação estará disponível em:
   <br />
   <a href="http://localhost:3000" target="_blank">
     http://localhost:3000
@@ -442,12 +445,12 @@ yarn dev
 
 <hr />
 
-<h3>🧪 Testing</h3>
+<h3>🧪 Testes</h3>
 
 <p>
-  Unit tests are located exclusively in the
+  Os testes unitários estão localizados exclusivamente no
   <strong>frontend</strong>.
-  Make sure you are inside the folder before running them:
+  Certifique-se de estar dentro da pasta antes de executá-los:
 </p>
 
 <pre>
@@ -455,7 +458,7 @@ cd frontend
 yarn test
 </pre>
 
-<p>To run tests in continuous mode (CI / single run):</p>
+<p>Para executar os testes em modo contínuo (CI / execução única):</p>
 
 <pre>
 yarn test:run
@@ -463,16 +466,16 @@ yarn test:run
 
 <hr />
 
-<h2 id="acknowledgments">🤝 Acknowledgments</h2>
+<h2 id="agradecimentos">🤝 Agradecimentos</h2>
 
 <p>
-  This project was a collaboration with 
-  <strong>Technical Lead – Max Milan</strong>, 
-  who was responsible for the definition and architecture of the application's <strong>backend</strong>.
+  Este projeto contou com a colaboração do
+  <strong>Líder Técnico de Desenvolvimento – Max Milan</strong>,
+  responsável pela definição e arquitetura do <strong>backend</strong> da aplicação.
 </p>
 
 <p>
-  Below is the link to his GitHub profile:
+  Abaixo segue o link para seu perfil no GitHub:
 </p>
 
 <p>
@@ -494,7 +497,8 @@ yarn test:run
     <td valign="middle">
       <blockquote>
         <em>
-          Example: I had the opportunity to train and share my backend knowledge with my longtime friend, I hope everyone enjoys this project.
+          “Exemplo: Tive a oportunidade de treinar e partilhar meus conhecimentos de backend
+          para meu amigo de longa data, espero que todos se divirtam com esse projeto.”
         </em>
       </blockquote>
     </td>
