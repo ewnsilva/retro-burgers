@@ -1,5 +1,14 @@
 <h1 align="center">🍔 Retro-Burguers</h1>
 
+<div align="right">
+  <strong>EN-US</strong> |
+  <a href="https://github.com/ewnsilva/retro-burgers/blob/main/README_pt-br.md">
+    PT-BR
+  </a>
+</div>
+
+<hr />
+
 <p align="justify">
   A <strong>full-stack</strong> application created to practice and reinforce knowledge in
   <strong>React</strong>, <strong>Node.js</strong>, and <strong>automated testing</strong>,
