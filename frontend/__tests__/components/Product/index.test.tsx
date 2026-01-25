@@ -2,7 +2,6 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
 import { ProductCard } from '../../../src/components/Product';
-
 import { useLanguage } from '../../../src/utils/hooks/useLanguage';
 import { useCart } from '../../../src/utils/hooks/products/useCart';
 
@@ -14,16 +13,47 @@ vi.mock('../../../src/utils/hooks/products/useCart', () => ({
   useCart: vi.fn(),
 }));
 
+vi.mock('@mui/material', async () => {
+  const actual = await vi.importActual<any>('@mui/material');
+
+  return {
+    ...actual,
+    Card: ({ children }: any) => <div>{children}</div>,
+    CardContent: ({ children }: any) => <div>{children}</div>,
+    CardMedia: () => <img />,
+    IconButton: ({ children, onClick }: any) => <button onClick={onClick}>{children}</button>,
+    Button: ({ children, onClick }: any) => <button onClick={onClick}>{children}</button>,
+    Tooltip: ({ children }: any) => <>{children}</>,
+    Skeleton: () => <div />,
+    useMediaQuery: () => false,
+    useTheme: () => ({
+      palette: {
+        secondary: { main: '#000' },
+        error: { main: '#000' },
+      },
+    }),
+  };
+});
+
+vi.mock('@mui/icons-material', () => ({
+  Add: () => <span data-testid="AddIcon" />,
+  Remove: () => <span data-testid="RemoveIcon" />,
+  Delete: () => <span data-testid="DeleteIcon" />,
+  ShoppingCart: () => <span data-testid="ShoppingCartIcon" />,
+  LunchDining: () => <span data-testid="LunchDiningIcon" />,
+  BrokenImage: () => <span />,
+}));
+
 const productMock = {
   id: 1,
-  namePt: 'Hambúrguer',
-  nameEn: 'Burger',
-  descriptionPt: 'Descrição PT',
-  descriptionEn: 'Description EN',
-  pricePt: 10,
-  priceEn: 2,
-  image: 'img.png',
+  title: { pt: 'Hambúrguer', en: 'Burger' },
+  description: { pt: 'Descrição PT', en: 'Description EN' },
+  price: { brl: '10', usd: '2' },
+  logo: 'img.png',
 };
+
+const setCustomizeOpenMock = vi.fn();
+const setSelectedProductMock = vi.fn();
 
 describe('ProductCard component', () => {
   const addToCartMock = vi.fn();
@@ -49,7 +79,13 @@ describe('ProductCard component', () => {
   });
 
   it('renders product information in Portuguese', () => {
-    render(<ProductCard item={productMock} />);
+    render(
+      <ProductCard
+        item={productMock}
+        setCustomizeOpen={setCustomizeOpenMock}
+        setSelectedProduct={setSelectedProductMock}
+      />
+    );
 
     expect(screen.getByText('Hambúrguer')).toBeTruthy();
     expect(screen.getByText('Descrição PT')).toBeTruthy();
@@ -63,47 +99,71 @@ describe('ProductCard component', () => {
       changeLanguage: vi.fn(),
     } as any);
 
-    render(<ProductCard item={productMock} />);
+    render(
+      <ProductCard
+        item={productMock}
+        setCustomizeOpen={setCustomizeOpenMock}
+        setSelectedProduct={setSelectedProductMock}
+      />
+    );
 
     expect(screen.getByText('Burger')).toBeTruthy();
     expect(screen.getByText('Description EN')).toBeTruthy();
     expect(screen.getByText('currency.usd2.00')).toBeTruthy();
   });
 
-  it('shows add to cart button when product is not in cart', () => {
-    render(<ProductCard item={productMock} />);
+  it('adds product to cart', () => {
+    render(
+      <ProductCard
+        item={productMock}
+        setCustomizeOpen={setCustomizeOpenMock}
+        setSelectedProduct={setSelectedProductMock}
+      />
+    );
 
-    fireEvent.click(screen.getByRole('button'));
+    fireEvent.click(screen.getByTestId('ShoppingCartIcon'));
 
     expect(addToCartMock).toHaveBeenCalledWith(productMock);
   });
 
   it('shows quantity controls when product is in cart', () => {
     vi.mocked(useCart).mockReturnValueOnce({
-      cartItems: [{ ...productMock, quantity: 2 }],
+      cartItems: [{ id: 1, quantity: 2 }],
       isInCart: () => true,
       addToCart: addToCartMock,
       incrementQuantity: incrementQuantityMock,
       decrementQuantity: decrementQuantityMock,
     } as any);
 
-    render(<ProductCard item={productMock} />);
+    render(
+      <ProductCard
+        item={productMock}
+        setCustomizeOpen={setCustomizeOpenMock}
+        setSelectedProduct={setSelectedProductMock}
+      />
+    );
 
     expect(screen.getByText('2')).toBeTruthy();
     expect(screen.getByTestId('AddIcon')).toBeTruthy();
     expect(screen.getByTestId('RemoveIcon')).toBeTruthy();
   });
 
-  it('calls incrementQuantity and decrementQuantity correctly', () => {
+  it('increments and decrements quantity', () => {
     vi.mocked(useCart).mockReturnValueOnce({
-      cartItems: [{ ...productMock, quantity: 2 }],
+      cartItems: [{ id: 1, quantity: 2 }],
       isInCart: () => true,
       addToCart: addToCartMock,
       incrementQuantity: incrementQuantityMock,
       decrementQuantity: decrementQuantityMock,
     } as any);
 
-    render(<ProductCard item={productMock} />);
+    render(
+      <ProductCard
+        item={productMock}
+        setCustomizeOpen={setCustomizeOpenMock}
+        setSelectedProduct={setSelectedProductMock}
+      />
+    );
 
     fireEvent.click(screen.getByTestId('AddIcon'));
     fireEvent.click(screen.getByTestId('RemoveIcon'));
@@ -114,14 +174,20 @@ describe('ProductCard component', () => {
 
   it('renders delete icon when quantity is 1', () => {
     vi.mocked(useCart).mockReturnValueOnce({
-      cartItems: [{ ...productMock, quantity: 1 }],
+      cartItems: [{ id: 1, quantity: 1 }],
       isInCart: () => true,
       addToCart: addToCartMock,
       incrementQuantity: incrementQuantityMock,
       decrementQuantity: decrementQuantityMock,
     } as any);
 
-    render(<ProductCard item={productMock} />);
+    render(
+      <ProductCard
+        item={productMock}
+        setCustomizeOpen={setCustomizeOpenMock}
+        setSelectedProduct={setSelectedProductMock}
+      />
+    );
 
     expect(screen.getByTestId('DeleteIcon')).toBeTruthy();
   });

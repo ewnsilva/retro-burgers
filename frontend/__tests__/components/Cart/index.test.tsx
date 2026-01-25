@@ -7,44 +7,61 @@ import { Cart } from '../../../src/components/Cart';
 import { useLanguage } from '../../../src/utils/hooks/useLanguage';
 import { useCartLogic } from '../../../src/components/Cart/Cart.logic';
 
-import type { IProducts } from '../../../src/utils/interfaces';
+import type { ICartProducts } from '../../../src/utils/interfaces';
 
-const createMockCartItem = (overrides?: Partial<IProducts>): IProducts => ({
+const createMockCartItem = (overrides?: Partial<ICartProducts>): ICartProducts => ({
   id: 1,
-  namePt: 'Hambúrguer',
-  nameEn: 'Burger',
-  pricePt: 10,
-  priceEn: 2,
-  image: 'img.png',
+  title: { pt: 'Hambúrguer', en: 'Burger' },
+  price: { brl: '20', usd: '4' },
+  logo: 'img.png',
+  quantity: 2,
+  isCustom: false,
+  additionals: [],
+  category_id: 1,
+  description: { pt: '', en: '' },
   ...overrides,
 });
 
-const baseCartLogicMock = {
+const cartLogicMock = {
   cartItems: [createMockCartItem()],
   isDrawerOpen: true,
   totalQuantity: 2,
   summaryOpen: false,
-  successOpen: false,
+
   closeDrawer: vi.fn(),
   openSummary: vi.fn(),
   confirmOrder: vi.fn(),
   setSummaryOpen: vi.fn(),
-  setSuccessOpen: vi.fn(),
   clearCart: vi.fn(),
   decrementQuantity: vi.fn(),
   incrementQuantity: vi.fn(),
   removeItem: vi.fn(),
-  updateValue: vi.fn(() => 'R$ 20,00'),
+  updateValue: vi.fn(() => ' R$ 40'),
 };
 
-vi.mock('../../../src/components/OrderSummaryModal', () => ({
-  OrderSummaryModal: ({ open }: { open: boolean }) =>
-    open ? <div data-testid="order-summary-modal" /> : null,
+vi.mock('@mui/material', async () => {
+  const actual = await vi.importActual<any>('@mui/material');
+
+  return {
+    ...actual,
+    Drawer: ({ open, children }: any) => (open ? <div>{children}</div> : null),
+  };
+});
+
+vi.mock('@mui/icons-material', () => ({
+  Delete: () => <span data-testid="DeleteIcon" />,
+  Add: () => <span data-testid="AddIcon" />,
+  Remove: () => <span data-testid="RemoveIcon" />,
+  ShoppingCart: () => <span data-testid="ShoppingCartIcon" />,
 }));
 
-vi.mock('../../../src/components/OrderSuccessModal', () => ({
-  OrderSuccessModal: ({ open }: { open: boolean }) =>
-    open ? <div data-testid="order-success-modal" /> : null,
+vi.mock('../../../src/components/OrderSummaryModal', () => ({
+  OrderSummaryModal: ({ open, onConfirm }: { open: boolean; onConfirm: () => void }) =>
+    open ? (
+      <button data-testid="order-summary-modal" onClick={onConfirm}>
+        Confirm
+      </button>
+    ) : null,
 }));
 
 vi.mock('../../../src/utils/hooks/useLanguage', () => ({
@@ -56,6 +73,8 @@ vi.mock('../../../src/components/Cart/Cart.logic', () => ({
 }));
 
 describe('Cart component', () => {
+  const onOrderSuccess = vi.fn();
+
   beforeEach(() => {
     vi.clearAllMocks();
 
@@ -65,96 +84,74 @@ describe('Cart component', () => {
       changeLanguage: vi.fn(),
     });
 
-    vi.mocked(useCartLogic).mockReturnValue(baseCartLogicMock);
+    vi.mocked(useCartLogic).mockReturnValue(cartLogicMock);
   });
 
-  it('renders the shopping cart with items', () => {
-    render(
-      <Cart
-        onOrderSuccess={function (): void {
-          throw new Error('Function not implemented.');
-        }}
-      />
-    );
+  it('renders cart title and items', () => {
+    render(<Cart onOrderSuccess={onOrderSuccess} />);
 
     expect(screen.getByText('cart.title')).toBeTruthy();
     expect(screen.getByText('Hambúrguer')).toBeTruthy();
-
     expect(screen.getByText(content => content.includes('cart.total'))).toBeTruthy();
   });
 
-  it('close the drawer by clicking the X.', () => {
-    render(
-      <Cart
-        onOrderSuccess={function (): void {
-          throw new Error('Function not implemented.');
-        }}
-      />
-    );
+  it('closes drawer when clicking X', () => {
+    render(<Cart onOrderSuccess={onOrderSuccess} />);
 
     fireEvent.click(screen.getByText('X'));
 
-    expect(baseCartLogicMock.closeDrawer).toHaveBeenCalled();
+    expect(cartLogicMock.closeDrawer).toHaveBeenCalled();
   });
 
-  it('clearCart is called when you click Clear.', () => {
-    render(
-      <Cart
-        onOrderSuccess={function (): void {
-          throw new Error('Function not implemented.');
-        }}
-      />
-    );
+  it('clears cart when clicking clear button', () => {
+    render(<Cart onOrderSuccess={onOrderSuccess} />);
 
-    fireEvent.click(screen.getByText('Limpar'));
+    fireEvent.click(screen.getByText('cart.clear'));
 
-    expect(baseCartLogicMock.clearCart).toHaveBeenCalled();
+    expect(cartLogicMock.clearCart).toHaveBeenCalled();
   });
 
-  it('open the order summary by clicking on Place Order.', () => {
-    render(
-      <Cart
-        onOrderSuccess={function (): void {
-          throw new Error('Function not implemented.');
-        }}
-      />
-    );
+  it('opens summary when clicking order button', () => {
+    render(<Cart onOrderSuccess={onOrderSuccess} />);
 
     fireEvent.click(screen.getByText('cart.order'));
 
-    expect(baseCartLogicMock.openSummary).toHaveBeenCalled();
+    expect(cartLogicMock.openSummary).toHaveBeenCalled();
   });
 
-  it('increases and decreases the quantity of the item.', () => {
-    render(
-      <Cart
-        onOrderSuccess={function (): void {
-          throw new Error('Function not implemented.');
-        }}
-      />
-    );
+  it('increments and decrements item quantity', () => {
+    render(<Cart onOrderSuccess={onOrderSuccess} />);
 
     fireEvent.click(screen.getByTestId('AddIcon'));
     fireEvent.click(screen.getByTestId('RemoveIcon'));
 
-    expect(baseCartLogicMock.incrementQuantity).toHaveBeenCalledWith(1);
-    expect(baseCartLogicMock.decrementQuantity).toHaveBeenCalledWith(1);
+    expect(cartLogicMock.incrementQuantity).toHaveBeenCalledWith(1);
+    expect(cartLogicMock.decrementQuantity).toHaveBeenCalledWith(1);
   });
 
-  it('renders the summary modal when summaryOpen = true.', () => {
+  it('renders OrderSummaryModal when summaryOpen is true', () => {
     vi.mocked(useCartLogic).mockReturnValueOnce({
-      ...baseCartLogicMock,
+      ...cartLogicMock,
       summaryOpen: true,
     });
 
-    render(
-      <Cart
-        onOrderSuccess={function (): void {
-          throw new Error('Function not implemented.');
-        }}
-      />
-    );
+    render(<Cart onOrderSuccess={onOrderSuccess} />);
 
     expect(screen.getByTestId('order-summary-modal')).toBeTruthy();
+  });
+
+  it('confirms order and closes drawer when confirming summary', () => {
+    vi.mocked(useCartLogic).mockReturnValueOnce({
+      ...cartLogicMock,
+      summaryOpen: true,
+    });
+
+    render(<Cart onOrderSuccess={onOrderSuccess} />);
+
+    fireEvent.click(screen.getByTestId('order-summary-modal'));
+
+    expect(cartLogicMock.confirmOrder).toHaveBeenCalled();
+    expect(onOrderSuccess).toHaveBeenCalled();
+    expect(cartLogicMock.closeDrawer).toHaveBeenCalled();
   });
 });

@@ -3,45 +3,64 @@ import { renderHook, act } from '@testing-library/react';
 
 import { useHomeLogic } from '../../../src/pages/Home/Home.logic';
 
-const fetchProductsMock = vi.fn();
-const fetchAdditionalsMock = vi.fn();
-const addToCartMock = vi.fn();
+import { useLanguage } from '../../../src/utils/hooks/useLanguage';
+import { useProducts } from '../../../src/utils/hooks/products/useProducts';
+import { useCart } from '../../../src/utils/hooks/products/useCart';
 
 vi.mock('../../../src/utils/hooks/useLanguage', () => ({
-  useLanguage: () => ({
-    language: 'pt',
-  }),
+  useLanguage: vi.fn(),
 }));
 
 vi.mock('../../../src/utils/hooks/products/useProducts', () => ({
-  useProducts: () => ({
-    products: [
-      { id: 1, namePt: 'Hambúrguer', nameEn: 'Burger' },
-      { id: 2, namePt: 'Batata', nameEn: 'Fries' },
-    ],
-    additionals: [],
-    fetchProducts: fetchProductsMock,
-    fetchAdditionals: fetchAdditionalsMock,
-  }),
+  useProducts: vi.fn(),
 }));
 
 vi.mock('../../../src/utils/hooks/products/useCart', () => ({
-  useCart: () => ({
-    totalQuantity: 0,
-    addToCart: addToCartMock,
-  }),
+  useCart: vi.fn(),
 }));
+
+const addToCartMock = vi.fn();
+
+const productsMock = [
+  {
+    id: 1,
+    title: { pt: 'Hambúrguer', en: 'Burger' },
+  },
+  {
+    id: 2,
+    title: { pt: 'Batata', en: 'Fries' },
+  },
+];
+
+const categoriesMock = [
+  { id: 1, title: 'Lanches' },
+  { id: 2, title: 'Acompanhamentos' },
+];
 
 describe('useHomeLogic', () => {
   beforeEach(() => {
     vi.clearAllMocks();
+
+    vi.mocked(useLanguage).mockReturnValue({
+      language: 'pt',
+    } as any);
+
+    vi.mocked(useProducts).mockReturnValue({
+      products: productsMock,
+      categories: categoriesMock,
+      isLoading: false,
+    } as any);
+
+    vi.mocked(useCart).mockReturnValue({
+      totalQuantity: 3,
+      addToCart: addToCartMock,
+    } as any);
   });
 
-  it('initializes with default state and calls fetchProducts and fetchAdditionals', () => {
-    renderHook(() => useHomeLogic());
+  it('initializes with first category selected automatically', () => {
+    const { result } = renderHook(() => useHomeLogic());
 
-    expect(fetchProductsMock).toHaveBeenCalledWith(1);
-    expect(fetchAdditionalsMock).toHaveBeenCalled();
+    expect(result.current.category).toBe(1);
   });
 
   it('filters products by search text in Portuguese', () => {
@@ -52,20 +71,20 @@ describe('useHomeLogic', () => {
     });
 
     expect(result.current.filteredProducts).toHaveLength(1);
-    expect(result.current.filteredProducts[0].namePt).toBe('Hambúrguer');
+    expect(result.current.filteredProducts[0].title.pt).toBe('Hambúrguer');
   });
 
-  it('updates category and refetches products', () => {
+  it('returns hasNoResults when search has no matches', () => {
     const { result } = renderHook(() => useHomeLogic());
 
     act(() => {
-      result.current.setCategory(2);
+      result.current.setSearch('pizza');
     });
 
-    expect(fetchProductsMock).toHaveBeenCalledWith(2);
+    expect(result.current.hasNoResults).toBe(true);
   });
 
-  it('toggles customize modal state', () => {
+  it('controls customize modal state', () => {
     const { result } = renderHook(() => useHomeLogic());
 
     act(() => {
@@ -85,14 +104,10 @@ describe('useHomeLogic', () => {
     expect(result.current.orderSuccessOpen).toBe(true);
   });
 
-  it('shows MenuHint after welcome finishes', () => {
+  it('exposes cart total quantity', () => {
     const { result } = renderHook(() => useHomeLogic());
 
-    act(() => {
-      result.current.setShowHint(true);
-    });
-
-    expect(result.current.showHint).toBe(true);
+    expect(result.current.totalQuantity).toBe(3);
   });
 
   it('exposes addToCart function', () => {
@@ -102,6 +117,18 @@ describe('useHomeLogic', () => {
       result.current.addToCart({ id: 1 } as any);
     });
 
-    expect(addToCartMock).toHaveBeenCalled();
+    expect(addToCartMock).toHaveBeenCalledWith({ id: 1 });
+  });
+
+  it('returns loading when products are loading', () => {
+    vi.mocked(useProducts).mockReturnValueOnce({
+      products: [],
+      categories: [],
+      isLoading: true,
+    } as any);
+
+    const { result } = renderHook(() => useHomeLogic());
+
+    expect(result.current.showLoading).toBe(true);
   });
 });
