@@ -441,7 +441,8 @@ cd frontend
 
 <pre>
 yarn install
-yarn dev
+yarn build
+yarn prod
 </pre>
 
 <p>
