@@ -504,7 +504,7 @@ yarn test:run
     <td valign="middle">
       <blockquote>
         <em>
-          Example: I had the opportunity to train and share my backend knowledge with my longtime friend, I hope everyone enjoys this project.
+          "Participating in this project was a rewarding experience. I had the opportunity to share my backend knowledge with a long-time friend, in a process marked by exchange, learning, and collaboration. Projects like this show how collaboration and friendship make all the difference in development."
         </em>
       </blockquote>
     </td>
