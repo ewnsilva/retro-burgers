@@ -66,25 +66,12 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'public/audio'),
-          to: 'audio',
-          noErrorOnMissing: true,
-        },
-        {
-          from: path.resolve(__dirname, 'public/robots.txt'),
-          to: 'robots.txt',
-          noErrorOnMissing: true,
-        },
-      ],
-    }),
-
-    new CopyWebpackPlugin({
-      patterns: [
-        {
           from: path.resolve(__dirname, 'public'),
           to: path.resolve(__dirname, 'dist'),
-
           noErrorOnMissing: true,
+          globOptions: {
+            ignore: ['**/index.html'],
+          },
         },
       ],
     }),
