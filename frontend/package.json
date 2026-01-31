@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack serve --mode development",
     "build": "cross-env NODE_ENV=production webpack --mode production",
-    "build:preview": "cross-env NODE_ENV=production webpack --mode development",
+    "build:preview": "cross-env NODE_ENV=development webpack --mode production",
     "prod": "npx serve dist",
     "test": "vitest",
     "test:run": "vitest run",
