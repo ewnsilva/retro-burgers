@@ -4,6 +4,9 @@
   <strong>EN-US</strong> |
   <a href="https://github.com/ewnsilva/retro-burgers/blob/main/README_pt-br.md">
     PT-BR
+  </a> | 
+  <a href="https://github.com/ewnsilva/retro-burgers/blob/main/README_es-es.md">
+    ES-ES
   </a>
 </div>
 
@@ -487,7 +490,7 @@ yarn test:run
 
 <p>
   🔗 <a href="https://github.com/crazymaax404" target="_blank">
-    https://github.com/crazymaax404
+    Max Milan - GitHub
   </a>
 </p>
 
