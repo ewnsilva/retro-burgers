@@ -53,6 +53,7 @@ vi.mock('@mui/icons-material', () => ({
   Add: () => <span data-testid="AddIcon" />,
   Remove: () => <span data-testid="RemoveIcon" />,
   ShoppingCart: () => <span data-testid="ShoppingCartIcon" />,
+  ExitToApp: () => <span data-testid="ExitToAppIcon" />,
 }));
 
 vi.mock('../../../src/components/OrderSummaryModal', () => ({
@@ -98,7 +99,7 @@ describe('Cart component', () => {
   it('closes drawer when clicking X', () => {
     render(<Cart onOrderSuccess={onOrderSuccess} />);
 
-    fireEvent.click(screen.getByText('X'));
+    fireEvent.click(screen.getByRole('button', { name: 'cart.close' }));
 
     expect(cartLogicMock.closeDrawer).toHaveBeenCalled();
   });
