@@ -130,7 +130,7 @@
 
 <div align="center"> <img src="https://github.com/user-attachments/assets/78f07274-2f23-4602-b9c4-8513f3efeca5" width="550" /> <p><em>Figura 10. Tema Retrowave.</em></p> </div>
 
-<div align="center"> <img src="https://github.com/user-attachments/assets/801bb864-7811-436f-af39-b0de49e6831a" width="550" /> <p><em>Figura 11. Tema Darkwave.</em></p> </div>
+<div align="center"> <img src="https://github.com/user-attachments/assets/d594edad-e60b-4fe9-b3f4-ae9d872cd439" width="550" /> <p><em>Figura 11. Tema Darkwave.</em></p> </div>
 
 <hr />
 
@@ -138,11 +138,11 @@
 
 <p align="justify"> El proyecto comenzó con la planificación de la interfaz de la aplicación, siguiendo criterios de Diseño UI/UX a través de la herramienta Figma. </p>
 
-<div align="center"> <img src="https://github.com/user-attachments/assets/e1ecf732-4307-45f9-a99d-2e80a1f61fe3" width="550" /> <p><em>Figura 12. Mocks proyectados en Figma.</em></p> </div>
+<div align="center"><img src="https://github.com/user-attachments/assets/801bb864-7811-436f-af39-b0de49e6831a" width="550" /> <p><em>Figura 12. Mocks proyectados en Figma.</em></p> </div>
 
 <p align="justify"> Una vez decidida la interfaz, se establecieron las reglas de negocio y la planificación de cómo se almacenarían los datos y cómo serían devueltos por el backend. </p>
 
-<div align="center"> <img src="https://github.com/user-attachments/assets/0e6d5ec2-b0f8-423e-a4c0-0c9d975512e5" width="250" /> <p><em>Figura 13. Modelo relacional de la base de datos.</em></p> </div>
+<div align="center"> <img src="https://github.com/user-attachments/assets/e1ecf732-4307-45f9-a99d-2e80a1f61fe3" width="550" /> <p><em>Figura 13. Modelo relacional de la base de datos.</em></p> </div>
 
 <p align="justify"> A continuación, se procedió al desarrollo del front-end y back-end, con el objetivo de lograr una segmentación limpia y organizada que facilitara cualquier mantenimiento futuro. </p>
 

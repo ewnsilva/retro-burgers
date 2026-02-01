@@ -339,7 +339,7 @@
 </div>
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/801bb864-7811-436f-af39-b0de49e6831a" width="550" />
+  <img src="https://github.com/user-attachments/assets/d594edad-e60b-4fe9-b3f4-ae9d872cd439" width="550" />
   <p><em>Figura 11. Tema Darkwave.</em></p>
 </div>
 
@@ -352,7 +352,7 @@
 </p>
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/e1ecf732-4307-45f9-a99d-2e80a1f61fe3" width="550" />
+  <img src="https://github.com/user-attachments/assets/801bb864-7811-436f-af39-b0de49e6831a" width="550" />
   <p><em>Figura 12. Mocks projetados no Figma.</em></p>
 </div>
 
@@ -361,7 +361,7 @@
 </p>
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/0e6d5ec2-b0f8-423e-a4c0-0c9d975512e5" width="250" />
+  <img src="https://github.com/user-attachments/assets/e1ecf732-4307-45f9-a99d-2e80a1f61fe3" width="550" />
   <p><em>Figura 13. Modelo relacional do banco de dados.</em></p>
 </div>
 
