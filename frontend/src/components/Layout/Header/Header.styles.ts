@@ -25,7 +25,7 @@ export const logoText = (theme: Theme): SxProps<Theme> => ({
 });
 
 export const searchField: SxProps<Theme> = {
-  minWidth: { xs: '100%', sm: 200 },
+  minWidth: { xs: '80%', sm: 200 },
   '& .MuiInputBase-input': {
     color: 'primary.main',
   },
