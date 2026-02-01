@@ -10,6 +10,7 @@
   },
   "cart": {
     "title": "Carrinho",
+    "close": "Fechar carrinho",
     "total": "Total: ",
     "clear": "Limpar",
     "includeAdditionals": "Incluir Adicionais",

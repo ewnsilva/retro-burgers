@@ -71,7 +71,12 @@ export const Cart = ({ onOrderSuccess }: CartProps): JSX.Element => {
               {t('cart.title')}
             </Typography>
           </Box>
-          <IconButton onClick={closeDrawer} color="primary" size="small">
+          <IconButton
+            onClick={closeDrawer}
+            color="primary"
+            size="small"
+            aria-label={t('cart.close')}
+          >
             <ExitToApp />
           </IconButton>
         </Box>

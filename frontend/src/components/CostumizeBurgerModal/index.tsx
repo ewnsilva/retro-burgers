@@ -108,7 +108,7 @@ export const CustomizeBurgerModal = ({
   if (!product) return null;
 
   return (
-    <Dialog open={open} onClose={onClose} fullWidth maxWidth="sm">
+    <Dialog open={open} onClose={onClose} fullWidth maxWidth="sm" fullScreen={matchesXs}>
       <DialogTitle color="primary" fontWeight={700}>
         {language === 'pt' ? product.title?.pt : product.title?.en}
       </DialogTitle>
@@ -125,7 +125,7 @@ export const CustomizeBurgerModal = ({
           return (
             <Box key={additional.id} py={1}>
               <Box display="flex" justifyContent="space-between" alignItems="center">
-                <Typography color="textSecondary">
+                <Typography color="textSecondary" variant="body1">
                   {language === 'pt' ? additional.title?.pt : additional.title?.en}
                 </Typography>
 
