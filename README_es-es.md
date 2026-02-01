@@ -2,6 +2,8 @@
 
 <div align="right"> <a href="https://github.com/ewnsilva/retro-burgers">EN-US</a> | <a href="https://github.com/ewnsilva/retro-burgers/blob/main/README_pt-br.md">PT-BR</a> | <strong> ES-ES </strong> </div>
 
+</p>
+
 <p align="justify"> Aplicación <strong>full-stack</strong> creada para entrenar y reforzar conocimientos en <strong>React</strong>, <strong>Node.js</strong> y <strong>pruebas automatizadas</strong>, simulando un e-commerce de hamburguesas y bebidas con un fuerte enfoque en <strong>arquitectura frontend</strong>, <strong>UX</strong>, <strong>internacionalización</strong> y <strong>buenas prácticas</strong>. </p>
 
 <p align="justify"> El proyecto sigue el rigor técnico y organizacional utilizado por profesionales de nivel <strong>pleno</strong> y <strong>senior</strong>, con código escalable, tipado y testeado. </p>
