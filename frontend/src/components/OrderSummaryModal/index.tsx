@@ -1,13 +1,14 @@
 import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Button,
-  Typography,
   Box,
-  Divider,
+  Button,
   Chip,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Divider,
+  Typography,
+  useMediaQuery,
 } from '@mui/material';
 
 import { useCart } from 'utils/hooks/products/useCart';
@@ -23,6 +24,7 @@ type Props = {
 export const OrderSummaryModal = ({ open, onClose, onConfirm }: Props) => {
   const { language, t } = useLanguage();
   const { cartItems, updateValue } = useCart();
+  const matchesXs = useMediaQuery('(max-width: 465px)');
 
   const renderAdditionals = (item: ICartProducts) => {
     if (!item.isCustom || !item.additionals?.length) return null;
@@ -79,10 +81,10 @@ export const OrderSummaryModal = ({ open, onClose, onConfirm }: Props) => {
       </DialogContent>
 
       <DialogActions>
-        <Button onClick={onClose} variant="outlined">
+        <Button size={matchesXs ? 'small' : 'medium'} onClick={onClose} variant="outlined">
           {t('orderSummary.edit')}
         </Button>
-        <Button onClick={onConfirm} variant="contained">
+        <Button size={matchesXs ? 'small' : 'medium'} onClick={onConfirm} variant="contained">
           {t('orderSummary.confirm')}
         </Button>
       </DialogActions>

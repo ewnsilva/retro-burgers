@@ -1,15 +1,16 @@
 import {
-  Drawer,
-  IconButton,
-  Typography,
-  List,
-  Button,
-  Divider,
-  Paper,
-  Box,
   Badge,
+  Box,
+  Button,
   CardMedia,
   Chip,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  Paper,
+  Typography,
+  useMediaQuery,
 } from '@mui/material';
 import { Delete, Add, Remove, ShoppingCart } from '@mui/icons-material';
 
@@ -41,6 +42,7 @@ export const Cart = ({ onOrderSuccess }: CartProps): JSX.Element => {
     removeItem,
     updateValue,
   } = useCartLogic();
+  const matchesXs = useMediaQuery('(max-width: 465px)');
 
   const renderAdditionals = (item: ICartProducts) => {
     if (!item.isCustom || !item.additionals?.length) return null;
@@ -89,26 +91,29 @@ export const Cart = ({ onOrderSuccess }: CartProps): JSX.Element => {
                   <CardMedia component="img" height="70" image={item.logo} />
                   <Box display="flex" mt={1} alignItems="center">
                     {item.quantity === 1 ? (
-                      <Box onClick={() => removeItem(item.id)} sx={styles.incrementQuantityStyle}>
+                      <Button
+                        onClick={() => removeItem(item.id)}
+                        sx={styles.incrementQuantityStyle}
+                      >
                         <Delete sx={styles.quantityIcons} />
-                      </Box>
+                      </Button>
                     ) : (
-                      <Box
+                      <Button
                         onClick={() => decrementQuantity(item.id)}
                         sx={styles.incrementQuantityStyle}
                       >
                         <Remove sx={styles.quantityIcons} />
-                      </Box>
+                      </Button>
                     )}
                     <Typography color="textSecondary" px={1.5}>
                       <strong>{item.quantity}</strong>
                     </Typography>
-                    <Box
+                    <Button
                       onClick={() => incrementQuantity(item.id)}
                       sx={styles.incrementQuantityStyle}
                     >
                       <Add sx={styles.quantityIcons} />
-                    </Box>
+                    </Button>
                   </Box>
                 </Box>
                 <Box ml={2} flexGrow={1}>
@@ -152,10 +157,15 @@ export const Cart = ({ onOrderSuccess }: CartProps): JSX.Element => {
             {updateValue()}
           </Typography>
           <Box display="flex" gap={1} mt={2} alignSelf="end">
-            <Button variant="outlined" color="primary" onClick={clearCart}>
+            <Button
+              size={matchesXs ? 'small' : 'medium'}
+              variant="outlined"
+              color="primary"
+              onClick={clearCart}
+            >
               {t('cart.clear')}
             </Button>
-            <Button variant="contained" onClick={openSummary}>
+            <Button size={matchesXs ? 'small' : 'medium'} variant="contained" onClick={openSummary}>
               {t('cart.order')}
             </Button>
           </Box>

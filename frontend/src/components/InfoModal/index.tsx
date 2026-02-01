@@ -1,4 +1,5 @@
-import { Modal, Box, Typography, useTheme } from '@mui/material';
+import { GitHub } from '@mui/icons-material';
+import { Modal, Box, Typography, useTheme, Button } from '@mui/material';
 import { useLanguage } from 'utils/hooks/useLanguage';
 
 interface InfoModalProps {
@@ -18,7 +19,7 @@ export const InfoModal = ({ open, onClose }: InfoModalProps) => {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          width: 420,
+          width: { xs: 380, sm: 420 },
           bgcolor: theme.palette.background.default,
           color: theme.palette.text.primary,
           borderRadius: 2,
@@ -28,11 +29,24 @@ export const InfoModal = ({ open, onClose }: InfoModalProps) => {
           border: `1px solid ${theme.palette.divider}`,
         }}
       >
-        <Typography variant="h6" mb={2}>
+        <Typography variant="h6" mb={2} fontWeight={600}>
           {t('infoModal.description')}
         </Typography>
 
-        <Typography variant="body1">{t('infoModal.text')}</Typography>
+        <Typography variant="body1" pb={3}>
+          {t('infoModal.text')}
+        </Typography>
+
+        <Button
+          LinkComponent={'a'}
+          href="https://github.com/ewnsilva/retro-burgers"
+          target="_blank"
+          size="large"
+          color="info"
+          variant="outlined"
+        >
+          <GitHub color="info" />
+        </Button>
       </Box>
     </Modal>
   );

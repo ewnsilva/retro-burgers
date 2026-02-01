@@ -1,15 +1,16 @@
 import { useMemo, useState, useEffect } from 'react';
 import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Typography,
   Box,
-  IconButton,
   Button,
   Checkbox,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
   Divider,
+  IconButton,
+  Typography,
+  useMediaQuery,
 } from '@mui/material';
 import { Add, Remove } from '@mui/icons-material';
 
@@ -32,6 +33,7 @@ export const CustomizeBurgerModal = ({
   onConfirm,
 }: CustomizeBurgerModalProps) => {
   const { language, t } = useLanguage();
+  const matchesXs = useMediaQuery('(max-width: 465px)');
 
   const [selectedAdditionals, setSelectedAdditionals] = useState<IAdditionals[]>([]);
 
@@ -112,7 +114,7 @@ export const CustomizeBurgerModal = ({
       </DialogTitle>
 
       <DialogContent>
-        <Typography color="textSecondary" variant="subtitle2" mb={1}>
+        <Typography color="textSecondary" variant="subtitle2" mb={1} fontWeight={600}>
           {t('costumizeBurgerModal.costumizeTitle')}
         </Typography>
 
@@ -129,6 +131,7 @@ export const CustomizeBurgerModal = ({
 
                 {additional.type === 'boolean' ? (
                   <Checkbox
+                    size={matchesXs ? 'small' : 'medium'}
                     checked={!!selected}
                     onChange={() => toggleBooleanAdditional(additional)}
                   />
@@ -172,10 +175,19 @@ export const CustomizeBurgerModal = ({
           </Typography>
 
           <Box display="flex" columnGap={2}>
-            <Button onClick={onClose} variant="outlined" color="primary">
+            <Button
+              onClick={onClose}
+              variant="outlined"
+              color="primary"
+              size={matchesXs ? 'small' : 'medium'}
+            >
               {t('costumizeBurgerModal.cancel')}
             </Button>
-            <Button variant="contained" onClick={handleConfirm}>
+            <Button
+              variant="contained"
+              onClick={handleConfirm}
+              size={matchesXs ? 'small' : 'medium'}
+            >
               {t('costumizeBurgerModal.add')}
             </Button>
           </Box>

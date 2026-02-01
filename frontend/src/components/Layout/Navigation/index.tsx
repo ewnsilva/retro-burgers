@@ -19,7 +19,7 @@ export const Navigation: React.FC<{
     ({ category, selectedCategory }: ButtonStyleProps): SxProps<Theme> =>
     theme => ({
       width: { xs: '45%', sm: 150 },
-      fontSize: { xs: 12, sm: 16 },
+      fontSize: { xs: 10, sm: 16 },
       fontWeight: 600,
       color: category === selectedCategory ? theme.palette.info.main : '#eeff00',
       transition: '0.25s',

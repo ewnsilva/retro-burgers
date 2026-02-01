@@ -36,14 +36,14 @@ export const Header = ({ setSearch }: { setSearch: (value: string) => void }): J
   return (
     <>
       <Box component="header" sx={styles.headerContainer(theme)}>
-        <Box display="flex" ml="2%" paddingY={2}>
+        <Box display="flex" ml={{ xs: 0, sm: '2%' }} paddingY={2}>
           <Fastfood htmlColor={theme.palette.primary.main} fontSize="large" />
           <Typography variant="h4" ml={1} sx={styles.logoText(theme)}>
             Retro-Burgers
           </Typography>
         </Box>
 
-        <Box display="flex" alignItems="center" gap={1} mr="5%">
+        <Box display="flex" alignItems="center" gap={1} mr={{ xs: 0, sm: '5%' }}>
           <TextField
             label={t('header.search')}
             variant="outlined"
