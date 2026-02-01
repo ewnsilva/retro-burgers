@@ -21,6 +21,7 @@ export const CartButton = (): JSX.Element => {
         border: matchesXs ? `1px solid ${theme.palette.secondary.main}` : null,
         background: matchesXs ? `${theme.palette.background.default}` : null,
         top: matchesSm ? '25%' : '15%',
+        zIndex: theme.zIndex.drawer,
         right: 16,
         transition: '0.25s',
         '&:hover': {
