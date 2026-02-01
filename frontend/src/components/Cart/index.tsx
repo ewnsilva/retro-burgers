@@ -127,7 +127,7 @@ export const Cart = ({ onOrderSuccess }: CartProps): JSX.Element => {
                       <Typography component="div" color="textSecondary" alignItems="center">
                         {language === 'pt' ? item.title?.pt : item.title?.en}
                         {item.isCustom && (
-                          <Chip label="Custom" size="small" color="secondary" sx={{ ml: 0.5 }} />
+                          <Chip label="Custom" size="small" color="primary" sx={{ ml: 0.5 }} />
                         )}
                       </Typography>
 

@@ -72,7 +72,7 @@ export const OrderSummaryModal = ({ open, onClose, onConfirm }: Props) => {
               >
                 {language === 'pt' ? item.title?.pt : item.title?.en} x{item.quantity}{' '}
                 {item.isCustom && (
-                  <Chip label="Custom" size="small" color="secondary" sx={{ ml: 0.5 }} />
+                  <Chip label="Custom" size="small" color="primary" sx={{ ml: 0.5 }} />
                 )}
               </Typography>
 
