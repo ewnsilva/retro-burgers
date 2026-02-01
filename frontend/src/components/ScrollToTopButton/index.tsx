@@ -28,7 +28,7 @@ export const ScrollToTopButton = (): JSX.Element => {
           position: 'fixed',
           bottom: 45,
           right: 16,
-          zIndex: theme.zIndex.tooltip,
+          zIndex: theme.zIndex.drawer,
           boxShadow: `0 0 12px ${theme.palette.primary.main}`,
           '&:hover': {
             transform: 'scale(1.05)',

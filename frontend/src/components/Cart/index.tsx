@@ -12,7 +12,7 @@ import {
   Typography,
   useMediaQuery,
 } from '@mui/material';
-import { Delete, Add, Remove, ShoppingCart } from '@mui/icons-material';
+import { Delete, Add, Remove, ShoppingCart, ExitToApp } from '@mui/icons-material';
 
 import { OrderSummaryModal } from 'components/OrderSummaryModal';
 import { useLanguage } from 'utils/hooks/useLanguage';
@@ -71,9 +71,9 @@ export const Cart = ({ onOrderSuccess }: CartProps): JSX.Element => {
               {t('cart.title')}
             </Typography>
           </Box>
-          <Typography onClick={closeDrawer} sx={{ cursor: 'pointer' }}>
-            X
-          </Typography>
+          <IconButton onClick={closeDrawer} color="primary" size="small">
+            <ExitToApp />
+          </IconButton>
         </Box>
 
         <List

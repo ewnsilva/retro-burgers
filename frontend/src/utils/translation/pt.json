@@ -52,7 +52,11 @@
     "title": "Resumo do Pedido",
     "total": "Total:",
     "edit": "Fazer alteração",
-    "confirm": "Concluir Pedido"
+    "confirm": "Concluir Pedido",
+    "paymentMethod": "Forma de pagamento"
+  },
+  "payment": {
+    "creditCard": "Cartão de crédito"
   },
   "currency": {
     "brl": "R$ ",

@@ -52,7 +52,11 @@
     "title": "Order Summary",
     "total": "Total:",
     "edit": "Make changes",
-    "confirm": "Confirm Order"
+    "confirm": "Confirm Order",
+    "paymentMethod": "Payment method"
+  },
+  "payment": {
+    "creditCard": "Credit card"
   },
   "currency": {
     "brl": "R$ ",

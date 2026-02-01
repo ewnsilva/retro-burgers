@@ -9,11 +9,15 @@ import {
   Divider,
   Typography,
   useMediaQuery,
+  ToggleButton,
+  ToggleButtonGroup,
 } from '@mui/material';
+import { CreditCard, Pix } from '@mui/icons-material';
 
 import { useCart } from 'utils/hooks/products/useCart';
 import { useLanguage } from 'utils/hooks/useLanguage';
 import { IAdditionals, ICartProducts } from 'utils/interfaces';
+import { useState } from 'react';
 
 type Props = {
   open: boolean;
@@ -25,6 +29,15 @@ export const OrderSummaryModal = ({ open, onClose, onConfirm }: Props) => {
   const { language, t } = useLanguage();
   const { cartItems, updateValue } = useCart();
   const matchesXs = useMediaQuery('(max-width: 465px)');
+
+  const [paymentMethod, setPaymentMethod] = useState<'credit' | 'pix'>('credit');
+
+  const handlePaymentChange = (
+    _: React.MouseEvent<HTMLElement>,
+    value: 'credit' | 'pix' | null
+  ) => {
+    if (value) setPaymentMethod(value);
+  };
 
   const renderAdditionals = (item: ICartProducts) => {
     if (!item.isCustom || !item.additionals?.length) return null;
@@ -78,6 +91,30 @@ export const OrderSummaryModal = ({ open, onClose, onConfirm }: Props) => {
         <Typography variant="h6" fontWeight={700} textAlign="right" color="primary">
           {t('orderSummary.total')} {updateValue()}
         </Typography>
+
+        <Box>
+          <Typography variant="subtitle2" fontWeight={600} color="textSecondary" mb={1}>
+            {t('orderSummary.paymentMethod')}
+          </Typography>
+
+          <ToggleButtonGroup
+            exclusive
+            color="primary"
+            value={paymentMethod}
+            onChange={handlePaymentChange}
+            size={matchesXs ? 'small' : 'medium'}
+          >
+            <ToggleButton value="credit">
+              <CreditCard sx={{ mr: 0.5 }} />
+              {t('payment.creditCard')}
+            </ToggleButton>
+
+            <ToggleButton value="pix">
+              <Pix sx={{ mr: 0.5 }} />
+              Pix
+            </ToggleButton>
+          </ToggleButtonGroup>
+        </Box>
       </DialogContent>
 
       <DialogActions>
