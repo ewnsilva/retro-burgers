@@ -66,14 +66,14 @@ const darkwaveOptions: ThemeOptions = {
     },
     info: {
       main: '#e5e5e5',
-      contrastText: '#3f0c2d',
+      contrastText: '#330a24',
     },
     background: {
-      default: '#3f0c2d',
+      default: '#330a24',
     },
     text: {
       primary: '#e5e5e5',
-      secondary: '#3f0c2d',
+      secondary: '#330a24',
     },
   },
   typography: {
