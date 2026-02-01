@@ -33,7 +33,7 @@
 <h2 id="overview"  align="justify">📸 Overview</h2>
 
 <div align="center">
-  <img src="https://private-user-images.githubusercontent.com/83819706/540299511-6e0be0f4-b1b6-4db7-a1a2-46061f05b83b.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI0NTQsIm5iZiI6MTc2OTM4MjE1NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk1MTEtNmUwYmUwZjQtYjFiNi00ZGI3LWExYTItNDYwNjFmMDViODNiLlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDIzNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTExOTMxMTVkM2Q4Yjg3ZDlhNmM5YTc1MzU2Y2M4OWZhZTI4MjdmNjA3NTg1MzQyZGZlYzUwZTdhZDVlMjcxM2UmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.KLPcNVfr_RiZUJvKOTiV9sO-mCI5gheAPKRnZrgVnnw"
+  <img src="https://github.com/user-attachments/assets/e66b6ad7-8895-482f-bb87-e71a24f9577c"
        width="900" />
   <p><em>Figure 1. Application main page.</em></p>
 </div>
@@ -263,7 +263,7 @@
 </p>
 
 <div align="center">
-  <img src="https://private-user-images.githubusercontent.com/83819706/540299517-9637ce91-a7d0-4039-82df-406ce2d37086.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk1MTctOTYzN2NlOTEtYTdkMC00MDM5LTgyZGYtNDA2Y2UyZDM3MDg2LlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTUxMjU0ZDhkYzJiNzljODBmNWE1OTczMjUyMmU2ZDVhNmEwN2EyOWM1ZGYyYzM1OTVmNWQwYWVmNDM0YjM4ZTImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.enQusoxkS2uyGHHoeMFXJrEcuhIU2BseYimyaCzI5YU" width="550" />
+  <img src="https://github.com/user-attachments/assets/4ddd7bdd-e265-4da1-932e-49a347a07f16" width="550" />
   <p><em>Figure 2. Product selection.</em></p>
 </div>
 
@@ -272,7 +272,7 @@
 </p>
 
 <div align="center">
-  <img src="https://private-user-images.githubusercontent.com/83819706/540299684-a6de4d15-d97d-49e5-8e2f-187928369494.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk2ODQtYTZkZTRkMTUtZDk3ZC00OWU1LThlMmYtMTg3OTI4MzY5NDk0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTg0NTMzMGQ4NTg4YTgwNzM3ZTBiZGRhNTc3ODZhMGUzNzNlYjgwYzVjMmUzZjkwMWI3ODJjYjY2ODYzODhhYmQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.kp3ke9hZgeeY4XpB_P1nyGFvm4EbzhLXW0oh3lldsT4" width="550" />
+  <img src="https://github.com/user-attachments/assets/a7d2af71-96d5-4d9c-b70d-cf3f8527b9c2" width="550" />
  <p><em>Figure 3. Add-ons button.</em></p>
 </div>
 
@@ -281,7 +281,7 @@
 </p>
 
 <div align="center">
-  <img src="https://private-user-images.githubusercontent.com/83819706/540299691-1b37b1fd-b1eb-46d9-80e8-382740c7fe48.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk2OTEtMWIzN2IxZmQtYjFlYi00NmQ5LTgwZTgtMzgyNzQwYzdmZTQ4LlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTZkZmI2ZWQwOGZmY2UwODdkYzczNGY3ODNhYTlmM2JhMTVkODI1MGEzMjNlNzBiNTEzY2I5MTk2YjI2ZjYyMmYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.jUPxoJsgaxMY1JoOSts4-nYZ64qGScqCdMw05Vtq5sE" width="550" />
+  <img src="https://github.com/user-attachments/assets/8b13c213-10b7-4db7-a990-78dd79c5b576" width="550" />
  <p><em>Figure 4. Add-ons list.</em></p>
 </div>
 
@@ -290,7 +290,7 @@
 </p>
 
 <div align="center">
-  <img src="https://private-user-images.githubusercontent.com/83819706/540299697-45d3bc01-f51d-4715-aecb-8f7ed17a598f.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk2OTctNDVkM2JjMDEtZjUxZC00NzE1LWFlY2ItOGY3ZWQxN2E1OThmLlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTkxMmM0NTU2MDcwZjdlMjEzMjJhZWJjMmViNTA1NGYxMjY0OWFkYjQ4Zjg3YjU0YzlkNDJjNDgyMmU4NGIxYzkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.B6cIVV8in4gGd8j8nCzk72PkeyTw2t1PZrR6pq76GAM" width="550" />
+  <img src="https://github.com/user-attachments/assets/87922c20-7d6d-4ff1-961a-90095bb6f0e9" width="550" />
  <p><em>Figure 5. Product cart.</em></p>
 </div>
 
@@ -299,12 +299,12 @@
 </p>
 
 <div align="center">
-  <img src="https://private-user-images.githubusercontent.com/83819706/540299700-052faa58-d9ed-4e70-99bc-d63184177c52.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk3MDAtMDUyZmFhNTgtZDllZC00ZTcwLTk5YmMtZDYzMTg0MTc3YzUyLlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWY3OTFhNjFkYTMxNTFiNzVhYzk4YzhhNWRhY2IwOTY0YzQxOTFhYzAwZmE3ODYyN2UxODY2NTBlOTc2NzM1ZDUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.vuXhIJuGovf6jft75IUCqWA-miUlgc4uv_cJO-5BqtQ" width="550" />
+  <img src="https://github.com/user-attachments/assets/2399cc49-08cb-4427-bf8c-5c0175c4231a" width="550" />
  <p><em>Figure 6. Order confirmation.</em></p>
 </div>
 
 <div align="center">
-  <img src="https://private-user-images.githubusercontent.com/83819706/540301726-e93fe981-e7fc-4df0-81c7-8edc43b80dd6.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODQxMzUsIm5iZiI6MTc2OTM4MzgzNSwicGF0aCI6Ii84MzgxOTcwNi81NDAzMDE3MjYtZTkzZmU5ODEtZTdmYy00ZGYwLTgxYzctOGVkYzQzYjgwZGQ2LlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMzAzNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTg0YWYwMTBmNjc0MzI4NjIwZTQ1ZjI2M2I1YjAwZjkyOWE1ZDA5M2NmYzRiMmVmZjJmNWRiYWY1NGM2MDZlZjgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.APQ8dBZxdHmY5qGu8Ue_t_a5HQae7TvRw1k3idoa3Xc" width="550" />
+  <img src="https://github.com/user-attachments/assets/34ee693b-aa07-4e2e-97c9-38e245a01795" width="550" />
   <p><em>Figure 7. Order placed screen.</em></p>
 </div>
 
@@ -319,22 +319,22 @@
 </p>
 
 <div align="center">
-  <img src="https://private-user-images.githubusercontent.com/83819706/540299718-fe2616f1-a525-49cc-b0a8-3e02ed65a16e.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk3MTgtZmUyNjE2ZjEtYTUyNS00OWNjLWIwYTgtM2UwMmVkNjVhMTZlLlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTkzNTk0ODBkMGY5ZWYwNzRjNDQ1MmRiNjI3MzJkNGM5MmMxMjMxYTZlMjVmYzg0YzViZDQyODI4YWM0Y2ZjNjgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.r1MHI4F0KHOQikzroa39bzOErK14jcQSgmtmktvVM4E" width="550" />
+  <img src="https://github.com/user-attachments/assets/1a3e123a-16e0-43d6-ae6e-33ece6120a28" width="550" />
   <p><em>Figure 8. Personalization tip.</em></p>
 </div>
 
 <div align="center">
-  <img src="https://private-user-images.githubusercontent.com/83819706/540299727-0dd54722-c007-445c-800d-38d386fe795f.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk3MjctMGRkNTQ3MjItYzAwNy00NDVjLTgwMGQtMzhkMzg2ZmU3OTVmLlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWFkNDMyOWVmYjg5YmJmMjQ0NDUzZGMwZGJlZmIwNzJjYTJhN2YzMjNkNmYxNTRiNGNjOTk4ZGVkZGE2ZmZiZjImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.G9XbB7al79NTt5skpZWGo8iJYTNFuC3ncwfGw4JcvgI" width="350" />
+  <img src="https://github.com/user-attachments/assets/9a371f60-c4e4-4ac5-af25-90bd80af7880" width="350" />
   <p><em>Figure 9. Application menu.</em></p>
 </div>
 
 <div align="center">
-  <img src="https://private-user-images.githubusercontent.com/83819706/540299733-ff94d330-8621-4176-ba28-a560cd5c35ca.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk3MzMtZmY5NGQzMzAtODYyMS00MTc2LWJhMjgtYTU2MGNkNWMzNWNhLlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWU1ZTc5YTQ3NDhmMjk1MTQxOTI4OTMwNDdlMzcxNzBjNDhjMGU1MGM4MTg4OGFjNTllYjMxZjA3ODEzYjQ2NmUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.hRkMCfnLQ_-uA28PdgH4Nw-byaTISxEcODIJS5LD_ek" width="550" />
+  <img src="https://github.com/user-attachments/assets/78f07274-2f23-4602-b9c4-8513f3efeca5" width="550" />
   <p><em>Figure 10. Retrowave Theme.</em></p>
 </div>
 
 <div align="center">
-  <img src="https://private-user-images.githubusercontent.com/83819706/540299741-e2e088fd-4c69-489b-b185-b4339040ac1d.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk3NDEtZTJlMDg4ZmQtNGM2OS00ODliLWIxODUtYjQzMzkwNDBhYzFkLlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTZkM2U2MDk2ZDI0MWZjZjFlMTc3NzExNGVhOTBkM2M1NDQzYjNiMWE2ODVhZTdkZDEzNjM1ZTFkYjlkY2UzODQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.-KPCMBN6BYCPOVlqorrGfiM7jj87PYNyh1yQoBUsG24" width="550" />
+  <img src="https://github.com/user-attachments/assets/d594edad-e60b-4fe9-b3f4-ae9d872cd439" width="550" />
   <p><em>Figure 11. Darkwave Theme.</em></p>
 </div>
 
@@ -347,7 +347,7 @@
 </p>
 
 <div align="center">
-  <img src="https://private-user-images.githubusercontent.com/83819706/540299750-6fa035a9-0679-4400-8761-ecaf6f1e3e4c.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk3NTAtNmZhMDM1YTktMDY3OS00NDAwLTg3NjEtZWNhZjZmMWUzZTRjLlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWEwZWEzNjgwMTY0MTE0OWQyNTcxMzI2ZjIyMTdlNTFmNjZiMmI5MGU1YjE3ZTdjY2NiMTE0ZTRmZGMwZjc2YzMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Wf7_xjDNfq6mEe69vo-81RRNaM6fcqbMyWTqDMbu0gY" width="550" />
+  <img src="https://github.com/user-attachments/assets/801bb864-7811-436f-af39-b0de49e6831a" width="550" />
   <p><em>Figure 12. Mocks designed in Figma.</em></p>
 </div>
 
@@ -356,7 +356,7 @@
 </p>
 
 <div align="center">
-  <img src="https://private-user-images.githubusercontent.com/83819706/540299757-0be02cbf-a38c-4e3e-aaf8-629389a9b14c.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk3NTctMGJlMDJjYmYtYTM4Yy00ZTNlLWFhZjgtNjI5Mzg5YTliMTRjLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTNkNTAwZWE5OGZiNGJmYzUxN2FjNjdjMDMwMzU4NmE4OWZmNDA4MGRlNGJlZTk1NDZiYjM2ZDJkNzQ0OWE4ZTUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.ye0mGRAye4mxN2LLIZC92WKfQBDDyaQI43vBFQLQZ0I" width="550" />
+  <img src="https://github.com/user-attachments/assets/e1ecf732-4307-45f9-a99d-2e80a1f61fe3" width="550" />
 <p><em>Figure 13. Relational database model.</em></p>
 </div>
 
@@ -365,7 +365,7 @@
 </p>
 
 <div align="center">
-  <img src="https://private-user-images.githubusercontent.com/83819706/540299763-05eb6d82-8101-4c34-80c5-fff6d48baa6a.PNG?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk3NjMtMDVlYjZkODItODEwMS00YzM0LTgwYzUtZmZmNmQ0OGJhYTZhLlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTMwYTNhYTMwODJlZGZhNDYwNWNhOGYxYjVhMDA5NmYxNThiYmMwYWIwMTgwMWEyMGVhZjkxZTdlNTUwYjkyMTkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.64b4sCPU-9XLayhAM3APOvb6P4rGvcafmCKFSeVcG7Y" width="250" />
+  <img src="https://github.com/user-attachments/assets/0e6d5ec2-b0f8-423e-a4c0-0c9d975512e5" width="250" />
 <p><em>Figure 14. Directory organization.</em></p>
 </div>
 
@@ -374,7 +374,7 @@
 </p>
 
 <div align="center">
-  <img src="https://private-user-images.githubusercontent.com/83819706/540299769-099fe6d3-3f60-4670-b1c9-cc25d83487da.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzODI1ODQsIm5iZiI6MTc2OTM4MjI4NCwicGF0aCI6Ii84MzgxOTcwNi81NDAyOTk3NjktMDk5ZmU2ZDMtM2Y2MC00NjcwLWIxYzktY2MyNWQ4MzQ4N2RhLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDIzMDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTlkMmFjMDc1YmM0NTA5NmNlNWQxNDM4ZWVhMjk0Y2ZiMzUxMDllM2I5ZDI0N2JjM2E0Mzc5MzNmMmFlZWU1YWEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.AdIid0a__-hDavcmwJ0k0BzD-VEOzWONC8erYPgZqec" width="550" />
+  <img src="https://github.com/user-attachments/assets/2249f6fc-2342-47ae-93b4-e6b28ed27344" width="550" />
 <p><em>Figure 15. Unit tests.</em></p>
 </div>
 
