@@ -7,6 +7,7 @@ export const CartButton = (): JSX.Element => {
   const theme = useTheme();
   const { setIsDrawerOpen, totalQuantity } = useCart();
   const matchesXs = useMediaQuery('(max-width: 465px)');
+  const matchesSm = useMediaQuery('(max-width:900px)');
 
   const openDrawer = () => {
     setIsDrawerOpen(true);
@@ -19,7 +20,7 @@ export const CartButton = (): JSX.Element => {
         position: 'fixed',
         border: matchesXs ? `1px solid ${theme.palette.secondary.main}` : null,
         background: matchesXs ? `${theme.palette.background.default}` : null,
-        top: '30%',
+        top: matchesSm ? '25%' : '15%',
         right: 16,
         transition: '0.25s',
         '&:hover': {

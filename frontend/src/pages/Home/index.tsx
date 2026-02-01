@@ -1,13 +1,22 @@
-import { Box, Grid2 as Grid, Grow, CircularProgress, Typography } from '@mui/material';
+import {
+  Box,
+  CircularProgress,
+  Grid2 as Grid,
+  Grow,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 
 import { Cart } from 'components/Cart';
 import { CartButton } from 'components/CartButton';
 import { CustomizeBurgerModal } from 'components/CostumizeBurgerModal';
 import { Footer, Header, Navigation } from 'components/Layout';
 import { MenuHint } from 'components/MenuHint';
-import { ProductCard } from 'components/Product';
-import { WelcomeModal } from 'components/WelcomeModal';
 import { OrderSuccessModal } from 'components/OrderSuccessModal';
+import { ProductCard } from 'components/Product';
+import { ScrollToTopButton } from 'components/ScrollToTopButton';
+import { WelcomeModal } from 'components/WelcomeModal';
 
 import { useHomeLogic } from './Home.logic';
 import { useLanguage } from '@/utils/hooks/useLanguage';
@@ -34,13 +43,27 @@ export const Home = () => {
     setShowHint,
   } = useHomeLogic();
 
+  const theme = useTheme();
+  const matchesSm = useMediaQuery('(max-width:900px)');
+
   return (
     <Box display="flex" flexDirection="column">
       <WelcomeModal onFinish={() => setShowHint(true)} />
       {showHint && <MenuHint />}
+      {matchesSm && <Box height={180} />}
 
-      <Header setSearch={setSearch} />
-      <Navigation setCategory={setCategory} category={category} categories={categories} />
+      <Box
+        sx={{
+          position: matchesSm ? 'fixed' : 'static',
+          top: 0,
+          left: 0,
+          width: '100%',
+          zIndex: theme.zIndex.appBar,
+        }}
+      >
+        <Header setSearch={setSearch} />
+        <Navigation setCategory={setCategory} category={category} categories={categories} />
+      </Box>
 
       {totalQuantity > 0 && <CartButton />}
       <Cart onOrderSuccess={() => setOrderSuccessOpen(true)} />
@@ -107,6 +130,8 @@ export const Home = () => {
       />
 
       <OrderSuccessModal open={orderSuccessOpen} onClose={() => setOrderSuccessOpen(false)} />
+
+      <ScrollToTopButton />
     </Box>
   );
 };
